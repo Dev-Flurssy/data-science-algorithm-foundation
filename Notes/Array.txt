@@ -134,7 +134,8 @@ IMPLEMENTATION OF ARRAY USING PYTHON LIST
 
 Python commonly uses lists to implement array-like structures.
 
-Example: arr = [10, 20, 30, 40, 50]
+Example: 
+arr = [10, 20, 30, 40, 50]
 
 Access:
 arr[0]      # 10
@@ -365,7 +366,6 @@ SPARSE MATRIX
 A Sparse Matrix is a matrix that contains mostly zero values and very few non-zero values.
 
 Example:
-
 2 0 0 0 0 0 8 9
 0 0 0 3 5 0 0 0
 0 0 0 0 1 9 7 0
@@ -402,18 +402,18 @@ Instead of storing all elements, store only non-zero elements.
 Rule:(Row Number, Column Number, Value)
 
 Example:
-(0,0,2)
-(0,6,8)
-(0,7,9)
-(1,3,3)
-(1,4,5)
-(2,4,1)
-(2,5,9)
-(2,6,7)
-(3,2,1)
-(3,3,3)
-(3,4,4)
-(4,7,6)
+(0, 0, 2)
+(0, 6, 8)
+(0, 7, 9)
+(1, 3, 3)
+(1, 4, 5)
+(2, 4, 1)
+(2, 5, 9)
+(2, 6, 7)
+(3, 2, 1)
+(3, 3, 3)
+(3, 4, 4)
+(4, 7, 6)
 
 Meaning:
 First value = Row Number
@@ -445,7 +445,7 @@ ADDITION OF SPARSE MATRICES
 
 Two sparse matrices can be added if their dimensions are equal.
 
-Rule: A(i,j) + B(i,j)
+Rule: A(i, j) + B(i, j)
 
 Example:
 A = (1, 2, 5)

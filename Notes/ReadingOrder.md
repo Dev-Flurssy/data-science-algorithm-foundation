@@ -1,6 +1,10 @@
 
 - Introduction to DSA
-- Data Structure
 - Algorithm
+- Data Manipulation
+- Space Complexity
+- Complexity Analysis
+- Amortized Analysis
 - Array
 - List
+- List2

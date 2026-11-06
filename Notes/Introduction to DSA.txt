@@ -29,10 +29,11 @@ Solve complex problems effectively
 CLASSIFICATION OF DATA STRUCTURES
 
 Data structures are mainly divided into:
+Primitive data structures
+Non-Primitive data structures
 No. These are two different classifications.
 
 Think of it this way:
-
 Data Structures │ 
 ├── Primitive v
 ├── Non-Primitive 
@@ -62,7 +63,6 @@ is_student = True # bool
 
 
 Characteristics:
-
 Store a single value
 Directly supported by the language
 Simple and fundamental
@@ -74,7 +74,6 @@ Non-primitive data structures are built using primitive data types.
 They can store multiple values and relationships between values.
 
 Examples:
-
 Array
 Linked List
 Stack
@@ -84,7 +83,6 @@ Graph
 Hash Table
 
 Characteristics:
-
 Store collections of data
 More complex
 Used to organize information efficiently
@@ -341,7 +339,6 @@ Task Scheduling
 Dijkstra Algorithm
 
 Advantages:
-
 Fast retrieval of highest or lowest value
 Efficient priority management
 
@@ -435,7 +432,7 @@ Process data
 Count elements
 
 Example:
-Array:[10, 20, 30, 40]
+Array: [10, 20, 30, 40]
 
 Traversal Output:
 10
@@ -534,7 +531,7 @@ Updating is the process of modifying an existing element in a data structure.
 Example:
 Before: [10, 20, 30]
 Update: 20 → 25
-After:[10, 25, 30]
+After: [10, 25, 30]
 
 Applications:
 Updating account balances
@@ -552,7 +549,6 @@ Access Index: 2
 Result: 30
 
 Applications:
-
 Reading stored data
 Displaying information
 Processing records

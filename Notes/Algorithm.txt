@@ -14,9 +14,7 @@ Example: Finding the largest number in a list of values.
 ------------------------------------------------------------ 
 WHY ALGORITHMS ARE IMPORTANT 
 
-
 Algorithms help us:
-
 Solve problems systematically
 Automate repetitive tasks
 Improve program efficiency
@@ -26,11 +24,9 @@ Build reliable software systems
 ------------------------------------------------------------ 
 TYPES OF ALGORITHMS 
 
-
 Algorithms can be classified based on the strategy used to solve problems.
 
 Common categories include:
-
 Searching Algorithms
 Sorting Algorithms
 Recursive Algorithms
@@ -86,7 +82,6 @@ Improved processing efficiency
 
 ------------------------------------------------------------ 
 RECURSIVE ALGORITHMS 
-
 
 A recursive algorithm solves a problem by calling itself repeatedly until a base condition is reached.
 
@@ -148,7 +143,6 @@ Fractional Knapsack
 ------------------------------------------------------------ 
 DYNAMIC PROGRAMMING 
 
-
 Dynamic Programming solves problems by storing previously computed results.
 It avoids performing the same calculations repeatedly.
 
@@ -205,7 +199,6 @@ Network Routing
 TREE ALGORITHMS 
 
 Tree algorithms work on hierarchical data structures.
-
 A tree consists of nodes connected in a parent-child relationship.
 
 Common operations:
@@ -286,7 +279,6 @@ KEY DSA TERMS TO KNOW
 
 Data Structure A way of organizing data for efficient access and modification.
 Algorithm A step-by-step procedure for solving a problem.
-
 Time Complexity The amount of time an algorithm takes as input size grows.
 Space Complexity The amount of memory an algorithm uses.
 Input Data given to an algorithm.
