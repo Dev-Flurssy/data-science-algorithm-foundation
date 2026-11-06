@@ -1,0 +1,804 @@
+COMPLEXITY ANALYSIS
+
+Complexity Analysis measures the time and memory required by an algorithm.
+It helps determine how efficient an algorithm is.
+
+------------------------------------------------------------
+THREE TYPES OF COMPLEXITY ANALYSIS
+
+1. Best Case
+2. Worst Case
+3. Average Case
+
+------------------------------------------------------------
+BEST CASE
+
+The algorithm gets lucky and performs the minimum number of operations.
+
+Sequential Search Example:
+a = [10, 5, 8, 20, 7]
+Search for:
+10
+
+Steps:
+Compare 10 with 10 ✓
+Found
+
+Number of Comparisons: 1
+Best Case Complexity: O(1)
+
+------------------------------------------------------------
+WORST CASE
+
+The algorithm gets unlucky and performs the maximum number of operations.
+
+Sequential Search Example: 
+a = [10, 5, 8, 20, 7]
+Search for: 7
+
+Steps:
+10 ? No
+5 ? No
+8 ? No
+20 ? No
+7 ? Yes
+
+Number of Comparisons: 5
+Worst Case Complexity: O(n)
+
+------------------------------------------------------------
+AVERAGE CASE
+
+The element can occur anywhere with equal probability.
+
+Sequential Search Example:
+a = [10, 5, 8, 20, 7]
+
+Position      Comparisons
+1st           1
+2nd           2
+3rd           3
+4th           4
+5th           5
+
+Average Comparisons:
+(1 + 2 + 3 + 4 + 5) / 5
+15 / 5
+3
+
+Average Comparisons Required: 3
+
+------------------------------------------------------------
+AVERAGE CASE FORMULA
+
+Formula: Tave = Σ p(inputi) × steps(inputi)
+
+Where:
+p(inputi) = Probability of input i occurring
+steps(inputi) = Number of steps for input i
+
+Meaning: Average Time = Probability × Cost + Probability × Cost + ...
+
+------------------------------------------------------------
+AVERAGE CASE EXAMPLE
+
+Suppose:
+Input A → 50% probability → 2 steps
+Input B → 30% probability → 4 steps
+Input C → 20% probability → 8 steps
+
+Calculation: 
+Tave = 0.5(2) + 0.3(4) + 0.2(8)
+= 1 + 1.2 + 1.6
+= 3.8
+
+Average Steps: 3.8
+
+------------------------------------------------------------
+SEQUENTIAL SEARCH
+
+Sequential Search checks elements one by one until the target is found.
+
+Example:
+[ ?, ?, ?, ..., ? ]
+
+The element may be in:
+Position 1
+Position 2
+Position 3
+...
+
+Position n
+Probability of each position: 1/n
+
+Average Comparisons: (1 + 2 + 3 + ... + n) / n
+Using: 1 + 2 + ... + n = n(n + 1)/2
+
+Therefore: [n(n + 1)/2] / n
+(n + 1)/2
+
+Average Number of Comparisons: (n + 1)/2
+
+------------------------------------------------------------
+SEQUENTIAL SEARCH SUMMARY
+
+Best Case: 1 Comparison
+Worst Case: n Comparisons
+Average Case: (n + 1)/2 Comparisons
+Complexity: O(n)
+
+------------------------------------------------------------
+MATRIX ADDITION
+
+Algorithm:
+
+for i = 1 to m
+    for j = 1 to n
+        c[i, j] = a[i, j] + b[i, j]
+
+Python:
+
+for i in range(m):
+    for j in range(n):
+        c[i][j] = a[i][j] + b[i][j]
+
+Inner Statement Executes: m × n times
+Total Steps: 2mn + 2m + 1
+For very large values of m and n: 2mn dominates 2m + 1
+
+Complexity: O(mn)
+
+------------------------------------------------------------
+BINARY SEARCH
+
+Binary Search repeatedly divides the search space into half.
+
+Example: [1, 2, 3, 4, 5, 6, 7, 8]
+Search for: 5
+
+------------------------------------------------------------
+FIRST COMPARISON
+
+Middle Element: 4
+Since: 5 > 4
+
+Ignore left half.
+Remaining:[5, 6, 7, 8]
+
+------------------------------------------------------------
+SECOND COMPARISON
+
+Middle Element: 6
+Since: 5 < 6
+
+Keep left half.
+Remaining: [5]
+
+------------------------------------------------------------
+THIRD COMPARISON
+
+5 Found.
+Total Comparisons: 3
+
+------------------------------------------------------------
+WHY LOG₂(n)?
+
+Each comparison cuts the data size in half.
+
+Example:
+16 ↓ 8 ↓ 4 2 1
+
+Number of halvings: log₂(16) = 4
+Therefore: Binary Search Complexity = O(log n)
+
+------------------------------------------------------------
+BINARY SEARCH SUMMARY
+
+Best Case: 1 Comparison
+Worst Case: log₂(n) Comparisons
+Average Case: log₂(n) Comparisons
+Complexity: O(log n)
+
+------------------------------------------------------------
+IMPORTANT EXAM POINTS
+
+Best Case = Minimum number of operations.
+Worst Case = Maximum number of operations.
+Average Case = Expected number of operations.
+
+Sequential Search:
+Best    = 1
+Worst   = n
+Average = (n + 1)/2
+O(n)
+
+Binary Search:
+Best    = 1
+Worst   = log₂(n)
+Average = log₂(n)
+O(log n)
+
+Matrix Addition:
+Total Steps = 2mn + 2m + 1
+Complexity = O(mn)
+
+------------------------------------------------------------
+BIG OH NOTATION (O)
+
+Big Oh Notation describes the upper bound (worst-case growth) of an algorithm.
+It tells us how fast an algorithm grows when the input size becomes very large.
+Big Oh focuses on the maximum amount of work an algorithm may perform.
+
+------------------------------------------------------------
+DEFINITION OF BIG OH
+
+A function f(n) is O(g(n)) if there exist positive constants:
+c
+n₀
+
+such that:
+f(n) ≤ c·g(n)
+for all:
+n > n₀
+
+------------------------------------------------------------
+MEANING
+
+f(n) = Actual running time or number of operations
+g(n) = Simpler function used to describe growth
+c = Constant multiplier
+n₀ = Starting point from which the inequality holds
+
+------------------------------------------------------------
+BIG OH INTERPRETATION
+
+If:
+f(n) ≤ c·g(n)
+
+Then:
+f(n) never grows faster than g(n) multiplied by some constant c.
+
+Therefore:
+f(n) is O(g(n))
+
+------------------------------------------------------------
+GRAPHICAL IDEA
+
+For sufficiently large values of n:
+f(n) stays below c·g(n)
+
+Visualization: 
+c·g(n)
+│
+│       /
+│      /
+│     /
+│    /
+│   /
+│  /  f(n)
+│ /
+│/
+└───────────────────► n
+        n₀
+
+After n₀:
+f(n) ≤ c·g(n)
+
+------------------------------------------------------------
+BIG OH RULES
+
+If:
+f₁(n) = O(g₁(n))
+and
+f₂(n) = O(g₂(n))
+
+Then:
+Addition Rule:
+f₁(n) + f₂(n)
+= O(max(g₁(n), g₂(n)))
+
+------------------------------------------------------------
+MULTIPLICATION RULE
+
+f₁(n) × f₂(n)
+= O(g₁(n) × g₂(n))
+
+------------------------------------------------------------
+EXAMPLE 1
+
+Let:
+f(n) = 4n + 3
+
+We can write:
+4n + 3 ≤ 5n
+
+for all:
+n ≥ 3
+
+Therefore:
+f(n) = O(n)
+
+Where:
+c = 5
+n₀ = 3
+
+------------------------------------------------------------
+WHY?
+
+For large n:
+4n dominates 3
+The constant 3 becomes insignificant.
+
+Therefore:
+4n + 3 behaves like n
+
+So:
+O(n)
+
+------------------------------------------------------------
+EXAMPLE 2
+
+Let:
+f(n) = 9n² + 5n + 3
+
+For:
+n ≥ 6
+
+We have:
+9n² + 5n + 3 ≤ 10n²
+
+Therefore:
+f(n) = O(n²)
+
+Where:
+c = 10
+n₀ = 6
+
+------------------------------------------------------------
+WHY?
+
+As n becomes large:
+n² grows much faster than:
+n
+constant values
+
+Therefore:
+9n² dominates the entire expression.
+So:
+9n² + 5n + 3
+behaves like:
+n²
+
+Therefore:
+O(n²)
+
+------------------------------------------------------------
+THEOREM
+
+If:
+f(n) = aₘnᵐ + aₘ₋₁nᵐ⁻¹ + ... + a₁n + a₀
+
+Then:
+f(n) = O(nᵐ)
+
+------------------------------------------------------------
+IMPORTANT IDEA
+
+For a polynomial:
+The highest power term determines the complexity.
+
+Ignore:
+Lower powers
+Constants
+Coefficients
+
+------------------------------------------------------------
+EXAMPLES
+
+f(n) = 5n³ + 2n² + 7n + 1
+Highest Power:
+n³
+
+Therefore:
+O(n³)
+
+------------------------------------------------------------
+f(n) = 8n⁴ + 3n² + 100
+
+Highest Power:
+n⁴
+
+Therefore:
+O(n⁴)
+
+------------------------------------------------------------
+f(n) = 7n + 50
+
+Highest Power:
+n
+
+Therefore:
+O(n)
+
+------------------------------------------------------------
+f(n) = 3
+
+Constant Function
+
+Therefore:
+O(1)
+
+------------------------------------------------------------
+COMMON BIG OH COMPLEXITIES
+
+O(1)
+Constant Time
+Example:
+Accessing an array element
+a[5]
+
+O(log n)
+Logarithmic Time
+Example: Binary Search
+
+O(n)
+Linear Time
+Example:
+Sequential Search
+
+O(n log n)
+Linearithmic Time
+Example:
+Merge Sort
+
+O(n²)
+Quadratic Time
+Example:
+Nested Loops
+for i in range(n):
+    for j in range(n):
+
+O(n³)
+Cubic Time
+Example:
+Three Nested Loops
+
+O(2ⁿ)
+Exponential Time
+Example:
+Some Recursive Algorithms
+
+------------------------------------------------------------
+ORDER OF GROWTH
+
+Fastest → Slowest Growth
+O(1)
+↓
+O(log n)
+↓
+O(n)
+↓
+O(n log n)
+↓
+O(n²)
+↓
+O(n³)
+↓
+O(2ⁿ)
+
+------------------------------------------------------------
+SHORTCUTS FOR FINDING BIG OH
+
+1. Remove Constants
+5n → O(n)
+100n² → O(n²)
+
+2. Keep Highest Power
+n³ + n² + n
+↓
+O(n³)
+
+3. Ignore Smaller Terms
+n² + n + 1
+↓
+O(n²)
+
+------------------------------------------------------------
+MEMORY SHORTCUT
+
+Big Oh = Worst Case
+Keep Highest Power
+Ignore Constants
+Ignore Smaller Terms
+4n + 3      → O(n)
+9n² + 5n + 3 → O(n²)
+5n³ + 2n² + n → O(n³)
+
+------------------------------------------------------------
+THETA NOTATION (Θ)
+
+Theta Notation represents the exact asymptotic growth of a function.
+It gives both the upper bound and lower bound of an algorithm.
+Theta tells us the tight bound of an algorithm.
+
+------------------------------------------------------------
+DEFINITION OF THETA
+
+A function f(n) is Θ(g(n)) if there exist positive constants:
+c₁
+c₂
+n₀
+
+such that:
+c₁g(n) ≤ f(n) ≤ c₂g(n)
+
+for all:
+n ≥ n₀
+
+------------------------------------------------------------
+MEANING
+
+Lower Bound: c₁g(n)
+Upper Bound: c₂g(n)
+
+Actual Function:
+f(n)
+
+Therefore:
+f(n) grows at the same rate as g(n)
+
+------------------------------------------------------------
+GRAPHICAL IDEA
+
+c₂g(n)
+│
+│      /
+│     /
+│    /
+│   /  f(n)
+│  /
+│ /
+│/
+│\
+│ \
+│  \
+│   \
+│    \
+│     \
+│      \
+c₁g(n)
+└────────────────────► n
+         n₀
+
+After n₀:
+c₁g(n) ≤ f(n) ≤ c₂g(n)
+
+------------------------------------------------------------
+EXAMPLE
+
+Let: f(n) = 3n + 2
+We know: 3n ≤ 3n + 2 ≤ 4n
+for all: n ≥ 2
+Therefore: f(n) = Θ(n)
+
+------------------------------------------------------------
+WHY?
+
+As n becomes large: 3n dominates 2
+The constant 2 becomes insignificant.
+
+Therefore: 3n + 2 behaves exactly like n.
+Hence: Θ(n)
+
+------------------------------------------------------------
+POLYNOMIAL RULE
+
+If: f(n) = aₘnᵐ + ... + a₁n + a₀
+Then: f(n) = Θ(nᵐ)
+
+------------------------------------------------------------
+EXAMPLES
+
+f(n) = 5n³ + 2n² + 10
+Highest Power: n³
+Therefore: Θ(n³)
+
+f(n) = 7n² + 9n + 1
+Highest Power: n²
+Therefore: Θ(n²)
+
+f(n) = 4n + 20
+Highest Power: n
+Therefore: Θ(n)
+
+
+------------------------------------------------------------
+GROWTH RATE OF FUNCTIONS
+
+Fastest Growth:
+Exponential Functions
+Examples:
+2ⁿ
+3ⁿ
+
+Medium Growth:
+Polynomial Functions
+Examples:
+n²
+n³
+n⁴
+
+
+Slowest Growth:
+Logarithmic Functions
+Examples:
+log n
+log₂ n
+
+------------------------------------------------------------
+Growth Order:
+log n
+↓
+n
+↓
+n²
+↓
+n³
+↓
+2ⁿ
+
+------------------------------------------------------------
+SMALL OH NOTATION (o)
+
+Small Oh represents a strict upper bound.
+
+Definition:
+f(n) = o(g(n))
+if:
+lim n→∞ [f(n)/g(n)] = 0
+
+------------------------------------------------------------
+MEANING
+
+f(n) grows much slower than g(n)
+As n becomes very large:
+f(n) becomes insignificant compared to g(n)
+
+------------------------------------------------------------
+EXAMPLE
+
+Let: f(n) = 3n + 2
+g(n) = n²
+
+Compute:
+lim n→∞ [(3n + 2)/n²]
+= 0
+
+Therefore:
+3n + 2 = o(n²)
+
+------------------------------------------------------------
+WHY?
+
+n² grows much faster than n.
+Eventually: (3n + 2)/n²
+becomes extremely small.
+
+Approaches:0
+Therefore: o(n²)
+
+------------------------------------------------------------
+MORE EXAMPLES OF SMALL OH
+
+n = o(n²)
+log n = o(n)
+n² = o(n³)
+n³ = o(2ⁿ)
+
+------------------------------------------------------------
+LITTLE OMEGA (ω)
+
+Little Omega represents a strict lower bound.
+
+Definition:
+f(n) = ω(g(n))
+if:
+lim n→∞ [g(n)/f(n)] = 0
+
+------------------------------------------------------------
+MEANING
+
+f(n) grows much faster than g(n)
+As n becomes very large:
+g(n) becomes insignificant compared to f(n)
+
+------------------------------------------------------------
+EXAMPLE
+
+f(n) = n²
+g(n) = n
+
+Compute:
+lim n→∞ [n/n²]
+= 0
+
+Therefore:
+n² = ω(n)
+
+------------------------------------------------------------
+WHY?
+
+n² grows much faster than n.
+
+Eventually: n/n² = 1/n
+Approaches: 0
+Therefore: n² is a strict lower bound above n.
+
+------------------------------------------------------------
+MORE EXAMPLES OF LITTLE OMEGA
+
+n² = ω(n)
+n³ = ω(n²)
+2ⁿ = ω(n³)
+n = ω(log n)
+
+------------------------------------------------------------
+COMPARISON OF NOTATIONS
+
+BIG OH O(g(n))
+Represents: Upper Bound
+Meaning: f(n) grows no faster than g(n)
+Usually used for: Worst Case
+
+BIG OMEGA Ω(g(n))
+Represents: Lower Bound
+Meaning: f(n) grows at least as fast as g(n)
+Usually used for: Best Case
+
+THETA Θ(g(n))
+Represents: Tight Bound
+Meaning:f(n) grows exactly like g(n)
+
+SMALL OH o(g(n))
+Represents: Strict Upper Bound
+Meaning: f(n) grows strictly slower than g(n)
+
+
+LITTLE OMEGA ω(g(n))
+Represents: Strict Lower Bound
+Meaning: f(n) grows strictly faster than g(n)
+
+
+------------------------------------------------------------
+SHORTCUTS
+
+f(n) = 3n + 2
+O(n)
+Θ(n)
+o(n²)
+
+
+f(n) = 9n² + 5n + 3
+O(n²)
+Θ(n²)
+ω(n)
+
+f(n) = n³ + n² + n
+O(n³)
+Θ(n³)
+ω(n²)
+
+------------------------------------------------------------
+MEMORY SHORTCUT
+
+O     → At Most
+Ω     → At Least
+Θ     → Exactly
+o     → Strictly Smaller
+ω     → Strictly Larger
+
+Worst Case → O
+Best Case → Ω
+Exact Growth → Θ
+
+------------------------------------------------------------

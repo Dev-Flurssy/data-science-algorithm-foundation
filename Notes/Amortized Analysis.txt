@@ -1,0 +1,169 @@
+AMORTIZED ANALYSIS
+
+Amortized Analysis is a technique used to determine the average cost of each operation over a sequence of operations in the worst-case scenario.
+It helps analyze algorithms where some operations are occasionally expensive but most operations are cheap.
+
+------------------------------------------------------------
+WHY AMORTIZED ANALYSIS IS IMPORTANT
+
+Some operations:
+Usually take very little time
+Occasionally take a lot of time
+Looking only at the worst-case operation may give a misleading picture.
+Amortized Analysis spreads the cost of expensive operations across many inexpensive operations.
+
+------------------------------------------------------------
+DEFINITION
+
+Amortized Analysis measures:
+Average Cost Per Operation
+over
+A Sequence of Operations
+in
+The Worst-Case Execution
+
+------------------------------------------------------------
+FORMULA
+
+Amortized Cost = Total Cost of Operations / Number of Operations
+
+A few expensive operations are balanced by many cheap operations.
+Therefore: Occasional expensive operations do not significantly affect the average cost.
+
+------------------------------------------------------------
+DYNAMIC ARRAY EXAMPLE
+
+Consider a dynamic array:
+a = []
+Adding an element: a.append(10)
+Usually requires: 1 step
+
+------------------------------------------------------------
+WHEN THE ARRAY BECOMES FULL
+
+Suppose the array capacity is: [_, _, _, _]
+And it is already full: [1, 2, 3, 4]
+Now insert: a.append(5)
+
+The array must:
+1. Create a larger array
+2. Copy all existing elements
+3. Insert the new element
+
+------------------------------------------------------------
+RESIZE PROCESS
+
+Old Array: [1, 2, 3, 4]
+New Array: [_, _, _, _, _, _, _, _]
+Copy Elements: 1, 2, 3, 4
+Insert: 5
+
+------------------------------------------------------------
+COST OF APPEND
+
+Normal Append: 1 step
+Resize Append: n steps
+
+because all existing elements must be copied.
+
+------------------------------------------------------------
+WORST CASE
+
+When resizing occurs:
+Time Complexity: O(n)
+
+Reason:
+All existing elements must be copied.
+
+------------------------------------------------------------
+SEQUENCE OF APPENDS
+
+Suppose we perform 8 append operations.
+Operation          Cost
+Append 1           1
+Append 2           1
+Append 3           2  (Resize)
+Append 4           1
+Append 5           4  (Resize)
+Append 6           1
+Append 7           1
+Append 8           1
+
+------------------------------------------------------------
+TOTAL COST
+
+Total Steps:
+1 + 1 + 2 + 1 + 4 + 1 + 1 + 1
+= 12
+
+------------------------------------------------------------
+AVERAGE COST
+
+Average Cost
+= 12 / 8
+= 1.5
+
+Therefore:
+Average Cost Per Append ≈ Constant
+
+------------------------------------------------------------
+AMORTIZED COMPLEXITY
+
+Even though some append operations cost O(n),
+the average cost over many operations is: O(1)
+This is called: Amortized O(1)
+
+------------------------------------------------------------
+WORST CASE VS AVERAGE CASE VS AMORTIZED CASE
+
+Worst Case: How expensive can one operation become?
+
+Average Case:
+Uses probability to determine expected performance.
+
+Amortized Case:
+Measures average cost across many operations.
+Does NOT use probability.
+
+------------------------------------------------------------
+COMPARISON
+
+Dynamic Array Append
+Worst Case: O(n)
+Reason: Resizing and copying may occur.
+
+Amortized Case: O(1)
+Reason: Resizing happens infrequently and its cost is spread across many insertions.
+
+------------------------------------------------------------
+
+IMPORTANT EXAM POINTS
+
+Amortized Analysis:
+Average cost over a sequence of operations.
+Used When: Some operations are occasionally expensive.
+Purpose: Spread the cost of expensive operations across many cheap operations.
+Does NOT Use: Probability
+
+Dynamic Array Append:
+Worst Case = O(n)
+Amortized Case = O(1)
+
+------------------------------------------------------------
+MAIN ADVANTAGE
+
+Gives a more realistic measure of performance for operations that are usually cheap but sometimes expensive.
+
+------------------------------------------------------------
+MEMORY SHORTCUT
+
+Worst Case
+= One Operation
+
+Average Case
+= Probability-Based Analysis
+
+Amortized Analysis
+=Many Operations Together
+
+------------------------------------------------------------
