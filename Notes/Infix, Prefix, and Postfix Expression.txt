@@ -1,4 +1,3 @@
---------------------------------------------------------------------------------------------
 IMPLEMENTATION OF STACK USING DICTIONARY
 
 A Stack can be implemented using a Dictionary.
@@ -7,7 +6,6 @@ Meaning:
 INFIX, PREFIX AND POSTFIX EXPRESSIONS
 
 An arithmetic expression can be written in three different forms:
-
 Infix Expression
 Prefix Expression
 Postfix Expression
@@ -21,7 +19,6 @@ INFIX EXPRESSION
 In an Infix Expression, the operator is placed between operands.
 
 Example:
-
 A + B
 
 Meaning:
@@ -29,7 +26,6 @@ The operator '+' is written between A and B.
 This is the normal form humans use.
 
 Examples:
-
 A + B
 A * B
 A + B * C
@@ -41,14 +37,12 @@ PREFIX EXPRESSION
 In a Prefix Expression, the operator comes before the operands.
 
 Example:
-
 +AB
 
 Meaning:
 The '+' operator is written before A and B.
 
 Examples:
-
 +AB
 *AB
 +A*BC
@@ -59,14 +53,12 @@ POSTFIX EXPRESSION
 In a Postfix Expression, the operator comes after the operands.
 
 Example:
-
 AB+
 
 Meaning:
 The '+' operator is written after A and B.
 
 Examples:
-
 AB+
 AB*
 ABC*+
@@ -74,21 +66,10 @@ ABC*+
 ------------------------------------------------------------
 COMPARISON OF ALL THREE FORMS
 
-Expression:
-
-A + B
-
-Infix:
-
-A + B
-
-Prefix:
-
-+AB
-
-Postfix:
-
-AB+
+Expression: A + B
+Infix: A + B
+Prefix: +AB
+Postfix: AB+
 
 ------------------------------------------------------------
 WHY COMPUTERS PREFER POSTFIX
@@ -102,14 +83,8 @@ Evaluation becomes easier.
 The stack can evaluate expressions directly.
 
 Example:
-
-Infix:
-
-A + B * C
-
-Postfix:
-
-ABC*+
+Infix: A + B * C
+Postfix: ABC*+
 
 Meaning:
 Multiplication is automatically evaluated first.
@@ -119,218 +94,122 @@ No precedence checking is needed during evaluation.
 OPERATOR PRECEDENCE
 
 Precedence determines which operator is evaluated first.
+OPERATOR PRECEDENCE TABLE
 
-Priority Table:
+| Priority | Operators                    | Meaning                    |
+|-----------|-----------------------------|----------------------------|
+| 4         | **, Unary -, not            | Highest Precedence         |
+| 3         | *, /, div, mod, and         | High Precedence            |
+| 2         | +, -, or                    | Medium Precedence          |
+| 1         | <, <=, <>, >=, >           | Lowest Precedence          |
 
-Priority 4
-
-**
-Unary -
-not
-
-Priority 3
-
-*
-/
-div
-mod
-and
-
-Priority 2
-
-+
--
-or
-
-Priority 1
-
-<
-<=
-<>
->=
->
 
 Meaning:
 Higher priority operators are evaluated first.
 
 Example:
-
 A + B * C
 
-Output:
-
-A + (B * C)
-
-Because:
-
-* has higher precedence than +
+Output: A + (B * C)
+Because: * has higher precedence than +
 
 ------------------------------------------------------------
 ASSOCIATIVITY OF OPERATORS
 
 When two operators have the same precedence:
-
 Exponentiation (**)
-
 Evaluate Right to Left
 
 Example:
-
 2 ** 3 ** 2
-
-Meaning:
-
-2 ** (3 ** 2)
+Meaning: 2 ** (3 ** 2)
 
 Other Operators
-
 Evaluate Left to Right
 
 Example:
-
 10 - 5 - 2
-
-Meaning:
-
-(10 - 5) - 2
+Meaning: (10 - 5) - 2
 
 ------------------------------------------------------------
 INFIX TO POSTFIX CONVERSION
 
 Computers convert infix expressions into postfix expressions.
-
-Meaning:
 Postfix expressions are easier to evaluate using stacks.
 
 Tools Used:
-
 Stack
 
 ------------------------------------------------------------
 RULES FOR INFIX TO POSTFIX CONVERSION
 
 Rule 1:
-
-If operand appears
-
-Output it immediately.
+If operand appears Output it immediately.
 
 Rule 2:
+If '(' appears Push it onto stack.
 
-If '(' appears
-
-Push it onto stack.
-
-Rule 3:
-
-If operator appears
-
-Push if stack is empty.
+Rule 3: 
+If operator appears Push if stack is empty.
 Otherwise compare precedence.
 
 Rule 4:
-
-If ')' appears
-
-Pop until '(' is found.
+If ')' appears Pop until '(' is found.
 
 Rule 5:
-
-After expression ends
-
+After expression ends 
 Pop all remaining operators.
 
 ------------------------------------------------------------
 EXAMPLE 1
 
 Convert:
-
 A + B * C
 
-Step 1
+Step 1: Read A
+Output: A
 
-Read A
-
-Output:
-
-A
-
-Stack:
-
-Empty
+Stack: Empty
 
 ------------------------------------------------------------
-
 Read +
 
-Output:
-
-A
-
-Stack:
-
-+
+Output: A
+Stack: +
 
 ------------------------------------------------------------
-
 Read B
 
-Output:
-
-AB
-
-Stack:
-
-+
+Output: AB
+Stack: +
 
 ------------------------------------------------------------
-
 Read *
 
-Output:
-
-AB
-
-Stack:
-
-+ *
+Output: AB
+Stack: + *
 
 Meaning:
-
 * has higher precedence than +
-
 Push *
 
 ------------------------------------------------------------
-
 Read C
 
-Output:
+Output: ABC
 
-ABC
-
-Stack:
-
-+ *
+Stack: + *
 
 ------------------------------------------------------------
-
 Expression Ends
 
 Pop *
-
-Output:
-
-ABC*
+Output: ABC*
 
 Pop +
-
-Output:
-
-ABC*+
+Output: ABC*+
 
 ------------------------------------------------------------
-
 Final Postfix Expression:
 
 ABC*+
@@ -338,138 +217,74 @@ ABC*+
 ------------------------------------------------------------
 EXAMPLE 2
 
-Convert:
-
-A/(B+C)*D
+Convert: A/(B+C)*D
 
 ------------------------------------------------------------
-
 Read A
 
-Output:
-
-A
-
-Stack:
-
-Empty
+Output: A
+Stack: Empty
 
 ------------------------------------------------------------
-
 Read /
 
-Output:
-
-A
-
-Stack:
-
-/
+Output: A
+Stack: /
 
 ------------------------------------------------------------
-
 Read (
 
-Output:
-
-A
-
-Stack:
-
-/ (
+Output: A
+Stack: / (
 
 ------------------------------------------------------------
-
 Read B
 
-Output:
-
-AB
-
-Stack:
-
-/ (
+Output: AB
+Stack: / (
 
 ------------------------------------------------------------
-
 Read +
 
-Output:
-
-AB
-
-Stack:
-
-/ ( +
+Output: AB
+Stack: / ( +
 
 ------------------------------------------------------------
-
 Read C
 
-Output:
+Output: ABC
 
-ABC
-
-Stack:
-
-/ ( +
+Stack: / ( +
 
 ------------------------------------------------------------
-
 Read )
 
 Pop until (
-
-Output:
-
-ABC+
-
-Stack:
-
-/
+Output: ABC+
+Stack: /
 
 ------------------------------------------------------------
-
 Read *
 
-Output:
-
-ABC+
-
-Stack:
-
-/ *
+Output: ABC+
+Stack: / *
 
 ------------------------------------------------------------
-
 Read D
 
-Output:
-
-ABC+D
-
-Stack:
-
-/ *
+Output: ABC+D
+Stack: / *
 
 ------------------------------------------------------------
-
 Expression Ends
 
 Pop *
-
-Output:
-
-ABC+D*
-
+Output: ABC+D*
 Pop /
 
-Output:
-
-ABC+D*/
+Output: ABC+D*/
 
 ------------------------------------------------------------
-
 Final Postfix Expression:
 
 ABC+D*/
@@ -518,66 +333,49 @@ ALGORITHM FOR POSTFIX EVALUATION
 ------------------------------------------------------------
 EXAMPLE OF POSTFIX EVALUATION
 
-Evaluate:
-
-1 3 5 * +
+Evaluate: 1 3 5 * +
 
 ------------------------------------------------------------
-
 Read 1
 
-Stack:
-
-1
+Stack: 1
 
 ------------------------------------------------------------
-
 Read 3
 
 Stack:
-
 1
 3
 
 ------------------------------------------------------------
-
 Read 5
 
 Stack:
-
 1
 3
 5
 
 ------------------------------------------------------------
-
 Read *
 
 Operation:
-
 3 × 5 = 15
 
 Stack:
-
 1
 15
 
 ------------------------------------------------------------
-
 Read +
 
 Operation:
-
 1 + 15 = 16
 
 Stack:
-
 16
 
 ------------------------------------------------------------
-
 Final Result:
-
 16
 
 ------------------------------------------------------------
@@ -586,7 +384,6 @@ CALCULATE FUNCTION
 The calculate() function performs arithmetic operations.
 
 Operations Supported:
-
 *
 /
 +
@@ -594,23 +391,17 @@ Operations Supported:
 %
 
 Meaning:
-
 Depending on the operator received,
 the corresponding operation is performed.
 
 Example:
-
 calculate(5,3,'+')
-
-Output:
-
-8
+Output: 8
 
 ------------------------------------------------------------
 APPLICATION OF STACK IN EXPRESSION EVALUATION
 
 Uses:
-
 Infix to Postfix Conversion
 Postfix Evaluation
 Compiler Design
@@ -624,13 +415,10 @@ They remove the need for complicated precedence handling.
 RECURSION
 
 Recursion occurs when a function calls itself.
-
-Meaning:
 The same function repeatedly invokes itself.
 The calls continue until a stopping condition is reached.
 
 Example:
-
 def factorial(n):
     if n == 1:
         return 1
@@ -643,12 +431,9 @@ factorial() calls itself repeatedly.
 ACTIVATION RECORD
 
 Each function call creates an Activation Record.
-
-Meaning:
 The system stores information about the function call.
 
 Contents:
-
 Function Parameters
 Local Variables
 Return Address
@@ -659,13 +444,10 @@ Returned Value
 RUN-TIME STACK
 
 Activation Records are stored in a Run-Time Stack.
-
-Meaning:
 Every function call creates a new record.
 Records are removed when functions finish execution.
 
 Example:
-
 main()
    ↓
 f1()
@@ -675,16 +457,13 @@ f2()
 f3()
 
 Run-Time Stack:
-
 Top
-
 f3()
 f2()
 f1()
 main()
 
 Bottom
-
 Meaning:
 The most recent function call stays on top.
 
@@ -702,18 +481,14 @@ Moves downward when functions return.
 RECURSIVE STRING REVERSAL
 
 Input:
-
 A
 b
 c
 z
 
 Program:
-
 rev()
-
 Output:
-
 z
 c
 b
@@ -727,33 +502,27 @@ During return, they are printed in reverse order.
 NON-RECURSIVE STRING REVERSAL USING STACK
 
 Steps:
-
 1. Push all characters onto stack.
 2. Pop characters one by one.
 3. Display popped characters.
 
 Example:
-
 Input:
-
 ABCD
 
 Stack:
-
 A
 B
 C
 D
 
 Pop Sequence:
-
 D
 C
 B
 A
 
 Output:
-
 DCBA
 
 Meaning:
@@ -783,49 +552,37 @@ Each function call requires an activation record.
 EXAM SUMMARY
 
 Expression Types:
-
 Infix  → A + B
-
 Prefix → +AB
-
 Postfix → AB+
 
 Operator Precedence:
-
 Highest:
-
 **
 Unary -
 not
 
 Middle:
-
 *
 /
 mod
 
 Lowest:
-
 +
 -
 
 Stack Applications:
-
 Delimiter Matching
 Infix to Postfix Conversion
 Postfix Evaluation
 Recursion
 
 Postfix Evaluation Rule:
-
 Operand → Push
-
 Operator → Pop, Calculate, Push Result
 
 Recursion:
-
 Function Calling Itself
-
 Activation Record Contains:
 
 Parameters
@@ -834,11 +591,8 @@ Return Address
 Stack Pointer
 
 Key Formula:
-
 Stack = LIFO
-
 Last In → First Out
 
 Remember:
-
 Computers Prefer Postfix Expressions Because No Precedence Handling Is Required During Evaluation.
