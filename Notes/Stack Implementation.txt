@@ -1,4 +1,3 @@
-------------------------------------------------------------
 IMPLEMENTATION OF STACK USING DICTIONARY
 
 A Stack can be implemented using a Dictionary.
@@ -10,7 +9,6 @@ The Value acts as the stack element.
 The stack size is restricted.
 
 Example:
-
 S = {
       0 : 10,
       1 : 20,
@@ -30,7 +28,6 @@ CREATE OPERATION
 A dictionary is created as an empty stack.
 
 Python:
-
 S = {}
 top = -1
 
@@ -39,9 +36,7 @@ An empty dictionary is created.
 Top = -1 means the stack is empty.
 
 Example:
-
 Stack = {}
-
 Top = -1
 
 ------------------------------------------------------------
@@ -50,23 +45,18 @@ ISFULL OPERATION
 The isFull() function checks whether the stack is full.
 
 Condition:
-
 top >= size - 1
 
 Meaning:
 When Top reaches the maximum size, the stack is full.
 
 Returns:
-
 1 → Stack Full
 0 → Stack Not Full
 
 Example:
-
 Size = 3
-
 Top = 2
-
 2 >= 3-1
 
 Stack is Full
@@ -77,21 +67,17 @@ ISEMPTY OPERATION
 The isEmpty() function checks whether the stack is empty.
 
 Condition:
-
 top <= -1
 
 Meaning:
 When Top becomes -1, there are no elements in the stack.
 
 Returns:
-
 1 → Stack Empty
 0 → Stack Not Empty
 
 Example:
-
 Top = -1
-
 Stack is Empty
 
 ------------------------------------------------------------
@@ -100,37 +86,30 @@ PUSH OPERATION USING DICTIONARY
 Push inserts an element at the top of the stack.
 
 Steps:
-
 1. Check if stack is full.
 2. Increment Top by 1.
 3. Insert element into dictionary.
 
 Statement:
-
 top += 1
 S[top] = data
 
 Example:
-
 Before Push(40)
-
 S = {
       0 : 10,
       1 : 20,
       2 : 30
     }
-
 TOP = 2
 
 After Push(40)
-
 S = {
       0 : 10,
       1 : 20,
       2 : 30,
       3 : 40
     }
-
 TOP = 3
 
 Meaning:
@@ -142,40 +121,32 @@ POP OPERATION USING DICTIONARY
 Pop removes the topmost element.
 
 Steps:
-
 1. Check if stack is empty.
 2. Access S[top].
 3. Delete S[top].
 4. Decrement Top.
 
 Statement:
-
 del S[top]
 top -= 1
 
 Example:
-
 Before Pop()
-
 S = {
       0 : 10,
       1 : 20,
       2 : 30
     }
-
 TOP = 2
 
 After Pop()
-
 S = {
       0 : 10,
       1 : 20
     }
-
 TOP = 1
 
 Removed Element = 30
-
 Meaning:
 The top element is deleted.
 
@@ -185,24 +156,18 @@ PEEK OPERATION USING DICTIONARY
 Peek displays the element at the top.
 
 Statement:
-
 S[top]
 
 Example:
-
 S = {
       0 : 10,
       1 : 20,
       2 : 30
     }
-
 TOP = 2
 
 Peek()
-
-Output:
-
-30
+Output: 30
 
 Meaning:
 The top element is displayed.
@@ -214,17 +179,14 @@ DISPLAY OPERATION USING DICTIONARY
 Display shows all elements in reverse order.
 
 Example:
-
 S = {
       0 : 10,
       1 : 20,
       2 : 30
     }
-
 TOP = 2
 
 Output:
-
 2 → 30
 1 → 20
 0 → 10
@@ -246,21 +208,16 @@ Object-Oriented Programming concepts are used.
 CLASS ATTRIBUTES
 
 The Stack class contains:
-
 S
 Top
 MaxSize
 
 Meaning:
-
 S → Stores stack elements
-
 Top → Stores position of top element
-
 MaxSize → Stores maximum stack capacity
 
 Example:
-
 self.S = []
 self.top = -1
 self.maxSize = size
@@ -271,7 +228,6 @@ CLASS METHOD: ISFULL
 Checks whether the stack is full.
 
 Condition:
-
 self.top >= self.maxSize - 1
 
 Meaning:
@@ -279,7 +235,6 @@ If Top reaches the last position,
 the stack becomes full.
 
 Returns:
-
 1 → Full
 0 → Not Full
 
@@ -289,14 +244,12 @@ CLASS METHOD: ISEMPTY
 Checks whether the stack is empty.
 
 Condition:
-
 self.top <= -1
 
 Meaning:
 No element exists in the stack.
 
 Returns:
-
 1 → Empty
 0 → Not Empty
 
@@ -306,15 +259,12 @@ CLASS METHOD: PUSH
 Adds an element to the stack.
 
 Steps:
-
 1. Check isFull().
 2. Increment Top.
 3. Insert the element into the list.
 
 Example:
-
 Before Push(6)
-
 TOP
 5
 4
@@ -323,7 +273,6 @@ TOP
 1
 
 After Push(6)
-
 TOP
 6
 5
@@ -341,15 +290,12 @@ CLASS METHOD: POP
 Removes the top element.
 
 Steps:
-
 1. Check isEmpty().
 2. Display top element.
 3. Decrement Top.
 
 Example:
-
 Before Pop()
-
 TOP
 6
 5
@@ -359,7 +305,6 @@ TOP
 1
 
 After Pop()
-
 TOP
 5
 4
@@ -378,7 +323,6 @@ CLASS METHOD: PEEK
 Displays the top element without deletion.
 
 Example:
-
 TOP
 5
 4
@@ -387,13 +331,9 @@ TOP
 1
 
 Peek()
-
-Output:
-
-5
+Output: 5
 
 Stack After Peek:
-
 TOP
 5
 4
@@ -410,7 +350,6 @@ CLASS METHOD: DISPLAY
 Displays all stack elements.
 
 Example:
-
 TOP
 5
 4
@@ -419,7 +358,6 @@ TOP
 1
 
 Output:
-
 5
 4
 3
@@ -433,9 +371,7 @@ Elements are displayed from top to bottom.
 IMPLEMENTATION OF STACK USING QUEUE MODULE
 
 Python provides a built-in stack using:
-
 queue.LifoQueue()
-
 LIFO = Last In First Out
 
 Meaning:
@@ -443,9 +379,7 @@ The Queue module provides stack functionality.
 The stack size can be restricted.
 
 Example:
-
 import queue
-
 Stack = queue.LifoQueue(3)
 
 Meaning:
@@ -455,17 +389,14 @@ Creates a stack of size 3.
 PUSH USING LIFOQUEUE
 
 Method:
-
 put()
 
 Example:
-
 Stack.put(10)
 Stack.put(20)
 Stack.put(30)
 
 Stack:
-
 TOP
 30
 20
@@ -478,11 +409,9 @@ Elements are inserted at the top.
 POP USING LIFOQUEUE
 
 Method:
-
 get()
 
 Example:
-
 TOP
 30
 20
@@ -491,11 +420,9 @@ TOP
 Stack.get()
 
 Output:
-
 30
 
 Stack:
-
 TOP
 20
 10
@@ -507,11 +434,9 @@ The last inserted element is removed.
 DISPLAY USING LIFOQUEUE
 
 Method:
-
 for i in Stack.queue
 
 Example:
-
 10
 20
 30
@@ -525,7 +450,6 @@ APPLICATIONS OF STACK
 Stacks are widely used in programming and data structures.
 
 Applications:
-
 Delimiter Matching
 Parenthesis Checking
 Infix to Postfix Conversion
@@ -544,7 +468,6 @@ DELIMITER MATCHING
 Delimiter Matching checks whether opening and closing symbols match correctly.
 
 Delimiters:
-
 ()
 []
 {}
@@ -556,9 +479,7 @@ Every opening delimiter must have a matching closing delimiter.
 CORRECTLY MATCHED EXPRESSIONS
 
 Examples:
-
 a = b + (c - d) + (e - f)
-
 p[10] = h[(a + b)] + (j + k)
 
 Meaning:
@@ -568,9 +489,7 @@ Every opening bracket has a matching closing bracket.
 INCORRECTLY MATCHED EXPRESSIONS
 
 Examples:
-
 a = (b + c) - (d + e))
-
 p[10] = h[(a + b] - (c + d)
 
 Meaning:
@@ -580,7 +499,6 @@ Opening and closing brackets do not match correctly.
 DELIMITER MATCHING ALGORITHM
 
 Steps:
-
 1. Read expression character by character.
 2. If opening delimiter:
        Push onto stack.
@@ -602,35 +520,25 @@ The stack must be empty at the end.
 EXAMPLE OF DELIMITER MATCHING
 
 Expression:
-
 a[5] + (b - {c*(d-e)+(f-g)})
 
 Processing:
-
 Push [
-
 Pop ]
 
 Push (
-
 Push {
-
 Push (
-
 Pop )
 
 Push (
-
 Pop )
-
 Pop }
-
 Pop )
 
 Stack Empty
 
 Result:
-
 Expression is Well Parenthesized
 
 Meaning:
