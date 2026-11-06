@@ -1,0 +1,310 @@
+SPACE COMPLEXITY
+
+Space Complexity measures the amount of memory (RAM) required by an algorithm while it is running.
+It helps determine how much memory an algorithm needs to execute.
+
+------------------------------------------------------------
+SPACE COMPLEXITY FORMULA
+
+S(p) = C + Sp
+
+Where:
+C  = Fixed Part
+Sp = Variable Part
+Total Space = Fixed Space + Variable Space
+
+------------------------------------------------------------
+FIXED PART
+
+The Fixed Part is the memory required regardless of the input size.
+This memory does not increase or decrease when the number of inputs changes.
+
+Examples:
+result = 0
+i = 0
+
+These variables need memory whether the array contains:
+5 elements
+100 elements
+1,000,000 elements
+
+Characteristics:
+Constant memory usage
+Independent of input size
+Always exists during execution
+
+------------------------------------------------------------
+VARIABLE PART
+
+The Variable Part depends on the size of the input.
+As the input size increases, the memory required also increases.
+
+Example:
+a = [7]
+
+Needs less memory than:
+a = [7, 2, 15, 9]
+
+Because the second array contains more elements.
+
+Characteristics:
+Depends on input size
+Grows as data grows
+Usually stores arrays, lists, recursion stacks, etc.
+
+------------------------------------------------------------
+MAX ALGORITHM
+
+Algorithm MAX
+result = a[1]
+
+for i = 2 to n
+    if (a[i] > result)
+        result = a[i]
+
+return result
+
+------------------------------------------------------------
+MEMORY REQUIRED BY MAX
+
+Suppose:
+a = [7, 2, 15, 9]
+n = 4
+
+The algorithm needs memory for:
+Variable n
+n = 4
+
+Memory Required:
+1 word
+
+------------------------------------------------------------
+Variable result
+result = 7
+
+Memory Required:
+1 word
+
+------------------------------------------------------------
+Variable i
+i = 1, 2, 3, 4
+
+Memory Required:
+1 word
+
+------------------------------------------------------------
+Array a
+[7, 2, 15, 9]
+
+Contains n elements.
+Memory Required:
+n words
+
+------------------------------------------------------------
+TOTAL SPACE FOR MAX
+
+Array a      = n words
+Variable n   = 1 word
+Variable i   = 1 word
+Variable result = 1 word
+
+Total: S(p) ≥ n + 3
+
+Meaning:
+The algorithm requires at least n + 3 words of memory.
+
+------------------------------------------------------------
+RECURSIVE ALGORITHM
+
+Algorithm RSum(a, n)
+if n <= 0
+    return 0
+else
+    return RSum(a, n-1) + a[n]
+
+------------------------------------------------------------
+WHY RECURSION USES MORE MEMORY
+
+Every recursive call creates a new function call.
+
+The system must remember:
+1. Current value of n
+2. Current value of a[n]
+3. Partial sum calculation
+
+These are stored in memory using a structure called the Call Stack.
+
+------------------------------------------------------------
+CALL STACK
+
+Suppose:
+a = [7, 2, 15, 9]
+
+RSum(a, 3)
+
+Recursive Calls:
+RSum(a, 3)
+RSum(a, 2)
+RSum(a, 1)
+RSum(a, 0)
+
+Each call is stored in memory until the base case is reached.
+
+Stack Representation:
+RSum(a,3)
+RSum(a,2)
+RSum(a,1)
+RSum(a,0)
+
+Nothing is removed until RSum(a, 0) returns.
+
+------------------------------------------------------------
+RECURSION DEPTH
+
+For:RSum(a, 3)
+
+The recursive calls are:
+3
+2
+1
+0
+
+Total Calls: 4
+Which is: n + 1
+
+Therefore:
+Depth of Recursion = n + 1
+
+------------------------------------------------------------
+MEMORY PER RECURSIVE CALL
+
+Each recursive call stores:
+n
+a[n]
+sum (partial result)
+
+Memory Required:
+3 words per call
+
+------------------------------------------------------------
+TOTAL SPACE FOR RSUM
+
+Number of Calls: n + 1
+Memory Per Call: 3 words
+Total Space: S(p) ≥ 3(n + 1)
+
+Meaning:
+The recursive algorithm requires at least 3(n + 1) words of memory.
+
+------------------------------------------------------------
+ITERATIVE VS RECURSIVE MEMORY USAGE
+
+ITERATIVE MAX
+
+def max_array(a):
+    result = a[0]
+
+    for i in range(1, len(a)):
+        if a[i] > result:
+            result = a[i]
+
+    return result
+
+Memory Used: Array + Few Variables
+Space Complexity: O(n)
+
+Reason:
+Only the array grows.
+Variables remain constant.
+
+------------------------------------------------------------
+RECURSIVE SUM
+
+def rsum(a, n):
+    if n == 0:
+        return a[0]
+
+    return rsum(a, n - 1) + a[n]
+
+Memory Used: Array + Recursion Stack
+Space Complexity: O(n)
+
+Reason:
+The recursion stack grows with each recursive call.
+
+------------------------------------------------------------
+WHY RECURSION REQUIRES MORE MEMORY
+
+Iteration: Reuses the same variables repeatedly.
+
+Example:
+result
+i
+
+These variables remain the same during execution.
+
+------------------------------------------------------------
+Recursion:
+
+Creates a new set of variables for every function call.
+
+Example:
+RSum(a, 3)
+RSum(a, 2)
+RSum(a, 1)
+RSum(a, 0)
+
+Each call occupies additional memory.
+Therefore recursion generally consumes more memory than iteration.
+
+------------------------------------------------------------
+FIXED PART
+
+Does not depend on input size.
+Examples:
+n
+i
+result
+
+------------------------------------------------------------
+VARIABLE PART
+
+Depends on input size.
+
+Examples:
+Arrays
+Lists
+Call Stack
+
+------------------------------------------------------------
+MAX ALGORITHM
+
+Memory Required: S(p) ≥ n + 3
+
+Reason:
+n words for array
+1 word for n
+1 word for i
+1 word for result
+
+------------------------------------------------------------
+RSUM ALGORITHM
+
+Memory Required: S(p) ≥ 3(n + 1)
+
+Reason:
+n + 1 recursive calls
+3 words per call
+
+------------------------------------------------------------
+MEMORY SHORTCUT
+
+Fixed Part → Constant Memory
+Variable Part → Grows With Input
+MAX → n + 3 words
+RSum → 3(n + 1) words
+Iteration → Less Memory
+Recursion → More Memory
+Reason → Recursion Creates a Call Stack
+
+------------------------------------------------------------

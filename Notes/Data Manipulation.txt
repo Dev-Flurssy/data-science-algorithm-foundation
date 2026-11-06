@@ -1,0 +1,226 @@
+DATA MANIPULATION
+
+Data Manipulation refers to storing, retrieving, processing, and transforming data 
+so that it can be used effectively by computers and users.
+
+------------------------------------------------------------
+DATA MANIPULATION IN THE REAL WORLD
+
+Data Manipulation involves:
+1. User Data Storage Representation: User data must be stored in a format that a computer can understand and process.
+
+Example:
+Name = "Bisola"
+Age = 20
+
+-----------------------------------
+2. Data Retrieval: Data stored in a computer should be retrieved and presented in a form that users can understand.
+
+Example:
+Displaying a student's grade from a database.
+
+-----------------------------------
+
+3. Data Transformation: Data often needs to be converted from one form to another.
+
+Examples:
+Text to Numbers
+Celsius to Fahrenheit
+Raw Data to Reports
+
+------------------------------------------------------------
+DATA REPRESENTATION
+
+Data is represented by data values that are: Temporarily stored in a program's memory or Permanently stored in a file
+
+Examples:
+Variables
+Arrays
+Files
+Databases
+
+------------------------------------------------------------
+DATA STRUCTURE
+
+A Data Structure is a structured collection of data.
+Programs follow specific rules to access and process the data efficiently.
+
+Formula: Data Structure = Organization of Data + Operations on Data
+Meaning: How data is stored + How data is processed
+
+------------------------------------------------------------
+CHOOSING A DATA MODEL
+
+The choice of a data model depends on two important factors.
+
+-----------------------------------
+1. Rich Structure: The model should represent real-world relationships accurately.
+
+Example:
+Student → Courses
+Employee → Department
+
+-----------------------------------
+2. Simplicity: The model should be simple enough for fast processing and easy implementation.
+
+Goal: Represent data accurately & Process data efficiently
+
+------------------------------------------------------------
+CLASSIFICATION OF DATA STRUCTURES
+
+Data Structures are classified into:
+1. Primitive Data Structures
+2. Non-Primitive Data Structures
+
+------------------------------------------------------------
+PRIMITIVE DATA STRUCTURES
+
+Machine instructions work directly on primitive data structures.
+
+Examples:
+Integer (int)
+Float
+Character (char)
+Boolean (bool)
+
+
+Characteristics:
+Simple
+Built into the language
+Store individual values
+Directly understood by the CPU
+
+------------------------------------------------------------
+NON-PRIMITIVE DATA STRUCTURES
+
+Non-Primitive Data Structures are organized collections of data items.
+
+The data may be: Homogeneous (same type) or Heterogeneous (different types)
+Examples:
+Array
+Linked List
+Stack
+Queue
+Tree
+Graph
+Hash Table
+
+
+Characteristics:
+Store multiple values
+More complex
+Used to model real-world relationships
+
+------------------------------------------------------------
+ABSTRACT DATA TYPE (ADT)
+
+An Abstract Data Type (ADT) defines: The set of values and the operations performed on those values
+An ADT focuses on: What the data does Not how it is implemented
+
+-----------------------------------
+ADT EXAMPLE
+Collection of Numbers
+Possible Operations:
+Read
+Insert
+Delete
+Sort
+Search
+Print
+
+------------------------------------------------------------
+ALGORITHM
+
+An Algorithm is a technique used by a computer to solve a problem.
+Definition: An Algorithm is a finite collection of instructions that performs a specific task.
+
+------------------------------------------------------------
+CHARACTERISTICS OF AN ALGORITHM
+
+1. Input: The algorithm must have zero or more inputs.
+2. Output: The algorithm must produce at least one output.
+3. Definiteness: Every instruction must be clear and unambiguous.
+4. Finiteness: The algorithm must terminate after a finite number of steps.
+
+------------------------------------------------------------
+PERFORMANCE ANALYSIS
+
+Performance Analysis determines: 
+How much memory an algorithm uses
+How much CPU time an algorithm requires
+
+Purpose:
+Compare different algorithms that solve the same problem.
+
+------------------------------------------------------------
+DEBUGGING
+
+Debugging is the process of: Running a program on test data, Checking whether the results are correct
+Finding and fixing errors, Repeating the process until correct results are obtained
+
+------------------------------------------------------------
+PROFILING / PERFORMANCE MEASUREMENT
+
+Profiling is the process of: Running a program, Measuring memory usage
+Measuring execution time, Evaluating overall performance
+
+------------------------------------------------------------
+SPACE COMPLEXITY
+
+Space Complexity measures the amount of storage space required by a program.
+Focus: Memory Usage
+Question: How much memory does the program need?
+
+------------------------------------------------------------
+TIME COMPLEXITY
+
+Time Complexity measures the time required to execute a program.
+Focus: Execution Time
+Question: How long does the program take to run?
+
+------------------------------------------------------------
+PARTS OF SPACE COMPLEXITY
+
+The space needed to run an algorithm consists of two parts:
+1. Fixed Part
+2. Variable Part
+
+------------------------------------------------------------
+FIXED PART
+
+Memory that does not depend on inputs or outputs.
+
+Examples:
+Variables
+Constants
+Program instructions
+
+Characteristics:
+Constant memory
+Does not change with input size
+
+------------------------------------------------------------
+VARIABLE PART
+
+Memory that depends on input size.
+
+Examples:
+Arrays
+Lists
+Recursion Stack
+Dynamic Memory Allocation
+
+Characteristics:
+Increases as input size increases
+
+------------------------------------------------------------
+IMPORTANT EXAM POINTS
+
+Data Manipulation = Store, Retrieve, and Transform Data
+Data Structure = Organization of Data + Operations on Data
+
+Data Model Requirements:
+1. Rich Structure
+2. Simplicity
+
+------------------------------------------------------------
