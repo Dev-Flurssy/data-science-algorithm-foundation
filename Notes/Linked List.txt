@@ -30,18 +30,8 @@ The list size can grow dynamically.
 Memory allocation becomes flexible.
 
 Example:
-
-Array:
-
-10 | 20 | 30 | 40
-
-(Stored in continuous memory)
-
-Linked List:
-
-10 → 20 → 30 → 40 → NULL
-
-(Nodes may be stored in different memory locations)
+Array: 10 | 20 | 30 | 40 (Stored in continuous memory)
+Linked List: 10 → 20 → 30 → 40 → NULL (Nodes may be stored in different memory locations)
 
 ------------------------------------------------------------
 ADVANTAGES OF LINKED LIST
@@ -77,7 +67,6 @@ Searching may require scanning many nodes.
 SINGLY LINKED LIST
 
 A Singly Linked List contains nodes with two fields:
-
 Data Field
 Next Field
 
@@ -86,12 +75,9 @@ Each node points only to the next node.
 Backward traversal is not possible.
 The last node points to NULL.
 
-Structure:
+Structure: (Data, Next)
 
-(Data, Next)
-
-Example:
-
+Example: 
 10 → 20 → 30 → 40 → NULL
 
 Meaning:
@@ -131,15 +117,13 @@ Initially next is None.
 ATTRIBUTES OF NODE
 
 Data Attribute
-
 self.data = key
 
 Meaning:
 Stores the actual value.
 The value is supplied using key.
 
-Next Attribute
-
+Next Attribute 
 self.next = None
 
 Meaning:
@@ -158,9 +142,7 @@ New nodes are connected using the Next pointer.
 There is no fixed size limit.
 
 Example:
-
 Start
-
 ↓
 10 → 20 → 30 → NULL
 
@@ -187,12 +169,9 @@ TRAVERSAL IN SINGLY LINKED LIST
 Traversal means visiting every node one by one.
 
 Example:
-
 10 → 20 → 30 → NULL
 
-Traversal Order:
-
-10 → 20 → 30
+Traversal Order: 10 → 20 → 30
 
 Steps:
 
@@ -224,18 +203,11 @@ INSERT AT THE BEGINNING
 
 The new node becomes the first node.
 
-Before:
-
-10 → 20 → 30 → NULL
-
+Before: 10 → 20 → 30 → NULL
 Insert 5
-
-After:
-
-5 → 10 → 20 → 30 → NULL
+After: 5 → 10 → 20 → 30 → NULL
 
 Steps:
-
 1. NewNode.next = Start
 2. Start = NewNode
 
@@ -248,18 +220,11 @@ INSERT AT THE END
 
 The new node becomes the last node.
 
-Before:
-
-10 → 20 → 30 → NULL
-
+Before: 10 → 20 → 30 → NULL
 Insert 40
-
-After:
-
-10 → 20 → 30 → 40 → NULL
+After: 10 → 20 → 30 → 40 → NULL
 
 Steps:
-
 1. Move to the last node.
 2. Last.next = NewNode
 
@@ -271,16 +236,178 @@ INSERT AFTER A GIVEN NODE
 
 Insert a new node after a specified node.
 
-Before:
-
-10 → 20 → 40 → NULL
-
+Before: 10 → 20 → 40 → NULL
 Insert 30 after 20
 
-After:
-
-10 → 20 → 30 → 40 → NULL
+After: 10 → 20 → 30 → 40 → NULL
 
 Steps:
+1. Find the target node.
+2. NewNode.next = Target.next
+3. Target.next = NewNode
 
-1. Find the target
+Meaning:
+The new node is inserted immediately after the target node.
+
+------------------------------------------------------------
+INSERT BEFORE A GIVEN NODE
+
+Insert a new node before a specified node.
+
+Before: 10 → 30 → 40 → NULL
+Insert 20 before 30
+
+After: 10 → 20 → 30 → 40 → NULL
+
+Steps:
+1. Find the node before the target.
+2. NewNode.next = Target
+3. Previous.next = NewNode
+
+Meaning:
+The new node is inserted immediately before the target node.
+
+------------------------------------------------------------
+DELETION IN SINGLY LINKED LIST
+
+A node can be deleted in five ways:
+
+Delete First Node
+Delete Last Node
+Delete Given Node
+Delete Node After a Given Node
+Delete Node Before a Given Node
+
+Meaning:
+Deletion removes unwanted nodes.
+Links are adjusted after removal.
+
+------------------------------------------------------------
+DELETE FIRST NODE
+
+Remove the first node.
+
+Before: 10 → 20 → 30 → NULL
+After: 20 → 30 → NULL
+
+Steps:
+1. Temp = Start
+2. Start = Start.next
+3. Delete Temp
+
+Meaning:
+The second node becomes the first node.
+
+------------------------------------------------------------
+DELETE LAST NODE
+
+Remove the last node.
+
+Before: 10 → 20 → 30 → NULL
+After: 10 → 20 → NULL
+
+Steps: 
+1. Move to last-but-one node.
+2. Set Next = NULL.
+3. Delete Last Node.
+
+Meaning:
+The second-last node becomes the last node.
+
+------------------------------------------------------------
+DELETE A GIVEN NODE
+
+Remove a specific node.
+
+Before: 10 → 20 → 30 → 40 → NULL
+Delete 30
+After: 10 → 20 → 40 → NULL
+
+Steps:
+1. Find the node.
+2. Connect previous node directly to next node.
+3. Delete the node.
+
+Meaning:
+The node is removed from the chain.
+
+------------------------------------------------------------
+DELETE NODE AFTER A GIVEN NODE
+
+Before: 10 → 20 → 30 → 40 → NULL
+Delete node after 20
+After: 10 → 20 → 40 → NULL
+
+Meaning:
+The node immediately after the target node is removed.
+
+------------------------------------------------------------
+DELETE NODE BEFORE A GIVEN NODE
+
+Before: 10 → 20 → 30 → 40 → NULL
+Delete node before 30
+After: 10 → 30 → 40 → NULL
+
+Meaning:
+The node immediately before the target node is removed.
+
+------------------------------------------------------------
+SENTINEL NODE
+
+A Sentinel Node is an extra dummy node added before the first node or after the last node.
+
+Meaning:
+It does not store actual user data.
+It simplifies insertion and deletion operations.
+It helps reduce special cases during implementation.
+
+------------------------------------------------------------
+APPLICATIONS OF LINKED LIST
+
+Stacks
+Queues
+Polynomial Manipulation
+Memory Management
+Dynamic Memory Allocation
+
+Meaning:
+Stacks can be implemented using linked lists.
+Queues can be implemented using linked lists.
+Operating systems use linked lists for memory management.
+Linked lists are useful whenever dynamic storage is required.
+
+------------------------------------------------------------
+EXAM SUMMARY
+
+Node Structure: Data | Next
+Linked List: Data + Pointer
+
+Operations:
+Traversal
+Insertion
+Deletion
+
+Insertions:
+Beginning
+End
+After a Given Node
+Before a Given Node
+
+Deletions:
+First Node
+Last Node
+Given Node
+After a Given Node
+Before a Given Node
+
+Main Advantage:
+
+Dynamic memory allocation and easy insertion/deletion.
+
+Main Disadvantage:
+
+Sequential access and slower searching.
+
+Key Formula:
+
+Singly Linked List = Data + Next Pointer

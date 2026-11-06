@@ -6,5 +6,7 @@
 - Complexity Analysis
 - Amortized Analysis
 - Array
-- List
-- List2
+- Linked List
+- Double Linked list
+- Circular Linked List
+- Stacks
