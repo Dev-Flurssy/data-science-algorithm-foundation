@@ -1,0 +1,457 @@
+STACK
+
+A Stack is a linear data structure in which insertion and deletion are performed at the same end called the TOP.
+
+Meaning:
+Elements are added from the top.
+Elements are removed from the top.
+The last element inserted is the first element removed.
+
+Examples:
+Stack of Plates
+Stack of Books
+Browser Back Button
+Undo Operation
+
+------------------------------------------------------------
+DEFINITION OF STACK
+
+A Stack is a restricted ordered list in which insertion and deletion are allowed only at one end called the TOP.
+
+Meaning:
+Only one end is used for all operations.
+Elements are processed in reverse order.
+The top element is the most recently inserted element.
+
+------------------------------------------------------------
+LIFO PRINCIPLE
+
+Stack follows the LIFO principle.
+LIFO = Last In First Out
+
+Meaning: The last element inserted is removed first.
+
+Example:
+Push 10
+Push 20
+Push 30
+
+Stack:
+TOP
+30
+20
+10
+
+Pop()
+Removed Element = 30
+
+Meaning:
+30 was inserted last.
+30 is removed first.
+
+------------------------------------------------------------
+STACK REPRESENTATION
+
+Suppose:
+S = {A, B, C, D}
+
+Representation:
+TOP
+D
+C
+B
+A
+
+Meaning:
+A is at the bottom.
+D is at the top.
+Insertion and deletion occur at D.
+
+------------------------------------------------------------
+TOP OF STACK
+
+Top is a variable that points to the topmost element of the stack.
+
+Meaning:
+Top helps identify the current top element.
+All stack operations depend on Top.
+
+Example:
+TOP
+30
+20
+10
+
+Top points to 30.
+
+------------------------------------------------------------
+STACK OPERATIONS
+
+Push()
+Pop()
+Peek()
+Display()
+
+Meaning:
+Push adds an element.
+Pop removes an element.
+Peek displays the top element.
+Display shows all elements in the stack.
+
+------------------------------------------------------------
+PUSH OPERATION
+
+Push inserts a new element on the top of the stack.
+
+Syntax: push(element)
+
+Steps:
+1. Increment Top by 1.
+2. Insert the new element at Top.
+
+Example:
+Before Push(40)
+TOP
+30
+20
+10
+
+After Push(40)
+TOP
+40
+30
+20
+10
+
+Meaning:
+40 becomes the new top element.
+
+------------------------------------------------------------
+ALGORITHM FOR PUSH
+
+1. Check whether stack is full.
+2. If not full:
+   a. Top = Top + 1
+   b. Stack[Top] = New Element
+3. Otherwise display Overflow.
+
+Meaning:
+The new element is inserted at the top position.
+
+------------------------------------------------------------
+POP OPERATION
+
+Pop removes the top element from the stack.
+
+Syntax: pop()
+
+Steps:
+1. Store top element.
+2. Decrement Top by 1.
+3. Return removed element.
+
+Example:
+Before Pop()
+TOP
+40
+30
+20
+10
+
+After Pop()
+TOP
+30
+20
+10
+
+Removed Element = 40
+
+Meaning:
+The last inserted element is removed first.
+
+------------------------------------------------------------
+ALGORITHM FOR POP
+
+1. Check whether stack is empty.
+2. If not empty:
+   a. x = Stack[Top]
+   b. Top = Top - 1
+3. Return x
+4. Otherwise display Underflow.
+
+Meaning:
+The topmost element is removed.
+
+------------------------------------------------------------
+PEEK OPERATION
+
+Peek displays the top element without removing it.
+
+Syntax: peek()
+
+Example:
+TOP
+40
+30
+20
+10
+
+Peek()
+Output: 40
+
+Stack After Peek:
+TOP
+40
+30
+20
+10
+
+Meaning:
+The top element is viewed.
+No element is removed.
+
+------------------------------------------------------------
+DISPLAY OPERATION
+
+Display shows all elements present in the stack.
+
+Example:
+TOP
+40
+30
+20
+10
+
+Display:
+40
+30
+20
+10
+
+Meaning:
+Elements are displayed from top to bottom.
+
+------------------------------------------------------------
+STACK OVERFLOW
+
+Stack Overflow occurs when an insertion is attempted on a full stack.
+
+Example:
+Stack Size = 3
+TOP
+30
+20
+10
+
+Push(40)
+Result: Overflow
+
+Meaning:
+No space is available for a new element.
+
+------------------------------------------------------------
+STACK UNDERFLOW
+
+Stack Underflow occurs when deletion is attempted on an empty stack.
+
+Example:
+Stack = Empty
+
+Pop()
+Result: Underflow
+
+Meaning:
+There is no element available for removal.
+
+------------------------------------------------------------
+STACK ADT (ABSTRACT DATA TYPE)
+
+An Abstract Data Type defines what operations can be performed on a stack.
+
+Methods:
+Create()
+Push()
+Pop()
+Peek()
+isEmpty()
+isFull()
+
+Meaning:
+These methods define the behavior of a stack.
+
+------------------------------------------------------------
+STACK METHODS
+
+Create(): Creates an empty stack.
+Push(Element): Adds an element to the top.
+Pop(): Removes the top element.
+Peek(): Displays the top element.
+isEmpty(): Checks whether the stack is empty.
+isFull(): Checks whether the stack is full.
+
+------------------------------------------------------------
+IMPLEMENTATION OF STACK USING LIST
+
+A Stack can be implemented using a Python List.
+List elements become stack elements.
+The variable Top keeps track of the stack's topmost element.
+
+Example:
+S = []
+
+Meaning:
+Creates an empty stack.
+
+------------------------------------------------------------
+CREATE OPERATION
+
+Python:
+S = []
+top = -1
+
+Meaning:
+An empty list is created.
+Top = -1 indicates an empty stack.
+
+------------------------------------------------------------
+ISEMPTY OPERATION
+
+Condition:
+top == -1
+
+Meaning:
+When Top becomes -1, there is no element in the stack.
+
+Returns:
+1 → Empty
+0 → Not Empty
+
+------------------------------------------------------------
+ISFULL OPERATION
+
+Condition:
+top >= size - 1
+
+Meaning:
+The stack has reached its maximum size.
+
+Returns:
+1 → Full
+0 → Not Full
+
+------------------------------------------------------------
+PUSH USING LIST
+
+Steps:
+1. Increment Top.
+2. Append element to list.
+
+Example:
+S = [10,20]
+Push(30)
+
+Result:
+S = [10,20,30]
+TOP = 2
+
+Meaning:
+30 becomes the top element.
+
+------------------------------------------------------------
+POP USING LIST
+
+Steps:
+1. Retrieve S[Top]
+2. Decrement Top.
+
+Example:
+S = [10,20,30]
+
+Pop()
+Removed = 30
+
+Result:
+S = [10,20]
+TOP = 1
+
+Meaning:
+The last inserted element is removed.
+
+------------------------------------------------------------
+PEEK USING LIST
+
+Example:
+S = [10,20,30]
+
+Peek()
+Output: 30
+
+Meaning:
+The top element is displayed.
+The stack remains unchanged.
+
+------------------------------------------------------------
+DISPLAY USING LIST
+
+Example:
+S = [10,20,30]
+
+Output:
+30
+20
+10
+
+Meaning:
+Elements are displayed from top to bottom.
+
+------------------------------------------------------------
+APPLICATIONS OF STACK
+
+Recursion
+Expression Evaluation
+Expression Conversion
+Undo Operation
+Browser Navigation
+Function Calls
+Syntax Checking
+
+Meaning:
+Stacks are used whenever reverse-order processing is required.
+
+------------------------------------------------------------
+REAL-LIFE EXAMPLES OF STACK
+
+Stack of Plates
+Stack of Books
+Undo Button
+Browser History
+
+Meaning:
+The last item placed is the first item removed.
+
+------------------------------------------------------------
+ADVANTAGES OF STACK
+
+Easy Insertion
+Easy Deletion
+Fast Access to Top Element
+Supports Recursion
+Simple Implementation
+
+Meaning:
+Push and Pop operations are efficient.
+Many algorithms use stacks internally.
+
+------------------------------------------------------------
+DISADVANTAGES OF STACK
+
+Limited Access
+Only Top Element Accessible
+Overflow Possible
+Underflow Possible
+
+Meaning:
+Elements cannot be accessed directly from the middle.
+Improper operations may cause errors.
+
+------------------------------------------------------------
