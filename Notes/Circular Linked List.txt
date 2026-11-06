@@ -10,7 +10,6 @@ The nodes form a circle.
 Traversal can continue repeatedly without reaching NULL.
 
 Example:
-
 10 → 20 → 30 → 40
 ↑            ↓
 └────────────┘
@@ -24,9 +23,7 @@ NODE STRUCTURE OF CIRCULAR LINKED LIST
 
 The node structure is the same as a Singly Linked List.
 
-Representation:
-
-(Data, Next)
+Representation: (Data, Next)
 
 Meaning:
 Data stores the actual value.
@@ -34,7 +31,6 @@ Next stores the address of the next node.
 The last node's Next points to the first node.
 
 Additional Pointer:
-
 Start → Points to the first node.
 End → Points to the last node.
 
@@ -61,7 +57,6 @@ LOOK-UP IN CIRCULAR LINKED LIST
 Look-Up means searching for a particular data item.
 
 Steps:
-
 1. Start from the head node.
 2. Move through the nodes one by one.
 3. If data is found, stop.
@@ -77,13 +72,11 @@ TRAVERSAL IN CIRCULAR LINKED LIST
 Traversal means visiting all nodes in the circular list.
 
 Example:
-
 10 → 20 → 30 → 40
 ↑            ↓
 └────────────┘
 
 Traversal:
-
 10 → 20 → 30 → 40 → 10 ...
 
 Meaning:
@@ -94,7 +87,6 @@ We stop when we return to the starting node.
 INSERTION IN CIRCULAR LINKED LIST
 
 A node can be inserted in four ways:
-
 Insert at Beginning
 Insert at End
 Insert After a Given Node
@@ -110,7 +102,6 @@ INSERT AT THE BEGINNING
 The new node becomes the first node.
 
 Before:
-
 10 → 20 → 30 → 40
 ↑            ↓
 └────────────┘
@@ -118,13 +109,11 @@ Before:
 Insert 5
 
 After:
-
 5 → 10 → 20 → 30 → 40
 ↑                 ↓
 └─────────────────┘
 
 Steps:
-
 1. Create NewNode.
 2. NewNode.next = Start
 3. End.next = NewNode
@@ -140,7 +129,6 @@ INSERT AT THE END
 The new node becomes the last node.
 
 Before:
-
 10 → 20 → 30
 ↑         ↓
 └─────────┘
@@ -148,13 +136,11 @@ Before:
 Insert 40
 
 After:
-
 10 → 20 → 30 → 40
 ↑              ↓
 └──────────────┘
 
 Steps:
-
 1. Create NewNode.
 2. NewNode.next = Start
 3. End.next = NewNode
@@ -171,7 +157,6 @@ INSERT AFTER A GIVEN NODE
 Insert a new node after a specified node.
 
 Before:
-
 10 → 20 → 40
 ↑         ↓
 └─────────┘
@@ -179,13 +164,11 @@ Before:
 Insert 30 after 20
 
 After:
-
 10 → 20 → 30 → 40
 ↑              ↓
 └──────────────┘
 
 Steps:
-
 1. Find the target node.
 2. NewNode.next = Target.next
 3. Target.next = NewNode
@@ -200,7 +183,6 @@ INSERT BEFORE A GIVEN NODE
 Insert a new node before a specified node.
 
 Before:
-
 10 → 30 → 40
 ↑         ↓
 └─────────┘
@@ -208,13 +190,11 @@ Before:
 Insert 20 before 30
 
 After:
-
 10 → 20 → 30 → 40
 ↑              ↓
 └──────────────┘
 
 Steps:
-
 1. Find the node before the target.
 2. NewNode.next = Target
 3. Previous.next = NewNode
@@ -227,7 +207,6 @@ The circular structure remains unchanged.
 DELETION IN CIRCULAR LINKED LIST
 
 A node can be deleted in five ways:
-
 Delete First Node
 Delete Last Node
 Delete Given Node
@@ -244,19 +223,16 @@ DELETE FIRST NODE
 Remove the first node from the list.
 
 Before:
-
 10 → 20 → 30 → 40
 ↑              ↓
 └──────────────┘
 
 After:
-
 20 → 30 → 40
 ↑         ↓
 └─────────┘
 
 Steps:
-
 1. Temp = Start
 2. Start = Start.next
 3. End.next = Start
@@ -272,19 +248,16 @@ DELETE LAST NODE
 Remove the last node.
 
 Before:
-
 10 → 20 → 30 → 40
 ↑              ↓
 └──────────────┘
 
 After:
-
 10 → 20 → 30
 ↑         ↓
 └─────────┘
 
 Steps:
-
 1. Move to the node before End.
 2. Temp.next = Start
 3. End = Temp
@@ -300,7 +273,6 @@ DELETE A GIVEN NODE
 Remove a specific node.
 
 Before:
-
 10 → 20 → 30 → 40
 ↑              ↓
 └──────────────┘
@@ -308,13 +280,11 @@ Before:
 Delete 30
 
 After:
-
 10 → 20 → 40
 ↑         ↓
 └─────────┘
 
 Steps:
-
 1. Find the node.
 2. Previous.next = Next
 3. Delete the node.
@@ -327,7 +297,6 @@ The remaining nodes stay connected.
 DELETE NODE AFTER A GIVEN NODE
 
 Before:
-
 10 → 20 → 30 → 40
 ↑              ↓
 └──────────────┘
@@ -335,13 +304,11 @@ Before:
 Delete node after 20
 
 After:
-
 10 → 20 → 40
 ↑         ↓
 └─────────┘
 
 Steps:
-
 1. Find the target node.
 2. Delete its next node.
 3. Reconnect the links.
@@ -353,7 +320,6 @@ The node immediately after the target is removed.
 DELETE NODE BEFORE A GIVEN NODE
 
 Before:
-
 10 → 20 → 30 → 40
 ↑              ↓
 └──────────────┘
@@ -361,13 +327,11 @@ Before:
 Delete node before 30
 
 After:
-
 10 → 30 → 40
 ↑         ↓
 └─────────┘
 
 Steps:
-
 1. Find the target node.
 2. Find its previous node.
 3. Remove the previous node.
@@ -423,36 +387,30 @@ Circular queues can be implemented efficiently.
 EXAM SUMMARY
 
 Circular Linked List:
-
 Last Node → First Node
 
 Node Structure:
-
 (Data, Next)
 
 Pointers:
-
 Start → First Node
 End → Last Node
 
 End.next = Start
 
 Operations:
-
 Traversal
 Searching
 Insertion
 Deletion
 
 Insertions:
-
 Beginning
 End
 After a Given Node
 Before a Given Node
 
 Deletions:
-
 First Node
 Last Node
 Given Node
@@ -460,13 +418,10 @@ After a Given Node
 Before a Given Node
 
 Main Advantage:
-
 No NULL at the end and ideal for repeated processing.
 
 Main Disadvantage:
-
 Traversal may become infinite if stopping condition is not used.
 
 Key Formula:
-
 Circular Linked List = Singly Linked List + Last Node Points To First Node
