@@ -1,0 +1,390 @@
+------------------------------------------------------------
+DOUBLY LINKED LIST
+
+A Doubly Linked List is a linear collection of nodes where each node points to both the next node and the previous node.
+
+Meaning:
+Each node stores data.
+Each node has a link to the next node.
+Each node has a link to the previous node.
+Traversal is possible in both forward and backward directions.
+
+Each node contains:
+Data Element
+Address of Previous Node
+Address of Next Node
+
+Representation:
+
+(Prev, Data, Next)
+
+Meaning:
+Data stores the actual value.
+Prev stores the address of the previous node.
+Next stores the address of the next node.
+Both Prev and Next are pointers.
+
+------------------------------------------------------------
+ADVANTAGES OF DOUBLY LINKED LIST
+
+Traversal in both directions
+Easy insertion and deletion
+Can access nodes from any position
+Better flexibility than singly linked list
+
+Meaning:
+Nodes can be visited forward or backward.
+Deletion is easier because the previous node is directly available.
+Operations become faster in many situations.
+
+------------------------------------------------------------
+DISADVANTAGES OF DOUBLY LINKED LIST
+
+Extra memory required
+Two pointers must be maintained
+More complex implementation
+
+Meaning:
+Each node stores an extra Prev pointer.
+Insertion and deletion require updating both pointers.
+More memory is used compared to singly linked lists.
+
+------------------------------------------------------------
+OPERATIONS ON DOUBLY LINKED LIST
+
+Traversal
+Insertion
+Deletion
+
+Meaning:
+Traversal visits nodes one by one.
+Insertion adds a new node.
+Deletion removes an existing node.
+
+------------------------------------------------------------
+TRAVERSAL IN DOUBLY LINKED LIST
+
+Traversal means visiting every node in the list.
+
+Example:
+
+10 ↔ 20 ↔ 30 ↔ NULL
+
+Forward Traversal:
+
+10 → 20 → 30
+
+Backward Traversal:
+
+30 → 20 → 10
+
+Meaning:
+The list can be traversed from start to end.
+The list can also be traversed from end to start.
+
+------------------------------------------------------------
+INSERTION IN DOUBLY LINKED LIST
+
+A node can be inserted in four ways:
+
+Insert at Beginning
+Insert at End
+Insert After a Given Node
+Insert Before a Given Node
+
+Meaning:
+Insertion adds a new node into the list.
+Pointers are adjusted to maintain links between nodes.
+
+------------------------------------------------------------
+INSERT AT THE BEGINNING
+
+A new node becomes the first node of the list.
+
+Before:
+
+10 ↔ 20 ↔ 30
+
+Insert 5
+
+After:
+
+5 ↔ 10 ↔ 20 ↔ 30
+
+Steps:
+
+1. NewNode.next = Start
+2. Start.prev = NewNode
+3. Start = NewNode
+
+Meaning:
+Connect the new node to the old first node.
+Make the old first node point back to the new node.
+Move Start to the new node.
+
+------------------------------------------------------------
+INSERT AT THE END
+
+A new node becomes the last node of the list.
+
+Before:
+
+10 ↔ 20 ↔ 30
+
+Insert 40
+
+After:
+
+10 ↔ 20 ↔ 30 ↔ 40
+
+Steps:
+
+1. Move to the last node.
+2. Last.next = NewNode
+3. NewNode.prev = Last
+
+Meaning:
+Find the last node.
+Connect the new node after it.
+Make the new node point back to the old last node.
+
+------------------------------------------------------------
+INSERT AFTER A GIVEN NODE
+
+Insert a new node after a specified node.
+
+Before:
+
+10 ↔ 20 ↔ 40
+
+Insert 30 after 20
+
+After:
+
+10 ↔ 20 ↔ 30 ↔ 40
+
+Steps:
+
+1. Find the target node.
+2. NewNode.next = Target.next
+3. NewNode.prev = Target
+4. Target.next.prev = NewNode
+5. Target.next = NewNode
+
+Meaning:
+Break the existing connection.
+Place the new node between two nodes.
+Reconnect all links.
+
+------------------------------------------------------------
+INSERT BEFORE A GIVEN NODE
+
+Insert a new node before a specified node.
+
+Before:
+
+10 ↔ 30 ↔ 40
+
+Insert 20 before 30
+
+After:
+
+10 ↔ 20 ↔ 30 ↔ 40
+
+Steps:
+
+1. Find the target node.
+2. Connect NewNode before Target.
+3. Update Prev and Next links.
+
+Meaning:
+The new node is inserted immediately before the required node.
+All links are updated correctly.
+
+------------------------------------------------------------
+DELETION IN DOUBLY LINKED LIST
+
+A node can be deleted in five ways:
+
+Delete First Node
+Delete Last Node
+Delete Given Node
+Delete Node After a Given Node
+Delete Node Before a Given Node
+
+Meaning:
+Deletion removes a node from the list.
+The surrounding nodes are reconnected.
+
+------------------------------------------------------------
+DELETE FIRST NODE
+
+Remove the first node of the list.
+
+Before:
+
+10 ↔ 20 ↔ 30
+
+After:
+
+20 ↔ 30
+
+Steps:
+
+1. Temp = Start
+2. Start = Start.next
+3. Start.prev = NULL
+4. Delete Temp
+
+Meaning:
+Move Start to the next node.
+Remove the old first node.
+The new first node has no previous node.
+
+------------------------------------------------------------
+DELETE LAST NODE
+
+Remove the last node of the list.
+
+Before:
+
+10 ↔ 20 ↔ 30
+
+After:
+
+10 ↔ 20
+
+Steps:
+
+1. Move to the second-last node.
+2. SecondLast.next = NULL
+3. Delete Last Node
+
+Meaning:
+Break the link to the last node.
+Remove the last node from memory.
+
+------------------------------------------------------------
+DELETE A GIVEN NODE
+
+Remove a specific node from the list.
+
+Before:
+
+10 ↔ 20 ↔ 30 ↔ 40
+
+Delete 30
+
+After:
+
+10 ↔ 20 ↔ 40
+
+Steps:
+
+1. Find the node.
+2. Previous.next = Next
+3. Next.prev = Previous
+4. Delete Node
+
+Meaning:
+Skip the node being removed.
+Connect its neighboring nodes directly.
+
+------------------------------------------------------------
+DELETE NODE AFTER A GIVEN NODE
+
+Before:
+
+10 ↔ 20 ↔ 30 ↔ 40
+
+Delete node after 20
+
+After:
+
+10 ↔ 20 ↔ 40
+
+Steps:
+
+1. Find the target node.
+2. Delete its next node.
+3. Reconnect remaining nodes.
+
+Meaning:
+The node immediately after the target node is removed.
+
+------------------------------------------------------------
+DELETE NODE BEFORE A GIVEN NODE
+
+Before:
+
+10 ↔ 20 ↔ 30 ↔ 40
+
+Delete node before 30
+
+After:
+
+10 ↔ 30 ↔ 40
+
+Steps:
+
+1. Find the target node.
+2. Delete its previous node.
+3. Reconnect remaining nodes.
+
+Meaning:
+The node immediately before the target node is removed.
+
+------------------------------------------------------------
+NODE STRUCTURE
+
+Prev | Data | Next
+
+Meaning:
+Prev stores the address of the previous node.
+Data stores the actual value.
+Next stores the address of the next node.
+
+------------------------------------------------------------
+EXAM SUMMARY
+
+Node Structure:
+
+Prev | Data | Next
+
+Traversal:
+
+Forward → Using Next
+Backward → Using Prev
+
+Insertions:
+
+Beginning
+End
+After a Given Node
+Before a Given Node
+
+Deletions:
+
+First Node
+Last Node
+Given Node
+After a Given Node
+Before a Given Node
+
+Key Formula:
+
+Doubly Linked List = Data + Prev + Next
+
+Remember:
+
+Singly Linked List = One Pointer (Next)
+
+Doubly Linked List = Two Pointers (Prev and Next)
+
+Main Advantage:
+
+Can move in both directions.
+
+Main Disadvantage:
+
+Requires extra memory for Prev pointer.
