@@ -10,5 +10,5 @@
 - Double Linked list
 - Circular Linked List
 - Stacks
-- Stack Implementation
+- Stack Implementations
 - Infix, Prefix, and Postfix Expression
