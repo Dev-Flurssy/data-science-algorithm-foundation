@@ -174,7 +174,6 @@ Example:
 Traversal Order: 10 → 20 → 30
 
 Steps:
-
 1. Assign temp = Start
 2. Print temp.data
 3. Move temp = temp.next

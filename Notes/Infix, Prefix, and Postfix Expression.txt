@@ -94,8 +94,8 @@ No precedence checking is needed during evaluation.
 OPERATOR PRECEDENCE
 
 Precedence determines which operator is evaluated first.
-OPERATOR PRECEDENCE TABLE
 
+OPERATOR PRECEDENCE TABLE
 | Priority | Operators                    | Meaning                    |
 |-----------|-----------------------------|----------------------------|
 | 4         | **, Unary -, not            | Highest Precedence         |
@@ -197,7 +197,6 @@ Push *
 Read C
 
 Output: ABC
-
 Stack: + *
 
 ------------------------------------------------------------
