@@ -1,0 +1,246 @@
+QUEUE
+
+A Queue is a linear data structure in which insertion and deletion are performed at different ends.
+
+Meaning:
+• Elements are added at the rear.
+• Elements are removed from the front.
+• The first element inserted is the first element removed.
+
+Examples:
+• Queue at Railway Station
+• Queue at Airport
+• Queue at Cinema Hall
+• Printer Queue
+• Customer Service Line
+
+------------------------------------------------------------
+DEFINITION OF QUEUE
+
+A Queue is a restricted ordered list in which insertion is done at the REAR and deletion is done at the FRONT.
+
+Meaning:
+• Two ends are used.
+• REAR is used for insertion.
+• FRONT is used for deletion.
+• Elements leave in the order they arrive.
+
+------------------------------------------------------------
+FIFO PRINCIPLE
+
+Queue follows the FIFO principle.
+
+FIFO = First In First Out
+
+Meaning:
+The first element inserted is removed first.
+
+Example:
+
+Enqueue(10)
+Enqueue(20)
+Enqueue(30)
+
+Queue:
+
+FRONT → 10 20 30 ← REAR
+
+Dequeue()
+
+Removed Element = 10
+
+Meaning:
+• 10 was inserted first.
+• 10 is removed first.
+
+------------------------------------------------------------
+QUEUE REPRESENTATION
+
+Suppose:
+
+Q = {10, 15, 20}
+
+Representation:
+
+FRONT → 10 15 20 ← REAR
+
+Meaning:
+• 10 is at the front.
+• 20 is at the rear.
+• Insertion occurs at the rear.
+• Deletion occurs at the front.
+
+------------------------------------------------------------
+QUEUE TERMINOLOGY
+
+FRONT
+
+Meaning:
+• The end from which elements are removed.
+• Points to the first element in the queue.
+
+REAR
+
+Meaning:
+• The end where new elements are inserted.
+• Points to the last element in the queue.
+
+------------------------------------------------------------
+QUEUE OPERATIONS
+
+The following operations are used to manage a queue:
+
+isEmpty()
+
+Meaning:
+Checks whether the queue has any elements.
+
+isFull()
+
+Meaning:
+Checks whether the queue is full.
+Used only in restricted-size queues.
+
+enqueue(el)
+
+Meaning:
+Adds an element at the rear of the queue.
+
+dequeue()
+
+Meaning:
+Removes an element from the front of the queue.
+
+first()
+
+Meaning:
+Returns the front element without removing it.
+
+------------------------------------------------------------
+ENQUEUE OPERATION
+
+Enqueue means inserting data into the queue.
+
+Meaning:
+• A new element is added at the rear.
+• Rear position moves forward.
+
+Example:
+
+Empty Queue
+
+FRONT = REAR = -1
+
+Enqueue(10)
+
+Queue:
+
+FRONT → 10 ← REAR
+
+Enqueue(15)
+
+Queue:
+
+FRONT → 10 15 ← REAR
+
+Meaning:
+• 10 entered first.
+• 15 entered after 10.
+• Both are added at the rear.
+
+------------------------------------------------------------
+STEPS OF ENQUEUE
+
+1. Check if the queue is full.
+
+2. If queue is not full:
+   • Increment rear by one.
+   • Insert the element at rear.
+   • Return the queue.
+
+3. Else:
+   Queue Overflow
+
+Meaning:
+No space is available for a new element.
+
+------------------------------------------------------------
+DEQUEUE OPERATION
+
+Dequeue means deleting data from the queue.
+
+Meaning:
+• The front element is removed.
+• Front position moves forward.
+
+Example:
+
+Queue:
+
+FRONT → 10 15 ← REAR
+
+Dequeue()
+
+Removed Element = 10
+
+Queue:
+
+FRONT → 15 ← REAR
+
+Meaning:
+• 10 leaves first because it entered first.
+
+------------------------------------------------------------
+STEPS OF DEQUEUE
+
+1. Check if the queue is empty.
+
+2. If queue is not empty:
+   • Remove the front element.
+   • Increment front by one.
+   • Return the queue.
+
+3. Else:
+   Queue Underflow
+
+Meaning:
+There is no element available for deletion.
+
+------------------------------------------------------------
+QUEUE OVERFLOW
+
+Queue Overflow occurs when insertion is attempted in a full queue.
+
+Meaning:
+• No empty space is available.
+• A new element cannot be inserted.
+
+------------------------------------------------------------
+QUEUE UNDERFLOW
+
+Queue Underflow occurs when deletion is attempted in an empty queue.
+
+Meaning:
+• No element is available for removal.
+
+------------------------------------------------------------
+REAL-LIFE APPLICATIONS OF QUEUE
+
+• Printer Queue
+• Customers Waiting in a Bank
+• Ticket Reservation Systems
+• CPU Scheduling
+• Network Data Transmission
+
+Meaning:
+Tasks are processed in the same order in which they arrive.
+
+------------------------------------------------------------
+IMPORTANT POINTS ABOUT QUEUE
+
+• Insertion takes place at REAR.
+• Deletion takes place at FRONT.
+• Queue follows FIFO.
+• Two ends are used.
+• First inserted element leaves first.
+• Queue is widely used in scheduling and resource-sharing systems.
