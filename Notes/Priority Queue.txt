@@ -1,0 +1,779 @@
+PRIORITY QUEUE
+
+A Priority Queue is a special type of queue in which elements are processed according to priority rather than arrival time.
+
+Meaning:
+• Higher-priority elements are processed first.
+• FIFO is followed only among elements having the same priority.
+• Important tasks move ahead in the queue.
+
+------------------------------------------------------------
+WHY PRIORITY QUEUE IS NEEDED
+
+In a normal queue:
+First Come → First Served
+
+Example:
+Patients at a Hospital
+
+Queue:
+Patient A
+Patient B
+Patient C
+
+Patient A is treated first.
+
+------------------------------------------------------------
+Problem:
+
+Suppose a critical accident patient arrives.
+
+Queue:
+Patient A
+Patient B
+Patient C
+Emergency Patient
+
+Using FIFO:
+Emergency Patient must wait.
+This is unacceptable.
+
+------------------------------------------------------------
+Solution:
+Priority Queue
+
+Queue:
+Emergency Patient
+Patient A
+Patient B
+Patient C
+
+Meaning:
+Higher-priority tasks are processed first.
+
+------------------------------------------------------------
+DEFINITION OF PRIORITY QUEUE
+
+A Priority Queue is a queue in which every element is assigned a priority and elements 
+with higher priority are processed before elements with lower priority.
+Processing depends on priority, not arrival time.
+
+------------------------------------------------------------
+REAL-LIFE APPLICATIONS
+
+Hospital Emergency Room
+CPU Scheduling
+Printer Scheduling
+Network Routing
+Air Traffic Control
+Operating Systems
+
+------------------------------------------------------------
+PRIORITY VALUES
+
+Priority is represented using integers.
+
+Rule: Smaller Integer = Higher Priority
+
+Example:
+Priority 0 → Highest Priority
+Priority 1 → High Priority
+Priority 2 → Medium Priority
+Priority 3 → Low Priority
+
+------------------------------------------------------------
+METHOD 1: MULTIPLE QUEUES
+
+Idea: Create a separate queue for each priority level.
+
+------------------------------------------------------------
+
+Priority 1 Queue
+J1 J2 J3
+
+Priority 2 Queue
+H1 H2 H3
+
+Priority 3 Queue
+K1 K2 K3
+
+------------------------------------------------------------
+PROCESSING ORDER
+
+First: Priority 1 Queue
+Then: Priority 2 Queue
+Then: Priority 3 Queue
+]
+Meaning:
+Higher-priority queues are completely processed before lower-priority queues.
+
+------------------------------------------------------------
+DISADVANTAGE OF MULTIPLE QUEUES
+
+Problem:
+High-priority jobs continue arriving.
+
+Example:
+
+Priority 1:
+J1 J2 J3 J4 ...
+
+Priority 3:
+K1 K2 K3
+
+------------------------------------------------------------
+Result:
+
+Priority 3 jobs may never execute.
+This is called: Starvation
+
+------------------------------------------------------------
+STARVATION
+
+Low-priority jobs wait indefinitely because higher-priority jobs continue arriving.
+
+------------------------------------------------------------
+METHOD 2: SINGLE SORTED QUEUE
+
+Idea:
+
+Store all elements together with priority.
+
+Format:
+
+(priority, data)
+
+Example:
+
+(1, A)
+
+(2, B)
+
+(0, C)
+
+------------------------------------------------------------
+
+Queue is maintained in priority order.
+
+Highest-priority element stays at the front.
+
+------------------------------------------------------------
+ADVANTAGE
+
+Deletion is Easy
+
+Because:
+
+Highest-priority element is always at the front.
+
+------------------------------------------------------------
+
+DISADVANTAGE
+
+Insertion is Difficult
+
+Because:
+
+Correct position must be found.
+
+------------------------------------------------------------
+SORTED PRIORITY QUEUE
+
+Example:
+
+(0, C)
+(1, A)
+(2, B)
+
+Front
+
+↓
+
+(0, C)
+
+Meaning:
+C has highest priority.
+
+------------------------------------------------------------
+UNSORTED PRIORITY QUEUE
+
+Example:
+
+(2, B)
+(0, C)
+(1, A)
+
+------------------------------------------------------------
+
+Advantage:
+
+Insertion is Easy
+
+------------------------------------------------------------
+
+Disadvantage:
+
+Deletion is Difficult
+
+Must search for highest-priority element.
+
+------------------------------------------------------------
+IMPLEMENTATION USING CLASS
+
+Class Name:
+
+Queue
+
+Purpose:
+Implements a Priority Queue using a list.
+
+------------------------------------------------------------
+CONSTRUCTOR
+
+Function:
+
+__init__(self, size)
+
+Initialization:
+
+self.maxSize = size
+
+self.front = 0
+
+self.rear = -1
+
+self.priority = 0
+
+self.PQ = []
+
+------------------------------------------------------------
+
+Meaning:
+
+PQ is a list of tuples.
+
+Each tuple stores:
+
+(priority, data)
+
+------------------------------------------------------------
+TUPLE FORMAT
+
+(priority, data)
+
+Examples:
+
+(1, 100)
+
+(0, 200)
+
+(1, 300)
+
+------------------------------------------------------------
+
+Meaning:
+
+First value = Priority
+
+Second value = Data
+
+------------------------------------------------------------
+ISFULL OPERATION
+
+Function:
+
+isFull()
+
+Condition:
+
+rear >= maxSize - 1
+
+Returns:
+
+1 → Queue Full
+
+0 → Queue Not Full
+
+------------------------------------------------------------
+ISEMPTY OPERATION
+
+Function:
+
+isEmpty()
+
+Condition:
+
+front > rear
+
+OR
+
+rear == -1
+
+Returns:
+
+1 → Queue Empty
+
+0 → Queue Not Empty
+
+------------------------------------------------------------
+ENQUEUE OPERATION
+
+Function:
+
+enqueue()
+
+Purpose:
+Insert an element with priority.
+
+------------------------------------------------------------
+INPUT
+
+Data:
+
+100
+
+Priority:
+
+1
+
+Tuple Created:
+
+(1,100)
+
+------------------------------------------------------------
+CASE 1: QUEUE IS EMPTY
+
+PQ = []
+
+Insert:
+
+(1,100)
+
+Result:
+
+[(1,100)]
+
+------------------------------------------------------------
+
+Meaning:
+
+Tuple is appended.
+
+------------------------------------------------------------
+CASE 2: LOW PRIORITY INSERTION
+
+Queue:
+
+[(1,100)]
+
+Insert:
+
+(0,200)
+
+Result:
+
+[(1,100),(0,200)]
+
+------------------------------------------------------------
+
+Meaning:
+
+Low-priority item is added at the end.
+
+------------------------------------------------------------
+CASE 3: HIGH PRIORITY INSERTION
+
+Queue:
+
+[(1,100),(0,200)]
+
+Insert:
+
+(1,300)
+
+Result:
+
+[(1,100),(1,300),(0,200)]
+
+------------------------------------------------------------
+
+Meaning:
+
+Priority-1 elements stay ahead of Priority-0 elements.
+
+------------------------------------------------------------
+DEQUEUE OPERATION
+
+Function:
+
+dequeue()
+
+Purpose:
+Removes front element.
+
+------------------------------------------------------------
+
+Queue:
+
+[(1,100),(1,300),(0,200)]
+
+Delete
+
+Removed:
+
+(1,100)
+
+Result:
+
+[(1,300),(0,200)]
+
+------------------------------------------------------------
+
+Meaning:
+
+Highest-priority element is removed first.
+
+------------------------------------------------------------
+DISPLAY OPERATION
+
+Function:
+
+display()
+
+Purpose:
+Displays all queue elements.
+
+Example:
+
+0 -> (1,100)
+
+1 -> (1,300)
+
+2 -> (0,200)
+
+------------------------------------------------------------
+PRIORITY QUEUE USING queue MODULE
+
+Python provides:
+
+PriorityQueue
+
+Import:
+
+from queue import PriorityQueue
+
+------------------------------------------------------------
+CREATE PRIORITY QUEUE
+
+PQ = PriorityQueue()
+
+Meaning:
+
+An empty priority queue is created.
+
+------------------------------------------------------------
+INSERT OPERATION
+
+Method:
+
+put()
+
+Example:
+
+PQ.put((0,"A"))
+
+PQ.put((2,"B"))
+
+PQ.put((1,"C"))
+
+------------------------------------------------------------
+
+Meaning:
+
+Elements are automatically arranged by priority.
+
+------------------------------------------------------------
+QUEUE AFTER INSERTION
+
+[(0,"A"), (2,"B"), (1,"C")]
+
+Processing Order:
+
+A
+
+C
+
+B
+
+------------------------------------------------------------
+
+Reason:
+
+Smaller priority value has higher priority.
+
+------------------------------------------------------------
+DELETE OPERATION
+
+Method:
+
+get()
+
+Example:
+
+PQ.get()
+
+Removed:
+
+(0,"A")
+
+------------------------------------------------------------
+
+Meaning:
+
+Highest-priority element is removed first.
+
+------------------------------------------------------------
+DISPLAY OPERATION
+
+Method:
+
+PQ.queue
+
+Purpose:
+Shows all queue elements.
+
+------------------------------------------------------------
+IMPORTANT RULE
+
+PriorityQueue Module:
+
+Priority 0 → Highest Priority
+
+Priority 1 → Next Priority
+
+Priority 2 → Lower Priority
+
+Smaller Number = Higher Priority
+
+------------------------------------------------------------
+IMPLEMENTATION USING heapq MODULE
+
+Import:
+
+import heapq
+
+Purpose:
+Implements priority queue using a heap.
+
+------------------------------------------------------------
+HEAP
+
+A Heap is a special tree structure used for efficient priority queue operations.
+
+------------------------------------------------------------
+INSERT OPERATION
+
+Method:
+
+heapq.heappush()
+
+Example:
+
+heapq.heappush(PQ,(0,"A"))
+
+heapq.heappush(PQ,(1,"B"))
+
+------------------------------------------------------------
+
+Meaning:
+
+Elements are inserted according to heap property.
+
+------------------------------------------------------------
+HEAPIFY OPERATION
+
+Method:
+
+heapq.heapify(PQ)
+
+Purpose:
+Arranges elements according to priority.
+
+------------------------------------------------------------
+DELETE OPERATION
+
+Method:
+
+heapq.heappop()
+
+Example:
+
+heapq.heappop(PQ)
+
+------------------------------------------------------------
+
+Meaning:
+
+Removes highest-priority element.
+
+------------------------------------------------------------
+EXAMPLE
+
+Insert:
+
+(2,"B")
+
+(0,"A")
+
+(1,"C")
+
+------------------------------------------------------------
+
+Heap After Heapify:
+
+[(0,"A"),(2,"B"),(1,"C")]
+
+------------------------------------------------------------
+
+Delete:
+
+heapq.heappop(PQ)
+
+Removed:
+
+(0,"A")
+
+------------------------------------------------------------
+
+Remaining:
+
+[(1,"C"),(2,"B")]
+
+------------------------------------------------------------
+PRIORITY QUEUE VS NORMAL QUEUE
+
+NORMAL QUEUE
+
+Processing Rule:
+
+FIFO
+
+First In First Out
+
+------------------------------------------------------------
+
+PRIORITY QUEUE
+
+Processing Rule:
+
+Priority Based
+
+Higher-priority elements processed first
+
+------------------------------------------------------------
+
+NORMAL QUEUE
+
+Example:
+
+A B C
+
+Output:
+
+A B C
+
+------------------------------------------------------------
+
+PRIORITY QUEUE
+
+Example:
+
+(1,A)
+
+(0,B)
+
+(2,C)
+
+Output:
+
+B A C
+
+------------------------------------------------------------
+ADVANTAGES OF PRIORITY QUEUE
+
+• Processes important tasks first.
+• Useful in scheduling.
+• Efficient task management.
+• Used in operating systems.
+• Used in networking.
+
+------------------------------------------------------------
+DISADVANTAGES OF PRIORITY QUEUE
+
+• More complex than normal queue.
+• Starvation can occur.
+• Priority management increases overhead.
+
+------------------------------------------------------------
+IMPORTANT POINTS
+
+• Priority Queue processes elements according to priority.
+• Smaller priority value means higher priority.
+• Element and priority are stored as tuples.
+• Highest-priority element remains at the front.
+• Starvation may occur.
+• Can be implemented using:
+  1. Multiple Queues
+  2. Sorted Queue
+  3. queue.PriorityQueue
+  4. heapq Module
+
+------------------------------------------------------------
+EXAM SHORT NOTES
+
+Priority Queue:
+Queue where elements are processed by priority.
+
+Tuple Format:
+
+(priority, data)
+
+Higher Priority:
+
+Smaller Integer Value
+
+Example:
+
+(0, A) → Highest Priority
+
+(2, B) → Lower Priority
+
+PriorityQueue Module:
+
+put() → Insert
+
+get() → Delete
+
+Display:
+
+PQ.queue
+
+heapq Module:
+
+heappush() → Insert
+
+heappop() → Delete
+
+heapify() → Arrange Heap
+
+Starvation:
+
+Low-priority jobs may never execute.
+
+Applications:
+
+Hospital,
+CPU Scheduling,
+Printer Scheduling,
+Networking,
+Operating Systems.
