@@ -93,16 +93,14 @@ Meaning:
 
 Example:
 Empty Queue
-
 FRONT = REAR = -1
-Enqueue(10)
 
-Queue:
+Enqueue(10)
+Queue: 
 FRONT → 10 ← REAR
 
 Enqueue(15)
 Queue:
-
 FRONT → 10 15 ← REAR
 
 Meaning:
@@ -135,17 +133,13 @@ Meaning:
 • Front position moves forward.
 
 Example:
-
 Queue:
-
 FRONT → 10 15 ← REAR
 
 Dequeue()
-
 Removed Element = 10
 
 Queue:
-
 FRONT → 15 ← REAR
 
 Meaning:
@@ -195,12 +189,288 @@ Meaning:
 Tasks are processed in the same order in which they arrive.
 
 ------------------------------------------------------------
-IMPORTANT POINTS ABOUT QUEUE
+QUEUE ADT (ABSTRACT DATA TYPE)
 
-• Insertion takes place at REAR.
-• Deletion takes place at FRONT.
+Queue ADT defines what operations can be performed on a queue without describing how the queue is implemented.
+
+Meaning:
+• It specifies the behavior of a queue.
+• It focuses on operations and rules.
+• It does not focus on implementation details.
+
+------------------------------------------------------------
+QUEUE ADT OPERATIONS
+
+Create(): Creates an empty queue.
+Add(el, Q): Adds the element "el" at the rear of queue Q.
+Delete(Q): Removes the front element from queue Q.
+getFront(): Returns the front element without removing it.
+isEmpty(): Returns True if the queue is empty.
+Returns False otherwise.
+isFull(): Returns True if the queue is full.
+Returns False otherwise.
+
+------------------------------------------------------------
+QUEUE ADT AXIOMS
+
+Axioms are rules that define the behavior of queue operations.
+
+------------------------------------------------------------
+AXIOM 1
+
+isEmpty(Create()) = True
+Meaning: A newly created queue is always empty.
+
+Example:
+Q = Create()
+
+Result: isEmpty(Q) = True
+
+------------------------------------------------------------
+AXIOM 2
+
+isEmpty(Add(el, Q)) = False
+Meaning: After adding an element, the queue is no longer empty.
+
+Example:
+Q = Create()
+Add(10, Q)
+
+Result: isEmpty(Q) = False
+
+------------------------------------------------------------
+AXIOM 3
+
+Delete(Create()) = Error
+Meaning: An element cannot be deleted from an empty queue.
+
+Example:
+Q = Create()
+Delete(Q)
+
+Result: Error
+
+Reason: Queue contains no elements.
+
+------------------------------------------------------------
+AXIOM 4
+
+getFront(Create()) = Error
+Meaning: The front element cannot be accessed from an empty queue.
+
+Example:
+Q = Create()
+getFront(Q)
+
+Result: Error
+
+Reason: No element exists in the queue.
+
+------------------------------------------------------------
+AXIOM 5
+
+getFront(Add(el, Q))
+Meaning:Adding an element at the rear does not change the front element unless the queue was empty.
+
+Case 1:
+Queue is Empty
+
+Q = Create()
+Add(10, Q)
+
+Result: getFront(Q) = 10
+
+Reason: 10 becomes both front and rear.
+
+------------------------------------------------------------
+Case 2:
+Queue is Not Empty
+
+Queue:
+FRONT → 10 15 ← REAR
+Add(20, Q)
+
+Queue:
+FRONT → 10 15 20 ← REAR
+
+Result: getFront(Q) = 10
+ 
+Reason:
+20 is inserted at the rear.
+Front remains unchanged.
+
+------------------------------------------------------------
+IMPORTANT POINTS ABOUT QUEUE ADT
+
+• ADT defines operations of a queue.
+• ADT does not define implementation.
+• Create() creates an empty queue.
+• Add() inserts at the rear.
+• Delete() removes from the front.
+• getFront() returns the front element.
 • Queue follows FIFO.
-• Two ends are used.
-• First inserted element leaves first.
-• Queue is widely used in scheduling and resource-sharing systems.
+• Deleting from an empty queue causes an error.
+• Accessing front of an empty queue causes an error.
+
+------------------------------------------------------------
+QUEUE IMPLEMENTATION
+
+A queue can be implemented using:
+• List
+• Dictionary
+• Class
+
+Most commonly:
+Queue is implemented using a Python List.
+
+------------------------------------------------------------
+IMPLEMENTATION USING LIST
+
+In this implementation:
+Q = []
+
+Meaning:
+Q is an empty queue represented by a list.
+
+Example:
+Q = []
+Queue is Empty
+
+------------------------------------------------------------
+CREATE OPERATION
+
+Function:
+create()
+
+Purpose:
+Creates an empty queue.
+
+Initialization:
+Q = []
+front = 0
+rear = -1
+
+Meaning:
+• front points to the first element.
+• rear = -1 indicates queue is empty.
+
+------------------------------------------------------------
+ISEMPTY OPERATION
+
+Function:
+isEmpty(front, rear)
+
+Condition:
+front > rear
+OR
+rear == -1
+
+Meaning:
+Queue contains no elements.
+
+Returns:
+1 → Queue is Empty
+0 → Queue is Not Empty
+
+------------------------------------------------------------
+ENQUEUE OPERATION
+
+Function:
+enqueue(Q, rear)
+
+Purpose:
+Inserts an element into the queue.
+
+Steps:
+1. Input element.
+2. Increment rear.
+3. Insert element at rear.
+4. Return queue and rear.
+
+Example:
+Before:
+FRONT = 0
+REAR = -1
+
+Queue = []
+Insert 10
+
+After:
+FRONT = 0
+REAR = 0
+
+Queue = [10]
+
+------------------------------------------------------------
+Insert 15
+
+After:
+FRONT = 0
+REAR = 1
+
+Queue = [10, 15]
+
+Meaning:
+Every new element joins at the rear.
+
+------------------------------------------------------------
+DEQUEUE OPERATION
+
+Function:
+dequeue(Q, front, rear)
+
+Purpose:
+Removes the front element.
+
+Steps:
+1. Check whether queue is empty.
+2. Print front element.
+3. Increment front.
+4. Return updated queue.
+
+Example:
+Queue: [10, 15]
+
+FRONT = 0
+REAR = 1
+
+Delete Front Element
+Removed = 10
+
+After:
+FRONT = 1
+REAR = 1
+
+Queue: [15]
+
+Meaning:
+Front element leaves the queue.
+
+------------------------------------------------------------
+DISPLAY OPERATION
+
+Function:
+display(Q, front, rear)
+
+Purpose:
+Displays queue elements.
+
+Output:
+Front Index
+Rear Index
+Queue Elements
+
+Example:
+Queue: [10, 15, 20]
+
+Output:
+0 -> 10
+1 -> 15
+2 -> 20
+
+Meaning:
+Elements appear in FIFO order.
+
+------------------------------------------------------------
+
 
