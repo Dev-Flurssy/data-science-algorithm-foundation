@@ -10,15 +10,10 @@ Meaning:
 ------------------------------------------------------------
 QUEUE CLASS
 
-Class Name:
-
-Queue
-
-Purpose:
-Represents a queue as an object.
+Class Name: Queue
+Purpose: Represents a queue as an object.
 
 The class contains:
-
 • Queue Data
 • Front Pointer
 • Rear Pointer
@@ -28,14 +23,10 @@ The class contains:
 CONSTRUCTOR / INITIALIZER
 
 Function:
-
 __init__(self, size)
-
-Purpose:
-Creates an empty queue object.
+Purpose: Creates an empty queue object.
 
 Initialization:
-
 self.maxSize = size
 self.front = 0
 self.rear = -1
@@ -52,9 +43,7 @@ Meaning:
 EMPTY QUEUE
 
 Initial State:
-
 Q = []
-
 Front = 0
 Rear = -1
 
@@ -64,89 +53,56 @@ No element exists in the queue.
 ------------------------------------------------------------
 ISFULL OPERATION
 
-Function:
-
-isFull()
-
-Purpose:
-Checks whether the queue is full.
+isFull(): Checks whether the queue is full.
 
 Condition:
-
 self.rear >= self.maxSize - 1
 
 Returns:
-
 1 → Queue is Full
-
 0 → Queue is Not Full
 
 ------------------------------------------------------------
 EXAMPLE OF ISFULL()
 
 Size = 5
-
-Queue:
-
-[10, 20, 30, 40, 50]
-
+Queue: [10, 20, 30, 40, 50]
 Rear = 4
 
 Condition:
-
 4 >= 4
 
 Result:
-
 Queue is Full
 
 ------------------------------------------------------------
 ISEMPTY OPERATION
 
-Function:
-
-isEmpty()
-
-Purpose:
-Checks whether the queue is empty.
+isEmpty(): Checks whether the queue is empty.
 
 Condition:
-
 self.front > self.rear
-
 OR
-
 self.rear == -1
 
 Returns:
-
 1 → Queue is Empty
-
 0 → Queue is Not Empty
 
 ------------------------------------------------------------
 EXAMPLE OF ISEMPTY()
 
-Queue:
-
-[]
-
+Queue: []
 Front = 0
 Rear = -1
 
 Result:
-
 Queue is Empty
 
 ------------------------------------------------------------
 ENQUEUE OPERATION
 
-Function:
-
-enqueue()
-
-Purpose:
-Inserts an element into the queue.
+enqueue(): Inserts an element into the queue.
 
 ------------------------------------------------------------
 STEPS OF ENQUEUE
@@ -165,34 +121,25 @@ STEPS OF ENQUEUE
 ENQUEUE EXAMPLE
 
 Initial Queue:
-
 []
-
 Front = 0
 Rear = -1
 
 Insert 10
 
 After Insertion:
-
 [10]
-
 Front = 0
 Rear = 0
 
 ------------------------------------------------------------
-
 Insert 15
 
-After Insertion:
-
-[10, 15]
-
+After Insertion: [10, 15]
 Front = 0
 Rear = 1
 
 Queue:
-
 FRONT → 10 15 ← REAR
 
 Meaning:
@@ -204,17 +151,12 @@ QUEUE OVERFLOW
 Overflow occurs when insertion is attempted in a full queue.
 
 Example:
-
 Size = 3
 
-Queue:
-
-[10, 20, 30]
-
+Queue: [10, 20, 30]
 Insert 40
 
 Result:
-
 Overflow:
 No more place for the Queue
 
@@ -224,12 +166,7 @@ Queue has reached maximum capacity.
 ------------------------------------------------------------
 DEQUEUE OPERATION
 
-Function:
-
-dequeue()
-
-Purpose:
-Removes an element from the front.
+dequeue(): an element from the front.
 
 ------------------------------------------------------------
 STEPS OF DEQUEUE
@@ -246,24 +183,18 @@ STEPS OF DEQUEUE
 ------------------------------------------------------------
 DEQUEUE EXAMPLE
 
-Queue:
-
-[10, 15, 20]
-
+Queue: [10, 15, 20]
 Front = 0
 Rear = 2
 
 Delete Element
-
 Deleted = 10
 
 After Deletion:
-
 Front = 1
 Rear = 2
 
 Queue:
-
 FRONT → 15 20 ← REAR
 
 Meaning:
@@ -275,16 +206,13 @@ QUEUE UNDERFLOW
 Underflow occurs when deletion is attempted from an empty queue.
 
 Example:
-
 Queue = []
-
 Front = 0
 Rear = -1
 
 Delete()
 
 Result:
-
 Underflow:
 There is no element in the Queue
 
@@ -294,22 +222,15 @@ No element exists for deletion.
 ------------------------------------------------------------
 DISPLAY OPERATION
 
-Function:
-
-display()
-
-Purpose:
-Displays all elements of the queue.
+display(): Displays all elements of the queue.
 
 ------------------------------------------------------------
 DISPLAY WHEN QUEUE IS EMPTY
 
 Condition:
-
 isEmpty() == 1
 
-Output:
-
+Output: 
 Queue is Empty
 
 Meaning:
@@ -319,13 +240,9 @@ No data exists in the queue.
 DISPLAY WHEN QUEUE IS FULL
 
 Example:
-
-Queue:
-
-[10, 20, 30, 40, 50]
+Queue: [10, 20, 30, 40, 50]
 
 Output:
-
 0 -> 10
 1 -> 20
 2 -> 30
@@ -341,13 +258,9 @@ Maximum capacity has been reached.
 DISPLAY WHEN QUEUE IS NOT FULL
 
 Example:
-
-Queue:
-
-[10, 20, 30]
+Queue: [10, 20, 30]
 
 Output:
-
 0 -> 10
 1 -> 20
 2 -> 30
@@ -356,76 +269,9 @@ Meaning:
 Displays all queue elements from front to rear.
 
 ------------------------------------------------------------
-MENU OPERATION
-
-Function:
-
-menu()
-
-Purpose:
-Displays available queue operations.
-
-Menu:
-
-1. Insert into Queue
-2. Delete from Queue
-3. Display Queue
-4. Exit
-
-------------------------------------------------------------
-MAIN PROGRAM FLOW
-
-Step 1:
-
-Enter Queue Size
-
-Example:
-
-Size = 5
-
-------------------------------------------------------------
-
-Step 2:
-
-Create Queue Object
-
-Qu = Queue(size)
-
-Meaning:
-An empty queue object is created.
-
-------------------------------------------------------------
-
-Step 3:
-
-Select Operation
-
-• Insert
-• Delete
-• Display
-• Exit
-
-------------------------------------------------------------
-
-Step 4:
-
-Perform Operation
-
-The selected operation is executed.
-
-------------------------------------------------------------
-
-Step 5:
-
-Repeat Until Exit
-
-Program continues until user chooses Exit.
-
-------------------------------------------------------------
 OBJECT CREATION
 
 Statement:
-
 Qu = Queue(size)
 
 Meaning:
@@ -433,11 +279,8 @@ Meaning:
 • Queue methods can be called using Qu.
 
 Examples:
-
 Qu.enqueue()
-
 Qu.dequeue()
-
 Qu.display()
 
 ------------------------------------------------------------
