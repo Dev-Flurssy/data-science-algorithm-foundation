@@ -29,25 +29,18 @@ Meaning:
 FIFO PRINCIPLE
 
 Queue follows the FIFO principle.
-
 FIFO = First In First Out
 
 Meaning:
 The first element inserted is removed first.
 
 Example:
-
 Enqueue(10)
 Enqueue(20)
 Enqueue(30)
 
-Queue:
-
-FRONT → 10 20 30 ← REAR
-
-Dequeue()
-
-Removed Element = 10
+Queue: FRONT → 10 20 30 ← REAR
+Dequeue(): Removed Element = 10
 
 Meaning:
 • 10 was inserted first.
@@ -57,11 +50,9 @@ Meaning:
 QUEUE REPRESENTATION
 
 Suppose:
-
 Q = {10, 15, 20}
 
 Representation:
-
 FRONT → 10 15 20 ← REAR
 
 Meaning:
@@ -74,13 +65,11 @@ Meaning:
 QUEUE TERMINOLOGY
 
 FRONT
-
 Meaning:
 • The end from which elements are removed.
 • Points to the first element in the queue.
 
 REAR
-
 Meaning:
 • The end where new elements are inserted.
 • Points to the last element in the queue.
@@ -90,10 +79,7 @@ QUEUE OPERATIONS
 
 The following operations are used to manage a queue:
 
-isEmpty()
-
-Meaning:
-Checks whether the queue has any elements.
+isEmpty(): Checks whether the queue has any elements.
 
 isFull()
 
