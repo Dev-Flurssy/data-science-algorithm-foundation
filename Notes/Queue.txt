@@ -205,10 +205,8 @@ Create(): Creates an empty queue.
 Add(el, Q): Adds the element "el" at the rear of queue Q.
 Delete(Q): Removes the front element from queue Q.
 getFront(): Returns the front element without removing it.
-isEmpty(): Returns True if the queue is empty.
-Returns False otherwise.
-isFull(): Returns True if the queue is full.
-Returns False otherwise.
+isEmpty(): Returns True if the queue is empty. Returns False otherwise.
+isFull(): Returns True if the queue is full. Returns False otherwise.
 
 ------------------------------------------------------------
 QUEUE ADT AXIOMS
@@ -249,7 +247,6 @@ Q = Create()
 Delete(Q)
 
 Result: Error
-
 Reason: Queue contains no elements.
 
 ------------------------------------------------------------
@@ -263,7 +260,6 @@ Q = Create()
 getFront(Q)
 
 Result: Error
-
 Reason: No element exists in the queue.
 
 ------------------------------------------------------------
