@@ -1,0 +1,287 @@
+QUEUE IMPLEMENTATION USING A FIXED-SIZE LIST
+
+In this implementation, the queue has a maximum size.
+
+Meaning:
+• Only a limited number of elements can be stored.
+• New elements cannot be inserted when the queue becomes full.
+• A new operation called isFull() is introduced.
+
+------------------------------------------------------------
+FIXED SIZE QUEUE
+
+A fixed-size queue has a predefined capacity.
+
+Example:
+Queue Size = 5
+Maximum Elements = 5
+
+Meaning:
+• Only 5 elements can be stored.
+• The 6th insertion causes Overflow.
+
+------------------------------------------------------------
+ISFULL OPERATION
+
+isFull(rear, front, size)
+Purpose: Checks whether the queue is full.
+
+Condition:
+rear >= size - 1
+
+Returns:
+1 → Queue is Full
+0 → Queue is Not Full
+
+Meaning:
+When rear reaches the last position, no more elements can be inserted.
+
+------------------------------------------------------------
+EXAMPLE OF ISFULL()
+
+Queue Size = 5
+Indexes: 0 1 2 3 4
+
+Queue: [10, 20, 30, 40, 50]
+
+Front = 0
+Rear = 4
+
+Condition:
+rear >= size - 1
+4 >= 4
+
+Result:
+Queue is Full
+
+------------------------------------------------------------
+QUEUE FULL CONDITION
+
+Queue:
+FRONT → 10 20 30 40 50 ← REAR
+Size = 5
+
+Meaning:
+• Maximum capacity reached.
+• No new element can be inserted.
+
+------------------------------------------------------------
+ENQUEUE OPERATION (FIXED SIZE QUEUE)
+
+Function:
+enqueue(Q, rear, front, size)
+Purpose: Inserts an element into the queue.
+
+Before inserting:
+Queue fullness is checked.
+
+------------------------------------------------------------
+STEPS OF ENQUEUE
+
+1. Check if queue is full.
+
+2. If queue is full:
+   Display Overflow message.
+
+3. Otherwise:
+   Increment rear by one.
+   Insert element at rear.
+   Return queue.
+
+------------------------------------------------------------
+ENQUEUE EXAMPLE
+
+Queue:
+FRONT → 10 20 ← REAR
+Rear = 1
+Insert 30
+
+After Insertion:
+FRONT → 10 20 30 ← REAR
+Rear = 2
+
+Meaning:
+• Rear moves forward.
+• New element joins at the rear.
+
+------------------------------------------------------------
+QUEUE OVERFLOW
+
+Overflow occurs when insertion is attempted in a full queue.
+
+Example:
+Size = 3
+
+Queue:
+FRONT → 10 20 30 ← REAR
+Enqueue(40)
+
+Result:
+Overflow:
+No more place for the Queue
+
+Meaning:
+• Queue has reached maximum capacity.
+• 40 cannot be inserted.
+
+------------------------------------------------------------
+DEQUEUE OPERATION
+
+No change from the previous implementation.
+Purpose: Removes the front element.
+
+Meaning:
+• Element leaves from the front.
+• Front moves forward.
+• Queue follows FIFO.
+
+------------------------------------------------------------
+ISEMPTY OPERATION
+
+No change from the previous implementation.
+
+Condition:
+
+front > rear
+
+OR
+
+rear == -1
+
+Meaning:
+No element exists in the queue.
+
+------------------------------------------------------------
+CREATE OPERATION
+
+No change from the previous implementation.
+
+Initial Values:
+
+Q = []
+Front = 0
+Rear = -1
+
+Meaning:
+Queue starts empty.
+
+------------------------------------------------------------
+DISPLAY OPERATION
+
+Function:
+
+display(Q, front, rear)
+
+Purpose:
+Displays queue elements.
+
+The function first checks:
+
+1. Is queue empty?
+2. Is queue full?
+3. Otherwise display queue normally.
+
+------------------------------------------------------------
+DISPLAY WHEN QUEUE IS EMPTY
+
+Condition:
+
+isEmpty(front, rear) == 1
+
+Output:
+
+Queue is Empty
+
+Meaning:
+No element exists in the queue.
+
+------------------------------------------------------------
+DISPLAY WHEN QUEUE IS FULL
+
+Condition:
+
+isFull(rear, front, size) == 1
+
+Example:
+
+Queue:
+
+10 20 30 40 50
+
+Output:
+
+0 -> 10
+1 -> 20
+2 -> 30
+3 -> 40
+4 -> 50
+
+Queue is Full
+
+Meaning:
+• Queue contents are displayed.
+• Queue capacity has been reached.
+
+------------------------------------------------------------
+DISPLAY WHEN QUEUE IS NEITHER FULL NOR EMPTY
+
+Example:
+
+Queue:
+
+[10, 20, 30]
+
+Front = 0
+Rear = 2
+
+Output:
+
+0 -> 10
+1 -> 20
+2 -> 30
+
+Meaning:
+Elements are displayed from front to rear.
+
+------------------------------------------------------------
+MENU OPERATION
+
+No change from the previous implementation.
+
+Options:
+
+1. Insert to Queue
+2. Delete from Queue
+3. Display Queue
+4. Exit
+
+------------------------------------------------------------
+FIXED-SIZE QUEUE VS DYNAMIC QUEUE
+
+Dynamic Queue
+
+• No fixed size.
+• Uses Python list.
+• Overflow usually does not occur.
+
+Fixed-Size Queue
+
+• Maximum size is defined.
+• isFull() is required.
+• Overflow can occur.
+
+------------------------------------------------------------
+IMPORTANT POINTS
+
+• Fixed-size queue has limited capacity.
+• isFull() checks whether queue is full.
+• Overflow occurs when inserting into a full queue.
+• isEmpty() checks whether queue is empty.
+• Underflow occurs when deleting from an empty queue.
+• Enqueue inserts at rear.
+• Dequeue removes from front.
+• Queue follows FIFO.
+• Front points to first element.
+• Rear points to last element.
+
+------------------------------------------------------------
