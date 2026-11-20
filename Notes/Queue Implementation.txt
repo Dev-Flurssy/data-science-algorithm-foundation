@@ -221,16 +221,6 @@ Meaning:
 Elements are displayed from front to rear.
 
 ------------------------------------------------------------
-MENU OPERATION
-No change from the previous implementation.
-
-Options:
-1. Insert to Queue
-2. Delete from Queue
-3. Display Queue
-4. Exit
-
-------------------------------------------------------------
 FIXED-SIZE QUEUE VS DYNAMIC QUEUE
 
 Dynamic Queue
@@ -258,11 +248,9 @@ Meaning:
 DICTIONARY QUEUE REPRESENTATION
 
 A dictionary stores data as:
-
 Key : Value
 
 Example:
-
 Q = {
      0 : 10,
      1 : 15,
@@ -275,21 +263,14 @@ Meaning:
 • Key 2 stores 20.
 
 Queue:
-
 FRONT → 10 15 20 ← REAR
 
 ------------------------------------------------------------
 CREATE OPERATION
 
-Function:
-
-create()
-
-Purpose:
-Creates an empty queue.
+create(): Creates an empty queue.
 
 Initialization:
-
 Q = {}
 front = 0
 rear = -1
@@ -303,7 +284,6 @@ Meaning:
 EMPTY QUEUE
 
 Q = {}
-
 Front = 0
 Rear = -1
 
@@ -313,19 +293,12 @@ No element exists in the queue.
 ------------------------------------------------------------
 ISFULL OPERATION
 
-Function:
-
-isFull(front, rear, size)
-
-Purpose:
-Checks whether the queue is full.
+isFull(front, rear, size): Checks whether the queue is full.
 
 Condition:
-
 rear >= size - 1
 
 Returns:
-
 1 → Queue is Full
 0 → Queue is Not Full
 
@@ -333,9 +306,7 @@ Returns:
 EXAMPLE OF ISFULL()
 
 Size = 5
-
 Queue:
-
 {
  0:10,
  1:15,
@@ -348,33 +319,22 @@ Front = 0
 Rear = 4
 
 Condition:
-
 4 >= 4
 
 Result:
-
 Queue is Full
 
 ------------------------------------------------------------
 ISEMPTY OPERATION
 
-Function:
-
-isEmpty(front, rear)
-
-Purpose:
-Checks whether queue is empty.
+isEmpty(front, rear): Checks whether queue is empty.
 
 Condition:
-
 front > rear
-
 OR
-
 rear == -1
 
 Returns:
-
 1 → Queue is Empty
 0 → Queue is Not Empty
 
@@ -382,23 +342,16 @@ Returns:
 EXAMPLE OF ISEMPTY()
 
 Q = {}
-
 Front = 0
 Rear = -1
 
 Result:
-
 Queue is Empty
 
 ------------------------------------------------------------
 ENQUEUE OPERATION
 
-Function:
-
-enqueue(Q, front, rear, size)
-
-Purpose:
-Inserts an element into the queue.
+enqueue(Q, front, rear, size): Inserts an element into the queue.
 
 ------------------------------------------------------------
 STEPS OF ENQUEUE
@@ -417,16 +370,13 @@ STEPS OF ENQUEUE
 ENQUEUE EXAMPLE
 
 Initial Queue:
-
 Q = {}
-
 Front = 0
 Rear = -1
 
 Insert 10
 
 After Insertion:
-
 Q = {
       0 : 10
     }
@@ -435,11 +385,9 @@ Front = 0
 Rear = 0
 
 ------------------------------------------------------------
-
 Insert 15
 
 After Insertion:
-
 Q = {
       0 : 10,
       1 : 15
@@ -449,7 +397,6 @@ Front = 0
 Rear = 1
 
 Queue:
-
 FRONT → 10 15 ← REAR
 
 Meaning:
@@ -461,11 +408,8 @@ QUEUE OVERFLOW
 Overflow occurs when insertion is attempted in a full queue.
 
 Example:
-
 Size = 3
-
 Queue:
-
 {
  0:10,
  1:20,
@@ -475,7 +419,6 @@ Queue:
 Insert 40
 
 Result:
-
 Overflow:
 No more place in the Queue
 
@@ -485,12 +428,7 @@ Maximum capacity reached.
 ------------------------------------------------------------
 DEQUEUE OPERATION
 
-Function:
-
-dequeue(Q, front, rear)
-
-Purpose:
-Deletes an element from the front of the queue.
+dequeue(Q, front, rear): Deletes an element from the front of the queue.
 
 ------------------------------------------------------------
 STEPS OF DEQUEUE
@@ -509,7 +447,6 @@ STEPS OF DEQUEUE
 DEQUEUE EXAMPLE
 
 Queue:
-
 {
  0:10,
  1:15,
@@ -520,11 +457,9 @@ Front = 0
 Rear = 2
 
 Delete Front Element
-
 Deleted Element = 10
 
 After Deletion:
-
 {
  1:15,
  2:20
@@ -534,7 +469,6 @@ Front = 1
 Rear = 2
 
 Queue:
-
 FRONT → 15 20 ← REAR
 
 Meaning:
@@ -546,16 +480,13 @@ QUEUE UNDERFLOW
 Underflow occurs when deletion is attempted from an empty queue.
 
 Example:
-
 Q = {}
-
 Front = 0
 Rear = -1
 
 Delete()
 
 Result:
-
 Underflow:
 There is no element in the Queue
 
@@ -565,15 +496,9 @@ No element exists for deletion.
 ------------------------------------------------------------
 DISPLAY OPERATION
 
-Function:
-
-display(Q, rear, size)
-
-Purpose:
-Displays queue contents.
+display(Q, rear, size): Displays queue contents.
 
 The function first checks:
-
 1. Is queue empty?
 2. Is queue full?
 3. Otherwise display queue normally.
@@ -582,11 +507,9 @@ The function first checks:
 DISPLAY WHEN QUEUE IS EMPTY
 
 Condition:
-
 isEmpty(front, rear) == 1
 
 Output:
-
 Queue is Empty
 
 Meaning:
@@ -596,7 +519,6 @@ No elements exist.
 DISPLAY WHEN QUEUE IS FULL
 
 Example:
-
 Q = {
       0:10,
       1:15,
@@ -606,7 +528,6 @@ Q = {
     }
 
 Output:
-
 0 -> 10
 1 -> 15
 2 -> 20
@@ -622,7 +543,6 @@ Maximum capacity reached.
 DISPLAY WHEN QUEUE IS NOT FULL
 
 Example:
-
 Q = {
       0:10,
       1:15,
@@ -630,69 +550,12 @@ Q = {
     }
 
 Output:
-
 0 -> 10
 1 -> 15
 2 -> 20
 
 Meaning:
 All queue elements are displayed from front to rear.
-
-------------------------------------------------------------
-MENU OPERATION
-
-Function:
-
-menu()
-
-Purpose:
-Displays available queue operations.
-
-Menu:
-
-1. Insert into Queue
-2. Delete from Queue
-3. Display Queue
-4. Exit
-
-------------------------------------------------------------
-MAIN PROGRAM FLOW
-
-Step 1:
-Enter Queue Size
-
-Example:
-
-Size = 5
-
-------------------------------------------------------------
-
-Step 2:
-Create Empty Queue
-
-Q = {}
-Front = 0
-Rear = -1
-
-------------------------------------------------------------
-
-Step 3:
-Choose Operation
-
-Insert
-
-Delete
-
-Display
-
-Exit
-
-------------------------------------------------------------
-
-Step 4:
-Repeat Until Exit
-
-Program continuously performs selected operations.
 
 ------------------------------------------------------------
 DICTIONARY QUEUE VS LIST QUEUE
@@ -704,27 +567,11 @@ LIST QUEUE
 • Simpler implementation.
 
 ------------------------------------------------------------
-
 DICTIONARY QUEUE
 
 • Elements stored as key-value pairs.
 • Keys act as indexes.
 • Values store queue data.
 • More flexible storage structure.
-
-------------------------------------------------------------
-IMPORTANT POINTS
-
-• Queue is implemented using a dictionary.
-• Dictionary stores data as key-value pairs.
-• front points to first element.
-• rear points to last element.
-• Enqueue inserts at rear.
-• Dequeue removes from front.
-• Queue follows FIFO.
-• isFull() checks fullness.
-• isEmpty() checks emptiness.
-• Overflow occurs when queue is full.
-• Underflow occurs when queue is empty.
 
 ------------------------------------------------------------
