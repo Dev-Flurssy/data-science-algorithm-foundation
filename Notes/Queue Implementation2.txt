@@ -1,0 +1,527 @@
+QUEUE IMPLEMENTATION USING A CLASS
+
+A queue can also be implemented using a class in Python.
+
+Meaning:
+• A class combines data and functions into one unit.
+• Queue data and operations are grouped together.
+• This follows the principles of Object-Oriented Programming (OOP).
+
+------------------------------------------------------------
+QUEUE CLASS
+
+Class Name:
+
+Queue
+
+Purpose:
+Represents a queue as an object.
+
+The class contains:
+
+• Queue Data
+• Front Pointer
+• Rear Pointer
+• Queue Operations
+
+------------------------------------------------------------
+CONSTRUCTOR / INITIALIZER
+
+Function:
+
+__init__(self, size)
+
+Purpose:
+Creates an empty queue object.
+
+Initialization:
+
+self.maxSize = size
+self.front = 0
+self.rear = -1
+self.Q = []
+
+Meaning:
+• maxSize stores maximum queue size.
+• front points to first element.
+• rear points to last element.
+• Q stores queue elements.
+• Queue starts empty.
+
+------------------------------------------------------------
+EMPTY QUEUE
+
+Initial State:
+
+Q = []
+
+Front = 0
+Rear = -1
+
+Meaning:
+No element exists in the queue.
+
+------------------------------------------------------------
+ISFULL OPERATION
+
+Function:
+
+isFull()
+
+Purpose:
+Checks whether the queue is full.
+
+Condition:
+
+self.rear >= self.maxSize - 1
+
+Returns:
+
+1 → Queue is Full
+
+0 → Queue is Not Full
+
+------------------------------------------------------------
+EXAMPLE OF ISFULL()
+
+Size = 5
+
+Queue:
+
+[10, 20, 30, 40, 50]
+
+Rear = 4
+
+Condition:
+
+4 >= 4
+
+Result:
+
+Queue is Full
+
+------------------------------------------------------------
+ISEMPTY OPERATION
+
+Function:
+
+isEmpty()
+
+Purpose:
+Checks whether the queue is empty.
+
+Condition:
+
+self.front > self.rear
+
+OR
+
+self.rear == -1
+
+Returns:
+
+1 → Queue is Empty
+
+0 → Queue is Not Empty
+
+------------------------------------------------------------
+EXAMPLE OF ISEMPTY()
+
+Queue:
+
+[]
+
+Front = 0
+Rear = -1
+
+Result:
+
+Queue is Empty
+
+------------------------------------------------------------
+ENQUEUE OPERATION
+
+Function:
+
+enqueue()
+
+Purpose:
+Inserts an element into the queue.
+
+------------------------------------------------------------
+STEPS OF ENQUEUE
+
+1. Check if queue is full.
+
+2. If queue is full:
+   Display Overflow message.
+
+3. Otherwise:
+   Read element.
+   Increment rear.
+   Append element to queue.
+
+------------------------------------------------------------
+ENQUEUE EXAMPLE
+
+Initial Queue:
+
+[]
+
+Front = 0
+Rear = -1
+
+Insert 10
+
+After Insertion:
+
+[10]
+
+Front = 0
+Rear = 0
+
+------------------------------------------------------------
+
+Insert 15
+
+After Insertion:
+
+[10, 15]
+
+Front = 0
+Rear = 1
+
+Queue:
+
+FRONT → 10 15 ← REAR
+
+Meaning:
+New elements are always added at the rear.
+
+------------------------------------------------------------
+QUEUE OVERFLOW
+
+Overflow occurs when insertion is attempted in a full queue.
+
+Example:
+
+Size = 3
+
+Queue:
+
+[10, 20, 30]
+
+Insert 40
+
+Result:
+
+Overflow:
+No more place for the Queue
+
+Meaning:
+Queue has reached maximum capacity.
+
+------------------------------------------------------------
+DEQUEUE OPERATION
+
+Function:
+
+dequeue()
+
+Purpose:
+Removes an element from the front.
+
+------------------------------------------------------------
+STEPS OF DEQUEUE
+
+1. Check if queue is empty.
+
+2. If queue is empty:
+   Display Underflow message.
+
+3. Otherwise:
+   Display front element.
+   Increment front.
+
+------------------------------------------------------------
+DEQUEUE EXAMPLE
+
+Queue:
+
+[10, 15, 20]
+
+Front = 0
+Rear = 2
+
+Delete Element
+
+Deleted = 10
+
+After Deletion:
+
+Front = 1
+Rear = 2
+
+Queue:
+
+FRONT → 15 20 ← REAR
+
+Meaning:
+The first inserted element is removed first.
+
+------------------------------------------------------------
+QUEUE UNDERFLOW
+
+Underflow occurs when deletion is attempted from an empty queue.
+
+Example:
+
+Queue = []
+
+Front = 0
+Rear = -1
+
+Delete()
+
+Result:
+
+Underflow:
+There is no element in the Queue
+
+Meaning:
+No element exists for deletion.
+
+------------------------------------------------------------
+DISPLAY OPERATION
+
+Function:
+
+display()
+
+Purpose:
+Displays all elements of the queue.
+
+------------------------------------------------------------
+DISPLAY WHEN QUEUE IS EMPTY
+
+Condition:
+
+isEmpty() == 1
+
+Output:
+
+Queue is Empty
+
+Meaning:
+No data exists in the queue.
+
+------------------------------------------------------------
+DISPLAY WHEN QUEUE IS FULL
+
+Example:
+
+Queue:
+
+[10, 20, 30, 40, 50]
+
+Output:
+
+0 -> 10
+1 -> 20
+2 -> 30
+3 -> 40
+4 -> 50
+
+Queue is Full
+
+Meaning:
+Maximum capacity has been reached.
+
+------------------------------------------------------------
+DISPLAY WHEN QUEUE IS NOT FULL
+
+Example:
+
+Queue:
+
+[10, 20, 30]
+
+Output:
+
+0 -> 10
+1 -> 20
+2 -> 30
+
+Meaning:
+Displays all queue elements from front to rear.
+
+------------------------------------------------------------
+MENU OPERATION
+
+Function:
+
+menu()
+
+Purpose:
+Displays available queue operations.
+
+Menu:
+
+1. Insert into Queue
+2. Delete from Queue
+3. Display Queue
+4. Exit
+
+------------------------------------------------------------
+MAIN PROGRAM FLOW
+
+Step 1:
+
+Enter Queue Size
+
+Example:
+
+Size = 5
+
+------------------------------------------------------------
+
+Step 2:
+
+Create Queue Object
+
+Qu = Queue(size)
+
+Meaning:
+An empty queue object is created.
+
+------------------------------------------------------------
+
+Step 3:
+
+Select Operation
+
+• Insert
+• Delete
+• Display
+• Exit
+
+------------------------------------------------------------
+
+Step 4:
+
+Perform Operation
+
+The selected operation is executed.
+
+------------------------------------------------------------
+
+Step 5:
+
+Repeat Until Exit
+
+Program continues until user chooses Exit.
+
+------------------------------------------------------------
+OBJECT CREATION
+
+Statement:
+
+Qu = Queue(size)
+
+Meaning:
+• Qu is an object of Queue class.
+• Queue methods can be called using Qu.
+
+Examples:
+
+Qu.enqueue()
+
+Qu.dequeue()
+
+Qu.display()
+
+------------------------------------------------------------
+ADVANTAGES OF CLASS IMPLEMENTATION
+
+• Better organization of code.
+• Supports Object-Oriented Programming.
+• Easy maintenance.
+• Easy code reuse.
+• Data and methods are grouped together.
+
+------------------------------------------------------------
+CLASS QUEUE VS LIST QUEUE
+
+LIST IMPLEMENTATION
+
+• Uses independent functions.
+• Queue variables passed as parameters.
+
+------------------------------------------------------------
+
+CLASS IMPLEMENTATION
+
+• Uses methods inside a class.
+• Data belongs to the object.
+• Easier to manage large programs.
+
+------------------------------------------------------------
+IMPORTANT POINTS
+
+• Queue is implemented as a class.
+• Queue object stores its own data.
+• __init__() creates an empty queue.
+• isFull() checks fullness.
+• isEmpty() checks emptiness.
+• enqueue() inserts at rear.
+• dequeue() removes from front.
+• display() shows queue contents.
+• Queue follows FIFO.
+• Overflow occurs when queue is full.
+• Underflow occurs when queue is empty.
+
+------------------------------------------------------------
+EXAM SHORT NOTES
+
+Class:
+Blueprint for creating objects.
+
+Object:
+
+Qu = Queue(size)
+
+Constructor:
+
+__init__()
+
+Queue Storage:
+
+self.Q = []
+
+Front:
+
+self.front
+
+Rear:
+
+self.rear
+
+Enqueue:
+
+self.Q.append(value)
+
+Dequeue:
+
+self.front += 1
+
+Overflow:
+Insertion into full queue.
+
+Underflow:
+Deletion from empty queue.
+
+FIFO:
+First In First Out.
+
+Class-Based Queue:
+Queue implementation using OOP concepts.
