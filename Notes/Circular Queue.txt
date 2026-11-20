@@ -1,0 +1,573 @@
+CIRCULAR QUEUE
+
+A Circular Queue is a queue in which the last position is connected back to the first position.
+
+Meaning:
+• The queue forms a circle.
+• Empty spaces created after deletion can be reused.
+• Memory is utilized efficiently.
+• Queue-full problems of a simple queue are avoided.
+
+------------------------------------------------------------
+WHY CIRCULAR QUEUE IS NEEDED
+
+Problem in a Simple Queue:
+
+After deletions, empty spaces remain unused.
+
+Example:
+
+Size = 4
+
+Queue:
+
+_ 20 30 40
+
+Front = 1
+Rear = 3
+
+Although index 0 is empty,
+new insertion is not allowed because:
+
+Rear = Max - 1
+
+Meaning:
+Space is wasted.
+
+------------------------------------------------------------
+SOLUTION
+
+Use Circular Queue.
+
+Meaning:
+When rear reaches the last index,
+it wraps around to the first index.
+
+This is done using:
+
+(rear + 1) % size
+
+------------------------------------------------------------
+CIRCULAR QUEUE REPRESENTATION
+
+Size = 4
+
+Indexes:
+
+0 1 2 3
+
+The last position connects back to the first position.
+
+Visual Representation:
+
+0 → 1 → 2 → 3
+↑           ↓
+← ← ← ← ← ←
+
+Meaning:
+Queue behaves like a circle.
+
+------------------------------------------------------------
+MODULAR ARITHMETIC
+
+Formula:
+
+(rear + 1) % size
+
+or
+
+(front + 1) % size
+
+Purpose:
+Moves pointers circularly.
+
+------------------------------------------------------------
+MODULO EXAMPLES
+
+Size = 4
+
+(0 + 1) % 4 = 1
+
+(1 + 1) % 4 = 2
+
+(2 + 1) % 4 = 3
+
+(3 + 1) % 4 = 0
+
+Meaning:
+After reaching index 3,
+the pointer returns to index 0.
+
+------------------------------------------------------------
+CLASS DEFINITION
+
+Class Name:
+
+MyCircularQueue
+
+Purpose:
+Implements a circular queue.
+
+------------------------------------------------------------
+CONSTRUCTOR
+
+Function:
+
+__init__(self, S)
+
+Purpose:
+Creates an empty circular queue.
+
+Initialization:
+
+self.size = S
+
+self.queue = [None] * S
+
+self.front = -1
+
+self.rear = -1
+
+Meaning:
+• Queue of size S is created.
+• Every position initially contains None.
+• Front and Rear indicate empty queue.
+
+------------------------------------------------------------
+EMPTY CIRCULAR QUEUE
+
+Size = 4
+
+Queue:
+
+[None, None, None, None]
+
+Front = -1
+
+Rear = -1
+
+Meaning:
+No elements are present.
+
+------------------------------------------------------------
+QUEUE FULL CONDITION
+
+Condition:
+
+(rear + 1) % size == front
+
+Meaning:
+Next position of rear is occupied by front.
+
+No more insertion is possible.
+
+------------------------------------------------------------
+EXAMPLE OF FULL QUEUE
+
+Size = 4
+
+Queue:
+
+10 20 30 40
+
+Front = 0
+
+Rear = 3
+
+Check:
+
+(3 + 1) % 4 = 0
+
+0 = Front
+
+Result:
+
+Queue is Full
+
+------------------------------------------------------------
+QUEUE EMPTY CONDITION
+
+Condition:
+
+front = -1
+
+Meaning:
+No elements exist.
+
+------------------------------------------------------------
+ENQUEUE OPERATION
+
+Function:
+
+enqueue()
+
+Purpose:
+Adds an element to the rear of the circular queue.
+
+------------------------------------------------------------
+STEPS OF ENQUEUE
+
+1. Check whether queue is full.
+
+2. If queue is full:
+   Display Full Queue message.
+
+3. If queue is empty:
+   front = 0
+   rear = 0
+
+4. Otherwise:
+   rear = (rear + 1) % size
+
+5. Insert element at rear.
+
+------------------------------------------------------------
+INSERT FIRST ELEMENT
+
+Initial Queue:
+
+[None, None, None, None]
+
+Front = -1
+Rear = -1
+
+Insert 10
+
+After Insertion:
+
+[10, None, None, None]
+
+Front = 0
+Rear = 0
+
+Meaning:
+First element becomes both front and rear.
+
+------------------------------------------------------------
+INSERT SECOND ELEMENT
+
+Insert 20
+
+Rear Calculation:
+
+(0 + 1) % 4 = 1
+
+Queue:
+
+[10, 20, None, None]
+
+Front = 0
+Rear = 1
+
+------------------------------------------------------------
+INSERT THIRD ELEMENT
+
+Insert 30
+
+Rear Calculation:
+
+(1 + 1) % 4 = 2
+
+Queue:
+
+[10, 20, 30, None]
+
+Front = 0
+Rear = 2
+
+------------------------------------------------------------
+INSERT FOURTH ELEMENT
+
+Insert 40
+
+Rear Calculation:
+
+(2 + 1) % 4 = 3
+
+Queue:
+
+[10, 20, 30, 40]
+
+Front = 0
+Rear = 3
+
+Queue is Full
+
+------------------------------------------------------------
+DEQUEUE OPERATION
+
+Function:
+
+dequeue()
+
+Purpose:
+Deletes the front element.
+
+------------------------------------------------------------
+STEPS OF DEQUEUE
+
+1. Check whether queue is empty.
+
+2. If queue contains only one element:
+   Delete element.
+   front = -1
+   rear = -1
+
+3. Otherwise:
+   Delete front element.
+   front = (front + 1) % size
+
+------------------------------------------------------------
+DELETE EXAMPLE
+
+Queue:
+
+[10, 20, 30, 40]
+
+Front = 0
+Rear = 3
+
+Delete Front Element
+
+Deleted:
+
+10
+
+Front Calculation:
+
+(0 + 1) % 4 = 1
+
+Queue:
+
+[None, 20, 30, 40]
+
+Front = 1
+Rear = 3
+
+------------------------------------------------------------
+REUSING EMPTY SPACE
+
+Current Queue:
+
+[None, 20, 30, 40]
+
+Front = 1
+Rear = 3
+
+Insert 50
+
+Rear Calculation:
+
+(3 + 1) % 4 = 0
+
+Queue:
+
+[50, 20, 30, 40]
+
+Front = 1
+Rear = 0
+
+Meaning:
+Index 0 is reused.
+
+No memory is wasted.
+
+------------------------------------------------------------
+ANOTHER DELETE EXAMPLE
+
+Queue:
+
+[50, 20, 30, 40]
+
+Front = 2
+Rear = 1
+
+Delete 30
+
+Front Calculation:
+
+(2 + 1) % 4 = 3
+
+Queue:
+
+[50, 20, None, 40]
+
+Front = 3
+Rear = 1
+
+------------------------------------------------------------
+DELETE AGAIN
+
+Delete 40
+
+Front Calculation:
+
+(3 + 1) % 4 = 0
+
+Queue:
+
+[50, 20, None, None]
+
+Front = 0
+Rear = 1
+
+Meaning:
+Front wraps around to index 0.
+
+------------------------------------------------------------
+DISPLAY OPERATION
+
+Function:
+
+Display()
+
+Purpose:
+Displays queue contents.
+
+------------------------------------------------------------
+DISPLAY WHEN QUEUE IS EMPTY
+
+Condition:
+
+front = -1
+
+Output:
+
+No element in the circular queue
+
+------------------------------------------------------------
+DISPLAY WHEN QUEUE IS FULL
+
+Condition:
+
+(rear + 1) % size = front
+
+Output:
+
+Queue is Full
+
+Followed by all elements.
+
+------------------------------------------------------------
+DISPLAY NORMAL QUEUE
+
+Example:
+
+Queue:
+
+[50, 20, 30, None]
+
+Output:
+
+50 20 30 None
+
+Meaning:
+Current queue contents are displayed.
+
+------------------------------------------------------------
+MENU OPERATION
+
+Options:
+
+1. Insert to Circular Queue
+2. Delete from Circular Queue
+3. Display Circular Queue
+4. Exit
+
+------------------------------------------------------------
+MAIN PROGRAM FLOW
+
+Step 1:
+
+Enter Size
+
+Example:
+
+4
+
+------------------------------------------------------------
+
+Step 2:
+
+Create Circular Queue
+
+CQ = MyCircularQueue(4)
+
+------------------------------------------------------------
+
+Step 3:
+
+Choose Operation
+
+• Insert
+• Delete
+• Display
+• Exit
+
+------------------------------------------------------------
+
+Step 4:
+
+Perform Selected Operation
+
+------------------------------------------------------------
+
+Step 5:
+
+Repeat Until Exit
+
+------------------------------------------------------------
+ADVANTAGES OF CIRCULAR QUEUE
+
+• Efficient memory utilization.
+• Reuses deleted positions.
+• No unnecessary shifting.
+• Faster than simple queue.
+• Prevents false queue-full conditions.
+
+------------------------------------------------------------
+DISADVANTAGES OF SIMPLE QUEUE
+
+• Wastes memory.
+• Empty locations remain unused.
+• Rear reaching the end causes false overflow.
+• Frequent shifting may be required.
+
+------------------------------------------------------------
+SIMPLE QUEUE VS CIRCULAR QUEUE
+
+SIMPLE QUEUE
+
+• Linear structure.
+• Wastes memory after deletions.
+• May show false overflow.
+
+------------------------------------------------------------
+
+CIRCULAR QUEUE
+
+• Circular structure.
+• Reuses free positions.
+• Efficient memory usage.
+• No false overflow.
+
+------------------------------------------------------------
+IMPORTANT FORMULAS
+
+Move Rear:
+
+rear = (rear + 1) % size
+
+Move Front:
+
+front = (front + 1) % size
+
+Queue Full:
+
+(rear + 1) % size == front
+
+Queue Empty:
+
+front == -1
+
+------------------------------------------------------------
