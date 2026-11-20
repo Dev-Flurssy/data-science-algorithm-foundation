@@ -30,7 +30,6 @@ FIFO PRINCIPLE
 
 Queue follows the FIFO principle.
 FIFO = First In First Out
-
 Meaning:
 The first element inserted is removed first.
 
@@ -78,53 +77,30 @@ Meaning:
 QUEUE OPERATIONS
 
 The following operations are used to manage a queue:
-
 isEmpty(): Checks whether the queue has any elements.
-
-isFull()
-
-Meaning:
-Checks whether the queue is full.
-Used only in restricted-size queues.
-
-enqueue(el)
-
-Meaning:
-Adds an element at the rear of the queue.
-
-dequeue()
-
-Meaning:
-Removes an element from the front of the queue.
-
-first()
-
-Meaning:
-Returns the front element without removing it.
+isFull():Checks whether the queue is full. Used only in restricted-size queues.
+enqueue(el): Adds an element at the rear of the queue.
+dequeue(): Removes an element from the front of the queue.
+first(): Returns the front element without removing it.
 
 ------------------------------------------------------------
 ENQUEUE OPERATION
 
 Enqueue means inserting data into the queue.
-
 Meaning:
 • A new element is added at the rear.
 • Rear position moves forward.
 
 Example:
-
 Empty Queue
 
 FRONT = REAR = -1
-
 Enqueue(10)
 
 Queue:
-
 FRONT → 10 ← REAR
 
 Enqueue(15)
-
 Queue:
 
 FRONT → 10 15 ← REAR
@@ -154,7 +130,6 @@ No space is available for a new element.
 DEQUEUE OPERATION
 
 Dequeue means deleting data from the queue.
-
 Meaning:
 • The front element is removed.
 • Front position moves forward.
@@ -196,7 +171,6 @@ There is no element available for deletion.
 QUEUE OVERFLOW
 
 Queue Overflow occurs when insertion is attempted in a full queue.
-
 Meaning:
 • No empty space is available.
 • A new element cannot be inserted.
@@ -205,7 +179,6 @@ Meaning:
 QUEUE UNDERFLOW
 
 Queue Underflow occurs when deletion is attempted in an empty queue.
-
 Meaning:
 • No element is available for removal.
 
@@ -230,3 +203,4 @@ IMPORTANT POINTS ABOUT QUEUE
 • Two ends are used.
 • First inserted element leaves first.
 • Queue is widely used in scheduling and resource-sharing systems.
+
