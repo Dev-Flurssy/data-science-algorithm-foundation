@@ -301,7 +301,6 @@ LIST IMPLEMENTATION
 • Queue variables passed as parameters.
 
 ------------------------------------------------------------
-
 CLASS IMPLEMENTATION
 
 • Uses methods inside a class.
@@ -309,62 +308,649 @@ CLASS IMPLEMENTATION
 • Easier to manage large programs.
 
 ------------------------------------------------------------
+QUEUE IMPLEMENTATION USING QUEUE MODULE
+
+Python provides a built-in Queue class through the queue module.
+
+Meaning:
+• Queue operations are already implemented.
+• No need to manually manage front and rear.
+• Queue follows FIFO automatically.
+• It is part of Python Standard Library.
+
+------------------------------------------------------------
+QUEUE MODULE
+
+Import Statement:
+
+from queue import Queue
+
+Purpose:
+Imports the Queue class from the queue module.
+
+------------------------------------------------------------
+CREATING A QUEUE
+
+Statement:
+
+Q = Queue(size)
+
+Example:
+
+Q = Queue(5)
+
+Meaning:
+• Queue capacity is 5.
+• Maximum 5 elements can be inserted.
+• Built-in queue object is created.
+
+------------------------------------------------------------
+QUEUE SIZE
+
+Queue(size)
+
+Meaning:
+The size parameter specifies the maximum number of elements.
+
+Example:
+
+Q = Queue(4)
+
+Maximum Elements:
+
+4
+
+------------------------------------------------------------
+UNLIMITED QUEUE
+
+Queue(0)
+
+or
+
+Queue(size <= 0)
+
+Meaning:
+Queue size becomes unlimited.
+
+No fixed maximum capacity exists.
+
+------------------------------------------------------------
+BUILT-IN QUEUE METHODS
+
+full()
+
+Meaning:
+Checks whether the queue is full.
+
+Returns:
+
+True → Queue is Full
+
+False → Queue is Not Full
+
+------------------------------------------------------------
+
+empty()
+
+Meaning:
+Checks whether the queue is empty.
+
+Returns:
+
+True → Queue is Empty
+
+False → Queue is Not Empty
+
+------------------------------------------------------------
+
+put(data)
+
+Meaning:
+Inserts an element into the queue.
+
+Example:
+
+Q.put(10)
+
+Meaning:
+10 is added to the rear.
+
+------------------------------------------------------------
+
+get()
+
+Meaning:
+Removes an element from the queue.
+
+Example:
+
+Q.get()
+
+Meaning:
+Front element is deleted and returned.
+
+------------------------------------------------------------
+
+q.queue
+
+Meaning:
+Returns all queue elements.
+
+Used for displaying queue contents.
+
+------------------------------------------------------------
+ENQUEUE OPERATION
+
+Function:
+
+enqueue(Q)
+
+Purpose:
+Inserts an element into the queue.
+
+------------------------------------------------------------
+STEPS OF ENQUEUE
+
+1. Check whether queue is full.
+
+2. If queue is full:
+   Display error message.
+
+3. Otherwise:
+   Read data.
+   Insert using put().
+
+------------------------------------------------------------
+ENQUEUE EXAMPLE
+
+Queue:
+
+[]
+
+Insert 10
+
+Q.put(10)
+
+Queue:
+
+[10]
+
+------------------------------------------------------------
+
+Insert 20
+
+Q.put(20)
+
+Queue:
+
+[10, 20]
+
+------------------------------------------------------------
+
+Insert 30
+
+Q.put(30)
+
+Queue:
+
+[10, 20, 30]
+
+Meaning:
+Elements are inserted at the rear.
+
+------------------------------------------------------------
+QUEUE OVERFLOW
+
+Condition:
+
+Q.full() == True
+
+Example:
+
+Size = 3
+
+Queue:
+
+[10, 20, 30]
+
+Insert 40
+
+Result:
+
+There is NO SPACE in the Queue
+
+Meaning:
+Queue has reached maximum capacity.
+
+------------------------------------------------------------
+DEQUEUE OPERATION
+
+Function:
+
+dequeue(Q)
+
+Purpose:
+Deletes an element from the queue.
+
+------------------------------------------------------------
+STEPS OF DEQUEUE
+
+1. Check whether queue is empty.
+
+2. If queue is empty:
+   Display error message.
+
+3. Otherwise:
+   Delete element using get().
+
+------------------------------------------------------------
+DEQUEUE EXAMPLE
+
+Queue:
+
+[10, 20, 30]
+
+Delete Element
+
+Q.get()
+
+Deleted Element:
+
+10
+
+Queue:
+
+[20, 30]
+
+Meaning:
+First inserted element leaves first.
+
+------------------------------------------------------------
+QUEUE UNDERFLOW
+
+Condition:
+
+Q.empty() == True
+
+Example:
+
+Queue:
+
+[]
+
+Delete Element
+
+Result:
+
+There is NO DATA in the Queue
+
+Meaning:
+Queue contains no elements.
+
+------------------------------------------------------------
+DISPLAY OPERATION
+
+Function:
+
+Display(Q)
+
+Purpose:
+Displays all queue elements.
+
+Queue elements are obtained using:
+
+Q.queue
+
+------------------------------------------------------------
+DISPLAY EXAMPLE
+
+Queue:
+
+[10, 20, 30]
+
+Output:
+
+10 20 30
+
+Meaning:
+Elements are displayed in FIFO order.
+
+------------------------------------------------------------
+DISPLAY WHEN QUEUE IS EMPTY
+
+Condition:
+
+Q.empty() == True
+
+Output:
+
+Queue is EMPTY
+
+Meaning:
+No elements exist in the queue.
+
+------------------------------------------------------------
+DISPLAY WHEN QUEUE IS FULL
+
+Condition:
+
+Q.full() == True
+
+Output:
+
+10 20 30 40
+
+Queue is Full
+
+Meaning:
+Maximum queue capacity has been reached.
+
+------------------------------------------------------------
+MENU OPERATION
+
+Menu:
+
+1. Insert into Queue
+2. Delete from Queue
+3. Display Queue
+4. Exit
+
+Purpose:
+Allows user to perform queue operations.
+
+------------------------------------------------------------
+MAIN PROGRAM FLOW
+
+Step 1:
+
+Enter Queue Size
+
+Example:
+
+Size = 4
+
+------------------------------------------------------------
+
+Step 2:
+
+Create Queue
+
+Q = Queue(4)
+
+------------------------------------------------------------
+
+Step 3:
+
+Choose Operation
+
+• Insert
+• Delete
+• Display
+• Exit
+
+------------------------------------------------------------
+
+Step 4:
+
+Perform Selected Operation
+
+------------------------------------------------------------
+
+Step 5:
+
+Repeat Until Exit
+
+------------------------------------------------------------
+IMPORTANT ADVANTAGE OF QUEUE MODULE
+
+In previous implementations:
+
+• Front and Rear were managed manually.
+• Memory spaces created by deletions could not be reused easily.
+
+Queue Module:
+
+• Automatically manages queue operations.
+• No manual handling of front and rear.
+• Easier and safer implementation.
+
+------------------------------------------------------------
+PROBLEM IN PREVIOUS QUEUE IMPLEMENTATIONS
+
+Consider Queue Size = 4
+
+Indexes:
+
+0 1 2 3
+
+------------------------------------------------------------
+
+Insert 10
+
+Queue:
+
+10
+
+Front = 0
+Rear = 0
+
+------------------------------------------------------------
+
+Insert 20
+
+Queue:
+
+10 20
+
+Front = 0
+Rear = 1
+
+------------------------------------------------------------
+
+Insert 30
+
+Queue:
+
+10 20 30
+
+Front = 0
+Rear = 2
+
+------------------------------------------------------------
+
+Insert 40
+
+Queue:
+
+10 20 30 40
+
+Front = 0
+Rear = 3
+
+Queue is Full
+
+------------------------------------------------------------
+
+Delete 10
+
+Queue:
+
+20 30 40
+
+Front = 1
+Rear = 3
+
+------------------------------------------------------------
+
+Now Try:
+
+Insert 50
+
+Condition:
+
+Rear = Max - 1
+
+3 = 4 - 1
+
+TRUE
+
+Result:
+
+Queue Full
+
+------------------------------------------------------------
+
+PROBLEM
+
+Even though index 0 is empty:
+
+_ 20 30 40
+
+Insertion is still not allowed.
+
+Meaning:
+• Empty spaces exist.
+• Queue incorrectly appears full.
+• Memory is wasted.
+
+------------------------------------------------------------
+WHY DOES THIS HAPPEN?
+
+Queue Full Condition:
+
+rear = max - 1
+
+Since rear already reached the last index:
+
+No further insertion is allowed.
+
+Even if front has moved forward.
+
+------------------------------------------------------------
+SOLUTION 1: DATA SHIFTING
+
+Method:
+
+After every deletion:
+
+Shift all elements one position to the left.
+
+Example:
+
+Before Shift:
+
+_ 20 30 40
+
+After Shift:
+
+20 30 40 _
+
+Rear becomes:
+
+Rear = Rear - 1
+
+------------------------------------------------------------
+
+DISADVANTAGE
+
+• Too much data movement.
+• Slow execution.
+• Not practical.
+
+------------------------------------------------------------
+SOLUTION 2: CIRCULAR QUEUE
+
+Method:
+
+Reuse empty locations.
+
+Example:
+
+_ 20 30 40
+
+Insert 50 in index 0
+
+50 20 30 40
+
+Meaning:
+Queue wraps around.
+
+------------------------------------------------------------
+
+ADVANTAGES
+
+• No wasted space.
+• Faster than shifting.
+• Efficient memory usage.
+
+------------------------------------------------------------
+SOLUTION 3: LINKED LIST IMPLEMENTATION
+
+Method:
+
+Store elements dynamically using nodes.
+
+Meaning:
+• No fixed-size array.
+• Memory allocated when needed.
+• No shifting required.
+
+------------------------------------------------------------
 IMPORTANT POINTS
 
-• Queue is implemented as a class.
-• Queue object stores its own data.
-• __init__() creates an empty queue.
-• isFull() checks fullness.
-• isEmpty() checks emptiness.
-• enqueue() inserts at rear.
-• dequeue() removes from front.
-• display() shows queue contents.
+• Queue module is part of Python Standard Library.
+• Queue object is created using Queue(size).
+• put() inserts elements.
+• get() removes elements.
+• full() checks whether queue is full.
+• empty() checks whether queue is empty.
+• q.queue displays all elements.
 • Queue follows FIFO.
-• Overflow occurs when queue is full.
-• Underflow occurs when queue is empty.
+• Previous array implementations waste space after deletions.
+• Circular Queue solves this problem.
+• Linked List Queue also solves this problem.
 
 ------------------------------------------------------------
 EXAM SHORT NOTES
 
-Class:
-Blueprint for creating objects.
+Queue Module:
 
-Object:
+from queue import Queue
 
-Qu = Queue(size)
+Create Queue:
 
-Constructor:
+Q = Queue(size)
 
-__init__()
+Insert:
 
-Queue Storage:
+Q.put(data)
 
-self.Q = []
+Delete:
 
-Front:
+Q.get()
 
-self.front
+Check Full:
 
-Rear:
+Q.full()
 
-self.rear
+Check Empty:
 
-Enqueue:
+Q.empty()
 
-self.Q.append(value)
+Display Elements:
 
-Dequeue:
+Q.queue
 
-self.front += 1
+Problem of Simple Queue:
 
-Overflow:
-Insertion into full queue.
+Rear reaches last index even if free cells exist.
 
-Underflow:
-Deletion from empty queue.
+Solutions:
+
+1. Shift Data
+2. Circular Queue
+3. Linked List Queue
 
 FIFO:
-First In First Out.
 
-Class-Based Queue:
-Queue implementation using OOP concepts.
+First In First Out.
