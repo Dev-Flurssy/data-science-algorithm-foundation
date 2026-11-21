@@ -1,4 +1,3 @@
-------------------------------------------------------------
 TREES
 
 A Tree is a non-linear data structure used to store data in a hierarchical form.
@@ -11,13 +10,11 @@ A tree consists of:
 ------------------------------------------------------------
 WHY TREES ARE NEEDED
 
-Linear Data Structures:
+Linear Data Structures: Store data in a sequence.
 Array
 Linked List
 Stack
 Queue
-
-Store data in a sequence.
 
 Example:
 CEO
@@ -462,7 +459,6 @@ V = E + 1
 Where:
 V = Number of Vertices (Nodes)
 E = Number of Edges
-
 
 Example
       A

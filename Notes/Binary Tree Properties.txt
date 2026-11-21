@@ -1,15 +1,12 @@
 SOME PROPERTIES OF BINARY TREES
 
-Level:
-The level of the root node is 1.
+Level: The level of the root node is 1.
 
 Rule:
-
 If a node is at level i,
 then its children are at level i + 1.
 
 Example:
-
         A      ← Level 1
        / \
       B   C    ← Level 2
@@ -30,7 +27,7 @@ Example:
 
 Levels:
 A = Level 1
-B,C = Level 2
+B, C = Level 2
 D = Level 3
 
 Height = 3
@@ -90,6 +87,7 @@ Example Tree
 
 ----------------------------------
 Table Representation
+----------------------------------
 Index   Data   Left   Right
 0       20      3      4
 1       39    None   None
@@ -100,22 +98,20 @@ Index   Data   Left   Right
 
 ----------------------------------
 Python Representation
-
+----------------------------------
 Tree = [
-(20,3,4),
-(39,None,None),
-(51,None,None),
-(25,5,None),
-(19,1,2),
-(71,None,None)
-]
-
+(20, 3, 4),
+(39, None, None),
+(51, None, None),
+(25, 5, None),
+(19, 1, 2),
+(71, None, None)]
 
 Meaning
 Tuple Format: (Data, LeftChildIndex, RightChildIndex)
 
 Example: 
-(20,3,4) Means:
+(20, 3, 4) Means:
 Data = 20
 Left Child at Index 3
 Right Child at Index 4
@@ -190,9 +186,7 @@ Example:
 Array:
 [A, B, None, C, None, None, None...]
 
-
-Result:
-Large amount of memory is wasted.
+Result: Large amount of memory is wasted.
 
 ------------------------------------------------------------
 ADVANTAGES OF ARRAY REPRESENTATION
@@ -287,7 +281,7 @@ Delete C
 DIFFICULT CASE
 
 Delete an internal node.
-Problem:Tree becomes disconnected.
+Problem: Tree becomes disconnected.
 A replacement node is needed.
 Binary Search Tree rules provide a solution.
 
@@ -405,8 +399,7 @@ A B +
 ------------------------------------------------------------
 CONSTRUCTING TREE FROM TRAVERSALS
 
-A binary tree can be constructed when any two
-traversals are known.
+A binary tree can be constructed when any two traversals are known.
 
 ------------------------------------------------------------
 RULE 1: PREORDER
