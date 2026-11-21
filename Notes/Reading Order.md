@@ -18,4 +18,6 @@
 - Circular Queue'
 - Priority Queue
 - Trees
-- 
+- Binary Tree Properties
+- Binary Search Tree
+- AVL Trees
