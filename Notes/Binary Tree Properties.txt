@@ -1,0 +1,495 @@
+SOME PROPERTIES OF BINARY TREES
+
+Level:
+The level of the root node is 1.
+
+Rule:
+
+If a node is at level i,
+then its children are at level i + 1.
+
+Example:
+
+        A      ← Level 1
+       / \
+      B   C    ← Level 2
+     / \
+    D   E      ← Level 3
+
+------------------------------------------------------------
+HEIGHT OR DEPTH OF A TREE
+
+The height (or depth) of a tree is the maximum level of any node in the tree.
+
+Example:
+        A
+       / \
+      B   C
+     /
+    D
+
+Levels:
+A = Level 1
+B,C = Level 2
+D = Level 3
+
+Height = 3
+
+------------------------------------------------------------
+DEPTH OF A NODE
+
+The number of edges from the root to that node.
+
+Example:
+        A
+       /
+      B
+     /
+    C
+
+Depth(A) = 0
+Depth(B) = 1
+Depth(C) = 2
+
+------------------------------------------------------------
+HEIGHT OF A NODE
+
+The number of edges from that node to the farthest leaf in its subtree.
+
+Example:
+        A
+       /
+      B
+     /
+    C
+
+Height(C) = 0
+Height(B) = 1
+Height(A) = 2
+
+------------------------------------------------------------
+REPRESENTATION OF BINARY TREE
+
+A Binary Tree can be represented in different ways.
+
+1. List of Tuples Representation
+2. Array Representation
+3. Dynamic Linked Representation
+
+------------------------------------------------------------
+METHOD 1: LIST OF TUPLES REPRESENTATION
+
+Each node is stored as: (Data, LeftIndex, RightIndex)
+
+Example Tree
+          20
+         /  \
+       25    19
+      /     /  \
+    71    39   51
+
+----------------------------------
+Table Representation
+Index   Data   Left   Right
+0       20      3      4
+1       39    None   None
+2       51    None   None
+3       25      5    None
+4       19      1      2
+5       71    None   None
+
+----------------------------------
+Python Representation
+
+Tree = [
+(20,3,4),
+(39,None,None),
+(51,None,None),
+(25,5,None),
+(19,1,2),
+(71,None,None)
+]
+
+
+Meaning
+Tuple Format: (Data, LeftChildIndex, RightChildIndex)
+
+Example: 
+(20,3,4) Means:
+Data = 20
+Left Child at Index 3
+Right Child at Index 4
+
+------------------------------------------------------------
+ADVANTAGES OF TUPLE REPRESENTATION
+
+• Easy to store.
+• Easy to locate children.
+• Memory efficient.
+• No wasted memory cells.
+
+------------------------------------------------------------
+METHOD 2: ARRAY REPRESENTATION
+
+Nodes are stored level by level.
+Root begins at Index 0.
+
+Example Tree
+          20
+         /  \
+       25    19
+      /     /  \
+    71    39   51
+
+----------------------------------
+Array Representation
+
+Index:
+0   1   2   3    4    5    6
+
+Data:
+20  25  19  71  39  51  None
+
+------------------------------------------------------------
+RULES IN ARRAY REPRESENTATION
+
+If a node is stored at index i:
+Left Child
+= 2i + 1
+
+Right Child
+= 2i + 2
+
+Parent
+= floor((i - 1)/2)
+
+Example
+Node: 20
+Stored at: Index 0
+
+Left Child:
+2(0)+1 = 1
+Node at Index 1 = 25
+
+Right Child:
+2(0)+2 = 2
+Node at Index 2 = 19
+
+------------------------------------------------------------
+DISADVANTAGE OF ARRAY REPRESENTATION
+
+Problem: In skewed trees many positions remain empty.
+
+Example:
+      A
+     /
+    B
+   /
+  C
+
+Array:
+[A, B, None, C, None, None, None...]
+
+
+Result:
+Large amount of memory is wasted.
+
+------------------------------------------------------------
+ADVANTAGES OF ARRAY REPRESENTATION
+
+• Easy indexing.
+• Fast parent-child access.
+• Simple implementation.
+
+------------------------------------------------------------
+DYNAMIC REPRESENTATION
+
+Each node is represented using a class.
+
+Each node contains:
+• Data
+• Left Pointer
+• Right Pointer
+
+----------------------------------
+Example
+
+class Node:
+    def __init__(self,data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+Meaning
+Each node can dynamically create children.
+No memory wastage.
+Tree size can increase during execution.
+
+------------------------------------------------------------
+OPERATIONS IN A BINARY TREE
+
+The major operations are:
+1. Insertion
+2. Deletion
+3. Traversal
+
+------------------------------------------------------------
+INSERTION IN A BINARY TREE
+
+Purpose: Add a new node to the tree.
+
+----------------------------------
+EASY CASE
+
+Insert as a leaf node.
+
+Example:
+Before
+      A
+     /
+    B
+
+After inserting C
+      A
+     / \
+    B   C
+
+----------------------------------
+DIFFICULT CASE
+
+Insert as an internal node.
+
+Problem: Existing subtree must be relocated.
+Ambiguity occurs.
+Binary Search Tree rules are usually used to decide.
+
+------------------------------------------------------------
+DELETION IN A BINARY TREE
+
+Purpose: Remove a node from the tree.
+
+----------------------------------
+EASY CASE
+
+Delete a leaf node.
+\
+Example
+      A
+     / \
+    B   C
+
+Delete C
+      A
+     /
+    B
+
+----------------------------------
+DIFFICULT CASE
+
+Delete an internal node.
+Problem:Tree becomes disconnected.
+A replacement node is needed.
+Binary Search Tree rules provide a solution.
+
+------------------------------------------------------------
+BINARY TREE TRAVERSALS
+
+Traversal means visiting every node of a tree in a specific order.
+
+------------------------------------------------------------
+THREE IMPORTANT PARTS
+
+L = Left Subtree
+D = Data (Root)
+R = Right Subtree
+
+------------------------------------------------------------
+1. PREORDER TRAVERSAL (DLR)
+
+Order:
+Data
+Left
+Right
+
+----------------------------------
+Algorithm
+1. Visit Root
+2. Traverse Left Subtree
+3. Traverse Right Subtree
+
+Example
+        A
+       / \
+      B   C
+
+Output: A B C
+
+------------------------------------------------------------
+2. INORDER TRAVERSAL (LDR)
+
+Order:
+Left
+Data
+Right
+
+----------------------------------
+Algorithm
+1. Traverse Left Subtree
+2. Visit Root
+3. Traverse Right Subtree
+
+Example
+        A
+       / \
+      B   C
+
+Output: B A C
+
+------------------------------------------------------------
+3. POSTORDER TRAVERSAL (LRD)
+
+Order:
+Left
+Right
+Data
+
+----------------------------------
+Algorithm
+1. Traverse Left Subtree
+2. Traverse Right Subtree
+3. Visit Root
+
+Example
+        A
+       / \
+      B   C
+
+Output: B C A
+
+------------------------------------------------------------
+TRAVERSAL MEMORY TRICK
+
+Preorder 
+DLR
+Data first
+
+
+Inorder
+LDR
+Data middle
+
+
+Postorder
+LRD
+Data last
+
+------------------------------------------------------------
+EXPRESSION TREE EXAMPLE
+
+        +
+       / \
+      A   B
+
+----------------------------------
+Preorder (DLR)
++ A B
+
+----------------------------------
+Inorder (LDR)
+A + B
+
+----------------------------------
+Postorder (LRD)
+A B +
+
+------------------------------------------------------------
+CONSTRUCTING TREE FROM TRAVERSALS
+
+A binary tree can be constructed when any two
+traversals are known.
+
+------------------------------------------------------------
+RULE 1: PREORDER
+
+First element is always the Root.
+
+Example
+Preorder:
+A B C D
+Root = A
+
+------------------------------------------------------------
+RULE 2: POSTORDER
+
+Last element is always the Root.
+
+Example
+Postorder:
+B C D A
+Root = A
+
+------------------------------------------------------------
+CONSTRUCTION USING INORDER + POSTORDER
+
+Steps
+1. Last element of Postorder = Root.
+2. Find Root in Inorder.
+3. Nodes left of root = Left Subtree.
+4. Nodes right of root = Right Subtree.
+5. Repeat recursively.
+
+Example
+
+Inorder:
+C B D A F E H G
+
+Postorder:
+C D B F H G E A
+
+----------------------------------
+Root: A
+Left Subtree: C B D
+Right Subtree: F E H G
+
+Final Tree
+          A
+        /   \
+       B     E
+      / \   / \
+     C   D F   G
+              /
+             H
+
+------------------------------------------------------------
+CONSTRUCTION USING INORDER + PREORDER
+
+Steps
+1. First element of Preorder = Root.
+2. Find Root in Inorder.
+3. Left side = Left Subtree.
+4. Right side = Right Subtree.
+5. Repeat recursively.
+
+Example
+
+Inorder
+15 20 24 25 33 35 38 40 45
+
+Preorder
+25 20 15 24 35 33 40 38 45
+
+----------------------------------
+Root: 25
+Left Subtree: 15 20 24
+Right Subtree: 33 35 38 40 45
+
+Final Tree
+             25
+           /    \
+         20      35
+        / \     /  \
+      15  24   33  40
+                   / \
+                  38 45
+
+------------------------------------------------------------
