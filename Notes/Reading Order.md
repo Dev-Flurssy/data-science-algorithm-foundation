@@ -13,4 +13,9 @@
 - Stack Implementations
 - Infix, Prefix, and Postfix Expression
 - Queue
+- Queue Implementation
+- Queue Implementation2
+- Circular Queue'
+- Priority Queue
+- Trees
 - 
