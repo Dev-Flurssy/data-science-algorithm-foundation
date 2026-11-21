@@ -63,7 +63,6 @@ A Tree is a finite set of one or more nodes in which:
 
 ------------------------------------------------------------
 TREE STRUCTURE
-============================================================
 
             1
           / | \
@@ -71,46 +70,37 @@ TREE STRUCTURE
          |     / \
          5    6   7
 
-============================================================
+------------------------------------------------------------
 TREE VS GRAPH
-============================================================
 
 TREE
-
 • A node can have multiple successors.
 • A node can have only one predecessor (parent).
 
 Example:
-
       1
      / \
     2   3
 
 ------------------------------------------------------------
-
 GRAPH
 
 • A node can have multiple successors.
 • A node can have multiple predecessors.
 
 Example:
-
 A ---> B
 |     /
 v    /
 C <--D
 
-============================================================
+------------------------------------------------------------
 TREE TERMINOLOGY
-============================================================
 
 1. ROOT
-
-Definition:
-Node that has no parent.
+Definition: Node that has no parent.
 
 Example:
-
       1
      / \
     2   3
@@ -118,31 +108,23 @@ Example:
 Root = 1
 
 ------------------------------------------------------------
-
 2. CHILD
 
-Definition:
-A node directly connected below another node.
+Definition: A node directly connected below another node.
 
 Example:
-
       1
      / \
     2   3
 
-Children of 1:
-
-2, 3
+Children of 1: 2, 3
 
 ------------------------------------------------------------
-
 3. PARENT
 
-Definition:
-A node directly connected above another node.
+Definition: A node directly connected above another node.
 
 Example:
-
       1
       |
       2
@@ -150,14 +132,11 @@ Example:
 Parent of 2 = 1
 
 ------------------------------------------------------------
-
 4. DEGREE
 
-Definition:
-Number of children of a node.
+Definition: Number of children of a node.
 
 Example:
-
       1
     / | \
    2  3  4
@@ -165,107 +144,78 @@ Example:
 Degree(1) = 3
 
 ------------------------------------------------------------
-
 5. SIBLINGS
 
-Definition:
-Nodes having the same parent.
+Definition: Nodes having the same parent.
 
 Example:
-
       1
     / | \
    2  3  4
 
-Siblings:
-
-2, 3, 4
+Siblings: 2, 3, 4
 
 ------------------------------------------------------------
-
 6. DESCENDANT
 
-Definition:
-A node reachable by moving downward.
+Definition: A node reachable by moving downward.
 
 Example:
-
       1
       |
       2
       |
       5
 
-Descendants of 1:
-
-2, 5
+Descendants of 1: 2, 5
 
 ------------------------------------------------------------
-
 7. ANCESTOR
 
-Definition:
-A node reachable by moving upward.
+Definition: A node reachable by moving upward.
 
 Example:
-
       1
       |
       2
       |
       5
 
-Ancestors of 5:
-
-2, 1
+Ancestors of 5: 2, 1
 
 ------------------------------------------------------------
-
 8. LEAF NODE (TERMINAL NODE)
 
-Definition:
-Node having no children.
+Definition: Node having no children.
 
 Example:
-
       1
      / \
     2   3
 
-Leaf Nodes:
-
-2, 3
-
+Leaf Nodes: 2, 3
 Degree = 0
 
 ------------------------------------------------------------
-
 9. INTERNAL NODE (NON-TERMINAL NODE)
 
-Definition:
-Node with at least one child.
+Definition: Node with at least one child.
 
 Example:
-
       1
       |
       2
       |
       5
 
-Internal Nodes:
-
-1, 2
+Internal Nodes: 1, 2
 
 ------------------------------------------------------------
-
 10. FOREST
 
-Definition:
-A collection of separate trees.
+Definition: A collection of separate trees.
 
 Example:
-
 Tree 1          Tree 2
 
   1              A
@@ -274,9 +224,8 @@ Tree 1          Tree 2
 
 Together form a Forest.
 
-============================================================
+------------------------------------------------------------
 EXAMPLE ANALYSIS
-============================================================
 
             1
           / | \
@@ -284,174 +233,70 @@ EXAMPLE ANALYSIS
          |     / \
          5    6   7
 
-------------------------------------------------------------
+----------------------------------
+Root: 1
+Children of 1: 2, 3, 4
+Parent of 5: 2
+Parent of 6 and 7: 4
+Siblings: 2, 3, 4 and 6, 7
+Leaf Nodes: 3, 5, 6, 7
+Internal Nodes:1, 2, 4
 
-Root:
-
-1
-
-------------------------------------------------------------
-
-Children of 1:
-
-2, 3, 4
-
-------------------------------------------------------------
-
-Parent of 5:
-
-2
-
-------------------------------------------------------------
-
-Parent of 6 and 7:
-
-4
-
-------------------------------------------------------------
-
-Siblings:
-
-2, 3, 4
-
-and
-
-6, 7
-
-------------------------------------------------------------
-
-Leaf Nodes:
-
-3, 5, 6, 7
-
-------------------------------------------------------------
-
-Internal Nodes:
-
-1, 2, 4
-
-------------------------------------------------------------
-
+----------------------------------
 Degrees:
-
 Degree(1) = 3
 Degree(2) = 1
 Degree(4) = 2
-
 Degree(3) = 0
 Degree(5) = 0
 Degree(6) = 0
 Degree(7) = 0
 
-============================================================
+------------------------------------------------------------
 BINARY TREE (BT)
-============================================================
 
 A Binary Tree is a special tree in which each node can have:
-
 • Left Child Only
 • Right Child Only
 • Both Left and Right Child
 
-Maximum:
-
-2 children per node
-
-------------------------------------------------------------
-
+Maximum: 2 children per node
 Example:
-
         1
       /   \
      2     3
     / \   /
    4   5 6
 
-============================================================
+------------------------------------------------------------
 ABSTRACT DATA TYPE OF BINARY TREE
-============================================================
 
 OPERATIONS
 
-create()
-Creates an empty binary tree.
+create():Creates an empty binary tree.
 
-------------------------------------------------------------
-
-makeBT(lbt, data, rbt)
-
-Creates a binary tree using:
-
+makeBT(lbt, data, rbt): Creates a binary tree using:
 • Left Subtree
 • Root Data
 • Right Subtree
 
-------------------------------------------------------------
-
-isEmpty()
-
-Returns:
-
+isEmpty(): Returns:
 True  -> Tree Empty
 False -> Tree Not Empty
 
-------------------------------------------------------------
+lchild(): Returns left child of a node.
 
-lchild()
-
-Returns left child of a node.
+rchild(): Returns right child of a node.
 
 ------------------------------------------------------------
-
-rchild()
-
-Returns right child of a node.
-
-============================================================
-AXIOMS OF BINARY TREE
-============================================================
-
-isEmpty(create())
-Result:
-TRUE
-
-------------------------------------------------------------
-
-isEmpty(makeBT(l,d,r))
-Result:
-FALSE
-
-------------------------------------------------------------
-
-lchild(makeBT(l,d,r))
-Result:
-l
-
-------------------------------------------------------------
-
-rchild(makeBT(l,d,r))
-Result:
-r
-
-------------------------------------------------------------
-
-Data(create())
-Result:
-ERROR
-
-============================================================
 TYPES OF BINARY TREES
-============================================================
 
+----------------------------------
 1. LEFT-SKEWED BINARY TREE
-============================================================
 
-Definition:
-
-Every node has only a left child.
+Definition: Every node has only a left child.
 
 Example:
-
       1
      /
     2
@@ -459,20 +304,15 @@ Example:
   3
 
 Characteristics:
-
 • No right child
 • Looks like a linked list
 
-============================================================
+------------------------------------------------------------
 2. RIGHT-SKEWED BINARY TREE
-============================================================
 
-Definition:
-
-Every node has only a right child.
+Definition: Every node has only a right child.
 
 Example:
-
 1
  \
   2
@@ -480,24 +320,16 @@ Example:
     3
 
 Characteristics:
-
 • No left child
 • Looks like a linked list
 
-============================================================
+------------------------------------------------------------
 3. STRICTLY BINARY TREE
-============================================================
 
-Definition:
-
-Every node has:
-
-• Exactly 2 children
-OR
-• No child
+Definition: Every node has:
+Exactly 2 children OR No child
 
 Example:
-
           8
         /   \
        4     9
@@ -506,82 +338,56 @@ Example:
 
 No node has only one child.
 
-============================================================
+------------------------------------------------------------
 4. FULL BINARY TREE
-============================================================
 
-Definition:
-
-A Binary Tree in which:
-
+Definition: A Binary Tree in which:
 • Every internal node has 2 children.
 • All leaf nodes are at the same level.
 
 Example:
-
             A
           /   \
          B     C
         / \   / \
        D   E F   G
 
-------------------------------------------------------------
-
 Characteristics
 
 Every node has:
-
 0 or 2 children
 
-------------------------------------------------------------
-
+----------------------------------
 FORMULA
-
 If:
-
 h = Height
 n = Total Nodes
 
 Then:
-
 n = 2^(h+1) - 1
 
-------------------------------------------------------------
-
+----------------------------------
 HEIGHT FORMULA
-
 h = log₂(n + 1) - 1
 
-------------------------------------------------------------
-
 Example
-
 h = 3
-
 n = 2^(3 + 1) - 1
 n = 16 - 1
 n = 15
 
-============================================================
+------------------------------------------------------------
 5. COMPLETE BINARY TREE
-============================================================
 
-Definition:
-
-All levels are completely filled except possibly the last
-level.
-
+Definition: All levels are completely filled except possibly the last level.
 The last level is filled from left to right.
 
 Example:
-
           A
          / \
         B   C
        / \ /
       D  E F
-
-------------------------------------------------------------
 
 Characteristics
 
@@ -589,135 +395,89 @@ Characteristics
 • Levels above are completely filled.
 
 ------------------------------------------------------------
-
 IMPORTANT POINT
 
 Every Full Binary Tree is a Complete Binary Tree.
-
 BUT
-
 Every Complete Binary Tree is NOT a Full Binary Tree.
 
-============================================================
-THEOREM 1
-MAXIMUM NODES AT LEVEL i
-============================================================
+------------------------------------------------------------
+THEOREM 1: MAXIMUM NODES AT LEVEL i
 
 Formula:
-
 Maximum Nodes = 2^(i-1)
 
-------------------------------------------------------------
-
 Examples
-
 Level 1 = 2^0 = 1
-
 Level 2 = 2^1 = 2
-
 Level 3 = 2^2 = 4
-
 Level 4 = 2^3 = 8
 
-============================================================
-THEOREM 2
-LEAF NODE FORMULA
-============================================================
+------------------------------------------------------------
+THEOREM 2: LEAF NODE FORMULA
 
 For Any Non-Empty Binary Tree
-
 n₀ = n₂ + 1
 
 Where:
-
 n₀ = Number of Leaf Nodes
-
 n₂ = Number of Nodes with Degree 2
 
-------------------------------------------------------------
-
 Example
-
           A
         /   \
        B     C
       / \   / \
      D  E  F  G
 
-------------------------------------------------------------
-
+----------------------------------
 Leaf Nodes:
-
 D, E, F, G
-
 n₀ = 4
 
-------------------------------------------------------------
-
+----------------------------------
 Degree 2 Nodes:
-
 A, B, C
-
 n₂ = 3
 
-------------------------------------------------------------
-
+----------------------------------
 Check:
-
 n₀ = n₂ + 1
-
 4 = 3 + 1
-
 TRUE
 
-============================================================
+------------------------------------------------------------
 COROLLARY
-============================================================
 
 For a Strictly Binary Tree
-
 Number of Leaf Nodes
+= Number of Internal Nodes + 1
 
-=
-
-Number of Internal Nodes + 1
-
-============================================================
-THEOREM 3
-VERTEX-EDGE RELATIONSHIP
-============================================================
+------------------------------------------------------------
+THEOREM 3: VERTEX-EDGE RELATIONSHIP
 
 Formula:
-
 V = E + 1
 
 Where:
-
 V = Number of Vertices (Nodes)
-
 E = Number of Edges
 
-------------------------------------------------------------
 
 Example
-
       A
      / \
     B   C
 
 Vertices = 3
-
 Edges = 2
 
 Check:
-
 3 = 2 + 1
-
 TRUE
 
-============================================================
+------------------------------------------------------------
 APPLICATIONS OF TREES
-============================================================
 
 • File Systems
 • Company Hierarchies
@@ -731,9 +491,8 @@ APPLICATIONS OF TREES
 • Operating Systems
 • DNS Hierarchy
 
-============================================================
+------------------------------------------------------------
 ADVANTAGES OF TREES
-============================================================
 
 • Represents hierarchical data naturally.
 • Fast searching and retrieval.
@@ -742,98 +501,12 @@ ADVANTAGES OF TREES
 • Used in databases and operating systems.
 • Suitable for large hierarchical datasets.
 
-============================================================
+------------------------------------------------------------
 DISADVANTAGES OF TREES
-============================================================
 
 • More complex than arrays and linked lists.
 • Requires extra memory for links/pointers.
 • Balancing may be required.
 • Traversal algorithms can be complex.
 
-============================================================
-IMPORTANT POINTS
-============================================================
-
-• Tree is a non-linear data structure.
-• Tree consists of nodes and edges.
-• Root node has no parent.
-• Leaf node has no children.
-• Internal node has at least one child.
-• Degree = Number of children.
-• Binary Tree allows maximum two children.
-• Left-Skewed Tree contains only left children.
-• Right-Skewed Tree contains only right children.
-• Strictly Binary Tree has 0 or 2 children.
-• Full Binary Tree has all leaves at same level.
-• Complete Binary Tree fills last level left to right.
-• Maximum nodes at level i = 2^(i−1).
-• n₀ = n₂ + 1
-• V = E + 1
-
-============================================================
-EXAM SHORT NOTES
-============================================================
-
-Tree:
-Non-linear hierarchical data structure.
-
-Root:
-Node with no parent.
-
-Child:
-Node directly below another node.
-
-Parent:
-Node directly above another node.
-
-Degree:
-Number of children of a node.
-
-Leaf Node:
-Node with no children.
-
-Internal Node:
-Node with at least one child.
-
-Forest:
-Collection of disjoint trees.
-
-Binary Tree:
-Tree with maximum two children per node.
-
-Left-Skewed Tree:
-Only left children.
-
-Right-Skewed Tree:
-Only right children.
-
-Strictly Binary Tree:
-Every node has 0 or 2 children.
-
-Full Binary Tree:
-Every internal node has 2 children and all leaves are at
-the same level.
-
-Complete Binary Tree:
-All levels filled except possibly last level. Last level
-filled left to right.
-
-Maximum Nodes at Level i:
-2^(i−1)
-
-Total Nodes in Full Binary Tree:
-n = 2^(h+1) − 1
-
-Height Formula:
-h = log₂(n+1) − 1
-
-Leaf Node Theorem:
-n₀ = n₂ + 1
-
-Vertex-Edge Theorem:
-V = E + 1
-
-Applications:
-File Systems, Databases, HTML/XML, AI, Operating Systems,
-Decision Trees, Binary Search Trees.
+------------------------------------------------------------
