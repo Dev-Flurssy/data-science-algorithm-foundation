@@ -1,0 +1,763 @@
+------------------------------------------------------------
+AVL TREES (HEIGHT BALANCED TREES)
+
+AVL Tree is a special type of Binary Search Tree (BST)
+that remains balanced after insertion and deletion.
+
+AVL Tree is named after:
+
+• Adelson-Velskii
+• Landis
+
+The inventors of the AVL Tree.
+
+------------------------------------------------------------
+WHY AVL TREES ARE NEEDED
+
+In a normal BST:
+
+Performance depends on the shape of the tree.
+
+------------------------------------------------------------
+
+Good BST
+
+        20
+       /  \
+     10    30
+    / \    / \
+   5  15 25  35
+
+Height is small.
+
+Searching is fast.
+
+------------------------------------------------------------
+
+Bad BST
+
+1
+ \
+  2
+   \
+    3
+     \
+      4
+       \
+        5
+
+Height is large.
+
+Searching becomes slow.
+
+------------------------------------------------------------
+
+Problem:
+
+Search time increases when BST becomes skewed.
+
+------------------------------------------------------------
+
+Solution:
+
+AVL Tree
+
+AVL Trees maintain balance automatically.
+
+------------------------------------------------------------
+PERFECTLY BALANCED TREE
+
+Definition:
+
+A Binary Search Tree in which:
+
+1. Height of left subtree and right subtree
+   are exactly equal.
+
+2. Left and right subtrees are also perfectly balanced.
+
+------------------------------------------------------------
+
+Example
+
+          4
+        /   \
+       2     6
+      / \   / \
+     1   3 5   7
+
+------------------------------------------------------------
+
+Left Height = Right Height
+
+Tree is perfectly balanced.
+
+------------------------------------------------------------
+
+Problem
+
+Perfect balance is difficult to maintain.
+
+Requires a fixed number of nodes.
+
+------------------------------------------------------------
+AVL TREE DEFINITION
+
+An AVL Tree is a Binary Search Tree such that:
+
+1. Height difference between left subtree and
+   right subtree is at most 1.
+
+2. Left and right subtrees are also AVL Trees.
+
+------------------------------------------------------------
+
+Meaning
+
+The tree is nearly balanced,
+not necessarily perfectly balanced.
+
+------------------------------------------------------------
+BALANCE FACTOR
+
+Balance Factor tells whether a node is balanced.
+
+------------------------------------------------------------
+
+Formula
+
+BF(x) = Height(Left Subtree) - Height(Right Subtree)
+
+------------------------------------------------------------
+
+BF(x) = XL - XR
+
+Where:
+
+XL = Height of Left Subtree
+
+XR = Height of Right Subtree
+
+------------------------------------------------------------
+ALLOWED BALANCE FACTORS
+
+AVL Tree permits only:
+
+BF = -1
+
+BF = 0
+
+BF = +1
+
+------------------------------------------------------------
+
+Balanced AVL Nodes
+
+      A
+     / \
+    B   C
+
+BF = 0
+
+------------------------------------------------------------
+
+Left Heavy
+
+      A
+     /
+    B
+
+BF = +1
+
+------------------------------------------------------------
+
+Right Heavy
+
+      A
+       \
+        B
+
+BF = -1
+
+------------------------------------------------------------
+
+Valid AVL Factors
+
+{-1, 0, +1}
+
+------------------------------------------------------------
+
+Invalid AVL Factors
+
+{-2, +2}
+
+------------------------------------------------------------
+
+Whenever BF becomes +2 or -2
+
+AVL Property is violated.
+
+Rebalancing is required.
+
+------------------------------------------------------------
+HEIGHT OF AVL TREE
+
+Important Property:
+
+Height of AVL Tree
+
+= O(log n)
+
+------------------------------------------------------------
+
+Meaning
+
+As data grows,
+height increases very slowly.
+
+------------------------------------------------------------
+
+Result
+
+Searching remains efficient.
+
+------------------------------------------------------------
+
+Time Complexity
+
+Search = O(log n)
+
+Insertion = O(log n)
+
+Deletion = O(log n)
+
+------------------------------------------------------------
+INSERTION IN AVL TREE
+
+Insertion starts exactly like BST insertion.
+
+------------------------------------------------------------
+
+Step 1
+
+Insert element normally into BST.
+
+------------------------------------------------------------
+
+Step 2
+
+Move upward toward the root.
+
+------------------------------------------------------------
+
+Step 3
+
+Check Balance Factor of every ancestor.
+
+------------------------------------------------------------
+
+Step 4
+
+If BF becomes:
+
++2 or -2
+
+Perform rotation.
+
+------------------------------------------------------------
+ROTATIONS IN AVL TREE
+
+There are four rotations:
+
+1. LL Rotation
+2. RR Rotation
+3. LR Rotation
+4. RL Rotation
+
+------------------------------------------------------------
+1. LL ROTATION
+
+Condition
+
+New node inserted into
+
+Left subtree of Left child.
+
+------------------------------------------------------------
+
+Before
+
+        A(+2)
+       /
+      B(+1)
+     /
+    C
+
+------------------------------------------------------------
+
+Tree becomes left-heavy.
+
+------------------------------------------------------------
+
+Solution
+
+Single Right Rotation
+
+------------------------------------------------------------
+
+After
+
+        B
+       / \
+      C   A
+
+------------------------------------------------------------
+
+Called:
+
+LL Rotation
+
+------------------------------------------------------------
+2. RR ROTATION
+
+Condition
+
+New node inserted into
+
+Right subtree of Right child.
+
+------------------------------------------------------------
+
+Before
+
+     A(-2)
+        \
+         B(-1)
+           \
+            C
+
+------------------------------------------------------------
+
+Tree becomes right-heavy.
+
+------------------------------------------------------------
+
+Solution
+
+Single Left Rotation
+
+------------------------------------------------------------
+
+After
+
+        B
+       / \
+      A   C
+
+------------------------------------------------------------
+
+Called:
+
+RR Rotation
+
+------------------------------------------------------------
+3. LR ROTATION
+
+Condition
+
+New node inserted into
+
+Right subtree of Left child.
+
+------------------------------------------------------------
+
+Before
+
+        A(+2)
+       /
+      C(-1)
+       \
+        B
+
+------------------------------------------------------------
+
+Balance factors have opposite signs.
+
+------------------------------------------------------------
+
+Step 1
+
+Left Rotation on C
+
+------------------------------------------------------------
+
+        A
+       /
+      B
+     /
+    C
+
+------------------------------------------------------------
+
+Step 2
+
+Right Rotation on A
+
+------------------------------------------------------------
+
+After
+
+        B
+       / \
+      C   A
+
+------------------------------------------------------------
+
+Called:
+
+LR Rotation
+
+------------------------------------------------------------
+4. RL ROTATION
+
+Condition
+
+New node inserted into
+
+Left subtree of Right child.
+
+------------------------------------------------------------
+
+Before
+
+      A(-2)
+         \
+          C(+1)
+         /
+        B
+
+------------------------------------------------------------
+
+Balance factors have opposite signs.
+
+------------------------------------------------------------
+
+Step 1
+
+Right Rotation on C
+
+------------------------------------------------------------
+
+Step 2
+
+Left Rotation on A
+
+------------------------------------------------------------
+
+After
+
+        B
+       / \
+      A   C
+
+------------------------------------------------------------
+
+Called:
+
+RL Rotation
+
+------------------------------------------------------------
+ROTATION MEMORY TRICK
+
+Same Signs
+
+Use Single Rotation
+
+------------------------------------------------------------
+
+(+2 , +1)
+
+LL Rotation
+
+------------------------------------------------------------
+
+(-2 , -1)
+
+RR Rotation
+
+------------------------------------------------------------
+
+Opposite Signs
+
+Use Double Rotation
+
+------------------------------------------------------------
+
+(+2 , -1)
+
+LR Rotation
+
+------------------------------------------------------------
+
+(-2 , +1)
+
+RL Rotation
+
+------------------------------------------------------------
+EXAMPLE OF AVL INSERTION
+
+Insert:
+
+50
+
+------------------------------------------------------------
+
+Tree
+
+50
+
+Balanced
+
+------------------------------------------------------------
+
+Insert:
+
+17
+
+        50
+       /
+      17
+
+BF = +1
+
+Balanced
+
+------------------------------------------------------------
+
+Insert:
+
+12
+
+        50
+       /
+      17
+     /
+    12
+
+------------------------------------------------------------
+
+BF(50) = +2
+
+AVL Property Violated
+
+------------------------------------------------------------
+
+Apply LL Rotation
+
+------------------------------------------------------------
+
+Result
+
+        17
+       /  \
+      12   50
+
+Balanced again.
+
+------------------------------------------------------------
+AVL DELETION
+
+Deleting a node may also destroy AVL balance.
+
+------------------------------------------------------------
+
+Process
+
+1. Delete node like BST.
+2. Move upward to root.
+3. Check balance factors.
+4. Rotate whenever necessary.
+
+------------------------------------------------------------
+
+Unlike insertion:
+
+Multiple nodes may become unbalanced.
+
+------------------------------------------------------------
+
+Therefore:
+
+Several rotations may be required.
+
+------------------------------------------------------------
+EXAMPLE OF AVL DELETION
+
+Suppose a node is deleted.
+
+Balance Factor becomes:
+
+BF = -2
+
+------------------------------------------------------------
+
+Tree becomes right-heavy.
+
+------------------------------------------------------------
+
+Apply RR Rotation
+
+------------------------------------------------------------
+
+Tree becomes balanced again.
+
+------------------------------------------------------------
+ADVANTAGES OF AVL TREE
+
+• Guaranteed balanced structure.
+• Fast searching.
+• Fast insertion.
+• Fast deletion.
+• Prevents skewed BST formation.
+• Height remains small.
+• Search complexity remains O(log n).
+
+------------------------------------------------------------
+DISADVANTAGES OF AVL TREE
+
+• More complex than BST.
+• Rotations increase overhead.
+• Extra space needed for Balance Factor.
+• Insertion and deletion are more expensive than BST.
+
+------------------------------------------------------------
+AVL TREE VS BST
+
+BST
+
+• May become skewed.
+• Search can become O(n).
+• Simpler implementation.
+
+------------------------------------------------------------
+
+AVL TREE
+
+• Automatically balanced.
+• Search remains O(log n).
+• Uses rotations.
+
+------------------------------------------------------------
+IMPORTANT POINTS
+
+• AVL Tree is a self-balancing BST.
+• Named after Adelson-Velskii and Landis.
+• Balance Factor = Left Height − Right Height.
+• Valid Balance Factors:
+  -1, 0, +1
+• Invalid Balance Factors:
+  -2, +2
+• Height of AVL Tree = O(log n).
+• Searching = O(log n).
+• Insertion = O(log n).
+• Deletion = O(log n).
+• Rebalancing is performed using rotations.
+• Four rotations exist:
+  LL, RR, LR, RL.
+• Single rotations:
+  LL and RR.
+• Double rotations:
+  LR and RL.
+
+------------------------------------------------------------
+EXAM SHORT NOTES
+
+AVL Tree:
+
+Height-balanced Binary Search Tree.
+
+------------------------------------------------------------
+
+Balance Factor:
+
+BF = Height(Left) - Height(Right)
+
+------------------------------------------------------------
+
+Allowed Values:
+
+-1, 0, +1
+
+------------------------------------------------------------
+
+AVL Violation:
+
+BF = +2
+
+or
+
+BF = -2
+
+------------------------------------------------------------
+
+LL Rotation:
+
+Left of Left
+
+Single Right Rotation
+
+------------------------------------------------------------
+
+RR Rotation:
+
+Right of Right
+
+Single Left Rotation
+
+------------------------------------------------------------
+
+LR Rotation:
+
+Right of Left
+
+Double Rotation
+
+------------------------------------------------------------
+
+RL Rotation:
+
+Left of Right
+
+Double Rotation
+
+------------------------------------------------------------
+
+Height of AVL Tree:
+
+O(log n)
+
+------------------------------------------------------------
+
+Complexities:
+
+Search   = O(log n)
+
+Insert   = O(log n)
+
+Delete   = O(log n)
+
+------------------------------------------------------------
+
+Advantages:
+
+Balanced,
+Fast Search,
+Efficient Updates
+
+------------------------------------------------------------
+
+Disadvantages:
+
+Complex,
+Requires Rotations,
+Extra Balance Factor Storage
