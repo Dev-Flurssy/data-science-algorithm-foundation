@@ -1,0 +1,341 @@
+GRAPH REPRESENTATION
+
+A graph can be represented in memory using either an adjacency list or an adjacency matrix.
+
+------------------------------------------------------------
+
+ADJACENCY LIST
+An adjacency list stores all vertices connected to each vertex using linked lists.
+
+Used When:
+• Number of edges is relatively small.
+• Sparse graphs.
+
+Example:
+1 → 2, 4
+2 → 3
+3 → 5
+4 → 1
+5 → 3
+
+Representation:
+1 : 2 → 4
+2 : 3
+3 : 5
+4 : 1
+5 : 3
+
+Properties:
+• Requires less memory for sparse graphs.
+• Easy to store neighbors of a vertex.
+• Vertices can be stored in any order.
+
+Disadvantage:
+Finding whether a specific edge exists may require searching the list.
+
+------------------------------------------------------------
+ADJACENCY MATRIX
+
+An adjacency matrix stores graph information in a two-dimensional matrix.
+
+Rule:
+M[i][j] = 1  → Edge exists
+M[i][j] = 0  → No edge exists
+
+Example:
+      1 2 3 4
+1     0 1 0 1
+2     0 0 1 0
+3     0 0 0 1
+4     1 0 0 0
+
+Properties:
+• Fast edge lookup.
+• Easy to implement.
+• Uses more memory.
+
+Disadvantage:
+Consumes large memory for sparse graphs.
+
+------------------------------------------------------------
+ADJACENCY MATRIX FOR WEIGHTED GRAPHS
+
+In a weighted graph, the matrix stores weights instead of 1.
+
+Example:
+      A  B  C
+A     0  5  2
+B     5  0  4
+C     2  4  0
+
+Meaning:
+• Weight(A,B) = 5
+• Weight(A,C) = 2
+• Weight(B,C) = 4
+
+Properties:
+• Stores edge weights directly.
+• Useful for shortest-path algorithms.
+
+------------------------------------------------------------
+TREE AS A GRAPH
+
+A tree can be viewed as a special type of graph.
+
+Properties:
+• Connected
+• No cycles
+• V vertices
+• V − 1 edges
+
+Example:
+    A
+   / \
+  B   C
+ /
+D
+
+Vertices = 4
+Edges = 3
+
+Since:
+Edges = Vertices − 1
+The graph is a tree.
+
+------------------------------------------------------------
+GRAPH TRAVERSAL
+
+Graph traversal is the process of visiting all vertices in a graph.
+
+Problem: Graphs may contain cycles, causing the same vertex to be visited multiple times.
+Solution: Use a Visited Array.
+
+Visited Array:
+• Stores whether a vertex has already been processed.
+• Prevents infinite loops.
+• Avoids revisiting vertices.
+
+------------------------------------------------------------
+DEPTH-FIRST SEARCH (DFS)
+
+DFS explores a path completely before exploring other paths.
+
+Data Structure Used: Stack
+
+Idea: Go as deep as possible before backtracking.
+
+Steps:
+1. Start at a vertex.
+2. Mark it visited.
+3. Push it onto the stack.
+4. Visit an unvisited adjacent vertex.
+5. Continue deeper.
+6. Backtrack when no unvisited vertex exists.
+
+Example:
+A
+├── B
+│   ├── E
+│   └── F
+│       └── C
+│           └── H
+└── D
+
+Possible DFS Traversal:
+A B E G F C H D
+
+Properties:
+• Uses Stack.
+• Backtracking is required.
+• Explores depth before breadth.
+
+Applications:
+• Maze solving
+• Cycle detection
+• Topological sorting
+• Finding connected components
+
+------------------------------------------------------------
+DFS ALGORITHM
+
+DFS visits vertices by going deep along one branch before exploring others.
+
+Algorithm:
+
+1. Mark starting vertex as visited.
+2. Push it onto the stack.
+3. While stack is not empty:
+   • Pop a vertex.
+   • Process it.
+   • Push all unvisited adjacent vertices.
+4. Repeat until stack becomes empty.
+
+------------------------------------------------------------
+BREADTH-FIRST SEARCH (BFS)
+
+BFS explores all neighbors before moving to the next level.
+
+Data Structure Used: Queue
+
+Idea: Visit vertices level by level.
+
+Steps:
+1. Start at a vertex.
+2. Mark it visited.
+3. Insert it into the queue.
+4. Remove front vertex.
+5. Visit all unvisited neighbors.
+6. Insert neighbors into the queue.
+7. Repeat until queue becomes empty.
+
+Example:
+        A
+      / | \
+     B  D  G
+     |  |
+     E  F
+        |
+        C
+        |
+        H
+
+Possible BFS Traversal:
+A B D G E F C H
+
+Properties:
+• Uses Queue.
+• Visits level-by-level.
+• Finds shortest path in an unweighted graph.
+
+Applications:
+• Shortest Path
+• Social Networks
+• Web Crawlers
+• Network Broadcasting
+
+------------------------------------------------------------
+DFS VS BFS
+
+DFS:
+• Uses Stack
+• Goes deep first
+• Requires backtracking
+• Lower memory usage
+
+BFS:
+• Uses Queue
+• Explores level by level
+• No backtracking
+• Finds shortest path in unweighted graphs
+
+------------------------------------------------------------
+AND/OR GRAPHS
+
+AND/OR graphs are used for problem-solving by breaking a problem into smaller subproblems.
+
+Idea:
+A problem can be solved using:
+• AND relationship
+• OR relationship
+
+------------------------------------------------------------
+AND NODE
+
+An AND node requires all child nodes to be solved.
+
+Example:
+A
+│
+├── B
+└── C
+
+To solve A:
+Solve B AND C
+
+------------------------------------------------------------
+OR NODE
+
+An OR node requires only one child node to be solved.
+
+Example:
+
+    A
+  / | \
+ B  C  D
+
+To solve A:
+
+Solve B OR C OR D
+
+------------------------------------------------------------
+AND/OR GRAPH
+
+An AND/OR graph combines both AND and OR relationships.
+
+Example:
+To solve A:
+
+• Solve B and C
+OR
+• Solve D
+OR
+• Solve E
+
+Properties:
+• Useful in Artificial Intelligence.
+• Represents decision-making problems.
+• Breaks complex problems into smaller tasks.
+
+------------------------------------------------------------
+AND/OR GRAPH WITH SHARED SUBPROBLEMS
+
+In some AND/OR graphs, multiple problems may require the same subproblem.
+
+Example:
+A
+├── B
+│   └── F
+└── C
+    └── F
+
+Here: F is shared by both B and C.
+
+Properties:
+• Not necessarily a tree.
+• May contain shared paths.
+• Reduces repeated work.
+
+------------------------------------------------------------
+COST IN AND/OR GRAPHS
+
+Each edge can have an associated cost.
+
+Rule:
+Total Cost = Sum of edge costs in the chosen solution path.
+
+Example:
+P1
+├── P2 (2)
+│   ├── P5 (1)
+│   └── P6 (1)
+├── P3 (3)
+│   ├── P6 (2)
+│   └── P7 (1)
+└── P4 (8)
+
+Calculations:
+
+Through P2:
+2 + 1 + 1 = 4
+
+Through P3:
+3 + 2 + 1 = 6
+
+Through P4:
+8
+
+Minimum Cost Solution:
+P1 → P2 → (P5 + P6)
+Total Cost = 4
+
+------------------------------------------------------------
