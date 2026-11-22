@@ -20,10 +20,7 @@ Suppose a node is at Level 10.
 If it is rarely used, No problem.
 But if it is frequently accessed, Searching becomes expensive.
 
-Solution
-Move frequently accessed nodes
-closer to the root.
-
+Solution: Move frequently accessed nodes closer to the root.
 Result: Average access time decreases.
 
 ------------------------------------------------------------
@@ -76,7 +73,7 @@ G = Grandparent of X
 ----------------------------------
 Splaying uses:
 
-1. Zig
+1. Zig or Zag
 2. Zig-Zig
 3. Zig-Zag
 
@@ -138,7 +135,6 @@ Step 1: Rotate P about G
 Step 2: Rotate X about P
 
 Result
-
         X
          \
           P
@@ -319,7 +315,6 @@ AVL TREE
 • Search time guaranteed O(log n).
 
 ------------------------------------------------------------
-
 SPLAY TREE
 
 • Not strictly balanced.
