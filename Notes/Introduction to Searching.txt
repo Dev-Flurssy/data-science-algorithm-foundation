@@ -1,4 +1,5 @@
 INTRODUCTION TO SEARCHING
+
 Searching is the process of finding a specific item in a collection of data.
 
 Examples:
@@ -13,76 +14,55 @@ Purpose:
 • Easy access to required records
 
 ------------------------------------------------------------
-
 WHY SEARCHING IS IMPORTANT
+
 Searching helps locate desired information quickly from a large collection of data.
 
 Example:
+List: 13 12 18 6 -4 9
 
-List:
-
-13 12 18 6 -4 9
-
-Search Key:
-
-6
-
-Result:
-
-Element Found
+Search Key: 6
+Result: Element Found
 
 Without searching, finding information manually would be time-consuming.
 
 ------------------------------------------------------------
-
 SEARCH KEY
+
 A search key is the value used to identify and locate a specific item.
 
 Example:
+List: 13 12 18 6 -4 9
 
-List:
-
-13 12 18 6 -4 9
-
-Search Key:
-
-6
-
-Here:
-
-6 is the key.
+Search Key: 6
+Here: 6 is the key.
 
 Properties:
 • Unique identifier of the data item.
 • Used for comparison during searching.
 
 ------------------------------------------------------------
-
 TYPES OF SEARCHING
 
 Common Searching Techniques:
-
 • Linear Search
 • Binary Search
 
 ------------------------------------------------------------
-
 LINEAR SEARCH
+
 Linear Search checks each element one by one until the required key is found.
 
-Idea:
-Start from the first element and move sequentially through the list.
+Idea: Start from the first element and move sequentially through the list.
 
 Also Called:
 • Sequential Search
 • Serial Search
 
 ------------------------------------------------------------
-
 WORKING OF LINEAR SEARCH
 
 Steps:
-
 1. Start from the first element.
 2. Compare it with the key.
 3. If equal, stop.
@@ -90,71 +70,43 @@ Steps:
 5. Repeat until the key is found or the list ends.
 
 ------------------------------------------------------------
-
 LINEAR SEARCH EXAMPLE (KEY FOUND)
 
-List:
+List: 13 12 18 6 -4 9
 
-13 12 18 6 -4 9
-
-Key:
-
-6
+Key: 6
 
 Comparisons:
-
 13 = 6 ? No
-
 12 = 6 ? No
-
 18 = 6 ? No
-
 6 = 6 ? Yes
 
 Result:
-
 Element Found
-
 Position = 4
-
 Index = 3
-
 Number of Comparisons = 4
 
 ------------------------------------------------------------
-
 LINEAR SEARCH EXAMPLE (KEY NOT FOUND)
 
-List:
-
-13 12 18 6 -4 9
-
-Key:
-
-17
+List: 13 12 18 6 -4 9
+Key: 17
 
 Comparisons:
-
 13 = 17 ? No
-
 12 = 17 ? No
-
 18 = 17 ? No
-
 6 = 17 ? No
-
 -4 = 17 ? No
-
 9 = 17 ? No
 
 Result:
-
 Search Unsuccessful
-
 Number of Comparisons = 6
 
 ------------------------------------------------------------
-
 LINEAR SEARCH ALGORITHM
 
 1. Start from index 0.
@@ -167,7 +119,6 @@ LINEAR SEARCH ALGORITHM
    • Report unsuccessful search.
 
 ------------------------------------------------------------
-
 ADVANTAGES OF LINEAR SEARCH
 
 • Very simple
@@ -176,7 +127,6 @@ ADVANTAGES OF LINEAR SEARCH
 • No preprocessing required
 
 ------------------------------------------------------------
-
 DISADVANTAGES OF LINEAR SEARCH
 
 • Slow for large datasets
@@ -184,48 +134,27 @@ DISADVANTAGES OF LINEAR SEARCH
 • Inefficient compared to Binary Search
 
 ------------------------------------------------------------
-
 TIME COMPLEXITY OF LINEAR SEARCH
 
-Best Case:
-
-O(1)
-
-(Key found at first position)
-
-Average Case:
-
-O(n)
-
-Worst Case:
-
-O(n)
-
-(Key found at the end or not present)
+Best Case: O(1) (Key found at first position)
+Average Case: O(n)
+Worst Case: O(n) (Key found at the end or not present)
 
 ------------------------------------------------------------
-
 BINARY SEARCH
+
 Binary Search finds an element by repeatedly dividing a sorted list into halves.
 
-Requirement:
-The list must be sorted.
-
-Idea:
-Check the middle element and eliminate half of the remaining elements after each comparison.
+Requirement: The list must be sorted.
+Idea: Check the middle element and eliminate half of the remaining elements after each comparison.
 
 ------------------------------------------------------------
-
 WHY BINARY SEARCH IS FASTER
 
 Instead of checking every element:
-
-Linear Search:
-
-1 → 2 → 3 → 4 → 5 → 6 → 7
+Linear Search: 1 → 2 → 3 → 4 → 5 → 6 → 7
 
 Binary Search:
-
 Check Middle
 ↓
 Discard Half
@@ -237,21 +166,16 @@ Discard Half Again
 This dramatically reduces comparisons.
 
 ------------------------------------------------------------
-
 BINARY SEARCH CONDITIONS
 
 The list must be:
-
 • Sorted in ascending order
 OR
 • Sorted in descending order
 
-Without sorting:
-
-Binary Search cannot work correctly.
+Without sorting: Binary Search cannot work correctly.
 
 ------------------------------------------------------------
-
 MIDDLE ELEMENT
 
 The middle position is calculated using:
@@ -259,124 +183,79 @@ The middle position is calculated using:
 mid = (first + last) // 2
 
 Example:
-
-List:
-
-2 3 5 7 10 11 12
-
-Indexes:
-
-0 1 2 3 4 5 6
+List: 2 3 5 7 10 11 12
+Indexes: 0 1 2 3 4 5 6
 
 Calculation:
-
 mid = (0 + 6) // 2
-
 mid = 3
-
 Middle Element = 7
 
 ------------------------------------------------------------
-
 WORKING OF BINARY SEARCH
 
 Three outcomes are possible:
-
-1. Middle element equals key.
-   • Search successful.
-
-2. Middle element greater than key.
-   • Search left half.
-
-3. Middle element less than key.
-   • Search right half.
+1. Middle element equals key: Search successful.
+2. Middle element greater than key: Search left half.
+3. Middle element less than key: Search right half.
 
 ------------------------------------------------------------
-
 BINARY SEARCH EXAMPLE
 
-Sorted List:
+Sorted List: 2 3 5 7 10 11 12
+Key: 10
 
-2 3 5 7 10 11 12
-
-Key:
-
-10
-
-------------------------------------------------------------
-
+--------------------------------
 ITERATION 1
 
 first = 0
-
 last = 6
 
 mid = (0 + 6) // 2 = 3
-
 numList[mid] = 7
 
 Compare:
-
 7 = 10 ? No
-
 10 > 7
-
 Search Right Half
 
 Update:
-
 first = mid + 1 = 4
 
-------------------------------------------------------------
-
+--------------------------------
 ITERATION 2
 
 first = 4
-
 last = 6
 
 mid = (4 + 6) // 2 = 5
-
 numList[mid] = 11
 
 Compare:
-
 11 = 10 ? No
-
 10 < 11
-
 Search Left Half
 
 Update:
-
 last = mid - 1 = 4
 
-------------------------------------------------------------
-
+--------------------------------
 ITERATION 3
 
 first = 4
-
 last = 4
 
 mid = (4 + 4) // 2 = 4
-
 numList[mid] = 10
 
 Compare:
-
 10 = 10 ? Yes
 
-Result:
-
-Element Found
-
+Result: Element Found
 Position = 5
-
 Index = 4
 
 ------------------------------------------------------------
-
 BINARY SEARCH ALGORITHM
 
 1. Set first = 0.
@@ -392,7 +271,6 @@ BINARY SEARCH ALGORITHM
 8. Repeat until key is found or search space becomes empty.
 
 ------------------------------------------------------------
-
 ADVANTAGES OF BINARY SEARCH
 
 • Very fast
@@ -401,7 +279,6 @@ ADVANTAGES OF BINARY SEARCH
 • Reduces search space by half every step
 
 ------------------------------------------------------------
-
 DISADVANTAGES OF BINARY SEARCH
 
 • List must be sorted
@@ -409,65 +286,46 @@ DISADVANTAGES OF BINARY SEARCH
 • Sorting may take extra time
 
 ------------------------------------------------------------
-
 TIME COMPLEXITY OF BINARY SEARCH
 
-Best Case:
+Best Case: O(1) (Key found immediately)
 
-O(1)
+Average Case: O(log n)
 
-(Key found immediately)
-
-Average Case:
-
-O(log n)
-
-Worst Case:
-
-O(log n)
-
-(Key not found or found after maximum divisions)
+Worst Case: O(log n) (Key not found or found after maximum divisions)
 
 ------------------------------------------------------------
-
 LINEAR SEARCH VS BINARY SEARCH
 
 Linear Search:
-
 • Works on unsorted data
 • Checks elements one by one
 • Slower for large datasets
 • Time Complexity = O(n)
 
 Binary Search:
-
 • Requires sorted data
 • Divides search space by half
 • Much faster for large datasets
 • Time Complexity = O(log n)
 
 ------------------------------------------------------------
-
 WHEN TO USE LINEAR SEARCH
 
 Use Linear Search When:
-
 • Data is small
 • Data is unsorted
 • Simplicity is important
 
 ------------------------------------------------------------
-
 WHEN TO USE BINARY SEARCH
 
 Use Binary Search When:
-
 • Data is sorted
 • Dataset is large
 • Fast searching is required
 
 ------------------------------------------------------------
-
 COMPARISON SUMMARY
 
 Linear Search:
@@ -481,7 +339,6 @@ Binary Search:
 • O(log n)
 
 Conclusion:
-
 For small unsorted data → Linear Search
-
 For large sorted data → Binary Search
+------------------------------------------------------------
