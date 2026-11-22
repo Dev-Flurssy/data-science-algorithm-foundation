@@ -599,21 +599,18 @@ Properties:
 • Breaks complex problems into smaller tasks.
 
 ------------------------------------------------------------
-
 AND/OR GRAPH WITH SHARED SUBPROBLEMS
+
 In some AND/OR graphs, multiple problems may require the same subproblem.
 
 Example:
-
 A
 ├── B
 │   └── F
 └── C
     └── F
 
-Here:
-
-F is shared by both B and C.
+Here: F is shared by both B and C.
 
 Properties:
 • Not necessarily a tree.
@@ -621,15 +618,14 @@ Properties:
 • Reduces repeated work.
 
 ------------------------------------------------------------
-
 COST IN AND/OR GRAPHS
+
 Each edge can have an associated cost.
 
 Rule:
 Total Cost = Sum of edge costs in the chosen solution path.
 
 Example:
-
 P1
 ├── P2 (2)
 │   ├── P5 (1)
@@ -642,19 +638,14 @@ P1
 Calculations:
 
 Through P2:
-
 2 + 1 + 1 = 4
 
 Through P3:
-
 3 + 2 + 1 = 6
 
 Through P4:
-
 8
 
 Minimum Cost Solution:
-
 P1 → P2 → (P5 + P6)
-
 Total Cost = 4

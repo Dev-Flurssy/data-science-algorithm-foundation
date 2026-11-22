@@ -1,0 +1,457 @@
+BI-CONNECTED COMPONENTS
+
+Bi-connected components are maximal connected subgraphs that remain connected even after removing any single vertex.
+
+Importance:
+• Improves network reliability.
+• Identifies critical vertices.
+• Helps detect weak points in a graph.
+• Used in communication and transportation networks.
+
+------------------------------------------------------------
+CONNECTIVITY
+
+A graph is connected if there is a path between every pair of vertices.
+
+Example:
+A ─── B ─── C
+│
+D
+
+All vertices can reach one another.
+
+Properties:
+• No isolated parts.
+• Every vertex is reachable from every other vertex.
+
+------------------------------------------------------------
+N-CONNECTED GRAPH
+
+A graph is n-connected if there are at least n different paths between any two vertices.
+
+Condition: Paths must not share common vertices.
+Purpose: If one path fails, other paths still maintain connectivity.
+
+------------------------------------------------------------
+BI-CONNECTED (2-CONNECTED) GRAPH
+
+A bi-connected graph has at least two different paths between every pair of vertices.
+
+Example:
+A ---- B
+|      |
+|      |
+D ---- C
+
+Between A and C:
+Path 1:
+A → B → C
+
+Path 2:
+A → D → C
+
+Properties:
+• No single vertex can disconnect the graph.
+• More reliable than ordinary connected graphs.
+
+------------------------------------------------------------
+ARTICULATION POINT (CUT VERTEX)
+
+An articulation point is a vertex whose removal disconnects the graph.
+
+Example:
+A ---- B ---- C
+       |
+       D
+
+If B is removed:
+A      C
+       D
+
+The graph becomes disconnected.
+Therefore: B is an articulation point.
+
+Properties:
+• Critical vertex.
+• Acts as a connector between regions.
+• Failure disconnects the graph.
+
+------------------------------------------------------------
+BRIDGE
+
+A bridge is an edge whose removal disconnects the graph.
+
+Example:
+A ---- B ---- C
+
+If edge (B,C) is removed:
+A ---- B     C
+
+The graph becomes disconnected.
+Therefore:
+(B, C) is a bridge.
+
+Properties:
+• Critical connection.
+• Removal increases the number of connected components.
+
+------------------------------------------------------------
+BI-CONNECTED COMPONENT
+
+A bi-connected component is a maximal bi-connected subgraph.
+
+Meaning:
+• The subgraph is bi-connected.
+• No additional vertex or edge can be included while keeping the same bi-connected structure.
+
+Properties:
+• Formed after removing articulation points.
+• Contains no articulation point internally.
+
+------------------------------------------------------------
+MAXIMAL BI-CONNECTED SUBGRAPH
+
+A maximal bi-connected subgraph is the largest possible bi-connected subgraph.
+
+Definition: 
+G' = (V', E')
+
+is maximal if there does not exist a larger bi-connected graph:
+G" = (V", E")
+
+such that:
+V' ⊂ V"
+and
+E' ⊂ E"
+
+Meaning:
+You cannot add more vertices or edges and still remain within the same bi-connected component.
+
+------------------------------------------------------------
+RELATIONSHIP BETWEEN BI-CONNECTED COMPONENTS
+
+Properties:
+• Two bi-connected components can share at most one vertex.
+• The shared vertex is always an articulation point.
+• An edge cannot belong to two different bi-connected components.
+
+This allows the graph to be divided into independent robust regions.
+
+------------------------------------------------------------
+WHY ARTICULATION POINTS ARE BAD
+
+Consider a communication network.
+
+Example:
+Computer A ---- Router B ---- Computer C
+
+If Router B fails:
+Computer A cannot communicate with Computer C.
+
+Problem: A single failure disconnects the network.
+Solution: Remove articulation points by creating alternate paths.
+
+------------------------------------------------------------
+CONVERTING A GRAPH INTO A BI-CONNECTED GRAPH
+
+Goal: Ensure articulation points no longer disconnect the graph.
+Method: Add extra edges between vertices belonging to different bi-connected components.
+Result: Alternative routes are created.
+
+Benefits:
+• Increased reliability.
+• Fault tolerance.
+• Better network robustness.
+
+------------------------------------------------------------
+DEPTH-FIRST SPANNING TREE
+
+A Depth-First Spanning Tree is produced using DFS traversal.
+
+Properties:
+• Contains all vertices.
+• Contains only the edges chosen by DFS.
+• Forms a tree structure.
+
+Edge Types:
+1. Tree Edge (Forward Edge)
+   • Included in DFS tree.
+
+2. Back Edge
+   • Present in the original graph.
+   • Not included in the DFS tree.
+   • Connects a node to one of its ancestors.
+
+------------------------------------------------------------
+DEPTH-FIRST NUMBER (DFN)
+
+The depth-first number indicates the order in which vertices are visited during DFS.
+
+Example:
+Visit Order:
+A → B → C → D
+
+Then:
+DFN(A) = 1
+DFN(B) = 2
+DFN(C) = 3
+DFN(D) = 4
+
+Purpose:
+• Helps identify articulation points.
+• Used in bi-connected component algorithms.
+
+------------------------------------------------------------
+RULE 1: ROOT ARTICULATION POINT
+
+The root of a DFS tree is an articulation point if it has two or more children.
+
+Example:
+      A
+     / \
+    B   C
+
+Removing A:
+B      C
+
+The graph becomes disconnected.
+Therefore:
+A is an articulation point.
+
+------------------------------------------------------------
+RULE 2: LEAF VERTEX
+
+A leaf node in a DFS spanning tree is never an articulation point.
+Reason: Removing a leaf does not disconnect any other vertices.
+
+Example:
+A ---- B ---- C
+
+Removing C:
+A ---- B
+
+The graph remains connected.
+
+------------------------------------------------------------
+RULE 3: INTERNAL ARTICULATION POINT
+
+A non-root, non-leaf vertex is an articulation point if no back edge connects its descendants to its ancestors.
+
+Reason: Without a back edge, descendants lose every alternative route.
+
+Example:
+A
+|
+B
+|
+C
+|
+D
+
+Removing B disconnects C and D from A.
+Therefore: B is an articulation point.
+
+------------------------------------------------------------
+LOW VALUE L(u)
+
+L(u) represents the smallest DFN reachable from vertex u using:
+• Descendants of u
+• One back edge
+
+Purpose: Determine whether a descendant has an alternate route to an ancestor.
+
+Interpretation:
+Small L(u) → Strong connectivity.
+Large L(u) → Possible articulation point.
+
+------------------------------------------------------------
+ARTICULATION POINT CONDITION
+
+For a non-root vertex u:
+u is an articulation point if it has a child w such that:
+
+L(w) ≥ DFN(u)
+Meaning: The subtree rooted at w cannot reach an ancestor of u.
+Therefore: Removing u disconnects that subtree.
+
+------------------------------------------------------------
+SHORTEST-PATH PROBLEM
+
+The shortest-path problem finds the minimum distance path between vertices.
+
+Goal: Travel from one vertex to another using the minimum total cost.
+
+Applications:
+• GPS Navigation
+• Internet Routing
+• Transportation Systems
+• Network Design
+
+------------------------------------------------------------
+LINK DISTANCE
+
+Link distance is the number of edges in a path.
+
+Example:
+A → B → C → D
+
+Link Distance: 3 edges
+Shortest path: Path containing the fewest edges.
+
+------------------------------------------------------------
+WEIGHTED GRAPH DISTANCE
+
+In weighted graphs, path length is the sum of edge weights.
+
+Example:
+A --2-- B --3-- C
+
+Distance(A, C):
+2 + 3 = 5
+
+Formula:
+Length(Path) =
+Sum of all edge weights
+
+------------------------------------------------------------
+SINGLE-SOURCE SHORTEST-PATH PROBLEM
+
+The single-source shortest-path problem finds shortest paths from one source vertex to all other vertices.
+
+Given:
+• Graph G
+• Source Vertex S
+
+Find: Shortest distance from S to every other vertex.
+
+------------------------------------------------------------
+DIJKSTRA'S ALGORITHM
+
+Dijkstra's Algorithm finds shortest paths in a weighted graph with non-negative weights.
+
+Idea: Always expand the vertex with the smallest known distance.
+
+Properties:
+• Greedy Algorithm
+• Works only with non-negative weights
+• Produces shortest paths from one source
+
+------------------------------------------------------------
+DIJKSTRA'S ALGORITHM STEPS
+
+1. Set source distance to 0.
+2. Set all other distances to ∞.
+3. Choose vertex with minimum distance.
+4. Update neighboring vertices.
+5. Repeat until all vertices are processed.
+
+------------------------------------------------------------
+RELAXATION
+
+Relaxation checks whether a shorter path exists through another vertex.
+
+Formula:
+If: d(u) + w(u, v) < d(v)
+Then: d(v) = d(u) + w(u, v)
+pred(v) = u
+
+Where:
+d(v) = Current shortest distance
+w(u, v) = Edge weight
+pred(v) = Predecessor of v
+
+Purpose: Store the best path found so far.
+
+------------------------------------------------------------
+PREDECESSOR
+
+The predecessor of a vertex is the previous vertex on the shortest path.
+
+Example:
+A → C → D
+
+Pred(C) = A
+Pred(D) = C
+
+Purpose: Used to reconstruct shortest paths.
+
+------------------------------------------------------------
+TOPOLOGICAL SORTING
+
+Topological sorting arranges vertices in an order that satisfies all dependencies.
+
+Used For:
+• Task scheduling
+• Project planning
+• Course prerequisites
+• Dependency management
+
+------------------------------------------------------------
+AOV NETWORK
+
+An Activity-On-Vertex (AOV) Network is a directed graph where:
+
+• Vertices represent activities.
+• Edges represent precedence relationships.
+
+Example:
+A → B → C
+
+Meaning:
+A must finish before B.
+B must finish before C.
+
+------------------------------------------------------------
+TOPOLOGICAL SORT
+
+A topological sort produces a valid order for executing tasks.
+
+Condition: The graph must be a DAG.
+Reason: Cycles create impossible dependencies.
+
+------------------------------------------------------------
+TOPOLOGICAL SORT ALGORITHM
+
+1. Find a vertex with no predecessors.
+2. Output the vertex.
+3. Remove the vertex and its outgoing edges.
+4. Repeat until all vertices are removed.
+
+If every remaining vertex has a predecessor:
+The graph contains a cycle.
+
+------------------------------------------------------------
+TOPOLOGICAL SORT EXAMPLE
+
+Graph:
+V1 → V4
+↓
+V2 → V5
+↓
+V3 → V6
+
+Possible Topological Order:
+V1 V2 V3 V4 V5 V6
+
+Properties:
+• Multiple valid orders may exist.
+• Dependency rules must never be violated.
+
+------------------------------------------------------------
+CYCLE IN TOPOLOGICAL SORTING
+
+Example:
+A → B
+↑   ↓
+└── C
+
+Problem:
+A depends on B,
+B depends on C,
+C depends on A.
+
+Result:
+No valid execution order exists.
+
+Therefore:
+Topological sorting is only possible on DAGs.
