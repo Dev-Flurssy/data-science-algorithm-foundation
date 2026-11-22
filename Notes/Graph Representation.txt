@@ -3,8 +3,8 @@ GRAPH REPRESENTATION
 A graph can be represented in memory using either an adjacency list or an adjacency matrix.
 
 ------------------------------------------------------------
-
 ADJACENCY LIST
+
 An adjacency list stores all vertices connected to each vertex using linked lists.
 
 Used When:
@@ -69,9 +69,9 @@ B     5  0  4
 C     2  4  0
 
 Meaning:
-• Weight(A,B) = 5
-• Weight(A,C) = 2
-• Weight(B,C) = 4
+• Weight(A, B) = 5
+• Weight(A, C) = 2
+• Weight(B, C) = 4
 
 Properties:
 • Stores edge weights directly.
@@ -119,9 +119,7 @@ Visited Array:
 DEPTH-FIRST SEARCH (DFS)
 
 DFS explores a path completely before exploring other paths.
-
 Data Structure Used: Stack
-
 Idea: Go as deep as possible before backtracking.
 
 Steps:
@@ -161,7 +159,6 @@ DFS ALGORITHM
 DFS visits vertices by going deep along one branch before exploring others.
 
 Algorithm:
-
 1. Mark starting vertex as visited.
 2. Push it onto the stack.
 3. While stack is not empty:
@@ -174,9 +171,7 @@ Algorithm:
 BREADTH-FIRST SEARCH (BFS)
 
 BFS explores all neighbors before moving to the next level.
-
 Data Structure Used: Queue
-
 Idea: Visit vertices level by level.
 
 Steps:
@@ -309,7 +304,6 @@ Properties:
 COST IN AND/OR GRAPHS
 
 Each edge can have an associated cost.
-
 Rule:
 Total Cost = Sum of edge costs in the chosen solution path.
 

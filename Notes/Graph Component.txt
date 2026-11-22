@@ -84,12 +84,11 @@ A bridge is an edge whose removal disconnects the graph.
 Example:
 A ---- B ---- C
 
-If edge (B,C) is removed:
+If edge (B, C) is removed:
 A ---- B     C
 
 The graph becomes disconnected.
-Therefore:
-(B, C) is a bridge.
+Therefore: (B, C) is a bridge.
 
 Properties:
 • Critical connection.
@@ -113,9 +112,7 @@ MAXIMAL BI-CONNECTED SUBGRAPH
 
 A maximal bi-connected subgraph is the largest possible bi-connected subgraph.
 
-Definition: 
-G' = (V', E')
-
+Definition:  G' = (V', E')
 is maximal if there does not exist a larger bi-connected graph:
 G" = (V", E")
 
@@ -124,8 +121,7 @@ V' ⊂ V"
 and
 E' ⊂ E"
 
-Meaning:
-You cannot add more vertices or edges and still remain within the same bi-connected component.
+Meaning: You cannot add more vertices or edges and still remain within the same bi-connected component.
 
 ------------------------------------------------------------
 RELATIONSHIP BETWEEN BI-CONNECTED COMPONENTS
@@ -215,8 +211,7 @@ Removing A:
 B      C
 
 The graph becomes disconnected.
-Therefore:
-A is an articulation point.
+Therefore: A is an articulation point.
 
 ------------------------------------------------------------
 RULE 2: LEAF VERTEX
@@ -236,7 +231,6 @@ The graph remains connected.
 RULE 3: INTERNAL ARTICULATION POINT
 
 A non-root, non-leaf vertex is an articulation point if no back edge connects its descendants to its ancestors.
-
 Reason: Without a back edge, descendants lose every alternative route.
 
 Example:
@@ -269,8 +263,8 @@ ARTICULATION POINT CONDITION
 
 For a non-root vertex u:
 u is an articulation point if it has a child w such that:
-
 L(w) ≥ DFN(u)
+
 Meaning: The subtree rooted at w cannot reach an ancestor of u.
 Therefore: Removing u disconnects that subtree.
 
@@ -278,7 +272,6 @@ Therefore: Removing u disconnects that subtree.
 SHORTEST-PATH PROBLEM
 
 The shortest-path problem finds the minimum distance path between vertices.
-
 Goal: Travel from one vertex to another using the minimum total cost.
 
 Applications:
@@ -310,8 +303,7 @@ Distance(A, C):
 2 + 3 = 5
 
 Formula:
-Length(Path) =
-Sum of all edge weights
+Length(Path) = Sum of all edge weights
 
 ------------------------------------------------------------
 SINGLE-SOURCE SHORTEST-PATH PROBLEM
@@ -328,7 +320,6 @@ Find: Shortest distance from S to every other vertex.
 DIJKSTRA'S ALGORITHM
 
 Dijkstra's Algorithm finds shortest paths in a weighted graph with non-negative weights.
-
 Idea: Always expand the vertex with the smallest known distance.
 
 Properties:
@@ -390,7 +381,6 @@ Used For:
 AOV NETWORK
 
 An Activity-On-Vertex (AOV) Network is a directed graph where:
-
 • Vertices represent activities.
 • Edges represent precedence relationships.
 
@@ -453,6 +443,5 @@ C depends on A.
 Result:
 No valid execution order exists.
 
-Therefore:
-Topological sorting is only possible on DAGs.
+Therefore: Topological sorting is only possible on DAGs.
 ------------------------------------------------------------

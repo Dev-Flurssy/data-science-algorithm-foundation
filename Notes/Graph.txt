@@ -1,4 +1,5 @@
 GRAPHS
+
 A graph is a collection of vertices (nodes) connected by edges that represent relationships between objects.
 
 ------------------------------------------------------------
@@ -73,7 +74,7 @@ Vertex    Data
 2         B
 3         C
 
-Representation: V = {(1,A), (2,B), (3,C)}
+Representation: V = {(1, A), (2, B), (3, C)}
 Purpose: Store extra information with each node.
 
 ------------------------------------------------------------
@@ -280,7 +281,7 @@ A ↔ B
 D ↔ C
 
 Properties:
-• Every vertex is reachable from every other vertex.
+Every vertex is reachable from every other vertex.
 
 ------------------------------------------------------------
 WEAKLY CONNECTED GRAPH
