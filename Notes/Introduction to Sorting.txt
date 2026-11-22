@@ -71,7 +71,6 @@ Examples:
 BUBBLE SORT
 
 Bubble Sort repeatedly compares adjacent elements and swaps them if they are in the wrong order.
-
 Idea: The largest element "bubbles up" to its correct position after each pass.
 
 Example:
@@ -163,11 +162,8 @@ Properties:
 ------------------------------------------------------------
 WORKING OF INSERTION SORT
 
-Initial:
-13 | 12 18 6 -4 9
-
-Sorted Portion:
-13
+Initial: 13 | 12 18 6 -4 9
+Sorted Portion: 13
 
 Insert 12:
 12 13 | 18 6 -4 9
@@ -197,26 +193,15 @@ INSERTION SORT ALGORITHM
 ------------------------------------------------------------
 INSERTION SORT EXAMPLE
 
-Initial List:
-13 12 18 6 -4 9
+Initial List: 13 12 18 6 -4 9
 
-Pass 1:
-12 13 18 6 -4 9
+Pass 1: 12 13 18 6 -4 9
+Pass 2: 12 13 18 6 -4 9
+Pass 3: 6 12 13 18 -4 9
+Pass 4: -4 6 12 13 18 9
+Pass 5: -4 6 9 12 13 18
 
-Pass 2:
-12 13 18 6 -4 9
-
-Pass 3:
-6 12 13 18 -4 9
-
-Pass 4:
--4 6 12 13 18 9
-
-Pass 5:
--4 6 9 12 13 18
-
-Sorted List:
--4 6 9 12 13 18
+Sorted List: -4 6 9 12 13 18
 
 ------------------------------------------------------------
 ADVANTAGES OF INSERTION SORT
@@ -251,19 +236,15 @@ Properties:
 ------------------------------------------------------------
 WORKING OF SELECTION SORT
 
-Initial:
-13 12 18 6 -4 9
+Initial: 13 12 18 6 -4 9
 
-Pass 1:
-Select smallest element (-4).
+Pass 1: Select smallest element (-4).
 -4 12 18 6 13 9
 
-Pass 2:
-Select next smallest element (6).
+Pass 2: Select next smallest element (6).
 -4 6 18 12 13 9
 
-Pass 3:
-Select next smallest element (9).
+Pass 3: Select next smallest element (9).
 -4 6 9 12 13 18
 
 Continue until completed.
@@ -279,26 +260,15 @@ SELECTION SORT ALGORITHM
 ------------------------------------------------------------
 SELECTION SORT EXAMPLE
 
-Initial List:
-13 12 18 6 -4 9
+Initial List: 13 12 18 6 -4 9
 
-Pass 1:
--4 12 18 6 13 9
+Pass 1: -4 12 18 6 13 9
+Pass 2: -4 6 18 12 13 9
+Pass 3: -4 6 9 12 13 18
+Pass 4: -4 6 9 12 13 18
+Pass 5: -4 6 9 12 13 18
 
-Pass 2:
--4 6 18 12 13 9
-
-Pass 3:
--4 6 9 12 13 18
-
-Pass 4:
--4 6 9 12 13 18
-
-Pass 5:
--4 6 9 12 13 18
-
-Sorted List:
--4 6 9 12 13 18
+Sorted List: -4 6 9 12 13 18
 
 ------------------------------------------------------------
 ADVANTAGES OF SELECTION SORT
