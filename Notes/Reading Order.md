@@ -22,3 +22,8 @@
 - Binary Search Tree
 - AVL Trees
 - Splay Trees
+- Graph
+- Graph Representation
+- Graph Component
+- Introduction to Sorting
+- Introduction to Searching
