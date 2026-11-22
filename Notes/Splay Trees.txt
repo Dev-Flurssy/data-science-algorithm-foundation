@@ -1,0 +1,360 @@
+SPLAY TREES
+
+A Splay Tree is a self-adjusting Binary Search Tree (BST)
+that moves recently accessed elements closer to the root.
+
+------------------------------------------------------------
+WHY SPLAY TREES ARE NEEDED
+
+In AVL Trees: Balancing is performed after insertion or deletion.
+Goal: Keep tree balanced.
+
+Problem
+Not every node is accessed equally.
+Some nodes are accessed frequently.
+Some nodes are rarely accessed.
+
+Example
+Suppose a node is at Level 10.
+
+If it is rarely used, No problem.
+But if it is frequently accessed, Searching becomes expensive.
+
+Solution
+Move frequently accessed nodes
+closer to the root.
+
+Result: Average access time decreases.
+
+------------------------------------------------------------
+BASIC IDEA OF SPLAY TREE
+
+Whenever a node is:
+• Accessed
+• Inserted
+• Searched
+
+Move it to the root.
+This process is called: Splaying
+
+Meaning: Recently accessed elements stay near the root.
+
+------------------------------------------------------------
+WHAT IS SPLAYING?
+
+Splaying is the process of moving a recently accessed node to the root of the tree.
+
+Example
+Before Access
+
+        20
+       /
+      10
+     /
+    5
+
+Access Node 5
+
+After Splaying
+
+        5
+         \
+         10
+           \
+           20
+
+Node 5 becomes root.
+
+------------------------------------------------------------
+TERMINOLOGY
+
+Let
+X = Recently Accessed Node
+P = Parent of X
+G = Grandparent of X
+
+----------------------------------
+Splaying uses:
+
+1. Zig
+2. Zig-Zig
+3. Zig-Zag
+
+----------------------------------
+CASE 1: ZIG OPERATION
+
+Condition: Parent of X is Root.
+
+Before
+        P
+       /
+      X
+
+Operation: Single Rotation
+
+After
+        X
+         \
+          P
+
+X becomes new root.
+Called: ZIG
+Equivalent To: Single Right Rotation
+
+----------------------------------
+CASE 1 MIRROR: ZAG OPERATION
+
+Condition: Parent P is root and X is right child.
+
+Before
+      P
+       \
+        X
+
+After
+        X
+       /
+      P
+
+Called: ZAG
+Equivalent To: Single Left Rotation
+
+----------------------------------
+CASE 2: ZIG-ZIG OPERATION
+
+Condition: X is Left Child of P and P is Left Child of G
+
+Configuration
+        G
+       /
+      P
+     /
+    X
+
+Called: Homogeneous Configuration
+
+----------------------------------
+Step 1: Rotate P about G
+Step 2: Rotate X about P
+
+Result
+
+        X
+         \
+          P
+           \
+            G
+
+Called: ZIG-ZIG
+Equivalent To: Double Right Rotation
+
+----------------------------------
+CASE 2 MIRROR: ZAG-ZAG
+
+Condition: X is Right Child of P and P is Right Child of G
+
+Before
+G
+ \
+  P
+   \
+    X
+
+After
+    X
+   /
+  P
+ /
+G
+
+Called: ZAG-ZAG
+Equivalent To: Double Left Rotation
+
+----------------------------------
+CASE 3: ZIG-ZAG OPERATION
+
+X is Left Child of P and P is Right Child of G
+
+Configuration
+      G
+       \
+        P
+       /
+      X
+
+Called: Heterogeneous Configuration
+
+----------------------------------
+Step 1: Rotate X about P
+Step 2: Rotate X about G
+
+Result
+        X
+       / \
+      G   P
+
+Called: ZIG-ZAG
+Equivalent To: Right-Left Rotation
+
+----------------------------------
+CASE 3 MIRROR: ZAG-ZIG
+
+Condition: X is Right Child of P and P is Left Child of G
+
+Before
+        G
+       /
+      P
+       \
+        X
+
+After
+        X
+       / \
+      P   G
+
+Called: ZAG-ZIG
+Equivalent To: Left-Right Rotation
+
+------------------------------------------------------------
+INSERTION IN SPLAY TREE
+
+Step 1: Insert node as in a BST.
+Step 2: Apply Splaying.
+Step 3: Move inserted node to root.
+
+Result: Newest node becomes root.
+
+------------------------------------------------------------
+INSERTION EXAMPLE
+
+Insert: 5
+Tree: 5
+Insert: 10
+
+BST
+    5
+     \
+     10
+
+Apply Zig
+      10
+     /
+    5
+
+10 becomes root.
+
+------------------------------------------------------------
+ANOTHER EXAMPLE
+
+Insert: 15
+
+Current Tree
+      10
+     /
+    5
+
+BST Insert
+      10
+        \
+         15
+
+Apply Zig
+
+        15
+       /
+      10
+     /
+    5
+
+15 becomes root.
+
+------------------------------------------------------------
+SPLAY TREE INSERTION RULE
+
+After every insertion:
+Newly inserted node becomes root.
+
+------------------------------------------------------------
+SEARCH IN SPLAY TREE
+
+Step 1: Search node like BST.
+Step 2: If found, Splay it.
+Step 3: Move accessed node to root.
+Benefit: Frequently used nodes move near root.
+
+------------------------------------------------------------
+DELETION IN SPLAY TREE
+
+Step 1: node like BST.
+Step 2: Splay the parent of deleted node.
+Step 3: Parent is moved closer to root.
+
+------------------------------------------------------------
+ADVANTAGES OF SPLAY TREE
+
+• Frequently accessed nodes move to root.
+• No balance factor required.
+• No height information required.
+• Simple implementation.
+• Good average performance.
+• Automatically adapts to access patterns.
+
+------------------------------------------------------------
+DISADVANTAGES OF SPLAY TREE
+
+• Tree may become temporarily unbalanced.
+• Worst-case single operation can be costly.
+• Not always as balanced as AVL Tree.
+• Structure changes after every access.
+
+------------------------------------------------------------
+SPLAY TREE VS AVL TREE
+
+AVL TREE
+
+• Strictly balanced.
+• Uses balance factor.
+• Requires rotations during updates.
+• Search time guaranteed O(log n).
+
+------------------------------------------------------------
+
+SPLAY TREE
+
+• Not strictly balanced.
+• No balance factor.
+• Moves accessed nodes to root.
+• Good amortized performance.
+
+------------------------------------------------------------
+APPLICATIONS OF SPLAY TREES
+
+• Caching Systems
+• Memory Management
+• Database Systems
+• Dictionaries
+• Symbol Tables
+• Frequently Accessed Data Storage
+• Network Routing Tables
+
+------------------------------------------------------------
+IMPORTANT POINTS
+
+• Splay Tree is a self-adjusting BST.
+• Recently accessed node is moved to root.
+• Process is called Splaying.
+• X = Accessed Node.
+• P = Parent.
+• G = Grandparent.
+• Zig = Single Rotation.
+• Zig-Zig = Double Right Rotation.
+• Zag-Zag = Double Left Rotation.
+• Zig-Zag = Right-Left Rotation.
+• Zag-Zig = Left-Right Rotation.
+• After insertion, new node becomes root.
+• After searching, accessed node becomes root.
+• No balance factor is stored.
+• Frequently used nodes become faster to access.
+
+------------------------------------------------------------

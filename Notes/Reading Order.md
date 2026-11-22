@@ -21,3 +21,4 @@
 - Binary Tree Properties
 - Binary Search Tree
 - AVL Trees
+- Splay Trees
