@@ -266,7 +266,7 @@ Purpose: Remove a node from the tree.
 EASY CASE
 
 Delete a leaf node.
-\
+
 Example
       A
      / \
@@ -281,6 +281,7 @@ Delete C
 DIFFICULT CASE
 
 Delete an internal node.
+
 Problem: Tree becomes disconnected.
 A replacement node is needed.
 Binary Search Tree rules provide a solution.

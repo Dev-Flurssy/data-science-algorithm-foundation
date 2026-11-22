@@ -13,7 +13,6 @@ WHY AVL TREES ARE NEEDED
 
 In a normal BST: Performance depends on the shape of the tree.
 
-
 ----------------------------------
 Good BST
         20
@@ -41,10 +40,7 @@ Height is large.
 Searching becomes slow.
 
 Problem: Search time increases when BST becomes skewed.
-
-
-Solution:
-AVL Tree: maintain balance automatically.
+Solution: AVL Tree: maintain balance automatically.
 
 ------------------------------------------------------------
 PERFECTLY BALANCED TREE
@@ -75,8 +71,7 @@ An AVL Tree is a Binary Search Tree such that:
 2. Left and right subtrees are also AVL Trees.
 
 Meaning
-The tree is nearly balanced,
-not necessarily perfectly balanced.
+The tree is nearly balanced, not necessarily perfectly balanced.
 
 ------------------------------------------------------------
 BALANCE FACTOR
@@ -164,8 +159,7 @@ Insertion starts exactly like BST insertion.
 Step 1: Insert element normally into BST.
 Step 2: Move upward toward the root.
 Step 3: Check Balance Factor of every ancestor.
-Step 4: If BF becomes:
-+2 or -2
+Step 4: If BF becomes: +2 or -2
 Perform rotation.
 
 ------------------------------------------------------------
@@ -180,8 +174,7 @@ There are four rotations:
 ------------------------------------------------------------
 1. LL ROTATION
 
-Condition:
-New node inserted into Left subtree of Left child.
+Condition: New node inserted into Left subtree of Left child.
 
 Before
         A(+2)
@@ -203,8 +196,7 @@ Called: LL Rotation
 ------------------------------------------------------------
 2. RR ROTATION
 
-Condition:
-New node inserted intom Right subtree of Right child.
+Condition: New node inserted intom Right subtree of Right child.
 
 Before
      A(-2)
@@ -225,8 +217,7 @@ Called: RR Rotation
 ------------------------------------------------------------
 3. LR ROTATION
 
-Condition
-New node inserted into Right subtree of Left child.
+Condition: New node inserted into Right subtree of Left child.
 
 Before
         A(+2)
@@ -397,7 +388,6 @@ BST
 • Simpler implementation.
 
 ------------------------------------------------------------
-
 AVL TREE
 
 • Automatically balanced.

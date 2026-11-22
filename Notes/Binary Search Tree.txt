@@ -246,7 +246,6 @@ SEARCH RULE
 If Value = Root
 Found
 
-
 If Value < Root
 Go Left
 
@@ -287,7 +286,6 @@ Result:
 SEARCH ADVANTAGE
 
 Only one subtree is searched.
-
 Similar to Binary Search in Arrays.
 
 ------------------------------------------------------------
@@ -465,7 +463,6 @@ IMPORTANT PROPERTY OF BST
 Inorder Traversal of a BST always produces data in sorted order.
 
 Example BST
-
         5
        / \
       3   7
