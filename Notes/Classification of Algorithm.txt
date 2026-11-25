@@ -65,22 +65,12 @@ DETERMINISTIC VS RANDOMIZED ALGORITHMS
 
 Deterministic Algorithm
 
-Input
-  ↓
-Fixed Steps
-  ↓
-Same Output
+Input → Fixed Steps → Same Output
 
 ------------------------------------------------------------
 Randomized Algorithm
 
-Input
-  ↓
-Random Choice
-  ↓
-Different Execution Paths
-  ↓
-Output
+Input → Random Choice → Different Execution Paths → Output
 
 ------------------------------------------------------------
 COMPARISON
@@ -248,7 +238,6 @@ Characteristics:
 OFFLINE ALGORITHM EXAMPLE
 
 Exam Scores
-
 Scores Available:
 78
 95
@@ -313,7 +302,7 @@ Result: Decisions must be made with incomplete data.
 Goal: Make the best possible decision using available information.
 
 ------------------------------------------------------------
-2.3 EXACT, APPROXIMATE, HEURISTIC, AND OPERATIONAL ALGORITHMS
+EXACT, APPROXIMATE, HEURISTIC, AND OPERATIONAL ALGORITHMS
 
 Algorithms can be classified based on how they approach problem solving and optimization.
 
@@ -321,8 +310,6 @@ Algorithms can be classified based on how they approach problem solving and opti
 EXACT ALGORITHMS
 
 An exact algorithm always finds the optimal (best possible) solution to a problem.
-
-Definition:
 The algorithm guarantees the correct and optimal answer.
 
 Properties:
@@ -334,11 +321,8 @@ Properties:
 ------------------------------------------------------------
 EXACT ALGORITHM EXAMPLE
 
-Problem:
-Find the shortest path between cities.
-
-Result:
-The algorithm guarantees the shortest possible path.
+Problem: Find the shortest path between cities.
+Result: The algorithm guarantees the shortest possible path.
 
 Advantages:
 • Perfect solution
@@ -352,8 +336,6 @@ Disadvantages:
 APPROXIMATION ALGORITHMS
 
 An approximation algorithm produces a solution that is close to the optimal solution.
-
-Definition:
 The algorithm guarantees that its answer is within a specific factor of the optimal answer.
 
 Properties:
@@ -367,20 +349,15 @@ APPROXIMATION FACTOR
 A c-approximation algorithm guarantees:
 
 Approximate Solution ≤ c × Optimal Solution
-
-Meaning:
-The solution will never be worse than the specified factor c compared to the optimal solution.
+Meaning: The solution will never be worse than the specified factor c compared to the optimal solution.
 
 ------------------------------------------------------------
 APPROXIMATION ALGORITHM EXAMPLE
 
 Traveling Salesman Problem (TSP)
 
-Problem:
-Finding the absolute shortest route is extremely expensive.
-
-Solution:
-Use an approximation algorithm to find a route close to the shortest one.
+Problem: Finding the absolute shortest route is extremely expensive.
+Solution: Use an approximation algorithm to find a route close to the shortest one.
 
 Advantages:
 • Faster execution
@@ -393,8 +370,6 @@ Disadvantages:
 HEURISTIC ALGORITHMS
 
 A heuristic algorithm aims to find a good solution quickly without guaranteeing the optimal solution.
-
-Definition:
 The algorithm uses practical rules or educated guesses to solve a problem.
 
 Properties:
@@ -406,7 +381,6 @@ Properties:
 HEURISTIC ALGORITHM EXAMPLE
 
 GPS Navigation
-
 Instead of examining every possible route, the system may choose roads that appear most promising.
 
 Result:
@@ -424,48 +398,28 @@ Disadvantages:
 EXACT VS APPROXIMATION VS HEURISTIC
 
 Exact Algorithm
-
-Solution:
-Optimal
-
-Speed:
-Usually Slow
-
-Guarantee:
-100% Correct
+Solution: Optimal
+Speed: Usually Slow
+Guarantee: 100% Correct
 
 ------------------------------------------------------------
-
 Approximation Algorithm
 
-Solution:
-Near Optimal
-
-Speed:
-Moderate
-
-Guarantee:
-Performance Bound Exists
+Solution: Near Optimal
+Speed: Moderate
+Guarantee: Performance Bound Exists
 
 ------------------------------------------------------------
-
 Heuristic Algorithm
 
-Solution:
-Good Enough
-
-Speed:
-Fast
-
-Guarantee:
-No Guarantee
+Solution: Good Enough
+Speed: Fast
+Guarantee: No Guarantee
 
 ------------------------------------------------------------
 OPERATIONAL ALGORITHMS
 
 Operational algorithms focus on completing a sequence of computational tasks rather than optimizing a specific objective function.
-
-Definition:
 Algorithms designed primarily for processing and operational tasks.
 
 Properties:
@@ -478,46 +432,27 @@ OPERATIONAL ALGORITHM EXAMPLE
 
 ClustalW (Bioinformatics)
 
-Purpose:
-Sequence Alignment
-
-Goal:
-Perform biological sequence analysis efficiently.
-
-Focus:
-Task completion rather than finding an optimal mathematical solution.
+Purpose: Sequence Alignment
+Goal: Perform biological sequence analysis efficiently.
+Focus: Task completion rather than finding an optimal mathematical solution.
 
 ------------------------------------------------------------
 TRAVELING SALESMAN PROBLEM (TSP)
 
 TSP is a famous NP-Hard optimization problem.
-
-Definition:
 Find the shortest route that visits every city exactly once and returns to the starting city.
 
 ------------------------------------------------------------
 GREEDY APPROXIMATION FOR TSP
 
 The following approximation approach can be used:
+Step 1: Construct a Minimum Spanning Tree (MST).
+Step 2: Duplicate the tree edges to create an Eulerian Graph.
+Step 3: Find an Eulerian Cycle.
+Step 4: Use shortcuts to transform the cycle into a Hamiltonian Cycle.
 
-Step 1:
-Construct a Minimum Spanning Tree (MST).
-
-Step 2:
-Duplicate the tree edges to create an Eulerian Graph.
-
-Step 3:
-Find an Eulerian Cycle.
-
-Step 4:
-Use shortcuts to transform the cycle into a Hamiltonian Cycle.
-
-Result:
-Produces a route close to the optimal solution.
-
-Time Complexity:
-
-O(n²)
+Result: Produces a route close to the optimal solution.
+Time Complexity: O(n²)
 
 ------------------------------------------------------------
 2.4 CLASSIFICATION ACCORDING TO MAIN CONCEPT
@@ -534,11 +469,9 @@ Main Categories:
 • Branch-and-Bound Algorithm
 
 ------------------------------------------------------------
-2.4.1 SIMPLE RECURSIVE ALGORITHM
+SIMPLE RECURSIVE ALGORITHM
 
 A recursive algorithm solves a problem by repeatedly solving smaller versions of the same problem.
-
-Definition:
 A function calls itself until a base case is reached.
 
 ------------------------------------------------------------
@@ -554,7 +487,6 @@ RECURSION EXAMPLE
 Counting Elements in a List
 
 Algorithm:
-
 1. If list is empty → Return 0
 2. Remove first element
 3. Count remaining elements
@@ -566,35 +498,22 @@ SEARCHING EXAMPLE
 Check if a value exists in a list.
 
 Steps:
-
 1. If list is empty → Return False
 2. If first element matches → Return True
 3. Search remaining elements recursively
 
 ------------------------------------------------------------
-KEYWORD: RECURSION
-
-Recursion is a process where a function calls itself directly or indirectly.
-
-------------------------------------------------------------
-2.4.2 DIVIDE-AND-CONQUER ALGORITHM
+DIVIDE-AND-CONQUER ALGORITHM
 
 Divide-and-Conquer breaks a large problem into smaller subproblems.
-
-Definition:
 Solve smaller subproblems and combine their answers.
 
 ------------------------------------------------------------
 HOW DIVIDE-AND-CONQUER WORKS
 
-Step 1:
-Divide the problem.
-
-Step 2:
-Solve each subproblem.
-
-Step 3:
-Combine the solutions.
+Step 1: Divide the problem.
+Step 2: Solve each subproblem.
+Step 3: Combine the solutions.
 
 ------------------------------------------------------------
 DIVIDE-AND-CONQUER STRUCTURE
@@ -615,27 +534,21 @@ Final Solution
 QUICKSORT
 
 Steps:
-
 1. Partition the array.
 2. Sort each partition recursively.
 3. No major combine step required.
 
-Time Complexity:
-
-O(n log n) Average Case
+Time Complexity: O(n log n) Average Case
 
 ------------------------------------------------------------
 MERGE SORT
 
 Steps:
-
 1. Split the array into halves.
 2. Sort each half.
 3. Merge sorted halves.
 
-Time Complexity:
-
-O(n log n)
+Time Complexity: O(n log n)
 
 ------------------------------------------------------------
 ADVANTAGES
@@ -645,21 +558,16 @@ ADVANTAGES
 • Suitable for large data sets
 
 ------------------------------------------------------------
-2.4.3 DYNAMIC PROGRAMMING ALGORITHM
+DYNAMIC PROGRAMMING ALGORITHM
 
 Dynamic Programming (DP) solves problems by storing solutions to previously solved subproblems.
-
-Definition:
 A problem-solving technique that avoids repeated calculations.
 
 ------------------------------------------------------------
 WHY DYNAMIC PROGRAMMING IS NEEDED
 
 Problem: The same subproblems may be solved repeatedly.
-
-Solution:
-
-Store previous results and reuse them.
+Solution: Store previous results and reuse them.
 
 ------------------------------------------------------------
 MEMOIZATION
@@ -671,7 +579,6 @@ Benefit: Avoids unnecessary recalculations.
 DYNAMIC PROGRAMMING EXAMPLE
 
 Fibonacci Sequence
-
 Formula:
 F(n) = F(n−1) + F(n−2)
 
