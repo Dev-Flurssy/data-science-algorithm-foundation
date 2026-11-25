@@ -1,0 +1,691 @@
+1.2.3 BASIC TERMINOLOGIES
+
+Basic terminologies are fundamental concepts used in data structures and data management.
+
+------------------------------------------------------------
+DATA
+
+Data is a value or a collection of values.
+
+Examples:
+• Name
+• Age
+• Salary
+• Student Marks
+
+Purpose:
+• Represents raw facts and information.
+
+------------------------------------------------------------
+DATA ITEM
+
+A data item is a single, distinct element of data.
+
+Examples:
+• Student Name
+• Employee ID
+• Product Price
+
+Properties:
+• Represents one unit of information.
+• Can be processed independently.
+
+------------------------------------------------------------
+GROUP ITEM
+
+A group item consists of multiple related data items.
+
+Example:
+
+Student
+• Name
+• ID
+• Age
+• Grade
+
+Properties:
+• Can be divided into smaller data items.
+• Represents related information as a whole.
+
+------------------------------------------------------------
+ELEMENTARY ITEM
+
+An elementary item is a data element that cannot be further divided.
+
+Examples:
+• Age = 20
+• Grade = A
+
+Properties:
+• Smallest meaningful data unit.
+• Non-splittable.
+
+------------------------------------------------------------
+ENTITY AND ATTRIBUTE
+
+An entity is an object about which data is stored.
+An attribute is a characteristic or property of an entity.
+
+Example:
+Entity: Student
+
+Attributes:
+• Student ID
+• Name
+• Age
+• Department
+
+Properties:
+• Entities represent real-world objects.
+• Attributes describe entities.
+
+------------------------------------------------------------
+ENTITY SET
+
+An entity set is a collection of similar entities sharing common attributes.
+
+Example:
+Students
+• Student 1
+• Student 2
+• Student 3
+
+Common Attributes:
+• ID
+• Name
+• Age
+
+Properties:
+• Groups related entities together.
+• Commonly used in databases.
+
+------------------------------------------------------------
+FIELD
+
+A field is a single unit of information representing one attribute of an entity.
+
+Example:
+Student Record
+• Name = John
+• Age = 21
+
+Properties:
+• Stores one specific piece of information.
+• Smallest component of a record.
+
+------------------------------------------------------------
+RECORD
+
+A record is a collection of related fields describing a single entity.
+
+Example:
+Student Record
+• ID = 1001
+• Name = John
+• Age = 21
+• Department = Computer Science
+
+Properties:
+• Represents one complete entity.
+• Contains multiple fields.
+
+------------------------------------------------------------
+FILE
+
+A file is a collection of records belonging to a particular entity set.
+
+Example:
+Student File
+• Record 1
+• Record 2
+• Record 3
+
+Properties:
+• Stores multiple records.
+• Used for long-term data storage.
+
+------------------------------------------------------------
+OVERVIEW OF DATA STRUCTURES
+
+A data structure is a specialized format for organizing, processing, retrieving, and storing data.
+
+------------------------------------------------------------
+WHY DATA STRUCTURES ARE NEEDED
+
+Data structures help organize data efficiently and improve program performance.
+
+Benefits:
+• Faster Searching
+• Faster Insertion
+• Faster Deletion
+• Better Memory Management
+
+Problem:
+Simple variables cannot efficiently manage large amounts of interconnected data.
+
+Solution:
+Data structures provide organized and efficient ways to store, access, and manipulate data.
+
+------------------------------------------------------------
+ARRAY
+
+An array stores elements in contiguous memory locations.
+
+Advantages:
+• Quick insertion and access if the index is known
+
+Disadvantages:
+• Slow deletion
+• Slow searching
+• Fixed size
+
+------------------------------------------------------------
+ORDERED ARRAY
+
+An ordered array stores elements in sorted order.
+
+Advantages:
+• Faster searching than an unsorted array
+
+Disadvantages:
+• Fixed size
+• Slow insertion
+• Slow deletion
+
+------------------------------------------------------------
+STACK
+
+A stack follows the Last-In, First-Out (LIFO) principle.
+
+Example:
+
+Top
+↓
+30
+20
+10
+
+Meaning:
+The last element inserted is the first element removed.
+
+Advantages:
+• Fast insertion
+• Fast deletion
+
+Disadvantages:
+• Slow access to other elements
+
+------------------------------------------------------------
+QUEUE
+
+A queue follows the First-In, First-Out (FIFO) principle.
+
+Example:
+Front → 10 | 20 | 30 ← Rear
+
+Meaning:
+The first element inserted is the first element removed.
+
+Advantages:
+• Ordered processing
+• Easy scheduling of tasks
+
+Disadvantages:
+• Slow access to other elements
+
+------------------------------------------------------------
+LINKED LIST
+
+A linked list stores elements as connected nodes.
+
+Example:
+10 → 20 → 30 → NULL
+
+Advantages:
+• Quick insertion
+• Quick deletion
+
+Disadvantages:
+• Slow searching
+
+------------------------------------------------------------
+BINARY TREE
+
+A binary tree is a hierarchical structure where each node has at most two children.
+
+Example:
+        50
+       /  \
+     30    70
+    / \    / \
+   20 40 60 80
+
+Advantages:
+• Fast insertion
+• Fast searching
+• Fast deletion when balanced
+
+Disadvantages:
+• Complex deletion algorithms
+• Performance decreases when unbalanced
+
+------------------------------------------------------------
+HASH TABLE
+
+A hash table stores data using key-value pairs.
+
+Example:
+1001 → John
+1002 → Sarah
+1003 → David
+
+Advantages:
+• Fast access when the key is known
+• Quick insertion
+
+Disadvantages:
+• Slow deletion
+• Inefficient memory usage
+• Slow access if the key is unknown
+
+------------------------------------------------------------
+HEAP
+
+A heap is a specialized tree used for priority-based operations.
+
+Example (Max Heap):
+       100
+      /   \
+    80     70
+   / \    /
+ 50  40  30
+
+Meaning:
+The largest element is always at the root.
+
+Advantages:
+• Quick insertion
+• Fast access to the largest item
+• Quick deletion
+
+Disadvantages:
+• Slow access to other elements
+
+------------------------------------------------------------
+ANALYZING DATA STRUCTURES AND ALGORITHMS
+
+Analyzing data structures and algorithms helps determine the resources required to solve a problem efficiently.
+
+------------------------------------------------------------
+WHY ALGORITHM ANALYSIS IS NEEDED
+
+Algorithm analysis helps compare different solutions and identify the most efficient one.
+
+Resources Measured:
+• Computation Time
+• Memory Usage
+• Hardware Resources
+• Communication Bandwidth
+
+Purpose:
+• Compare competing algorithms
+• Select the most efficient solution
+• Eliminate weaker approaches
+
+------------------------------------------------------------
+COMPUTATION TIME
+
+Computation time is the amount of time required for an algorithm to produce a result.
+
+Properties:
+• Most common measure of performance
+• Depends on input size
+• Used to compare algorithms
+
+------------------------------------------------------------
+RAM MODEL (RANDOM ACCESS MACHINE)
+
+The RAM model is a simplified theoretical model used to analyze algorithms.
+
+Assumptions:
+• One processor is used
+• Instructions execute one at a time
+• Each instruction takes constant time
+
+Common Operations:
+• Load
+• Store
+• Copy
+• Addition
+• Subtraction
+• Multiplication
+• Division
+• Branching
+
+Purpose:
+• Provides a standard way to analyze algorithms
+• Makes performance comparisons easier
+
+------------------------------------------------------------
+ALGORITHM EFFICIENCY
+
+The efficiency of an algorithm depends on the amount of resources it consumes.
+
+Main Factors:
+• Running Time
+• Memory Usage
+
+Goal:
+• Achieve maximum performance using minimum resources
+
+------------------------------------------------------------
+ORDER OF GROWTH
+
+Order of growth describes how an algorithm's running time increases as the input size increases.
+
+------------------------------------------------------------
+WHY ORDER OF GROWTH IS IMPORTANT
+
+For large inputs, the growth rate is more important than exact execution time.
+
+Example:
+
+T(n) = 5n² + 3n + 2
+
+For large n:
+• Ignore lower-order terms
+• Ignore constants
+
+Result:
+
+T(n) ≈ n²
+
+Meaning:
+The algorithm has quadratic growth.
+
+------------------------------------------------------------
+SIMPLIFYING RUNNING TIME
+
+When analyzing algorithms:
+
+Ignore:
+• Constants
+• Lower-order terms
+
+Focus On:
+• Fastest growing term
+
+Example:
+5n² + 3n + 2
+→ O(n²)
+
+Reason:
+The n² term dominates for large input sizes.
+
+------------------------------------------------------------
+INSERTION SORT ANALYSIS
+
+Insertion Sort builds a sorted array one element at a time.
+
+------------------------------------------------------------
+INPUT SIZE
+
+The performance of Insertion Sort depends on:
+
+• Number of elements (n)
+• Initial arrangement of data
+
+Observation:
+Larger inputs require more processing time.
+
+------------------------------------------------------------
+BEST-CASE ANALYSIS
+
+Best case occurs when the array is already sorted.
+
+Example:
+
+[1, 2, 3, 4, 5]
+
+Operations:
+• Only comparisons are needed
+• No shifting required
+
+Running Time:
+
+O(n)
+
+Meaning:
+Running time grows linearly with input size.
+
+------------------------------------------------------------
+WORST-CASE ANALYSIS
+
+Worst case occurs when the array is sorted in reverse order.
+
+Example:
+
+[5, 4, 3, 2, 1]
+
+Operations:
+• Every element must be compared
+• Every element must be shifted
+
+Running Time:
+
+O(n²)
+
+Meaning:
+Running time grows quadratically with input size.
+
+------------------------------------------------------------
+AVERAGE-CASE ANALYSIS
+
+Average case occurs when data is randomly arranged.
+
+Example:
+
+[4, 1, 5, 2, 3]
+
+Observation:
+About half of the elements need shifting.
+
+Running Time:
+
+O(n²)
+
+Meaning:
+Average performance is similar to the worst case.
+
+
+------------------------------------------------------------
+RANDOMIZED ALGORITHMS
+
+A randomized algorithm uses random choices during execution.
+
+Benefits:
+• Often improves average performance
+• Useful when worst-case analysis is difficult
+
+Examples:
+• Randomized Quick Sort
+• Monte Carlo Algorithms
+
+------------------------------------------------------------
+HARD PROBLEMS
+
+Some computational problems are extremely difficult to solve efficiently, even with modern computers.
+
+------------------------------------------------------------
+NON-DETERMINISTIC POLYNOMIAL TIME (NP)
+
+NP refers to a class of problems for which finding a solution is difficult, but verifying a solution is relatively easy.
+
+Properties:
+• Solutions are difficult to compute.
+• Solutions can be checked efficiently.
+• Many important real-world problems belong to this category.
+
+------------------------------------------------------------
+NP-COMPLETE PROBLEMS
+
+NP-Complete problems are considered some of the hardest computational problems.
+
+Characteristics:
+• No efficient algorithm is currently known.
+• No proof exists that an efficient algorithm is impossible.
+• Solving one NP-Complete problem efficiently would solve all NP-Complete problems efficiently.
+
+Importance:
+• Widely studied in computer science.
+• Frequently appear in real-world applications.
+
+------------------------------------------------------------
+WHY STUDY NP-COMPLETE PROBLEMS?
+
+Reason 1: No one has proven that efficient solutions cannot exist.
+Reason 2: An efficient solution to one NP-Complete problem would apply to many others.
+Reason 3: Small changes in a problem can dramatically change its difficulty.
+
+------------------------------------------------------------
+REAL-WORLD IMPORTANCE
+
+NP-Complete problems appear in many practical situations.
+
+Examples:
+• Route Planning
+• Scheduling
+• Resource Allocation
+• Network Design
+• Logistics and Delivery Systems
+
+Implication:
+Understanding these problems helps developers avoid spending excessive time searching for impossible perfect solutions.
+
+------------------------------------------------------------
+TRAVELING SALESMAN PROBLEM (TSP)
+
+The Traveling Salesman Problem (TSP) is a famous NP-Complete problem.
+
+Definition:
+Find the shortest possible route that visits every location exactly once and returns to the starting point.
+
+------------------------------------------------------------
+TSP EXAMPLE
+
+Delivery Locations:
+
+       B
+      / \
+     /   \
+    A-----C
+     \   /
+      \ /
+       D
+
+Goal: Visit all locations while minimizing total travel distance.
+
+Applications:
+• Delivery Services
+• Transportation Networks
+• Logistics Companies
+• Route Optimization
+
+------------------------------------------------------------
+WHY TSP IS DIFFICULT
+
+Problem:
+The number of possible routes grows rapidly as the number of locations increases.
+
+Result: Finding the perfect solution becomes computationally expensive.
+
+Solution:
+Approximation algorithms are often used to find near-optimal solutions.
+
+------------------------------------------------------------
+APPROXIMATION ALGORITHMS
+
+Approximation algorithms provide good solutions when finding the perfect solution is impractical.
+
+Advantages:
+• Faster execution
+• Acceptable results
+• Suitable for large datasets
+
+Example:
+Delivery companies often use approximate routes instead of the mathematically shortest route.
+
+------------------------------------------------------------
+1.2.6 PARALLELISM
+
+Parallelism is the practice of performing multiple computations simultaneously.
+
+------------------------------------------------------------
+WHY PARALLELISM IS NEEDED
+
+Processor speeds cannot continuously increase due to physical limitations.
+
+Problem:
+Increasing clock speed generates excessive heat and power consumption.
+
+Solution:
+Use multiple processing cores to perform tasks simultaneously.
+
+------------------------------------------------------------
+MULTICORE PROCESSORS
+
+A multicore processor contains multiple processing units on a single chip.
+
+Example:
+Core 1 → Task A
+Core 2 → Task B
+Core 3 → Task C
+Core 4 → Task D
+
+Result: Multiple tasks execute at the same time.
+
+------------------------------------------------------------
+PARALLEL COMPUTING
+
+Parallel computing divides a large problem into smaller tasks that can run simultaneously.
+
+Example:
+Task: Process 1,000,000 records
+
+Sequential Approach: One processor handles all records.
+Parallel Approach: Four processors each handle 250,000 records.
+
+Result: Faster execution.
+
+------------------------------------------------------------
+MULTITHREADED ALGORITHMS
+
+Multithreaded algorithms use multiple threads to execute different parts of a program simultaneously.
+
+Benefits:
+• Faster processing
+• Better hardware utilization
+• Increased throughput
+
+Applications:
+• Operating Systems
+• Web Servers
+• Scientific Computing
+• Artificial Intelligence
+
+------------------------------------------------------------
+ADVANTAGES OF PARALLELISM
+
+• Faster execution time
+• Improved performance
+• Better resource utilization
+• Increased system throughput
+
+------------------------------------------------------------
+LIMITATIONS OF PARALLELISM
+
+• More complex programming
+• Synchronization challenges
+• Additional hardware requirements
+
+------------------------------------------------------------
