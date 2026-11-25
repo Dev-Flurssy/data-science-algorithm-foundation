@@ -6,27 +6,17 @@ Algorithms can be classified based on how they produce their results.
 DETERMINISTIC ALGORITHM
 
 A deterministic algorithm always produces the same output for a given input.
-
-Definition:
 Given the same input, the algorithm follows the same steps and generates the same result every time.
 
 Example:
-
-Input:
-5, 3, 2
-
-Output:
-2, 3, 5
+Input: 5, 3, 2
+Output: 2, 3, 5
 
 If executed again:
-Input:
-5, 3, 2
+Input: 5, 3, 2
+Output: 2, 3, 5
 
-Output:
-2, 3, 5
-
-Result:
-The output never changes.
+Result: The output never changes.
 
 ------------------------------------------------------------
 PROPERTIES OF DETERMINISTIC ALGORITHMS
@@ -46,26 +36,16 @@ Examples:
 RANDOMIZED ALGORITHM
 
 A randomized algorithm uses random choices during execution.
-
-Definition:
 The algorithm may follow different execution paths even when the input remains the same.
 
 Example:
+Input: 5, 3, 2
 
-Input:
-5, 3, 2
+Run 1: Chooses Path A
+Run 2: Chooses Path B
+Run 3: Chooses Path C
 
-Run 1:
-Chooses Path A
-
-Run 2:
-Chooses Path B
-
-Run 3:
-Chooses Path C
-
-Result:
-Execution differs each time.
+Result: Execution differs each time.
 
 ------------------------------------------------------------
 PROPERTIES OF RANDOMIZED ALGORITHMS
@@ -92,7 +72,6 @@ Fixed Steps
 Same Output
 
 ------------------------------------------------------------
-
 Randomized Algorithm
 
 Input
@@ -104,7 +83,6 @@ Different Execution Paths
 Output
 
 ------------------------------------------------------------
-
 COMPARISON
 
 Deterministic Algorithms:
@@ -121,7 +99,6 @@ Randomized Algorithms:
 TYPES OF RANDOMIZED ALGORITHMS
 
 There are two major types:
-
 • Monte Carlo Algorithms
 • Las Vegas Algorithms
 
@@ -136,12 +113,9 @@ Properties:
 • High probability of correct results
 
 Example:
+Input: Prime Number Test
 
-Input:
-Prime Number Test
-
-Result:
-The algorithm may occasionally be wrong.
+Result: The algorithm may occasionally be wrong.
 
 ------------------------------------------------------------
 MONTE CARLO CHARACTERISTICS
@@ -164,11 +138,9 @@ Properties:
 • Uses randomization internally
 
 Example:
-
 Randomized Quick Sort
 
-Result:
-Correctly sorted array every time.
+Result: Correctly sorted array every time.
 
 ------------------------------------------------------------
 LAS VEGAS CHARACTERISTICS
@@ -185,36 +157,24 @@ MONTE CARLO VS LAS VEGAS
 
 Monte Carlo
 
-Output:
-May be incorrect
+Output: May be incorrect
+Runtime: Usually predictable
 
-Runtime:
-Usually predictable
-
-Goal:
-Fast approximation
+Goal: Fast approximation
 
 ------------------------------------------------------------
-
 Las Vegas
 
-Output:
-Always correct
+Output: Always correct
+Runtime: May vary
 
-Runtime:
-May vary
-
-Goal:
-Correct solution
+Goal: Correct solution
 
 ------------------------------------------------------------
 WHY USE RANDOMIZED ALGORITHMS?
 
-Problem:
-Certain inputs create poor performance for deterministic algorithms.
-
-Solution:
-Introduce randomness.
+Problem: Certain inputs create poor performance for deterministic algorithms.
+Solution: Introduce randomness.
 
 Benefits:
 • Avoid worst-case inputs
@@ -225,7 +185,6 @@ Benefits:
 REAL-WORLD APPLICATIONS
 
 Randomized Algorithms are used in:
-
 • Artificial Intelligence
 • Cryptography
 • Network Routing
@@ -233,7 +192,7 @@ Randomized Algorithms are used in:
 • Data Analysis
 
 ------------------------------------------------------------
-2.2 ONLINE VS OFFLINE ALGORITHMS
+ONLINE VS OFFLINE ALGORITHMS
 
 Algorithms can also be classified based on when input becomes available.
 
@@ -241,8 +200,6 @@ Algorithms can also be classified based on when input becomes available.
 ONLINE ALGORITHM
 
 An online algorithm receives input gradually during execution.
-
-Definition:
 The algorithm must make decisions without knowing future inputs.
 
 Characteristics:
@@ -256,20 +213,12 @@ ONLINE ALGORITHM EXAMPLE
 Food Delivery System
 
 Orders Arrive:
-
-Time 1:
-Order A
-
-Time 2:
-Order B
-
-Time 3:
-Order C
+Time 1: Order A
+Time 2: Order B
+Time 3: Order C
 
 The system must decide immediately how to assign deliveries.
-
-Problem:
-Future orders are unknown.
+Problem: Future orders are unknown.
 
 ------------------------------------------------------------
 PROPERTIES OF ONLINE ALGORITHMS
@@ -288,8 +237,6 @@ Applications:
 OFFLINE ALGORITHM
 
 An offline algorithm knows all inputs before execution begins.
-
-Definition:
 The complete data set is available before processing starts.
 
 Characteristics:
@@ -303,7 +250,6 @@ OFFLINE ALGORITHM EXAMPLE
 Exam Scores
 
 Scores Available:
-
 78
 95
 63
@@ -316,15 +262,9 @@ Since all data is available before processing begins, sorting can be optimized.
 ONLINE VS OFFLINE ALGORITHMS
 
 Online Algorithm
-
-Input:
-Received gradually
-
-Future Inputs:
-Unknown
-
-Decision:
-Immediate
+Input: Received gradually
+Future Inputs: Unknown
+Decision: Immediate
 
 Applications:
 • Navigation
@@ -332,17 +272,11 @@ Applications:
 • Network Routing
 
 ------------------------------------------------------------
-
 Offline Algorithm
 
-Input:
-Available from the start
-
-Future Inputs:
-Known
-
-Decision:
-Planned in advance
+Input: Available from the start
+Future Inputs: Known
+Decision: Planned in advance
 
 Applications:
 • Batch Processing
@@ -355,40 +289,27 @@ SKI RENTAL PROBLEM
 The Ski Rental Problem is a classic example of an online algorithm problem.
 
 Situation:
-
 A skier has two choices:
-
 • Rent skis daily
 • Buy skis permanently
 
-Unknown:
-How many days the skier will continue skiing
+Unknown: How many days the skier will continue skiing
 
 ------------------------------------------------------------
 SKI RENTAL EXAMPLE
 
-Rental Cost:
-1 unit per day
+Rental Cost: 1 unit per day
+Purchase Cost: B units
+Problem: Should the skier continue renting or buy skis now?
 
-Purchase Cost:
-B units
-
-Problem:
-Should the skier continue renting or buy skis now?
-
-Challenge:
-The future number of skiing days is unknown.
+Challenge: The future number of skiing days is unknown.
 
 ------------------------------------------------------------
 WHY ONLINE ALGORITHMS ARE DIFFICULT
 
-Problem:
-Future information is unavailable.
+Problem: Future information is unavailable.
+Result: Decisions must be made with incomplete data.
 
-Result:
-Decisions must be made with incomplete data.
-
-Goal:
-Make the best possible decision using available information.
+Goal: Make the best possible decision using available information.
 
 ------------------------------------------------------------
