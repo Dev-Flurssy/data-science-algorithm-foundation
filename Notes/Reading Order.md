@@ -1,11 +1,14 @@
 
 - Introduction to DSA
+- DSA Overview
 - Algorithm
+- Classification of Algorithm
 - Data Manipulation
 - Space Complexity
 - Complexity Analysis
 - Amortized Analysis
 - Array
+- Analysis of Arrays and Set
 - Linked List
 - Double Linked list
 - Circular Linked List
