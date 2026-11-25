@@ -313,3 +313,433 @@ Result: Decisions must be made with incomplete data.
 Goal: Make the best possible decision using available information.
 
 ------------------------------------------------------------
+2.3 EXACT, APPROXIMATE, HEURISTIC, AND OPERATIONAL ALGORITHMS
+
+Algorithms can be classified based on how they approach problem solving and optimization.
+
+------------------------------------------------------------
+EXACT ALGORITHMS
+
+An exact algorithm always finds the optimal (best possible) solution to a problem.
+
+Definition:
+The algorithm guarantees the correct and optimal answer.
+
+Properties:
+• Always produces the best solution
+• High accuracy
+• May require large amounts of time and memory
+• Often impractical for very large inputs
+
+------------------------------------------------------------
+EXACT ALGORITHM EXAMPLE
+
+Problem:
+Find the shortest path between cities.
+
+Result:
+The algorithm guarantees the shortest possible path.
+
+Advantages:
+• Perfect solution
+• Guaranteed correctness
+
+Disadvantages:
+• Slow for large problems
+• High computational cost
+
+------------------------------------------------------------
+APPROXIMATION ALGORITHMS
+
+An approximation algorithm produces a solution that is close to the optimal solution.
+
+Definition:
+The algorithm guarantees that its answer is within a specific factor of the optimal answer.
+
+Properties:
+• Faster than exact algorithms
+• Provides near-optimal results
+• Comes with a performance guarantee
+
+------------------------------------------------------------
+APPROXIMATION FACTOR
+
+A c-approximation algorithm guarantees:
+
+Approximate Solution ≤ c × Optimal Solution
+
+Meaning:
+The solution will never be worse than the specified factor c compared to the optimal solution.
+
+------------------------------------------------------------
+APPROXIMATION ALGORITHM EXAMPLE
+
+Traveling Salesman Problem (TSP)
+
+Problem:
+Finding the absolute shortest route is extremely expensive.
+
+Solution:
+Use an approximation algorithm to find a route close to the shortest one.
+
+Advantages:
+• Faster execution
+• Predictable solution quality
+
+Disadvantages:
+• Does not always produce the perfect answer
+
+------------------------------------------------------------
+HEURISTIC ALGORITHMS
+
+A heuristic algorithm aims to find a good solution quickly without guaranteeing the optimal solution.
+
+Definition:
+The algorithm uses practical rules or educated guesses to solve a problem.
+
+Properties:
+• Fast execution
+• Simple implementation
+• No guarantee of optimality
+
+------------------------------------------------------------
+HEURISTIC ALGORITHM EXAMPLE
+
+GPS Navigation
+
+Instead of examining every possible route, the system may choose roads that appear most promising.
+
+Result:
+Usually near-optimal
+Not guaranteed optimal
+
+Advantages:
+• Very fast
+• Efficient for large problems
+
+Disadvantages:
+• May miss the best solution
+
+------------------------------------------------------------
+EXACT VS APPROXIMATION VS HEURISTIC
+
+Exact Algorithm
+
+Solution:
+Optimal
+
+Speed:
+Usually Slow
+
+Guarantee:
+100% Correct
+
+------------------------------------------------------------
+
+Approximation Algorithm
+
+Solution:
+Near Optimal
+
+Speed:
+Moderate
+
+Guarantee:
+Performance Bound Exists
+
+------------------------------------------------------------
+
+Heuristic Algorithm
+
+Solution:
+Good Enough
+
+Speed:
+Fast
+
+Guarantee:
+No Guarantee
+
+------------------------------------------------------------
+OPERATIONAL ALGORITHMS
+
+Operational algorithms focus on completing a sequence of computational tasks rather than optimizing a specific objective function.
+
+Definition:
+Algorithms designed primarily for processing and operational tasks.
+
+Properties:
+• Focus on execution
+• Not necessarily optimization-based
+• Often used in practical applications
+
+------------------------------------------------------------
+OPERATIONAL ALGORITHM EXAMPLE
+
+ClustalW (Bioinformatics)
+
+Purpose:
+Sequence Alignment
+
+Goal:
+Perform biological sequence analysis efficiently.
+
+Focus:
+Task completion rather than finding an optimal mathematical solution.
+
+------------------------------------------------------------
+TRAVELING SALESMAN PROBLEM (TSP)
+
+TSP is a famous NP-Hard optimization problem.
+
+Definition:
+Find the shortest route that visits every city exactly once and returns to the starting city.
+
+------------------------------------------------------------
+GREEDY APPROXIMATION FOR TSP
+
+The following approximation approach can be used:
+
+Step 1:
+Construct a Minimum Spanning Tree (MST).
+
+Step 2:
+Duplicate the tree edges to create an Eulerian Graph.
+
+Step 3:
+Find an Eulerian Cycle.
+
+Step 4:
+Use shortcuts to transform the cycle into a Hamiltonian Cycle.
+
+Result:
+Produces a route close to the optimal solution.
+
+Time Complexity:
+
+O(n²)
+
+------------------------------------------------------------
+2.4 CLASSIFICATION ACCORDING TO MAIN CONCEPT
+
+Algorithms may also be classified by their problem-solving technique.
+
+Main Categories:
+• Simple Recursive Algorithm
+• Divide-and-Conquer Algorithm
+• Dynamic Programming Algorithm
+• Backtracking Algorithm
+• Greedy Algorithm
+• Brute Force Algorithm
+• Branch-and-Bound Algorithm
+
+------------------------------------------------------------
+2.4.1 SIMPLE RECURSIVE ALGORITHM
+
+A recursive algorithm solves a problem by repeatedly solving smaller versions of the same problem.
+
+Definition:
+A function calls itself until a base case is reached.
+
+------------------------------------------------------------
+CHARACTERISTICS OF RECURSION
+
+• Solves a base case directly
+• Solves a smaller subproblem
+• Builds the final solution from smaller solutions
+
+------------------------------------------------------------
+RECURSION EXAMPLE
+
+Counting Elements in a List
+
+Algorithm:
+
+1. If list is empty → Return 0
+2. Remove first element
+3. Count remaining elements
+4. Add 1
+
+------------------------------------------------------------
+SEARCHING EXAMPLE
+
+Check if a value exists in a list.
+
+Steps:
+
+1. If list is empty → Return False
+2. If first element matches → Return True
+3. Search remaining elements recursively
+
+------------------------------------------------------------
+KEYWORD: RECURSION
+
+Recursion is a process where a function calls itself directly or indirectly.
+
+------------------------------------------------------------
+2.4.2 DIVIDE-AND-CONQUER ALGORITHM
+
+Divide-and-Conquer breaks a large problem into smaller subproblems.
+
+Definition:
+Solve smaller subproblems and combine their answers.
+
+------------------------------------------------------------
+HOW DIVIDE-AND-CONQUER WORKS
+
+Step 1:
+Divide the problem.
+
+Step 2:
+Solve each subproblem.
+
+Step 3:
+Combine the solutions.
+
+------------------------------------------------------------
+DIVIDE-AND-CONQUER STRUCTURE
+
+Problem
+   |
+Divide
+   |
+Subproblems
+   |
+Solve
+   |
+Combine
+   |
+Final Solution
+
+------------------------------------------------------------
+QUICKSORT
+
+Steps:
+
+1. Partition the array.
+2. Sort each partition recursively.
+3. No major combine step required.
+
+Time Complexity:
+
+O(n log n) Average Case
+
+------------------------------------------------------------
+MERGE SORT
+
+Steps:
+
+1. Split the array into halves.
+2. Sort each half.
+3. Merge sorted halves.
+
+Time Complexity:
+
+O(n log n)
+
+------------------------------------------------------------
+ADVANTAGES
+
+• Highly efficient
+• Logarithmic recursion depth
+• Suitable for large data sets
+
+------------------------------------------------------------
+2.4.3 DYNAMIC PROGRAMMING ALGORITHM
+
+Dynamic Programming (DP) solves problems by storing solutions to previously solved subproblems.
+
+Definition:
+A problem-solving technique that avoids repeated calculations.
+
+------------------------------------------------------------
+WHY DYNAMIC PROGRAMMING IS NEEDED
+
+Problem: The same subproblems may be solved repeatedly.
+
+Solution:
+
+Store previous results and reuse them.
+
+------------------------------------------------------------
+MEMOIZATION
+
+Memoization means storing computed results for future reuse.
+Benefit: Avoids unnecessary recalculations.
+
+------------------------------------------------------------
+DYNAMIC PROGRAMMING EXAMPLE
+
+Fibonacci Sequence
+
+Formula:
+F(n) = F(n−1) + F(n−2)
+
+Without DP: Many repeated calculations.
+With DP: Each value is calculated once.
+
+------------------------------------------------------------
+ADVANTAGES
+
+• Faster execution
+• Eliminates duplicate computations
+• Converts exponential solutions to polynomial or linear solutions
+
+------------------------------------------------------------
+OPTIMAL SUBSTRUCTURE
+
+optimal solution contains optimal solutions to smaller subproblems.
+
+Example:
+Shortest Path Problems
+
+------------------------------------------------------------
+OVERLAPPING SUBPROBLEMS
+
+The same subproblems are solved repeatedly.
+
+Example:
+Fibonacci Numbers
+
+------------------------------------------------------------
+APPLICATIONS OF DYNAMIC PROGRAMMING
+
+• Knapsack Problem
+• Fibonacci Numbers
+• Sequence Alignment
+• Viterbi Algorithm
+• Shortest Path Problems
+
+------------------------------------------------------------
+BACKTRACKING ALGORITHM
+
+Backtracking builds solutions step-by-step and abandons invalid paths immediately.
+Explore a path and backtrack whenever a condition is violated.
+
+------------------------------------------------------------
+HOW BACKTRACKING WORKS
+
+1. Choose an option.
+2. Test validity.
+3. Continue if valid.
+4. Backtrack if invalid.
+
+------------------------------------------------------------
+N-QUEENS PROBLEM
+
+Goal: Place N queens on a chessboard so that no queen attacks another queen.
+
+Method:
+• Place queen
+• Check validity
+• Continue
+• Backtrack if necessary
+
+------------------------------------------------------------
+ADVANTAGES
+
+• Avoids unnecessary exploration
+• More efficient than Brute Force
+• Quickly eliminates invalid solutions
+
+------------------------------------------------------------
