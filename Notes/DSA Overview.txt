@@ -1,4 +1,4 @@
-1.2.3 BASIC TERMINOLOGIES
+BASIC TERMINOLOGIES
 
 Basic terminologies are fundamental concepts used in data structures and data management.
 
@@ -10,7 +10,6 @@ Data is a value or a collection of values.
 Examples:
 • Name
 • Age
-• Salary
 • Student Marks
 
 Purpose:
@@ -36,11 +35,9 @@ GROUP ITEM
 A group item consists of multiple related data items.
 
 Example:
-
 Student
 • Name
 • ID
-• Age
 • Grade
 
 Properties:
@@ -71,7 +68,6 @@ Entity: Student
 
 Attributes:
 • Student ID
-• Name
 • Age
 • Department
 
@@ -122,7 +118,6 @@ Example:
 Student Record
 • ID = 1001
 • Name = John
-• Age = 21
 • Department = Computer Science
 
 Properties:
@@ -196,17 +191,14 @@ Disadvantages:
 STACK
 
 A stack follows the Last-In, First-Out (LIFO) principle.
+The last element inserted is the first element removed.
 
 Example:
-
 Top
 ↓
 30
 20
 10
-
-Meaning:
-The last element inserted is the first element removed.
 
 Advantages:
 • Fast insertion
@@ -219,12 +211,10 @@ Disadvantages:
 QUEUE
 
 A queue follows the First-In, First-Out (FIFO) principle.
+The first element inserted is the first element removed.
 
 Example:
 Front → 10 | 20 | 30 ← Rear
-
-Meaning:
-The first element inserted is the first element removed.
 
 Advantages:
 • Ordered processing
@@ -292,6 +282,7 @@ Disadvantages:
 HEAP
 
 A heap is a specialized tree used for priority-based operations.
+The largest element is always at the root.
 
 Example (Max Heap):
        100
@@ -299,9 +290,6 @@ Example (Max Heap):
     80     70
    / \    /
  50  40  30
-
-Meaning:
-The largest element is always at the root.
 
 Advantages:
 • Quick insertion
@@ -367,6 +355,49 @@ Purpose:
 • Makes performance comparisons easier
 
 ------------------------------------------------------------
+ALGORITHMS LIKE A TECHNOLOGY
+
+Algorithms are considered a fundamental technology because they help computers solve problems efficiently using available resources.
+
+------------------------------------------------------------
+WHAT IS AN ALGORITHM?
+
+An algorithm is a step-by-step procedure used to solve a problem or perform a task.
+
+Purpose:
+• Produce correct results
+• Use resources efficiently
+• Complete tasks within a reasonable time
+
+------------------------------------------------------------
+WHY ALGORITHMS ARE IMPORTANT
+
+Even if computers become faster, efficient algorithms remain necessary.
+Reason: Computer resources are limited.
+
+Limited Resources:
+• Processing Time
+• Memory
+• Storage
+• Power Consumption
+
+Solution: Use efficient algorithms to maximize performance.
+
+------------------------------------------------------------
+ALGORITHMS VS HARDWARE
+
+System performance depends on both:
+• Fast Hardware
+• Efficient Algorithms
+
+Example:
+Fast Computer + Poor Algorithm
+= Poor Performance
+
+Slow Computer + Efficient Algorithm
+= Better Performance
+
+------------------------------------------------------------
 ALGORITHM EFFICIENCY
 
 The efficiency of an algorithm depends on the amount of resources it consumes.
@@ -379,124 +410,13 @@ Goal:
 • Achieve maximum performance using minimum resources
 
 ------------------------------------------------------------
-ORDER OF GROWTH
+ADA LOVELACE
 
-Order of growth describes how an algorithm's running time increases as the input size increases.
+Ada Lovelace is widely regarded as the world's first computer programmer.
 
-------------------------------------------------------------
-WHY ORDER OF GROWTH IS IMPORTANT
-
-For large inputs, the growth rate is more important than exact execution time.
-
-Example:
-
-T(n) = 5n² + 3n + 2
-
-For large n:
-• Ignore lower-order terms
-• Ignore constants
-
-Result:
-
-T(n) ≈ n²
-
-Meaning:
-The algorithm has quadratic growth.
-
-------------------------------------------------------------
-SIMPLIFYING RUNNING TIME
-
-When analyzing algorithms:
-
-Ignore:
-• Constants
-• Lower-order terms
-
-Focus On:
-• Fastest growing term
-
-Example:
-5n² + 3n + 2
-→ O(n²)
-
-Reason:
-The n² term dominates for large input sizes.
-
-------------------------------------------------------------
-INSERTION SORT ANALYSIS
-
-Insertion Sort builds a sorted array one element at a time.
-
-------------------------------------------------------------
-INPUT SIZE
-
-The performance of Insertion Sort depends on:
-
-• Number of elements (n)
-• Initial arrangement of data
-
-Observation:
-Larger inputs require more processing time.
-
-------------------------------------------------------------
-BEST-CASE ANALYSIS
-
-Best case occurs when the array is already sorted.
-
-Example:
-
-[1, 2, 3, 4, 5]
-
-Operations:
-• Only comparisons are needed
-• No shifting required
-
-Running Time:
-
-O(n)
-
-Meaning:
-Running time grows linearly with input size.
-
-------------------------------------------------------------
-WORST-CASE ANALYSIS
-
-Worst case occurs when the array is sorted in reverse order.
-
-Example:
-
-[5, 4, 3, 2, 1]
-
-Operations:
-• Every element must be compared
-• Every element must be shifted
-
-Running Time:
-
-O(n²)
-
-Meaning:
-Running time grows quadratically with input size.
-
-------------------------------------------------------------
-AVERAGE-CASE ANALYSIS
-
-Average case occurs when data is randomly arranged.
-
-Example:
-
-[4, 1, 5, 2, 3]
-
-Observation:
-About half of the elements need shifting.
-
-Running Time:
-
-O(n²)
-
-Meaning:
-Average performance is similar to the worst case.
-
+Contribution:
+• Wrote the first computer algorithm.
+• Recognized the potential of programmable machines.
 
 ------------------------------------------------------------
 RANDOMIZED ALGORITHMS
@@ -510,6 +430,59 @@ Benefits:
 Examples:
 • Randomized Quick Sort
 • Monte Carlo Algorithms
+
+------------------------------------------------------------
+INSERTION SORT
+
+Insertion Sort builds a sorted array one element at a time.
+Running Time: O(n²)
+
+Characteristics:
+• Simple to implement
+• Good for small datasets
+• Inefficient for large datasets
+
+------------------------------------------------------------
+MERGE SORT
+
+Merge Sort divides data into smaller parts and then merges them in sorted order.
+Running Time: O(n log n)
+
+Characteristics:
+• Efficient for large datasets
+• Faster growth rate than Insertion Sort
+• Uses extra memory
+
+------------------------------------------------------------
+COMPARISON
+
+Insertion Sort:
+• O(n²)
+
+Merge Sort:
+• O(n log n)
+
+Observation:
+As the input size increases, Merge Sort becomes significantly faster than Insertion Sort.
+
+------------------------------------------------------------
+REAL-WORLD EXAMPLE
+
+Suppose two computers are sorting 10 million numbers.
+
+Computer A:
+• Extremely fast hardware
+• Uses Insertion Sort
+
+Computer B:
+• Slower hardware
+• Uses Merge Sort
+
+Result:
+Computer B may finish significantly faster because Merge Sort is more efficient.
+
+Lesson:
+Algorithm efficiency often matters more than hardware speed.
 
 ------------------------------------------------------------
 HARD PROBLEMS
@@ -566,15 +539,12 @@ Understanding these problems helps developers avoid spending excessive time sear
 TRAVELING SALESMAN PROBLEM (TSP)
 
 The Traveling Salesman Problem (TSP) is a famous NP-Complete problem.
-
-Definition:
 Find the shortest possible route that visits every location exactly once and returns to the starting point.
 
 ------------------------------------------------------------
 TSP EXAMPLE
 
 Delivery Locations:
-
        B
       / \
      /   \
@@ -594,13 +564,10 @@ Applications:
 ------------------------------------------------------------
 WHY TSP IS DIFFICULT
 
-Problem:
-The number of possible routes grows rapidly as the number of locations increases.
-
+Problem: The number of possible routes grows rapidly as the number of locations increases.
 Result: Finding the perfect solution becomes computationally expensive.
 
-Solution:
-Approximation algorithms are often used to find near-optimal solutions.
+Solution: Approximation algorithms are often used to find near-optimal solutions.
 
 ------------------------------------------------------------
 APPROXIMATION ALGORITHMS
@@ -616,7 +583,7 @@ Example:
 Delivery companies often use approximate routes instead of the mathematically shortest route.
 
 ------------------------------------------------------------
-1.2.6 PARALLELISM
+PARALLELISM
 
 Parallelism is the practice of performing multiple computations simultaneously.
 
@@ -625,11 +592,8 @@ WHY PARALLELISM IS NEEDED
 
 Processor speeds cannot continuously increase due to physical limitations.
 
-Problem:
-Increasing clock speed generates excessive heat and power consumption.
-
-Solution:
-Use multiple processing cores to perform tasks simultaneously.
+Problem: Increasing clock speed generates excessive heat and power consumption.
+Solution: Use multiple processing cores to perform tasks simultaneously.
 
 ------------------------------------------------------------
 MULTICORE PROCESSORS
@@ -689,3 +653,10 @@ LIMITATIONS OF PARALLELISM
 • Additional hardware requirements
 
 ------------------------------------------------------------
+WHY ALGORITHMS MATTER
+
+Benefits:
+• Reduce running time
+• Save memory
+• Improve scalability
+• Solve larger problems efficiently

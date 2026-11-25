@@ -27,6 +27,7 @@ Found
 Number of Comparisons: 1
 Best Case Complexity: O(1)
 
+
 ------------------------------------------------------------
 WORST CASE
 
