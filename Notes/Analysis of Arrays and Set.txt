@@ -222,78 +222,50 @@ DELETION
 Deletion means removing an element from an array.
 
 Example:
-
 Before: ["apples", "bananas", "cucumbers", "dates", "elderberries"]
-
-Delete:
-
-"cucumbers"
+Delete: "cucumbers"
 
 ------------------------------------------------------------
 STEP 1
 
 Remove "cucumbers"
-
 ["apples", "bananas", _, "dates", "elderberries"]
 
 ------------------------------------------------------------
 STEP 2
 
 Move "dates" left
-
 ["apples", "bananas", "dates", _, "elderberries"]
 
 ------------------------------------------------------------
 STEP 3
 
 Move "elderberries" left
-
 ["apples", "bananas", "dates", "elderberries", _]
 
 ------------------------------------------------------------
 WHY DELETION CAN BE SLOW
 
 Array gaps are not allowed.
-
 After deletion:
 • Remaining elements must shift left.
 
 ------------------------------------------------------------
 DELETION TIME COMPLEXITY
 
-Best Case:
-O(1)
-
+Best Case: O(1)
 Delete last element
 
-Worst Case:
-O(n)
-
+Worst Case: O(n)
 Delete first element
-
-------------------------------------------------------------
-DELETION SUMMARY
-
-Operation:
-Remove element
-
-Best Case:
-O(1)
-
-Worst Case:
-O(n)
 
 ------------------------------------------------------------
 ARRAY TIME COMPLEXITY TABLE
 
 Operation          Time Complexity
-
 Reading            O(1)
-
 Searching          O(n)
-
 Insertion          O(n)
-
 Deletion           O(n)
 
 ------------------------------------------------------------
@@ -309,5 +281,269 @@ Disadvantages:
 • Slow insertions in middle
 • Slow deletions in middle
 • Fixed contiguous memory requirement
+
+------------------------------------------------------------
+EFFICIENCY AFFECTED IN SETS BY A SINGLE RULE
+
+A set is a data structure that stores unique values and does not allow duplicates.
+
+------------------------------------------------------------
+SET
+
+A set is a collection of values where duplicate elements are not allowed.
+
+Example:
+Set = ["a", "b", "c"]
+
+Valid Insertion: Add "d"
+Result: ["a", "b", "c", "d"]
+
+------------------------------------------------------------
+INVALID INSERTION
+
+Set = ["a", "b", "c"]
+Attempt to Add: "b"
+
+Result: Not Allowed
+Reason: The value already exists in the set.
+
+------------------------------------------------------------
+WHY SETS ARE NEEDED
+
+Sets help prevent duplicate data.
+
+Examples:
+• Phone Numbers
+• Email Addresses
+• Student IDs
+• Product Codes
+
+Problem: Duplicate values may lead to incorrect data.
+Solution: Sets automatically prevent duplication.
+
+------------------------------------------------------------
+ARRAY VS SET
+
+At first glance, arrays and sets appear similar.
+
+Both:
+• Store multiple values
+• Use indexes
+• Can be searched
+• Can be traversed
+
+Difference: 
+Array: Duplicates Allowed
+
+Example:
+["A", "B", "B", "C"]
+
+------------------------------------------------------------
+Set:
+Duplicates Not Allowed
+
+Example:
+["A", "B", "C"]
+
+------------------------------------------------------------
+READING IN A SET
+
+Reading means accessing a value at a specific index.
+
+Example:
+Set: ["apples", "bananas", "dates"]
+
+Read index 1
+Result: "bananas"
+
+------------------------------------------------------------
+READING EFFICIENCY
+
+Just like arrays, a set can directly access an index.
+
+Time Complexity: O(1)
+Meaning: Requires only one step.
+
+------------------------------------------------------------
+SEARCHING IN A SET
+
+Searching means checking whether a value exists.
+
+Example:
+["apples", "bananas", "dates"]
+
+Search: "dates"
+
+Process:
+Check index 0 → apples
+Check index 1 → bananas
+Check index 2 → dates
+
+Found
+
+------------------------------------------------------------
+SEARCHING EFFICIENCY
+
+Worst Case: Must check all elements.
+Time Complexity: O(n)
+Meaning: Maximum N steps for N elements.
+
+------------------------------------------------------------
+DELETION IN A SET
+
+Deletion works similarly to an array.
+
+Example:
+Before: ["apples", "bananas", "dates", "figs"]
+Delete: "bananas"
+After Deletion: ["apples", _, "dates", "figs"]
+
+------------------------------------------------------------
+SHIFT ELEMENTS
+
+Move "dates" left
+Move "figs" left
+
+Final Result: ["apples", "dates", "figs"]
+
+------------------------------------------------------------
+DELETION EFFICIENCY
+
+Time Complexity: O(n)
+Reason: Elements may need to shift left.
+
+------------------------------------------------------------
+INSERTION IN A SET
+
+Insertion is where sets differ from arrays.
+
+Before adding a new element:
+
+The set must verify that the value does not already exist.
+
+------------------------------------------------------------
+EXAMPLE
+
+Current Set: ["apples", "bananas", "cucumbers", "dates", "elderberries"]
+Add: "figs"
+
+Search Index 0: "apples"
+Search Index 1: "bananas"
+Search Index 2: "cucumbers"
+Search Index 3: "dates"
+Search Index 4: "elderberries"
+Insert "figs"
+
+Result: ["apples", "bananas", "cucumbers", "dates", "elderberries", "figs"]
+
+------------------------------------------------------------
+WHY INSERTION IS SLOWER IN SETS
+
+Before insertion:
+The computer must search the entire set to ensure the value does not already exist.
+
+Rule:
+No Duplicates Allowed
+Additional search is required before insertion.
+
+------------------------------------------------------------
+BEST-CASE INSERTION
+
+For a set containing N elements:
+
+Steps Required:
+N Search Steps + 1 Insertion Step
+Total: N + 1 Steps
+Time Complexity: O(n)
+
+------------------------------------------------------------
+WORST-CASE INSERTION
+
+Insert at the beginning:
+
+The computer must:
+Step 1: Search all N elements
+Step 2: Shift all N elements right
+Step 3: Insert the new value
+Total Steps: 2N + 1
+Time Complexity: O(n)
+
+------------------------------------------------------------
+ARRAY VS SET EFFICIENCY
+
+READING
+
+Array: O(1)
+Set: O(1)
+
+Winner: Tie
+
+------------------------------------------------------------
+SEARCHING
+
+Array: O(n)
+Set: O(n)
+
+Winner: Tie
+
+------------------------------------------------------------
+INSERTION
+
+Array:
+O(1) at end
+O(n) worst case
+Set: O(n)
+
+Winner: Array
+
+------------------------------------------------------------
+DELETION
+
+Array: O(n)
+Set: O(n)
+
+Winner: Tie
+
+------------------------------------------------------------
+ADVANTAGES OF SETS
+
+• Prevent duplicate values
+• Improve data integrity
+• Useful for unique collections
+• Simple implementation
+
+------------------------------------------------------------
+DISADVANTAGES OF SETS
+
+• Slower insertion than arrays
+• Additional searching required
+• Duplicate checking increases overhead
+
+------------------------------------------------------------
+WHEN TO USE ARRAYS
+
+Use Arrays When:
+• Duplicates are allowed
+• Fast insertion is important
+• Simpler storage is needed
+
+Examples:
+• Shopping Lists
+• Test Scores
+• Sensor Readings
+
+------------------------------------------------------------
+WHEN TO USE SETS
+
+Use Sets When:
+• Duplicate values are not allowed
+• Data uniqueness is important
+• Integrity matters more than insertion speed
+
+Examples:
+• Phone Numbers
+• Email Addresses
+• Employee IDs
+• Usernames
 
 ------------------------------------------------------------
