@@ -1,0 +1,437 @@
+3.1 ARRAY: THE FOUNDATIONAL DATA STRUCTURE
+
+An array is one of the most basic and widely used data structures in computer science.
+
+Definition:
+An array is a collection of elements stored in contiguous memory locations.
+
+------------------------------------------------------------
+ARRAY EXAMPLE
+
+Shopping List Array:
+
+["apples", "bananas", "cucumbers", "dates", "elderberries"]
+
+Index:
+
+0 → apples
+1 → bananas
+2 → cucumbers
+3 → dates
+4 → elderberries
+
+------------------------------------------------------------
+INDEX
+
+An index represents the position of an element in an array.
+
+Properties:
+• Most programming languages start indexing from 0.
+• Each element has a unique index.
+• Allows direct access to data.
+
+Example:
+
+Array = ["A", "B", "C", "D"]
+
+Index:
+0 → A
+1 → B
+2 → C
+3 → D
+
+------------------------------------------------------------
+WHY ARRAYS ARE IMPORTANT
+
+Arrays provide:
+
+• Fast access to elements
+• Simple implementation
+• Efficient memory usage
+• Foundation for many advanced data structures
+
+Examples:
+• Shopping Lists
+• Student Records
+• Inventory Systems
+• Mathematical Computations
+
+------------------------------------------------------------
+COMMON ARRAY OPERATIONS
+
+The four main operations are:
+
+1. Reading
+2. Searching
+3. Insertion
+4. Deletion
+
+------------------------------------------------------------
+3.1.1 READING
+
+Reading means accessing a value at a specific index.
+
+Example:
+
+Array:
+
+["apples", "bananas", "cucumbers", "dates", "elderberries"]
+
+Read index 2
+
+Result:
+
+"cucumbers"
+
+------------------------------------------------------------
+WHY READING IS FAST
+
+The computer can directly jump to any index location.
+
+Properties:
+• No searching required
+• Direct memory access
+• Very efficient
+
+Time Complexity:
+
+O(1)
+
+Meaning:
+Reading always requires one step, regardless of array size.
+
+------------------------------------------------------------
+MEMORY ADDRESS
+
+Each array element occupies a unique memory address.
+
+Example:
+
+Index      Address
+0          1010
+1          1011
+2          1012
+3          1013
+4          1014
+
+To find index 3:
+
+1010 + 3 = 1013
+
+Value found:
+
+"dates"
+
+------------------------------------------------------------
+READING SUMMARY
+
+Operation:
+Access a known index
+
+Time Complexity:
+O(1)
+
+Efficiency:
+Very Fast
+
+------------------------------------------------------------
+3.1.2 SEARCHING
+
+Searching means finding whether a value exists in an array.
+
+Example:
+
+Array:
+
+["apples", "bananas", "cucumbers", "dates", "elderberries"]
+
+Search for:
+
+"dates"
+
+------------------------------------------------------------
+LINEAR SEARCH PROCESS
+
+Step 1:
+Check "apples"
+
+Step 2:
+Check "bananas"
+
+Step 3:
+Check "cucumbers"
+
+Step 4:
+Check "dates"
+
+Found
+
+------------------------------------------------------------
+WHY SEARCHING IS SLOWER
+
+The computer must examine one element at a time until it finds the target.
+
+Worst Case:
+
+Searching for:
+
+"elderberries"
+
+or
+
+Searching for an item that does not exist.
+
+The computer examines every element.
+
+------------------------------------------------------------
+SEARCHING TIME COMPLEXITY
+
+Array contains N elements.
+
+Worst Case:
+
+O(n)
+
+Meaning:
+
+Maximum Steps = N
+
+Examples:
+
+5 elements → 5 steps
+
+100 elements → 100 steps
+
+1000 elements → 1000 steps
+
+------------------------------------------------------------
+SEARCHING SUMMARY
+
+Operation:
+Find a value
+
+Time Complexity:
+O(n)
+
+Efficiency:
+Moderate
+
+------------------------------------------------------------
+3.1.3 INSERTION
+
+Insertion means adding a new element into an array.
+
+------------------------------------------------------------
+INSERTION AT THE END
+
+Example:
+
+Before:
+
+["apples", "bananas", "cucumbers"]
+
+Insert:
+
+"dates"
+
+After:
+
+["apples", "bananas", "cucumbers", "dates"]
+
+------------------------------------------------------------
+INSERTION AT THE END COMPLEXITY
+
+Only one insertion is required.
+
+Time Complexity:
+
+O(1)
+
+------------------------------------------------------------
+INSERTION IN THE MIDDLE
+
+Example:
+
+Before:
+
+["apples", "bananas", "cucumbers", "dates"]
+
+Insert:
+
+"figs" at index 2
+
+------------------------------------------------------------
+STEP 1
+
+Move "dates" right
+
+["apples", "bananas", "cucumbers", _, "dates"]
+
+------------------------------------------------------------
+STEP 2
+
+Move "cucumbers" right
+
+["apples", "bananas", _, "cucumbers", "dates"]
+
+------------------------------------------------------------
+STEP 3
+
+Insert "figs"
+
+["apples", "bananas", "figs", "cucumbers", "dates"]
+
+------------------------------------------------------------
+WHY INSERTION CAN BE SLOW
+
+To create space:
+
+• Existing elements must be shifted.
+• More elements mean more shifts.
+
+------------------------------------------------------------
+INSERTION TIME COMPLEXITY
+
+Best Case:
+O(1)
+
+Insert at end
+
+Worst Case:
+O(n)
+
+Insert at beginning
+
+------------------------------------------------------------
+INSERTION SUMMARY
+
+Operation:
+Add new element
+
+Best Case:
+O(1)
+
+Worst Case:
+O(n)
+
+------------------------------------------------------------
+3.1.4 DELETION
+
+Deletion means removing an element from an array.
+
+Example:
+
+Before:
+
+["apples", "bananas", "cucumbers", "dates", "elderberries"]
+
+Delete:
+
+"cucumbers"
+
+------------------------------------------------------------
+STEP 1
+
+Remove "cucumbers"
+
+["apples", "bananas", _, "dates", "elderberries"]
+
+------------------------------------------------------------
+STEP 2
+
+Move "dates" left
+
+["apples", "bananas", "dates", _, "elderberries"]
+
+------------------------------------------------------------
+STEP 3
+
+Move "elderberries" left
+
+["apples", "bananas", "dates", "elderberries", _]
+
+------------------------------------------------------------
+WHY DELETION CAN BE SLOW
+
+Array gaps are not allowed.
+
+After deletion:
+• Remaining elements must shift left.
+
+------------------------------------------------------------
+DELETION TIME COMPLEXITY
+
+Best Case:
+O(1)
+
+Delete last element
+
+Worst Case:
+O(n)
+
+Delete first element
+
+------------------------------------------------------------
+DELETION SUMMARY
+
+Operation:
+Remove element
+
+Best Case:
+O(1)
+
+Worst Case:
+O(n)
+
+------------------------------------------------------------
+ARRAY TIME COMPLEXITY TABLE
+
+Operation          Time Complexity
+
+Reading            O(1)
+
+Searching          O(n)
+
+Insertion          O(n)
+
+Deletion           O(n)
+
+------------------------------------------------------------
+WHY ARRAYS ARE POWERFUL
+
+Advantages:
+• Fast random access
+• Simple structure
+• Efficient memory usage
+• Easy implementation
+
+Disadvantages:
+• Slow insertions in middle
+• Slow deletions in middle
+• Fixed contiguous memory requirement
+
+------------------------------------------------------------
+KEYWORDS
+
+Array
+→ Collection of elements stored in contiguous memory locations
+
+Index
+→ Position of an element inside an array
+
+Memory Address
+→ Unique location in memory
+
+Reading
+→ Accessing a value at a known index
+
+Searching
+→ Finding a value in an array
+
+Insertion
+→ Adding a new value
+
+Deletion
+→ Removing a value
+
+------------------------------------------------------------
