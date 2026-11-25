@@ -12,8 +12,7 @@ Examples:
 • Age
 • Student Marks
 
-Purpose:
-• Represents raw facts and information.
+Purpose: • Represents raw facts and information.
 
 ------------------------------------------------------------
 DATA ITEM
@@ -155,11 +154,8 @@ Benefits:
 • Faster Deletion
 • Better Memory Management
 
-Problem:
-Simple variables cannot efficiently manage large amounts of interconnected data.
-
-Solution:
-Data structures provide organized and efficient ways to store, access, and manipulate data.
+Problem: Simple variables cannot efficiently manage large amounts of interconnected data.
+Solution: Data structures provide organized and efficient ways to store, access, and manipulate data.
 
 ------------------------------------------------------------
 ARRAY
@@ -456,11 +452,8 @@ Characteristics:
 ------------------------------------------------------------
 COMPARISON
 
-Insertion Sort:
-• O(n²)
-
-Merge Sort:
-• O(n log n)
+Insertion Sort: O(n²)
+Merge Sort: O(n log n)
 
 Observation:
 As the input size increases, Merge Sort becomes significantly faster than Insertion Sort.
@@ -478,11 +471,8 @@ Computer B:
 • Slower hardware
 • Uses Merge Sort
 
-Result:
-Computer B may finish significantly faster because Merge Sort is more efficient.
-
-Lesson:
-Algorithm efficiency often matters more than hardware speed.
+Result: Computer B may finish significantly faster because Merge Sort is more efficient.
+Lesson: Algorithm efficiency often matters more than hardware speed.
 
 ------------------------------------------------------------
 HARD PROBLEMS

@@ -64,12 +64,9 @@ Advantages:
 DETERMINISTIC VS RANDOMIZED ALGORITHMS
 
 Deterministic Algorithm
-
 Input → Fixed Steps → Same Output
 
-------------------------------------------------------------
 Randomized Algorithm
-
 Input → Random Choice → Different Execution Paths → Output
 
 ------------------------------------------------------------
@@ -104,7 +101,6 @@ Properties:
 
 Example:
 Input: Prime Number Test
-
 Result: The algorithm may occasionally be wrong.
 
 ------------------------------------------------------------
@@ -146,15 +142,12 @@ Disadvantages:
 MONTE CARLO VS LAS VEGAS
 
 Monte Carlo
-
 Output: May be incorrect
 Runtime: Usually predictable
 
 Goal: Fast approximation
 
-------------------------------------------------------------
 Las Vegas
-
 Output: Always correct
 Runtime: May vary
 
@@ -421,6 +414,8 @@ OPERATIONAL ALGORITHMS
 
 Operational algorithms focus on completing a sequence of computational tasks rather than optimizing a specific objective function.
 Algorithms designed primarily for processing and operational tasks.
+Operational algorithms are created to carry out a set of steps or tasks efficiently, 
+rather than finding the "best" solution according to some mathematical objective function.
 
 Properties:
 • Focus on execution

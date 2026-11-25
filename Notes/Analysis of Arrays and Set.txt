@@ -60,12 +60,11 @@ The four main operations are:
 4. Deletion
 
 ------------------------------------------------------------
-3.1.1 READING
+READING
 
 Reading means accessing a value at a specific index.
 
 Example:
-
 Array: ["apples", "bananas", "cucumbers", "dates", "elderberries"]
 
 Read index 2
@@ -145,7 +144,6 @@ The computer examines every element.
 SEARCHING TIME COMPLEXITY
 
 Array contains N elements.
-
 Worst Case: O(n)
 
 Meaning: Maximum Steps = N
@@ -183,19 +181,13 @@ Before: ["apples", "bananas", "cucumbers", "dates"]
 Insert: "figs" at index 2
 
 ------------------------------------------------------------
-STEP 1
+STEPS
 
 Move "dates" right
 ["apples", "bananas", "cucumbers", _, "dates"]
 
-------------------------------------------------------------
-STEP 2
-
 Move "cucumbers" right
 ["apples", "bananas", _, "cucumbers", "dates"]
-
-------------------------------------------------------------
-STEP 3
 
 Insert "figs"
 ["apples", "bananas", "figs", "cucumbers", "dates"]
@@ -226,19 +218,13 @@ Before: ["apples", "bananas", "cucumbers", "dates", "elderberries"]
 Delete: "cucumbers"
 
 ------------------------------------------------------------
-STEP 1
+STEPS
 
 Remove "cucumbers"
 ["apples", "bananas", _, "dates", "elderberries"]
 
-------------------------------------------------------------
-STEP 2
-
 Move "dates" left
 ["apples", "bananas", "dates", _, "elderberries"]
-
-------------------------------------------------------------
-STEP 3
 
 Move "elderberries" left
 ["apples", "bananas", "dates", "elderberries", _]
@@ -247,6 +233,7 @@ Move "elderberries" left
 WHY DELETION CAN BE SLOW
 
 Array gaps are not allowed.
+
 After deletion:
 • Remaining elements must shift left.
 
@@ -338,7 +325,6 @@ Array: Duplicates Allowed
 Example:
 ["A", "B", "B", "C"]
 
-------------------------------------------------------------
 Set:
 Duplicates Not Allowed
 
@@ -418,7 +404,6 @@ INSERTION IN A SET
 Insertion is where sets differ from arrays.
 
 Before adding a new element:
-
 The set must verify that the value does not already exist.
 
 ------------------------------------------------------------
@@ -450,9 +435,9 @@ Additional search is required before insertion.
 BEST-CASE INSERTION
 
 For a set containing N elements:
-
 Steps Required:
 N Search Steps + 1 Insertion Step
+
 Total: N + 1 Steps
 Time Complexity: O(n)
 
