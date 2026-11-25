@@ -191,7 +191,7 @@ Degree(C) = 2
 Note: A self-loop contributes 2 to the degree.
 
 ------------------------------------------------------------
-DEGREE THEOREM
+UNDIRECTED DEGREE THEOREM
 
 The sum of all vertex degrees in an undirected graph equals twice the number of edges.
 

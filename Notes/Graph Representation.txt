@@ -318,7 +318,6 @@ P1
 └── P4 (8)
 
 Calculations:
-
 Through P2:
 2 + 1 + 1 = 4
 

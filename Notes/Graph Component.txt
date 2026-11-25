@@ -343,7 +343,8 @@ Relaxation checks whether a shorter path exists through another vertex.
 
 Formula:
 If: d(u) + w(u, v) < d(v)
-Then: d(v) = d(u) + w(u, v)
+Then: d(v) = d(u) + w(u, v)++
+
 pred(v) = u
 
 Where:
