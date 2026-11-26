@@ -15,13 +15,14 @@
 - Circular Linked List
 - Stacks
 - Stack Implementations
+- Stack Analysis
 - Infix, Prefix, and Postfix Expression
 - Queue
 - Queue Implementation
 - Queue Implementation2
 - Circular Queue
 - Priority Queue
-- Stack & Queue Analysis
+- Queue Analysis
 - Trees
 - Binary Tree Properties
 - Binary Search Tree
