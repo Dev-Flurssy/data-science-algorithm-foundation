@@ -12,7 +12,7 @@ Examples:
 • Age
 • Student Marks
 
-Purpose: • Represents raw facts and information.
+Purpose: Represents raw facts and information.
 
 ------------------------------------------------------------
 DATA ITEM
