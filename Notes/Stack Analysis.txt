@@ -1,4 +1,4 @@
-UNDERSTANDING STACKS
+b nUNDERSTANDING STACKS
 
 A stack is a linear data structure that follows the Last-In, First-Out (LIFO) principle.
 The last element inserted into the stack is the first element removed.
@@ -251,7 +251,6 @@ Disadvantages:
 STACK TIME COMPLEXITY
 
 Operation        Complexity
-
 Push             O(1)
 Pop              O(1)
 Peek             O(1)
@@ -360,7 +359,8 @@ A stack is not only a data storage structure but also a powerful problem-solving
 WHY STACKS ARE USEFUL
 
 Stacks simplify many programming tasks.
-Instead of manually tracking data positions and indexes, the stack automatically manages insertion and removal operations.
+Instead of manually tracking data positions and indexes, 
+the stack automatically manages insertion and removal operations.
 
 Benefits:
 • Simpler code
