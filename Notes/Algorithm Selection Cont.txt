@@ -6,7 +6,6 @@ A stack is not only a data storage structure but also a powerful problem-solving
 WHY STACKS ARE USEFUL
 
 Stacks simplify many programming tasks.
-
 Instead of manually tracking data positions and indexes, the stack automatically manages insertion and removal operations.
 
 Benefits:
@@ -234,14 +233,10 @@ Front           Rear
 Dequeue
 
 Result:
-
 Front      Rear
-
 20   30   40
 
-Removed:
-
-10
+Removed: 10
 
 ------------------------------------------------------------
 PEEK OPERATION
@@ -249,17 +244,11 @@ PEEK OPERATION
 Peek returns the front element without removing it.
 
 Example:
-
 Queue:
-
 Front           Rear
-
 10   20   30   40
 
-Peek Result:
-
-10
-
+Peek Result: 10
 Queue Remains Unchanged
 
 ------------------------------------------------------------
@@ -274,9 +263,7 @@ Queues can be implemented using:
 ARRAY IMPLEMENTATION
 
 Example:
-
 Index   Value
-
 0       10
 1       20
 2       30
@@ -291,7 +278,6 @@ Disadvantages:
 LINKED LIST IMPLEMENTATION
 
 Each node contains:
-
 • Data
 • Reference to next node
 
@@ -308,40 +294,27 @@ A circular queue reuses empty spaces created at the beginning of the array.
 PROBLEM WITH NORMAL ARRAY QUEUE
 
 After several deletions:
-
 Front → moves right
-
 Rear → continues moving right
 
 Eventually:
-
 Rear reaches the last index
-
 Even though empty spaces exist at the front.
 
 ------------------------------------------------------------
 SOLUTION: CIRCULAR QUEUE
 
-Instead of stopping:
-
-Rear wraps around to the beginning.
+Instead of stopping: Rear wraps around to the beginning.
 
 Example:
-
 Array Size = 5
-
-Index:
-
-0 1 2 3 4
-
+Index: 0 1 2 3 4
 Rear reaches index 4
 
 Next insertion:
-
 Rear returns to index 0
 
-Result:
-Array space is reused efficiently.
+Result: Array space is reused efficiently.
 
 ------------------------------------------------------------
 QUEUE TIME COMPLEXITY
@@ -349,101 +322,69 @@ QUEUE TIME COMPLEXITY
 Operation          Complexity
 
 Enqueue            O(1)
-
 Dequeue            O(1)
-
 Peek               O(1)
-
 Search             O(n)
 
 ------------------------------------------------------------
 WHY QUEUE OPERATIONS ARE FAST
 
-Reason:
-
 Insertion occurs only at rear.
-
 Removal occurs only at front.
-
 No shifting is required.
 
 ------------------------------------------------------------
 ERROR CONDITIONS
 
 QUEUE OVERFLOW
-
 Occurs when attempting to insert into a full queue.
 
 Example:
-
 Capacity = 5
-
 Queue Already Contains 5 Items
-
 Enqueue New Item
 
-Result:
-
-Overflow Error
+Result: Overflow Error
 
 ------------------------------------------------------------
-
 QUEUE UNDERFLOW
 
 Occurs when attempting to remove from an empty queue.
 
 Example:
-
 Queue Empty
-
 Dequeue
 
-Result:
-
-Underflow Error
+Result: Underflow Error
 
 ------------------------------------------------------------
-5.3 PRIORITY QUEUES
+PRIORITY QUEUES
 
 A priority queue is a special type of queue where elements are processed according to priority.
 
 ------------------------------------------------------------
 WHAT IS A PRIORITY QUEUE?
 
-Definition:
-
 Items are removed based on priority rather than arrival order.
-
-Highest Priority Item
-→ Removed First
+Highest Priority Item → Removed First
 
 ------------------------------------------------------------
 NORMAL QUEUE
 
-Arrival Order:
-
-10 → 20 → 30 → 40
-
-Removal Order:
-
-10 → 20 → 30 → 40
-
+Arrival Order: 10 → 20 → 30 → 40
+Removal Order: 10 → 20 → 30 → 40
 FIFO
 
 ------------------------------------------------------------
 PRIORITY QUEUE
 
 Items:
-
 20
 5
 50
 10
 
-Removal Order:
-
-5 → 10 → 20 → 50
-
+Removal Order: 5 → 10 → 20 → 50
 Highest Priority Processed First
 
 ------------------------------------------------------------
@@ -452,20 +393,16 @@ REAL-LIFE EXAMPLE
 Hospital Emergency Room
 
 Patients:
-
 Patient A → Minor Injury
 Patient B → Heart Attack
 Patient C → Fever
 
 Treatment Order:
-
 Patient B
 Patient C
 Patient A
 
-Reason:
-
-Priority, not arrival time.
+Reason: Priority, not arrival time.
 
 ------------------------------------------------------------
 HOW PRIORITY QUEUES WORK
@@ -473,57 +410,33 @@ HOW PRIORITY QUEUES WORK
 Elements remain sorted based on priority.
 
 Example:
-
-Queue:
-
-50 40 30 20 10
-
-Highest Priority:
-
-10
-
+Queue: 50 40 30 20 10
+Highest Priority: 10
 Removed First
 
 ------------------------------------------------------------
 PRIORITY QUEUE OPERATIONS
 
-Insertion:
-Place item in correct sorted position.
-
-Deletion:
-Remove highest-priority item.
-
-Peek:
-View highest-priority item.
+Insertion: Place item in correct sorted position.
+Deletion: Remove highest-priority item.
+Peek: View highest-priority item.
 
 ------------------------------------------------------------
 INSERTION IN PRIORITY QUEUE
 
 Example:
-
-Current Queue:
-
-500 400 200 100
-
-Insert:
-
-300
-
-Result:
-
-500 400 300 200 100
+Current Queue: 500 400 200 100
+Insert: 300
+Result: 500 400 300 200 100
 
 ------------------------------------------------------------
 WHY INSERTION IS SLOWER
 
 To maintain order:
-
 • Search required
 • Elements may need shifting
 
-Time Complexity:
-
-O(n)
+Time Complexity: O(n)
 
 ------------------------------------------------------------
 DELETION IN PRIORITY QUEUE
@@ -531,37 +444,24 @@ DELETION IN PRIORITY QUEUE
 Highest-priority item already sits at the front.
 
 Example:
-
 500 400 300 200 100
+Delete: 100
 
-Delete:
-
-100
-
-Result:
-
-500 400 300 200
+Result: 500 400 300 200
 
 ------------------------------------------------------------
 WHY DELETION IS FAST
 
 Item is already positioned correctly.
-
 No searching required.
-
-Time Complexity:
-
-O(1)
+Time Complexity: O(1)
 
 ------------------------------------------------------------
 PRIORITY QUEUE TIME COMPLEXITY
 
 Operation          Complexity
-
 Insertion          O(n)
-
 Deletion           O(1)
-
 Peek               O(1)
 
 ------------------------------------------------------------
@@ -578,98 +478,31 @@ USES OF PRIORITY QUEUES
 STACK VS QUEUE VS PRIORITY QUEUE
 
 Stack
-
-Rule:
-LIFO
+Rule: LIFO
 
 Example:
 Plate Stack
-
-Insertion:
-O(1)
-
-Deletion:
-O(1)
+Insertion: O(1)
+Deletion: O(1)
 
 ------------------------------------------------------------
-
 Queue
 
-Rule:
-FIFO
+Rule: FIFO
 
 Example:
 Ticket Line
-
-Insertion:
-O(1)
-
-Deletion:
-O(1)
+Insertion: O(1)
+Deletion: O(1)
 
 ------------------------------------------------------------
-
 Priority Queue
 
-Rule:
-Priority-Based
+Rule: Priority-Based
 
 Example:
 Hospital Emergency Room
-
-Insertion:
-O(n)
-
-Deletion:
-O(1)
+Insertion: O(n)
+Deletion: O(1)
 
 ------------------------------------------------------------
-QUICK EXAM SUMMARY
-
-Stack
-→ Last In First Out (LIFO)
-
-Push
-→ Add to top
-
-Pop
-→ Remove from top
-
-Queue
-→ First In First Out (FIFO)
-
-Enqueue
-→ Add to rear
-
-Dequeue
-→ Remove from front
-
-Circular Queue
-→ Reuses empty spaces in array
-
-Priority Queue
-→ Removes highest-priority item first
-
-Stack Complexity
-
-Push = O(1)
-Pop = O(1)
-
-Queue Complexity
-
-Enqueue = O(1)
-Dequeue = O(1)
-
-Priority Queue Complexity
-
-Insertion = O(n)
-Deletion = O(1)
-
-Main Use of Stack
-→ Function Calls and Recursion
-
-Main Use of Queue
-→ Ordered Processing
-
-Main Use of Priority Queue
-→ Processing Important Tasks First

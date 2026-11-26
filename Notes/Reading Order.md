@@ -4,6 +4,7 @@
 - Algorithm
 - Classification of Algorithm
 - Algorithm Selection
+- Algorithm Selection Cont
 - Data Manipulation
 - Space Complexity
 - Complexity Analysis
