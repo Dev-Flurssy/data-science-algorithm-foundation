@@ -1,3 +1,357 @@
+UNDERSTANDING STACKS
+
+A stack is a linear data structure that follows the Last-In, First-Out (LIFO) principle.
+The last element inserted into the stack is the first element removed.
+
+------------------------------------------------------------
+STACK
+
+Think of a stack of plates.
+
+Example:
+Top
+ ↓
+[Plate 4]
+[Plate 3]
+[Plate 2]
+[Plate 1]
+
+To remove a plate:
+Remove Plate 4 first.
+
+Result: Last plate added → First plate removed
+
+------------------------------------------------------------
+LIFO PRINCIPLE
+
+LIFO stands for: Last In, First Out
+
+Meaning:
+Last Item Added
+        ↓
+First Item Removed
+
+Example:
+Push A
+Push B
+Push C
+
+Stack:
+Top
+ ↓
+C
+B
+A
+
+Pop Operation: Remove C
+Result: C is removed first.
+
+------------------------------------------------------------
+WHY STACKS ARE NEEDED
+
+Stacks are extremely useful when dealing with temporary data.
+
+Applications:
+• Function Calls
+• Undo Operations
+• Expression Evaluation
+• Delimiter Matching
+• Browser History
+• Recursion
+
+------------------------------------------------------------
+REAL-LIFE EXAMPLE 1: MAIL STACK
+
+Suppose letters arrive throughout the day.
+
+Arrival Order:
+Letter A
+Letter B
+Letter C
+Letter D
+
+Stack:
+Top
+ ↓
+D
+C
+B
+A
+
+Processing: D → C → B → A
+Result: Most recently received letter is processed first.
+
+------------------------------------------------------------
+REAL-LIFE EXAMPLE 2: WORK TASKS
+
+Current Task: Project A
+Suddenly: Project B becomes urgent
+
+Later: Meeting C starts
+Then: Phone Call D arrives
+
+Stack:
+Top
+ ↓
+D
+C
+B
+A
+
+Work Order:
+Finish D
+Return to C
+Return to B
+Return to A
+
+This is exactly how stack behavior works.
+
+------------------------------------------------------------
+BASIC STACK OPERATIONS
+
+The main stack operations are:
+• Push
+• Pop
+• Peek
+
+------------------------------------------------------------
+PUSH OPERATION
+
+Push means adding an item to the top of the stack.
+
+Example:
+Before:
+Top
+ ↓
+30
+20
+10
+
+Push 40
+
+After:
+Top
+ ↓
+40
+30
+20
+10
+
+------------------------------------------------------------
+POP OPERATION
+
+Pop means removing the top element from the stack.
+
+Example:
+Before:
+Top
+ ↓
+40
+30
+20
+10
+
+Pop
+
+After:
+Top
+ ↓
+30
+20
+10
+
+Removed:
+40
+
+------------------------------------------------------------
+PEEK OPERATION
+
+Peek allows us to examine the top element without removing it.
+
+Example:
+Stack:
+Top
+ ↓
+40
+30
+20
+10
+
+Peek Result: 40
+Stack Remains Unchanged
+
+------------------------------------------------------------
+STACK OVERFLOW
+
+Overflow occurs when attempting to push into a full stack.
+
+Example:
+Maximum Capacity = 5
+
+Current Stack:
+5
+4
+3
+2
+1
+
+Push 6
+Result: Overflow Error
+
+------------------------------------------------------------
+STACK UNDERFLOW
+
+Underflow occurs when attempting to pop from an empty stack.
+
+Example:
+Stack: Empty
+Attempt: Pop
+Result: Underflow Error
+
+------------------------------------------------------------
+STACK IMPLEMENTATION
+
+Stacks can be implemented using:
+• Arrays
+• Linked Lists
+
+------------------------------------------------------------
+ARRAY IMPLEMENTATION
+
+Example:
+Index   Value
+0       10
+1       20
+2       30
+
+Top = 2
+
+Advantages:
+• Simple implementation
+• Fast access
+
+Disadvantages:
+• Fixed size
+
+------------------------------------------------------------
+LINKED LIST IMPLEMENTATION
+
+Each node stores:
+• Data
+• Reference to next node
+
+Advantages:
+• Dynamic size
+• No fixed capacity
+
+Disadvantages:
+• Extra memory required for pointers
+
+------------------------------------------------------------
+STACK TIME COMPLEXITY
+
+Operation        Complexity
+
+Push             O(1)
+Pop              O(1)
+Peek             O(1)
+Search           O(n)
+
+------------------------------------------------------------
+WHY STACK OPERATIONS ARE FAST
+
+All operations occur only at the top.
+No shifting of elements is required.
+
+------------------------------------------------------------
+STACK APPLICATION 1: FUNCTION CALLS
+
+Stacks are heavily used during function execution.
+
+Example:
+main()
+   ↓
+functionA()
+   ↓
+functionB()
+
+Stack:
+Top
+ ↓
+functionB
+functionA
+main
+
+When functionB completes: Pop functionB
+Return to functionA
+
+------------------------------------------------------------
+STACK APPLICATION 2: EXPRESSION EVALUATION
+
+Stacks help evaluate expressions.
+
+Example:
+3 × (4 + 5)
+
+Steps:
+1. Store operators and parentheses
+2. Compute inner expression first
+3. Return result
+
+Result: 3 × 9 = 27
+
+------------------------------------------------------------
+STACK APPLICATION 3: DELIMITER MATCHING
+
+Stacks help verify matching symbols.
+
+Symbols:
+()
+[]
+{}
+
+------------------------------------------------------------
+HOW DELIMITER MATCHING WORKS
+
+Opening Symbols:([{
+Action: Push onto Stack
+
+Closing Symbols: )]}
+Action: Pop from Stack
+Compare
+
+If Matching: Continue
+If Not Matching: Error
+
+------------------------------------------------------------
+STACK ADVANTAGES
+
+• Fast insertion
+• Fast deletion
+• Simple implementation
+• Efficient memory use
+• Supports recursion
+
+------------------------------------------------------------
+STACK DISADVANTAGES
+
+• Access restricted to top element
+• Searching is slow
+• No random access
+
+------------------------------------------------------------
+STACK VS ARRAY
+
+Array:
+• Access any element directly
+• Supports indexing
+
+Stack:
+• Access only top element
+• Follows LIFO
+
+------------------------------------------------------------
+
 USING THE STACK AS AN ANALYTICAL TOOL
 
 A stack is not only a data storage structure but also a powerful problem-solving tool.
