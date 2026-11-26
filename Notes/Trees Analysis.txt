@@ -20,37 +20,29 @@ Examples:
 Problem:
 Arrays and linked lists are inefficient for representing hierarchical relationships.
 
-Solution:
-Trees organize parent-child relationships naturally.
+Solution: Trees organize parent-child relationships naturally.
 
 ------------------------------------------------------------
 TREE STRUCTURE
 
 Example:
-
          A
        / | \
       B  C  D
          |
          E
 
-Nodes:
-A, B, C, D, E
-
-Edges:
-A-B, A-C, A-D, C-E
+Nodes: A, B, C, D, E
+Edges: A-B, A-C, A-D, C-E
 
 ------------------------------------------------------------
 TREE COMPONENTS
 
-Node
-→ Individual data element
-
-Edge
-→ Connection between nodes
+Node → Individual data element
+Edge → Connection between nodes
 
 ------------------------------------------------------------
-6.1 TREE TERMINOLOGY
+TREE TERMINOLOGY
 
 Several important terms are used when working with trees.
 
@@ -60,12 +52,8 @@ PATH
 A path is a sequence of nodes connected by edges.
 
 Example:
-
 A → C → E
-
-Path Length:
-
-2 edges
+Path Length: 2 edges
 
 ------------------------------------------------------------
 ROOT
@@ -73,7 +61,6 @@ ROOT
 The root is the topmost node in a tree.
 
 Example:
-
          A
        / | \
       B  C  D
@@ -90,7 +77,6 @@ PARENT
 A parent is a node directly above another node.
 
 Example:
-
      A
      |
      B
@@ -103,7 +89,6 @@ CHILD
 A child is a node directly below another node.
 
 Example:
-
      A
     / \
    B   C
@@ -118,7 +103,6 @@ LEAF
 A leaf is a node with no children.
 
 Example:
-
       A
      / \
     B   C
@@ -137,7 +121,6 @@ SUBTREE
 A subtree consists of a node and all of its descendants.
 
 Example:
-
         A
        / \
       B   C
@@ -145,7 +128,6 @@ Example:
     D   E
 
 Subtree of B:
-
       B
      / \
     D   E
@@ -176,7 +158,6 @@ LEVEL
 Level indicates the distance from the root.
 
 Example:
-
          A          Level 0
         / \
        B   C        Level 1
@@ -189,7 +170,6 @@ KEY
 A key is a value used to identify or search for a node.
 
 Example:
-
          50
         / \
       25   75
@@ -200,7 +180,7 @@ Keys:
 • 75
 
 ------------------------------------------------------------
-6.1.11 BINARY TREE
+BINARY TREE
 
 A binary tree is a tree where each node has at most two children.
 
@@ -218,9 +198,7 @@ Properties:
 ------------------------------------------------------------
 POSSIBLE BINARY TREE NODES
 
-Valid:
-
-      A
+Valid:    A
 
 ------------------------------------------------------------
 
@@ -241,12 +219,11 @@ Valid:
     B   C
 
 ------------------------------------------------------------
-6.2 TREE ANALOGY IN COMPUTERS
+TREE ANALOGY IN COMPUTERS
 
 One of the most common examples of trees is a computer file system.
 
 Example:
-
 C:
 │
 ├── Documents
@@ -260,20 +237,12 @@ C:
 ------------------------------------------------------------
 FILE SYSTEM TREE TERMS
 
-Root
-→ C:
-
-Directories
-→ Documents, Pictures
-
-Leaves
-→ Actual files
-
-Paths
-→ Full file location
+Root → C:
+Directories → Documents, Pictures
+Leaves → Actual files
+Paths → Full file location
 
 Example:
-
 C:\Documents\Report.pdf
 
 ------------------------------------------------------------
@@ -286,10 +255,9 @@ Advantages:
 • Scalable structure
 
 ------------------------------------------------------------
-6.3 BASIC BINARY TREE OPERATIONS
+BASIC BINARY TREE OPERATIONS
 
 The main binary tree operations are:
-
 • Searching
 • Insertion
 • Deletion
@@ -301,7 +269,6 @@ SEARCHING
 Searching means locating a node with a specific key.
 
 Example:
-
          50
         /  \
       25    75
@@ -311,11 +278,8 @@ Example:
 Search 62
 
 Process:
-
 50 → Right
-
 75 → Left
-
 62 → Found
 
 ------------------------------------------------------------
@@ -324,9 +288,7 @@ INSERTION
 Insertion means adding a new node while maintaining tree rules.
 
 Example:
-
 Current Tree
-
          50
         /  \
       25    75
@@ -334,13 +296,10 @@ Current Tree
 Insert 60
 
 Process:
-
 60 > 50 → Right
-
 60 < 75 → Left
 
 Result:
-
          50
         /  \
       25    75
@@ -353,11 +312,7 @@ DELETION
 Deletion removes a node from the tree.
 
 Example:
-
-Remove:
-
-25
-
+Remove: 25
 Tree structure is adjusted to maintain binary tree properties.
 
 ------------------------------------------------------------
@@ -370,14 +325,12 @@ Advantages:
 • Dynamic structure
 
 ------------------------------------------------------------
-6.3.1 BINARY SEARCH TREE (BST)
+BINARY SEARCH TREE (BST)
 
 A Binary Search Tree follows a special rule.
 
 Rule:
-
 Left Child < Parent
-
 Right Child ≥ Parent
 
 ------------------------------------------------------------
@@ -390,17 +343,11 @@ BST EXAMPLE
     12  37 62   87
 
 Verification:
-
 25 < 50 ✓
-
 75 > 50 ✓
-
 12 < 25 ✓
-
 37 > 25 ✓
-
 62 < 75 ✓
-
 87 > 75 ✓
 
 ------------------------------------------------------------
@@ -408,21 +355,11 @@ BST SEARCHING
 
 Search 37
 
-Step 1:
-
 37 < 50
-
 Go Left
 
-------------------------------------------------------------
-Step 2:
-
 37 > 25
-
 Go Right
-
-------------------------------------------------------------
-Step 3
 
 Found 37
 
@@ -430,7 +367,6 @@ Found 37
 BST INSERTION
 
 Insert 40
-
 Current Tree:
 
           50
@@ -440,17 +376,13 @@ Current Tree:
     12  37
 
 Process:
-
 40 < 50 → Left
-
 40 > 25 → Right
-
 40 > 37 → Right
 
 Insert
 
 Result:
-
           50
         /    \
       25      75
@@ -465,7 +397,6 @@ BALANCED TREE
 A balanced tree distributes nodes evenly.
 
 Example:
-
           50
         /    \
       25      75
@@ -481,7 +412,6 @@ Advantages:
 UNBALANCED TREE
 
 Example:
-
 10
   \
    20
@@ -490,8 +420,7 @@ Example:
         \
          40
 
-Problem:
-Behaves like a linked list.
+Problem: Behaves like a linked list.
 
 Disadvantages:
 • Slow searching
@@ -502,22 +431,12 @@ Disadvantages:
 COMPARISON
 
 Balanced Tree
-
-Height:
-Small
-
-Performance:
-Fast
-
-------------------------------------------------------------
+Height: Small
+Performance: Fast
 
 Unbalanced Tree
-
-Height:
-Large
-
-Performance:
-Slow
+Height: Large
+Performance: Slow
 
 ------------------------------------------------------------
 TREE TRAVERSAL
@@ -532,28 +451,20 @@ Types:
 ------------------------------------------------------------
 INORDER TRAVERSAL
 
-Order:
-
-Left → Root → Right
-
+Order: Left → Root → Right
 Example:
 
        50
       /  \
      25   75
 
-Output:
-
-25 50 75
-
-Result:
-Produces sorted order in a BST.
+Output: 25 50 75
+Result: Produces sorted order in a BST.
 
 ------------------------------------------------------------
 PREORDER TRAVERSAL
 
 Order: Root → Left → Right
-
 Example:
        50
       /  \
@@ -565,7 +476,6 @@ Output: 50 25 75
 POSTORDER TRAVERSAL
 
 Order: Left → Right → Root
-
 Example:
 
        50
