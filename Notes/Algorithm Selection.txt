@@ -1,0 +1,528 @@
+4.1 ORDERED ARRAYS
+
+An ordered array is an array in which elements are always maintained in sorted order.
+
+Definition:
+Elements are arranged either in ascending or descending order.
+
+------------------------------------------------------------
+ORDERED ARRAY
+
+Example:
+
+[3, 17, 80, 202]
+
+Properties:
+• Elements are always sorted.
+• New values must be inserted in the correct position.
+• Supports faster searching techniques.
+
+------------------------------------------------------------
+ORDERED ARRAY VS REGULAR ARRAY
+
+Regular Array:
+
+[3, 17, 80, 202]
+
+Insert 75:
+
+[3, 17, 80, 202, 75]
+
+Properties:
+• Fast insertion at the end.
+• No sorting required.
+
+------------------------------------------------------------
+
+Ordered Array:
+
+[3, 17, 80, 202]
+
+Insert 75:
+
+[3, 17, 75, 80, 202]
+
+Properties:
+• Must maintain order.
+• Requires searching before insertion.
+
+------------------------------------------------------------
+INSERTION IN AN ORDERED ARRAY
+
+Current Array:
+
+[3, 17, 80, 202]
+
+Insert:
+
+75
+
+------------------------------------------------------------
+STEP 1
+
+Compare with 3
+
+75 > 3
+
+Move Right
+
+------------------------------------------------------------
+STEP 2
+
+Compare with 17
+
+75 > 17
+
+Move Right
+
+------------------------------------------------------------
+STEP 3
+
+Compare with 80
+
+75 < 80
+
+Correct Position Found
+
+------------------------------------------------------------
+STEP 4
+
+Move 202 one position right
+
+[3, 17, 80, _, 202]
+
+------------------------------------------------------------
+STEP 5
+
+Move 80 one position right
+
+[3, 17, _, 80, 202]
+
+------------------------------------------------------------
+STEP 6
+
+Insert 75
+
+[3, 17, 75, 80, 202]
+
+------------------------------------------------------------
+INSERTION EFFICIENCY
+
+Problem:
+The computer must first locate the correct position.
+
+Then:
+• Shift elements
+• Insert new value
+
+Time Complexity:
+
+O(n)
+
+------------------------------------------------------------
+ORDERED ARRAY ADVANTAGE
+
+Although insertion is slower, searching becomes much faster.
+
+Reason:
+Elements remain sorted.
+
+------------------------------------------------------------
+4.2 SEARCHING AN ORDERED ARRAY
+
+Searching means locating a specific value inside the ordered array.
+
+------------------------------------------------------------
+LINEAR SEARCH
+
+A linear search checks one element at a time from left to right.
+
+Example:
+
+Array:
+
+[3, 17, 75, 80, 202]
+
+Search:
+
+22
+
+------------------------------------------------------------
+STEP 1
+
+Check 3
+
+Not Found
+
+------------------------------------------------------------
+STEP 2
+
+Check 17
+
+Not Found
+
+------------------------------------------------------------
+STEP 3
+
+Check 75
+
+75 > 22
+
+Stop Search
+
+------------------------------------------------------------
+WHY CAN WE STOP?
+
+Since the array is sorted:
+
+[3, 17, 75, 80, 202]
+
+Once 75 is reached:
+
+All remaining numbers are larger than 75.
+
+Therefore:
+22 cannot exist further right.
+
+------------------------------------------------------------
+ORDERED ARRAY LINEAR SEARCH
+
+Advantage:
+Can stop early when encountering a larger element.
+
+Time Complexity:
+
+Worst Case:
+
+O(n)
+
+------------------------------------------------------------
+REGULAR ARRAY VS ORDERED ARRAY SEARCH
+
+Regular Array:
+
+[17, 3, 75, 202, 80]
+
+Searching 22
+
+Must inspect every element.
+
+------------------------------------------------------------
+
+Ordered Array:
+
+[3, 17, 75, 80, 202]
+
+Searching 22
+
+Stop when reaching 75.
+
+------------------------------------------------------------
+4.3 BINARY SEARCH
+
+Binary Search is a powerful searching technique that works only on sorted data.
+
+Definition:
+A divide-and-conquer algorithm that repeatedly divides the search space in half.
+
+------------------------------------------------------------
+WHY BINARY SEARCH IS NEEDED
+
+Problem:
+
+Linear Search examines elements one by one.
+
+Solution:
+
+Binary Search eliminates half the remaining elements at each step.
+
+------------------------------------------------------------
+NUMBER GUESSING EXAMPLE
+
+Think of a number between 1 and 100.
+
+First Guess:
+
+50
+
+If answer is higher:
+Search only 51–100
+
+If answer is lower:
+Search only 1–49
+
+Half the possibilities are removed instantly.
+
+------------------------------------------------------------
+HOW BINARY SEARCH WORKS
+
+Step 1:
+Check the middle element.
+
+Step 2:
+If target is smaller:
+Search left half.
+
+Step 3:
+If target is larger:
+Search right half.
+
+Step 4:
+Repeat until found.
+
+------------------------------------------------------------
+BINARY SEARCH EXAMPLE
+
+Array:
+
+[1, 3, 4, 7, 9, 12, 15, 18, 21]
+
+Find:
+
+7
+
+------------------------------------------------------------
+STEP 1
+
+Middle Element:
+
+9
+
+7 < 9
+
+Remove right half.
+
+------------------------------------------------------------
+Remaining:
+
+[1, 3, 4, 7]
+
+------------------------------------------------------------
+STEP 2
+
+Middle Element:
+
+3
+
+7 > 3
+
+Remove left half.
+
+------------------------------------------------------------
+Remaining:
+
+[4, 7]
+
+------------------------------------------------------------
+STEP 3
+
+Middle Element:
+
+4
+
+7 > 4
+
+Remove left half.
+
+------------------------------------------------------------
+Remaining:
+
+[7]
+
+------------------------------------------------------------
+STEP 4
+
+Found 7
+
+Search Complete
+
+------------------------------------------------------------
+WHY BINARY SEARCH IS FAST
+
+Every comparison removes half the remaining elements.
+
+Example:
+
+100 Elements
+
+After 1 Comparison:
+50 Remaining
+
+After 2 Comparisons:
+25 Remaining
+
+After 3 Comparisons:
+12 Remaining
+
+After 4 Comparisons:
+6 Remaining
+
+After 5 Comparisons:
+3 Remaining
+
+After 6 Comparisons:
+1 Remaining
+
+------------------------------------------------------------
+TIME COMPLEXITY OF BINARY SEARCH
+
+Time Complexity:
+
+O(log n)
+
+Meaning:
+
+The number of operations increases very slowly as data grows.
+
+------------------------------------------------------------
+4.4 BINARY SEARCH VS LINEAR SEARCH
+
+------------------------------------------------------------
+ARRAY SIZE = 100
+
+Linear Search:
+
+Up To 100 Steps
+
+Binary Search:
+
+About 7 Steps
+
+------------------------------------------------------------
+ARRAY SIZE = 1000
+
+Linear Search:
+
+Up To 1000 Steps
+
+Binary Search:
+
+About 10 Steps
+
+------------------------------------------------------------
+ARRAY SIZE = 10,000
+
+Linear Search:
+
+Up To 10,000 Steps
+
+Binary Search:
+
+About 13 Steps
+
+------------------------------------------------------------
+ARRAY SIZE = 1,000,000
+
+Linear Search:
+
+Up To 1,000,000 Steps
+
+Binary Search:
+
+About 20 Steps
+
+------------------------------------------------------------
+COMPARISON TABLE
+
+Operation             Linear Search      Binary Search
+
+Search Pattern
+One-by-one            Divide in Half
+
+Requirement
+Any Array             Sorted Array Only
+
+Time Complexity
+O(n)                  O(log n)
+
+Speed
+Slower                Much Faster
+
+------------------------------------------------------------
+TRADE-OFF OF ORDERED ARRAYS
+
+Advantages:
+• Supports Binary Search
+• Extremely fast searching
+• Data remains organized
+
+Disadvantages:
+• Slower insertion
+• Elements may need shifting
+• Maintaining order takes extra work
+
+------------------------------------------------------------
+WHEN TO USE ORDERED ARRAYS
+
+Use Ordered Arrays When:
+
+• Searching is frequent
+• Insertions are infrequent
+• Sorted data is required
+
+Examples:
+• Student Roll Numbers
+• Customer IDs
+• Product Codes
+• Dictionary Applications
+
+------------------------------------------------------------
+WHEN TO USE REGULAR ARRAYS
+
+Use Regular Arrays When:
+
+• Insertions happen frequently
+• Sorting is unnecessary
+• Simplicity is preferred
+
+Examples:
+• Shopping Lists
+• Temporary Data Storage
+• Activity Logs
+
+------------------------------------------------------------
+KEYWORDS
+
+Ordered Array
+→ Array whose elements remain sorted
+
+Linear Search
+→ Searches one element at a time
+
+Binary Search
+→ Divides search space into halves
+
+Divide-and-Conquer
+→ Solves problems by repeatedly dividing them
+
+------------------------------------------------------------
+QUICK EXAM SUMMARY
+
+Ordered Array
+→ Elements stored in sorted order
+
+Major Advantage
+→ Binary Search can be used
+
+Major Disadvantage
+→ Slower insertion
+
+Linear Search
+→ O(n)
+
+Binary Search
+→ O(log n)
+
+Binary Search Requirement
+→ Data must be sorted
+
+Array Size = 1,000,000
+
+Linear Search
+→ Up to 1,000,000 checks
+
+Binary Search
+→ About 20 checks
+
+Best Use of Ordered Arrays
+→ Applications requiring fast searching
