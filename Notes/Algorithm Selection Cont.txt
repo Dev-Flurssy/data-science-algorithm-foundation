@@ -72,7 +72,6 @@ Required
 EXAMPLE
 
 Stack:
-
 Top
  ↓
 40
@@ -83,7 +82,6 @@ Top
 Push 50
 
 Result:
-
 Top
  ↓
 50
@@ -93,10 +91,7 @@ Top
 10
 
 Only one operation is performed.
-
-Time Complexity:
-
-O(1)
+Time Complexity: O(1)
 
 ------------------------------------------------------------
 STACK ADVANTAGE
@@ -107,22 +102,17 @@ STACK ADVANTAGE
 • Simple implementation
 
 ------------------------------------------------------------
-5.2 QUEUES
+QUEUES
 
 A queue is a linear data structure that follows the First-In, First-Out (FIFO) principle.
-
-Definition:
 The first element inserted is the first element removed.
 
 ------------------------------------------------------------
 FIFO PRINCIPLE
 
-FIFO stands for:
-
-First In, First Out
+FIFO stands for: First In, First Out
 
 Meaning:
-
 First Item Added
         ↓
 First Item Removed
@@ -131,22 +121,16 @@ First Item Removed
 QUEUE EXAMPLE
 
 Think of a ticket line.
-
 Front                               Rear
-
 [A] [B] [C] [D]
 
 Person A arrives first.
-
 Person A gets served first.
 
 ------------------------------------------------------------
 STACK VS QUEUE
 
-Stack:
-
-LIFO
-
+Stack: LIFO
 Last In → First Out
 
 Example:
@@ -154,10 +138,7 @@ Pile of Plates
 
 ------------------------------------------------------------
 
-Queue:
-
-FIFO
-
+Queue:FIFO 
 First In → First Out
 
 Example:
@@ -179,7 +160,6 @@ Applications:
 REAL-LIFE EXAMPLE
 
 Bank Queue
-
 Front                       Rear
 John → Mary → David → Sarah
 
@@ -203,18 +183,13 @@ ENQUEUE OPERATION
 Enqueue means adding an item to the rear of the queue.
 
 Example:
-
 Queue:
 Front      Rear
-
 10   20   30
-
 Enqueue 40
 
 Result:
-
 Front           Rear
-
 10   20   30   40
 
 ------------------------------------------------------------
@@ -223,13 +198,9 @@ DEQUEUE OPERATION
 Dequeue means removing an item from the front.
 
 Example:
-
 Queue:
-
 Front           Rear
-
 10   20   30   40
-
 Dequeue
 
 Result:

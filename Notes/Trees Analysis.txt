@@ -1,0 +1,602 @@
+6. TREES
+
+A tree is a hierarchical data structure made up of nodes connected by edges.
+
+Definition:
+A tree consists of nodes (data elements) connected through edges (links).
+
+------------------------------------------------------------
+WHY TREES ARE NEEDED
+
+Trees help organize hierarchical data efficiently.
+
+Examples:
+• File Systems
+• Organization Charts
+• Family Trees
+• Decision Making Systems
+• Database Indexing
+
+Problem:
+Arrays and linked lists are inefficient for representing hierarchical relationships.
+
+Solution:
+Trees organize parent-child relationships naturally.
+
+------------------------------------------------------------
+TREE STRUCTURE
+
+Example:
+
+         A
+       / | \
+      B  C  D
+         |
+         E
+
+Nodes:
+A, B, C, D, E
+
+Edges:
+A-B, A-C, A-D, C-E
+
+------------------------------------------------------------
+TREE COMPONENTS
+
+Node
+→ Individual data element
+
+Edge
+→ Connection between nodes
+
+------------------------------------------------------------
+6.1 TREE TERMINOLOGY
+
+Several important terms are used when working with trees.
+
+------------------------------------------------------------
+PATH
+
+A path is a sequence of nodes connected by edges.
+
+Example:
+
+A → C → E
+
+Path Length:
+
+2 edges
+
+------------------------------------------------------------
+ROOT
+
+The root is the topmost node in a tree.
+
+Example:
+
+         A
+       / | \
+      B  C  D
+
+Root = A
+
+Properties:
+• Only one root exists.
+• Every node is connected to the root.
+
+------------------------------------------------------------
+PARENT
+
+A parent is a node directly above another node.
+
+Example:
+
+     A
+     |
+     B
+
+Parent of B = A
+
+------------------------------------------------------------
+CHILD
+
+A child is a node directly below another node.
+
+Example:
+
+     A
+    / \
+   B   C
+
+Children of A:
+• B
+• C
+
+------------------------------------------------------------
+LEAF
+
+A leaf is a node with no children.
+
+Example:
+
+      A
+     / \
+    B   C
+
+Leaves:
+• B
+• C
+
+Properties:
+• End points of a tree
+• Have no descendants
+
+------------------------------------------------------------
+SUBTREE
+
+A subtree consists of a node and all of its descendants.
+
+Example:
+
+        A
+       / \
+      B   C
+     / \
+    D   E
+
+Subtree of B:
+
+      B
+     / \
+    D   E
+
+------------------------------------------------------------
+VISITING
+
+A node is visited when the program accesses it.
+
+Examples:
+• Displaying data
+• Comparing values
+• Performing calculations
+
+------------------------------------------------------------
+TRAVERSING
+
+Traversing means visiting every node in a specific order.
+
+Purpose:
+• Search data
+• Display data
+• Process data
+
+------------------------------------------------------------
+LEVEL
+
+Level indicates the distance from the root.
+
+Example:
+
+         A          Level 0
+        / \
+       B   C        Level 1
+      / \
+     D   E          Level 2
+
+------------------------------------------------------------
+KEY
+
+A key is a value used to identify or search for a node.
+
+Example:
+
+         50
+        / \
+      25   75
+
+Keys:
+• 50
+• 25
+• 75
+
+------------------------------------------------------------
+6.1.11 BINARY TREE
+
+A binary tree is a tree where each node has at most two children.
+
+Example:
+
+        A
+       / \
+      B   C
+
+Properties:
+• Maximum 2 children per node
+• Left child
+• Right child
+
+------------------------------------------------------------
+POSSIBLE BINARY TREE NODES
+
+Valid:
+
+      A
+
+------------------------------------------------------------
+
+      A
+     /
+    B
+
+------------------------------------------------------------
+
+      A
+       \
+        B
+
+------------------------------------------------------------
+
+      A
+     / \
+    B   C
+
+------------------------------------------------------------
+6.2 TREE ANALOGY IN COMPUTERS
+
+One of the most common examples of trees is a computer file system.
+
+Example:
+
+C:
+│
+├── Documents
+│   ├── Notes.docx
+│   └── Report.pdf
+│
+└── Pictures
+    ├── Photo1.jpg
+    └── Photo2.jpg
+
+------------------------------------------------------------
+FILE SYSTEM TREE TERMS
+
+Root
+→ C:
+
+Directories
+→ Documents, Pictures
+
+Leaves
+→ Actual files
+
+Paths
+→ Full file location
+
+Example:
+
+C:\Documents\Report.pdf
+
+------------------------------------------------------------
+WHY TREES ARE USED IN COMPUTERS
+
+Advantages:
+• Fast searching
+• Hierarchical organization
+• Efficient storage
+• Scalable structure
+
+------------------------------------------------------------
+6.3 BASIC BINARY TREE OPERATIONS
+
+The main binary tree operations are:
+
+• Searching
+• Insertion
+• Deletion
+• Traversal
+
+------------------------------------------------------------
+SEARCHING
+
+Searching means locating a node with a specific key.
+
+Example:
+
+         50
+        /  \
+      25    75
+     / \   / \
+   12 37 62 87
+
+Search 62
+
+Process:
+
+50 → Right
+
+75 → Left
+
+62 → Found
+
+------------------------------------------------------------
+INSERTION
+
+Insertion means adding a new node while maintaining tree rules.
+
+Example:
+
+Current Tree
+
+         50
+        /  \
+      25    75
+
+Insert 60
+
+Process:
+
+60 > 50 → Right
+
+60 < 75 → Left
+
+Result:
+
+         50
+        /  \
+      25    75
+            /
+          60
+
+------------------------------------------------------------
+DELETION
+
+Deletion removes a node from the tree.
+
+Example:
+
+Remove:
+
+25
+
+Tree structure is adjusted to maintain binary tree properties.
+
+------------------------------------------------------------
+WHY BINARY TREES ARE USEFUL
+
+Advantages:
+• Faster searching than arrays
+• Faster insertion
+• Faster deletion
+• Dynamic structure
+
+------------------------------------------------------------
+6.3.1 BINARY SEARCH TREE (BST)
+
+A Binary Search Tree follows a special rule.
+
+Rule:
+
+Left Child < Parent
+
+Right Child ≥ Parent
+
+------------------------------------------------------------
+BST EXAMPLE
+
+          50
+        /    \
+      25      75
+     /  \    /  \
+    12  37 62   87
+
+Verification:
+
+25 < 50 ✓
+
+75 > 50 ✓
+
+12 < 25 ✓
+
+37 > 25 ✓
+
+62 < 75 ✓
+
+87 > 75 ✓
+
+------------------------------------------------------------
+BST SEARCHING
+
+Search 37
+
+Step 1:
+
+37 < 50
+
+Go Left
+
+------------------------------------------------------------
+Step 2:
+
+37 > 25
+
+Go Right
+
+------------------------------------------------------------
+Step 3
+
+Found 37
+
+------------------------------------------------------------
+BST INSERTION
+
+Insert 40
+
+Current Tree:
+
+          50
+        /    \
+      25      75
+     /  \
+    12  37
+
+Process:
+
+40 < 50 → Left
+
+40 > 25 → Right
+
+40 > 37 → Right
+
+Insert
+
+Result:
+
+          50
+        /    \
+      25      75
+     /  \
+    12  37
+           \
+           40
+
+------------------------------------------------------------
+BALANCED TREE
+
+A balanced tree distributes nodes evenly.
+
+Example:
+
+          50
+        /    \
+      25      75
+     / \     / \
+   12 37   62 87
+
+Advantages:
+• Fast searching
+• Fast insertion
+• Fast deletion
+
+------------------------------------------------------------
+UNBALANCED TREE
+
+Example:
+
+10
+  \
+   20
+     \
+      30
+        \
+         40
+
+Problem:
+Behaves like a linked list.
+
+Disadvantages:
+• Slow searching
+• Slow insertion
+• Slow deletion
+
+------------------------------------------------------------
+COMPARISON
+
+Balanced Tree
+
+Height:
+Small
+
+Performance:
+Fast
+
+------------------------------------------------------------
+
+Unbalanced Tree
+
+Height:
+Large
+
+Performance:
+Slow
+
+------------------------------------------------------------
+TREE TRAVERSAL
+
+Traversal means visiting every node in a specific order.
+
+Types:
+• Preorder Traversal
+• Inorder Traversal
+• Postorder Traversal
+
+------------------------------------------------------------
+INORDER TRAVERSAL
+
+Order:
+
+Left → Root → Right
+
+Example:
+
+       50
+      /  \
+     25   75
+
+Output:
+
+25 50 75
+
+Result:
+Produces sorted order in a BST.
+
+------------------------------------------------------------
+PREORDER TRAVERSAL
+
+Order: Root → Left → Right
+
+Example:
+       50
+      /  \
+     25   75
+
+Output: 50 25 75
+
+------------------------------------------------------------
+POSTORDER TRAVERSAL
+
+Order: Left → Right → Root
+
+Example:
+
+       50
+      /  \
+     25   75
+
+Output: 25 75 50
+
+------------------------------------------------------------
+TREE TIME COMPLEXITY
+
+Balanced Binary Search Tree
+Operation          Complexity
+Search             O(log n)
+Insert             O(log n)
+Delete             O(log n)
+
+Worst Case (Unbalanced Tree)
+Operation          Complexity
+Search             O(n)
+Insert             O(n)
+Delete             O(n)
+
+------------------------------------------------------------
+TREE APPLICATIONS
+
+• File Systems
+• Database Indexing
+• Decision Trees
+• Expression Trees
+• Search Engines
+• Artificial Intelligence
+
+------------------------------------------------------------
