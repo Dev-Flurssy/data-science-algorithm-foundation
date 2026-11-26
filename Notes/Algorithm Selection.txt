@@ -98,12 +98,8 @@ Search: 22
 ------------------------------------------------------------
 STEPS
 
-Check 3
-Not Found
-
-Check 17
-Not Found
-
+Check 3 Not Found
+Check 17 Not Found
 Check 75
 75 > 22
 Stop Search
@@ -123,9 +119,7 @@ ORDERED ARRAY LINEAR SEARCH
 
 Advantage:
 Can stop early when encountering a larger element.
-
-Time Complexity:
-Worst Case: O(n)
+Time Complexity: Worst Case: O(n)
 
 ------------------------------------------------------------
 REGULAR ARRAY VS ORDERED ARRAY SEARCH
@@ -148,7 +142,6 @@ A divide-and-conquer algorithm that repeatedly divides the search space in half.
 WHY BINARY SEARCH IS NEEDED
 
 Problem: Linear Search examines elements one by one.
-
 Solution: Binary Search eliminates half the remaining elements at each step.
 
 ------------------------------------------------------------
@@ -157,11 +150,8 @@ NUMBER GUESSING EXAMPLE
 Think of a number between 1 and 100.
 First Guess: 50
 
-If answer is higher:
-Search only 51–100
-
-If answer is lower:
-Search only 1–49
+If answer is higher: Search only 51–100
+If answer is lower: Search only 1–49
 
 Half the possibilities are removed instantly.
 

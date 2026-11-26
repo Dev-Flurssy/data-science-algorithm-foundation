@@ -9,16 +9,14 @@ FIFO PRINCIPLE
 FIFO stands for: First In, First Out
 
 Meaning:
-First Item Added
-        ↓
-First Item Removed
+First Item Added - First Item Removed
 
 ------------------------------------------------------------
 QUEUE EXAMPLE
 
 Think of a ticket line.
-Front                               Rear
-[A] [B] [C] [D]
+Front       Rear
+[A] [B] [C] [D]     
 
 Person A arrives first.
 Person A gets served first.
@@ -28,15 +26,11 @@ STACK VS QUEUE
 
 Stack: LIFO
 Last In → First Out
-
 Example:
 Pile of Plates
 
-------------------------------------------------------------
-
 Queue:FIFO 
 First In → First Out
-
 Example:
 Waiting Line
 
@@ -56,7 +50,7 @@ Applications:
 REAL-LIFE EXAMPLE
 
 Bank Queue
-Front                       Rear
+Front                 Rear
 John → Mary → David → Sarah
 
 Service Order:
@@ -80,13 +74,13 @@ Enqueue means adding an item to the rear of the queue.
 
 Example:
 Queue:
-Front      Rear
+Front     Rear
 10   20   30
-Enqueue 40
 
+Enqueue 40
 Result:
-Front           Rear
-10   20   30   40
+Front      Rear
+10  20  30  40
 
 ------------------------------------------------------------
 DEQUEUE OPERATION
@@ -245,11 +239,7 @@ FIFO
 ------------------------------------------------------------
 PRIORITY QUEUE
 
-Items:
-20
-5
-50
-10
+Items: 20 5 50 10
 
 Removal Order: 5 → 10 → 20 → 50
 Highest Priority Processed First
@@ -352,9 +342,7 @@ Plate Stack
 Insertion: O(1)
 Deletion: O(1)
 
-------------------------------------------------------------
 Queue
-
 Rule: FIFO
 
 Example:
@@ -362,9 +350,7 @@ Ticket Line
 Insertion: O(1)
 Deletion: O(1)
 
-------------------------------------------------------------
 Priority Queue
-
 Rule: Priority-Based
 
 Example:
