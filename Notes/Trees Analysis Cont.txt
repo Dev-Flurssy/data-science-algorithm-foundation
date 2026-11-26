@@ -1,0 +1,408 @@
+6.7 TRAVERSING A TREE
+
+Traversal means visiting every node in a tree in a specific order.
+Traversal is the process of accessing each node exactly once.
+
+------------------------------------------------------------
+WHY TREE TRAVERSAL IS NEEDED
+
+Traversal is used when we want to:
+• Display all nodes
+• Process all records
+• Sort data
+• Evaluate expressions
+• Export tree contents
+
+------------------------------------------------------------
+COMMON TRAVERSAL TYPES
+
+There are three main traversal methods:
+1. Inorder Traversal
+2. Preorder Traversal
+3. Postorder Traversal
+
+------------------------------------------------------------
+SAMPLE TREE
+
+          50
+         /  \
+       30    60
+      /  \
+    20   40
+
+The following examples use this tree.
+
+------------------------------------------------------------
+INORDER TRAVERSAL
+
+Inorder follows the order: Left → Root → Right
+
+------------------------------------------------------------
+INORDER ALGORITHM
+
+Step 1: Traverse Left Subtree
+Step 2: Visit Root
+Step 3: Traverse Right Subtree
+
+------------------------------------------------------------
+INORDER EXAMPLE
+
+Tree:
+          50
+         /  \
+       30    60
+      /  \
+    20   40
+
+------------------------------------------------------------
+VISITING ORDER
+
+20 30 40 50 60
+
+------------------------------------------------------------
+OUTPUT
+
+20 30 40 50 60
+
+------------------------------------------------------------
+IMPORTANT PROPERTY
+
+For a Binary Search Tree (BST):
+Inorder Traversal produces values in sorted order.
+
+Example:
+BST:
+          50
+         /  \
+       30    60
+      /  \
+    20   40
+
+Output: 20 30 40 50 60
+Ascending Order
+
+------------------------------------------------------------
+WHEN TO USE INORDER
+
+• Sorting tree values
+• Displaying BST contents
+• Producing ascending order
+
+------------------------------------------------------------
+TRAVERSING A SMALL TREE
+
+Example:
+      A
+     / \
+    B   C
+
+------------------------------------------------------------
+INORDER STEPS
+
+Step 1: Visit Left Child B
+
+Step 2: Visit Root A
+
+Step 3: Visit Right Child C
+
+Output: B A C
+
+------------------------------------------------------------
+ PREORDER TRAVERSAL
+
+Preorder follows the order:
+Root → Left → Right
+
+------------------------------------------------------------
+PREORDER ALGORITHM
+
+Step 1: Visit Root
+Step 2: Traverse Left Subtree
+Step 3: Traverse Right Subtree
+
+------------------------------------------------------------
+PREORDER EXAMPLE
+
+Tree:
+          50
+         /  \
+       30    60
+      /  \
+    20   40
+
+------------------------------------------------------------
+VISITING ORDER
+
+50 30 20 40 60
+
+------------------------------------------------------------
+OUTPUT
+
+50 30 20 40 60
+
+------------------------------------------------------------
+WHEN TO USE PREORDER
+
+• Copying trees
+• Saving tree structure
+• Expression trees
+• Hierarchical reports
+
+------------------------------------------------------------
+EXPRESSION TREE EXAMPLE
+
+Expression: A × (B + C)
+Tree:
+          *
+         / \
+        A   +
+           / \
+          B   C
+
+------------------------------------------------------------
+PREORDER OUTPUT
+
+* A + B C
+This is called: Prefix Notation
+
+------------------------------------------------------------
+PREFIX NOTATION
+
+Operator appears before operands.
+
+Example:
+*A+BC
+Equivalent Infix Form: A × (B + C)
+
+------------------------------------------------------------
+POSTORDER TRAVERSAL
+
+Postorder follows the order: Left → Right → Root
+
+------------------------------------------------------------
+POSTORDER ALGORITHM
+
+Step 1: Traverse Left Subtree
+Step 2: Traverse Right Subtree
+Step 3: Visit Root
+
+------------------------------------------------------------
+POSTORDER EXAMPLE
+
+Tree:
+          50
+         /  \
+       30    60
+      /  \
+    20   40
+
+------------------------------------------------------------
+VISITING ORDER
+
+20 40 30 60 50
+
+------------------------------------------------------------
+OUTPUT
+
+20 40 30 60 50
+
+------------------------------------------------------------
+WHEN TO USE POSTORDER
+
+• Deleting trees
+• Freeing memory
+• Expression evaluation
+
+------------------------------------------------------------
+POSTFIX NOTATION
+
+Using the expression tree:
+          *
+         / \
+        A   +
+           / \
+          B   C
+
+------------------------------------------------------------
+POSTORDER OUTPUT
+
+A B C + *
+This is called: Postfix Notation
+
+------------------------------------------------------------
+POSTFIX RULE
+
+Operator appears after operands.
+
+Example:
+ABC+*
+Equivalent Infix Form: A × (B + C)
+
+------------------------------------------------------------
+WHY POSTORDER IS USEFUL
+
+When deleting a tree:
+Delete children first
+Delete parent last
+This prevents losing access to child nodes.
+
+------------------------------------------------------------
+COMPARISON OF TRAVERSALS
+
+Tree:
+          50
+         /  \
+       30    60
+      /  \
+    20   40
+
+------------------------------------------------------------
+INORDER
+
+Left → Root → Right
+Output: 20 30 40 50 60
+
+------------------------------------------------------------
+PREORDER
+
+Root → Left → Right
+Output: 50 30 20 40 60
+
+------------------------------------------------------------
+POSTORDER
+
+Left → Right → Root
+Output: 20 40 30 60 50
+
+------------------------------------------------------------
+RECURSION IN TREE TRAVERSAL
+
+Tree traversals are usually implemented using recursion.
+
+Reason: Each subtree is itself a smaller tree.
+
+Process:
+Visit Node
+↓
+Visit Left Subtree
+↓
+Visit Right Subtree
+
+------------------------------------------------------------
+EFFICIENCY OF BINARY TREES
+
+The efficiency of a binary tree depends on its height.
+
+------------------------------------------------------------
+WHAT DETERMINES SPEED?
+
+A search moves:
+Root
+↓
+Child
+↓
+Grandchild
+↓
+Leaf
+
+One level at a time.
+Therefore: More levels = More comparisons
+
+------------------------------------------------------------
+LEVELS IN A FULL TREE
+
+Nodes          Levels
+1              1
+3              2
+7              3
+15             4
+31             5
+1023           10
+32767          15
+1048575        20
+
+------------------------------------------------------------
+OBSERVATION
+
+Even very large trees have relatively few levels.
+
+Example:
+1,048,575 Nodes
+Only 20 Levels
+
+------------------------------------------------------------
+TREE TIME COMPLEXITY
+
+Balanced Binary Tree
+Operation         Complexity
+Search            O(log n)
+Insert            O(log n)
+Delete            O(log n)
+
+------------------------------------------------------------
+WHY O(log n)?
+
+Each comparison eliminates roughly half of the remaining tree.
+Similar to Binary Search.
+
+------------------------------------------------------------
+COMPARISON WITH ARRAYS
+
+Data Structure        Search
+Unordered Array       O(n)
+Linked List           O(n)
+Binary Search Tree    O(log n)
+
+------------------------------------------------------------
+EXAMPLE
+
+1,000,000 Elements
+Unordered Array
+Average Comparisons: 500,000
+
+Binary Search Tree
+Average Comparisons: About 20
+
+------------------------------------------------------------
+INSERTION COMPARISON
+
+Ordered Array
+Insertion: O(n)
+Reason: Elements must shift.
+
+Binary Search Tree
+Insertion: O(log n)
+Reason: Only follow a path from root to leaf.
+
+------------------------------------------------------------
+DELETION COMPARISON
+
+Array
+Deletion: O(n)
+Reason: Elements shift left.
+
+Binary Search Tree
+Deletion: O(log n)
+Reason: Only one path is modified.
+
+------------------------------------------------------------
+ADVANTAGES OF BINARY TREES
+
+• Fast searching
+• Fast insertion
+• Fast deletion
+• Dynamic structure
+• Efficient storage
+
+------------------------------------------------------------
+APPLICATIONS OF TREES
+
+• File Systems
+• Database Indexing
+• Search Engines
+• Expression Evaluation
+• Graph Algorithms
+• Artificial Intelligence
+• Decision Trees
+
+------------------------------------------------------------
