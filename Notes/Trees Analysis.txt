@@ -1,8 +1,6 @@
-6. TREES
+TREES
 
 A tree is a hierarchical data structure made up of nodes connected by edges.
-
-Definition:
 A tree consists of nodes (data elements) connected through edges (links).
 
 ------------------------------------------------------------
@@ -17,8 +15,7 @@ Examples:
 • Decision Making Systems
 • Database Indexing
 
-Problem:
-Arrays and linked lists are inefficient for representing hierarchical relationships.
+Problem: Arrays and linked lists are inefficient for representing hierarchical relationships.
 
 Solution: Trees organize parent-child relationships naturally.
 
