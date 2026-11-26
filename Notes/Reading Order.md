@@ -3,6 +3,7 @@
 - DSA Overview
 - Algorithm
 - Classification of Algorithm
+- Algorithm Selection
 - Data Manipulation
 - Space Complexity
 - Complexity Analysis

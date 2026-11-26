@@ -1,15 +1,12 @@
-4.1 ORDERED ARRAYS
+ORDERED ARRAYS
 
 An ordered array is an array in which elements are always maintained in sorted order.
-
-Definition:
 Elements are arranged either in ascending or descending order.
 
 ------------------------------------------------------------
 ORDERED ARRAY
 
 Example:
-
 [3, 17, 80, 202]
 
 Properties:
@@ -20,27 +17,17 @@ Properties:
 ------------------------------------------------------------
 ORDERED ARRAY VS REGULAR ARRAY
 
-Regular Array:
-
-[3, 17, 80, 202]
-
-Insert 75:
-
-[3, 17, 80, 202, 75]
+Regular Array: [3, 17, 80, 202]
+Insert 75: [3, 17, 80, 202, 75]
 
 Properties:
 • Fast insertion at the end.
 • No sorting required.
 
 ------------------------------------------------------------
+Ordered Array: [3, 17, 80, 202]
 
-Ordered Array:
-
-[3, 17, 80, 202]
-
-Insert 75:
-
-[3, 17, 75, 80, 202]
+Insert 75: [3, 17, 75, 80, 202]
 
 Properties:
 • Must maintain order.
@@ -49,86 +36,53 @@ Properties:
 ------------------------------------------------------------
 INSERTION IN AN ORDERED ARRAY
 
-Current Array:
-
-[3, 17, 80, 202]
-
-Insert:
-
-75
+Current Array: [3, 17, 80, 202]
+Insert: 75
 
 ------------------------------------------------------------
-STEP 1
+STEPS
 
 Compare with 3
-
 75 > 3
-
 Move Right
-
-------------------------------------------------------------
-STEP 2
 
 Compare with 17
-
 75 > 17
-
 Move Right
 
-------------------------------------------------------------
-STEP 3
-
 Compare with 80
-
 75 < 80
-
 Correct Position Found
 
-------------------------------------------------------------
-STEP 4
-
 Move 202 one position right
-
 [3, 17, 80, _, 202]
 
-------------------------------------------------------------
-STEP 5
-
 Move 80 one position right
-
 [3, 17, _, 80, 202]
 
 ------------------------------------------------------------
-STEP 6
-
 Insert 75
-
 [3, 17, 75, 80, 202]
 
 ------------------------------------------------------------
 INSERTION EFFICIENCY
 
-Problem:
-The computer must first locate the correct position.
+Problem: The computer must first locate the correct position.
 
 Then:
 • Shift elements
 • Insert new value
 
-Time Complexity:
-
-O(n)
+Time Complexity: O(n)
 
 ------------------------------------------------------------
 ORDERED ARRAY ADVANTAGE
 
 Although insertion is slower, searching becomes much faster.
-
-Reason:
-Elements remain sorted.
+Reason: Elements remain sorted.
 
 ------------------------------------------------------------
-4.2 SEARCHING AN ORDERED ARRAY
+SEARCHING AN ORDERED ARRAY
 
 Searching means locating a specific value inside the ordered array.
 
@@ -138,51 +92,31 @@ LINEAR SEARCH
 A linear search checks one element at a time from left to right.
 
 Example:
-
-Array:
-
-[3, 17, 75, 80, 202]
-
-Search:
-
-22
+Array: [3, 17, 75, 80, 202]
+Search: 22
 
 ------------------------------------------------------------
-STEP 1
+STEPS
 
 Check 3
-
 Not Found
-
-------------------------------------------------------------
-STEP 2
 
 Check 17
-
 Not Found
 
-------------------------------------------------------------
-STEP 3
-
 Check 75
-
 75 > 22
-
 Stop Search
 
 ------------------------------------------------------------
 WHY CAN WE STOP?
 
-Since the array is sorted:
-
-[3, 17, 75, 80, 202]
+Since the array is sorted: [3, 17, 75, 80, 202]
 
 Once 75 is reached:
-
 All remaining numbers are larger than 75.
 
-Therefore:
-22 cannot exist further right.
+Therefore: 22 cannot exist further right.
 
 ------------------------------------------------------------
 ORDERED ARRAY LINEAR SEARCH
@@ -191,59 +125,37 @@ Advantage:
 Can stop early when encountering a larger element.
 
 Time Complexity:
-
-Worst Case:
-
-O(n)
+Worst Case: O(n)
 
 ------------------------------------------------------------
 REGULAR ARRAY VS ORDERED ARRAY SEARCH
 
-Regular Array:
-
-[17, 3, 75, 202, 80]
-
+Regular Array: [17, 3, 75, 202, 80]
 Searching 22
-
 Must inspect every element.
 
-------------------------------------------------------------
-
-Ordered Array:
-
-[3, 17, 75, 80, 202]
-
+Ordered Array: [3, 17, 75, 80, 202]
 Searching 22
-
 Stop when reaching 75.
 
 ------------------------------------------------------------
-4.3 BINARY SEARCH
+BINARY SEARCH
 
 Binary Search is a powerful searching technique that works only on sorted data.
-
-Definition:
 A divide-and-conquer algorithm that repeatedly divides the search space in half.
 
 ------------------------------------------------------------
 WHY BINARY SEARCH IS NEEDED
 
-Problem:
+Problem: Linear Search examines elements one by one.
 
-Linear Search examines elements one by one.
-
-Solution:
-
-Binary Search eliminates half the remaining elements at each step.
+Solution: Binary Search eliminates half the remaining elements at each step.
 
 ------------------------------------------------------------
 NUMBER GUESSING EXAMPLE
 
 Think of a number between 1 and 100.
-
-First Guess:
-
-50
+First Guess: 50
 
 If answer is higher:
 Search only 51–100
@@ -256,84 +168,36 @@ Half the possibilities are removed instantly.
 ------------------------------------------------------------
 HOW BINARY SEARCH WORKS
 
-Step 1:
-Check the middle element.
-
-Step 2:
-If target is smaller:
-Search left half.
-
-Step 3:
-If target is larger:
-Search right half.
-
-Step 4:
-Repeat until found.
+Step 1: Check the middle element.
+Step 2: If target is smaller: Search left half.
+Step 3: If target is larger: Search right half.
+Step 4: Repeat until found.
 
 ------------------------------------------------------------
 BINARY SEARCH EXAMPLE
 
-Array:
-
-[1, 3, 4, 7, 9, 12, 15, 18, 21]
-
-Find:
-
-7
+Array: [1, 3, 4, 7, 9, 12, 15, 18, 21]
+Find: 7
 
 ------------------------------------------------------------
-STEP 1
+STEPS
 
-Middle Element:
-
-9
-
+Middle Element: 9
 7 < 9
-
 Remove right half.
+Remaining: [1, 3, 4, 7]
 
-------------------------------------------------------------
-Remaining:
-
-[1, 3, 4, 7]
-
-------------------------------------------------------------
-STEP 2
-
-Middle Element:
-
-3
-
+Middle Element: 3
 7 > 3
-
 Remove left half.
+Remaining:[4, 7]
 
-------------------------------------------------------------
-Remaining:
-
-[4, 7]
-
-------------------------------------------------------------
-STEP 3
-
-Middle Element:
-
-4
-
+Middle Element: 4
 7 > 4
-
 Remove left half.
-
-------------------------------------------------------------
-Remaining:
-
-[7]
-
-------------------------------------------------------------
-STEP 4
+Remaining: [7]
 
 Found 7
-
 Search Complete
 
 ------------------------------------------------------------
@@ -342,99 +206,58 @@ WHY BINARY SEARCH IS FAST
 Every comparison removes half the remaining elements.
 
 Example:
-
 100 Elements
 
-After 1 Comparison:
-50 Remaining
-
-After 2 Comparisons:
-25 Remaining
-
-After 3 Comparisons:
-12 Remaining
-
-After 4 Comparisons:
-6 Remaining
-
-After 5 Comparisons:
-3 Remaining
-
-After 6 Comparisons:
-1 Remaining
+After 1 Comparison: 50 Remaining
+After 2 Comparisons: 25 Remaining
+After 3 Comparisons: 12 Remaining
+After 4 Comparisons: 6 Remaining
+After 5 Comparisons: 3 Remaining
+After 6 Comparisons: 1 Remaining
 
 ------------------------------------------------------------
 TIME COMPLEXITY OF BINARY SEARCH
 
-Time Complexity:
-
-O(log n)
-
-Meaning:
-
-The number of operations increases very slowly as data grows.
+Time Complexity: O(log n)
+Meaning: The number of operations increases very slowly as data grows.
 
 ------------------------------------------------------------
-4.4 BINARY SEARCH VS LINEAR SEARCH
+ BINARY SEARCH VS LINEAR SEARCH
 
 ------------------------------------------------------------
 ARRAY SIZE = 100
 
-Linear Search:
-
-Up To 100 Steps
-
-Binary Search:
-
-About 7 Steps
+Linear Search: Up To 100 Steps
+Binary Search: About 7 Steps
 
 ------------------------------------------------------------
 ARRAY SIZE = 1000
 
-Linear Search:
-
-Up To 1000 Steps
-
-Binary Search:
-
-About 10 Steps
+Linear Search: Up To 1000 Steps
+Binary Search: About 10 Steps
 
 ------------------------------------------------------------
 ARRAY SIZE = 10,000
 
-Linear Search:
-
-Up To 10,000 Steps
-
-Binary Search:
-
-About 13 Steps
+Linear Search: Up To 10,000 Steps
+Binary Search: About 13 Steps
 
 ------------------------------------------------------------
 ARRAY SIZE = 1,000,000
 
-Linear Search:
-
-Up To 1,000,000 Steps
-
-Binary Search:
-
-About 20 Steps
+Linear Search: Up To 1,000,000 Steps
+Binary Search: About 20 Steps
 
 ------------------------------------------------------------
 COMPARISON TABLE
 
 Operation             Linear Search      Binary Search
-
 Search Pattern
 One-by-one            Divide in Half
-
 Requirement
 Any Array             Sorted Array Only
-
 Time Complexity
 O(n)                  O(log n)
-
 Speed
 Slower                Much Faster
 
@@ -455,7 +278,6 @@ Disadvantages:
 WHEN TO USE ORDERED ARRAYS
 
 Use Ordered Arrays When:
-
 • Searching is frequent
 • Insertions are infrequent
 • Sorted data is required
@@ -470,7 +292,6 @@ Examples:
 WHEN TO USE REGULAR ARRAYS
 
 Use Regular Arrays When:
-
 • Insertions happen frequently
 • Sorting is unnecessary
 • Simplicity is preferred
@@ -481,48 +302,356 @@ Examples:
 • Activity Logs
 
 ------------------------------------------------------------
-KEYWORDS
+UNDERSTANDING STACKS
 
-Ordered Array
-→ Array whose elements remain sorted
-
-Linear Search
-→ Searches one element at a time
-
-Binary Search
-→ Divides search space into halves
-
-Divide-and-Conquer
-→ Solves problems by repeatedly dividing them
+A stack is a linear data structure that follows the Last-In, First-Out (LIFO) principle.
+The last element inserted into the stack is the first element removed.
 
 ------------------------------------------------------------
-QUICK EXAM SUMMARY
+STACK
 
-Ordered Array
-→ Elements stored in sorted order
+Think of a stack of plates.
 
-Major Advantage
-→ Binary Search can be used
+Example:
+Top
+ ↓
+[Plate 4]
+[Plate 3]
+[Plate 2]
+[Plate 1]
 
-Major Disadvantage
-→ Slower insertion
+To remove a plate:
+Remove Plate 4 first.
 
-Linear Search
-→ O(n)
+Result: Last plate added → First plate removed
 
-Binary Search
-→ O(log n)
+------------------------------------------------------------
+LIFO PRINCIPLE
 
-Binary Search Requirement
-→ Data must be sorted
+LIFO stands for: Last In, First Out
 
-Array Size = 1,000,000
+Meaning:
+Last Item Added
+        ↓
+First Item Removed
 
-Linear Search
-→ Up to 1,000,000 checks
+Example:
+Push A
+Push B
+Push C
 
-Binary Search
-→ About 20 checks
+Stack:
+Top
+ ↓
+C
+B
+A
 
-Best Use of Ordered Arrays
-→ Applications requiring fast searching
+Pop Operation: Remove C
+Result: C is removed first.
+
+------------------------------------------------------------
+WHY STACKS ARE NEEDED
+
+Stacks are extremely useful when dealing with temporary data.
+
+Applications:
+• Function Calls
+• Undo Operations
+• Expression Evaluation
+• Delimiter Matching
+• Browser History
+• Recursion
+
+------------------------------------------------------------
+REAL-LIFE EXAMPLE 1: MAIL STACK
+
+Suppose letters arrive throughout the day.
+
+Arrival Order:
+Letter A
+Letter B
+Letter C
+Letter D
+
+Stack:
+Top
+ ↓
+D
+C
+B
+A
+
+Processing: D → C → B → A
+Result: Most recently received letter is processed first.
+
+------------------------------------------------------------
+REAL-LIFE EXAMPLE 2: WORK TASKS
+
+Current Task: Project A
+Suddenly: Project B becomes urgent
+
+Later: Meeting C starts
+Then: Phone Call D arrives
+
+Stack:
+Top
+ ↓
+D
+C
+B
+A
+
+Work Order:
+Finish D
+Return to C
+Return to B
+Return to A
+
+This is exactly how stack behavior works.
+
+------------------------------------------------------------
+BASIC STACK OPERATIONS
+
+The main stack operations are:
+• Push
+• Pop
+• Peek
+
+------------------------------------------------------------
+PUSH OPERATION
+
+Push means adding an item to the top of the stack.
+
+Example:
+Before:
+Top
+ ↓
+30
+20
+10
+
+Push 40
+
+After:
+Top
+ ↓
+40
+30
+20
+10
+
+------------------------------------------------------------
+POP OPERATION
+
+Pop means removing the top element from the stack.
+
+Example:
+Before:
+Top
+ ↓
+40
+30
+20
+10
+
+Pop
+
+After:
+Top
+ ↓
+30
+20
+10
+
+Removed:
+40
+
+------------------------------------------------------------
+PEEK OPERATION
+
+Peek allows us to examine the top element without removing it.
+
+Example:
+Stack:
+Top
+ ↓
+40
+30
+20
+10
+
+Peek Result: 40
+Stack Remains Unchanged
+
+------------------------------------------------------------
+STACK OVERFLOW
+
+Overflow occurs when attempting to push into a full stack.
+
+Example:
+Maximum Capacity = 5
+
+Current Stack:
+5
+4
+3
+2
+1
+
+Push 6
+Result: Overflow Error
+
+------------------------------------------------------------
+STACK UNDERFLOW
+
+Underflow occurs when attempting to pop from an empty stack.
+
+Example:
+Stack: Empty
+Attempt: Pop
+Result: Underflow Error
+
+------------------------------------------------------------
+STACK IMPLEMENTATION
+
+Stacks can be implemented using:
+• Arrays
+• Linked Lists
+
+------------------------------------------------------------
+ARRAY IMPLEMENTATION
+
+Example:
+Index   Value
+0       10
+1       20
+2       30
+
+Top = 2
+
+Advantages:
+• Simple implementation
+• Fast access
+
+Disadvantages:
+• Fixed size
+
+------------------------------------------------------------
+LINKED LIST IMPLEMENTATION
+
+Each node stores:
+• Data
+• Reference to next node
+
+Advantages:
+• Dynamic size
+• No fixed capacity
+
+Disadvantages:
+• Extra memory required for pointers
+
+------------------------------------------------------------
+STACK TIME COMPLEXITY
+
+Operation        Complexity
+
+Push             O(1)
+Pop              O(1)
+Peek             O(1)
+Search           O(n)
+
+------------------------------------------------------------
+WHY STACK OPERATIONS ARE FAST
+
+All operations occur only at the top.
+No shifting of elements is required.
+
+------------------------------------------------------------
+STACK APPLICATION 1: FUNCTION CALLS
+
+Stacks are heavily used during function execution.
+
+Example:
+main()
+   ↓
+functionA()
+   ↓
+functionB()
+
+Stack:
+Top
+ ↓
+functionB
+functionA
+main
+
+When functionB completes: Pop functionB
+Return to functionA
+
+------------------------------------------------------------
+STACK APPLICATION 2: EXPRESSION EVALUATION
+
+Stacks help evaluate expressions.
+
+Example:
+3 × (4 + 5)
+
+Steps:
+1. Store operators and parentheses
+2. Compute inner expression first
+3. Return result
+
+Result: 3 × 9 = 27
+
+------------------------------------------------------------
+STACK APPLICATION 3: DELIMITER MATCHING
+
+Stacks help verify matching symbols.
+
+Symbols:
+()
+[]
+{}
+
+------------------------------------------------------------
+HOW DELIMITER MATCHING WORKS
+
+Opening Symbols:([{
+Action: Push onto Stack
+
+Closing Symbols: )]}
+Action: Pop from Stack
+Compare
+
+If Matching: Continue
+If Not Matching: Error
+
+------------------------------------------------------------
+STACK ADVANTAGES
+
+• Fast insertion
+• Fast deletion
+• Simple implementation
+• Efficient memory use
+• Supports recursion
+
+------------------------------------------------------------
+STACK DISADVANTAGES
+
+• Access restricted to top element
+• Searching is slow
+• No random access
+
+------------------------------------------------------------
+STACK VS ARRAY
+
+Array:
+• Access any element directly
+• Supports indexing
+
+Stack:
+• Access only top element
+• Follows LIFO
+
+------------------------------------------------------------
