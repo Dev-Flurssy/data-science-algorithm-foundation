@@ -4,7 +4,6 @@
 - Algorithm
 - Classification of Algorithm
 - Algorithm Selection
-- Algorithm Selection Cont
 - Data Manipulation
 - Space Complexity
 - Complexity Analysis
@@ -20,8 +19,9 @@
 - Queue
 - Queue Implementation
 - Queue Implementation2
-- Circular Queue'
+- Circular Queue
 - Priority Queue
+- Stack & Queue Analysis
 - Trees
 - Binary Tree Properties
 - Binary Search Tree
