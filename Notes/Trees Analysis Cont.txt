@@ -1,4 +1,4 @@
-6.7 TRAVERSING A TREE
+TRAVERSING A TREE
 
 Traversal means visiting every node in a tree in a specific order.
 Traversal is the process of accessing each node exactly once.
@@ -100,15 +100,13 @@ Example:
 INORDER STEPS
 
 Step 1: Visit Left Child B
-
 Step 2: Visit Root A
-
 Step 3: Visit Right Child C
 
 Output: B A C
 
 ------------------------------------------------------------
- PREORDER TRAVERSAL
+PREORDER TRAVERSAL
 
 Preorder follows the order:
 Root → Left → Right
@@ -278,7 +276,6 @@ Output: 20 40 30 60 50
 RECURSION IN TREE TRAVERSAL
 
 Tree traversals are usually implemented using recursion.
-
 Reason: Each subtree is itself a smaller tree.
 
 Process:

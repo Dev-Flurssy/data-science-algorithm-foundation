@@ -16,7 +16,6 @@ Examples:
 • Database Indexing
 
 Problem: Arrays and linked lists are inefficient for representing hierarchical relationships.
-
 Solution: Trees organize parent-child relationships naturally.
 
 ------------------------------------------------------------
@@ -153,7 +152,6 @@ Purpose:
 LEVEL
 
 Level indicates the distance from the root.
-
 Example:
          A          Level 0
         / \
@@ -182,7 +180,6 @@ BINARY TREE
 A binary tree is a tree where each node has at most two children.
 
 Example:
-
         A
        / \
       B   C
@@ -378,7 +375,6 @@ Process:
 40 > 37 → Right
 
 Insert
-
 Result:
           50
         /    \
