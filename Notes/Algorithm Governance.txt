@@ -172,7 +172,6 @@ Examples:
 8. Impact on Human Thinking
 Excessive reliance on algorithms may affect human decision-making.
 
-
 9. Loss of Human Control
 Humans may become overly dependent on automated decisions.
 This is called: Heteronomy
@@ -526,7 +525,7 @@ SUMMARY OF MARKET LIMITATIONS
 • Reduced service quality
 
 ------------------------------------------------------------
-8.3.2 LIMITATIONS OF SELF-REGULATION AND SELF-ORGANIZATION
+ LIMITATIONS OF SELF-REGULATION AND SELF-ORGANIZATION
 
 Self-regulation occurs when organizations voluntarily create rules and standards.
 
