@@ -1,4 +1,3 @@
-
 - Introduction to DSA
 - DSA Overview
 - Algorithm
@@ -28,8 +27,12 @@
 - Binary Search Tree
 - AVL Trees
 - Splay Trees
+- Trees Analysis
+- Trees Analysis Cont
 - Graph
 - Graph Representation
 - Graph Component
-- Introduction to Sorting
-- Introduction to Searching
+- Sorting Algorithms
+- Search Algorithms
+- Searching in Graph and Trees
+- Algorithm Governance

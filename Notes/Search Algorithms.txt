@@ -1,23 +1,45 @@
 SEARCH ALGORITHMS
 
-A search algorithm is a method used to locate a specific item within a collection of data.
-
-------------------------------------------------------------
-WHY SEARCH ALGORITHMS ARE NEEDED
-
-Searching is one of the most common operations in computer science.
+Searching is the process of finding a specific item within a collection of data.
 
 Examples:
-• Finding a contact in a phone book
-• Searching a student record
-• Looking up a product ID
-• Retrieving customer information
+• Finding a contact in a phonebook
+• Searching for a website
+• Looking for a student's record
+• Finding a product in a database
 
-Problem:
-Large datasets make manual searching inefficient.
+Purpose:
+• Fast information retrieval
+• Efficient data processing
+• Easy access to required records
 
-Solution:
-Search algorithms help locate data quickly and efficiently.
+------------------------------------------------------------
+WHY SEARCHING IS IMPORTANT
+
+Searching helps locate desired information quickly from a large collection of data.
+
+Example:
+List: 13 12 18 6 -4 9
+Search Key: 6
+
+Result: Element Found
+Without searching techniques, locating information manually would be slow and inefficient.
+
+------------------------------------------------------------
+SEARCH KEY
+
+A search key is the value used to identify and locate a specific item.
+
+Example:
+List: 13 12 18 6 -4 9
+
+Search Key: 6
+Here, 6 is the search key.
+
+Properties:
+• Identifies the required data item
+• Used during comparisons
+• May be unique or non-unique depending on the application
 
 ------------------------------------------------------------
 SEARCH INPUTS
@@ -43,35 +65,45 @@ TYPES OF SEARCH ALGORITHMS
 UNORDERED LINEAR SEARCH
 
 Unordered Linear Search is used when data is not sorted.
-Search each element one by one from the beginning until the item is found.
+Search each element one by one from the beginning until the required item is found.
+
+Also Called:
+• Linear Search
+• Sequential Search
+• Serial Search
 
 ------------------------------------------------------------
-EXAMPLE
+WORKING OF UNORDERED LINEAR SEARCH
+
+Steps:
+1. Start from the first element.
+2. Compare it with the key.
+3. If equal, stop.
+4. Otherwise move to the next element.
+5. Repeat until the key is found or the list ends.
+
+------------------------------------------------------------
+EXAMPLE (KEY FOUND)
 
 Array: [35, 17, 26, 34, 8, 23, 49, 9]
 Search: 34
 
-------------------------------------------------------------
-STEPS
+Comparisons:
+34 = 35 ? No
+34 = 17 ? No
+34 = 26 ? No
+34 = 34 ? Yes
 
-Compare 34 with 35: Not Found
-Compare 34 with 17: Not Found
-Compare 34 with 26: Not Found
-Compare 34 with 34: Found
-
-------------------------------------------------------------
-RESULT
-
-Position = 4
+Result: Position = 4
 Comparisons = 4
 
 ------------------------------------------------------------
-ELEMENT NOT FOUND
+EXAMPLE (KEY NOT FOUND)
 
-Search: 19
 Array: [35, 17, 26, 34, 8, 23, 49, 9]
+Search: 19
 
-Process: Compare every element
+Process:
 35
 17
 26
@@ -85,28 +117,43 @@ Result: 19 Not Found
 Comparisons = 8
 
 ------------------------------------------------------------
+ALGORITHM
+
+1. Start at index 0.
+2. Compare current element with key.
+3. If match is found, return position.
+4. Else move to the next element.
+5. Continue until end of list.
+6. If key is not found, report unsuccessful search.
+
+------------------------------------------------------------
+ADVANTAGES
+
+• Very simple
+• Easy to implement
+• Works on unsorted data
+• No preprocessing required
+
+------------------------------------------------------------
+DISADVANTAGES
+
+• Slow for large datasets
+• May examine every element
+• Less efficient than Binary Search
+
+------------------------------------------------------------
 TIME COMPLEXITY
 
+Best Case: O(1)
+Average Case: O(n)
 Worst Case: O(n)
 Formula: T(n) = n
 
 ------------------------------------------------------------
-CHARACTERISTICS
-
-Advantages:
-• Very simple
-• Works on any data
-
-Disadvantages:
-• Slow for large datasets
-
-------------------------------------------------------------
- ORDERED LINEAR SEARCH
+ORDERED LINEAR SEARCH
 
 Ordered Linear Search is used when data is already sorted.
-
-Definition:
-Search from left to right but stop early when the current value becomes larger than the target.
+Search from left to right and stop immediately when the current value becomes larger than the target value.
 
 ------------------------------------------------------------
 EXAMPLE
@@ -114,20 +161,15 @@ EXAMPLE
 Sorted Array: [8, 9, 17, 23, 26, 34, 35, 49]
 Search: 34
 
-------------------------------------------------------------
-STEPS
+Comparisons:
+34 > 8
+34 > 9
+34 > 17
+34 > 23
+34 > 26
+34 = 34
 
-34 > 8: Continue
-34 > 9: Continue
-34 > 17: Continue
-34 > 23: Continue
-34 > 26: Continue
-34 = 34: Found
-
-------------------------------------------------------------
-RESULT
-
-Position = 6
+Result: Position = 6
 
 ------------------------------------------------------------
 EARLY STOPPING EXAMPLE
@@ -135,51 +177,49 @@ EARLY STOPPING EXAMPLE
 Search: 19
 Array: [8, 9, 17, 23, 26, 34, 35, 49]
 
-------------------------------------------------------------
-STEPS
+Comparisons:
+19 > 8
+19 > 9
+19 > 17
+19 < 23
 
-19 > 8: Continue
-19 > 9: Continue
-19 > 17: Continue
-19 < 23: Stop Search
-
-------------------------------------------------------------
-RESULT
-
-19 Not Found
-Reason: All remaining elements are larger than 19.
-
-------------------------------------------------------------
-TIME COMPLEXITY
-
-Worst Case: O(n)
-Formula: T(n) = 2n
+Result: 19 Not Found
+Reason: Since 23 is already larger than 19, all remaining elements must also be larger.
 
 ------------------------------------------------------------
 ADVANTAGE OVER UNORDERED SEARCH
 
-Can stop earlier when the target cannot exist.
+The search can stop early when it becomes impossible for the target to exist in the remaining portion of the array.
+
+------------------------------------------------------------
+TIME COMPLEXITY
+
+Best Case: O(1)
+Average Case: O(n)
+Worst Case: O(n)
+
+Formula: T(n) = 2n
 
 ------------------------------------------------------------
 CHUNK SEARCH
 
-Chunk Search divides an ordered list into smaller groups called chunks.
-Search chunk boundaries first, then perform linear search inside the selected chunk.
+Chunk Search divides a sorted list into smaller groups called chunks.
+Search chunk boundaries first and then perform Linear Search within the selected chunk.
 
 ------------------------------------------------------------
 WHY CHUNK SEARCH IS USED
 
 Problem: Linear Search examines too many elements.
-Solution: Divide data into manageable chunks.
+Solution: Break the data into smaller chunks.
 
 ------------------------------------------------------------
 EXAMPLE
 
 Array: [8, 9, 17, 23, 26, 34, 35, 49]
-Chunk Size = 2
+Chunk Size: 2
 
 ------------------------------------------------------------
-CHUNKS
+CREATE CHUNKS
 
 Chunk 1: [8, 9]
 Chunk 2: [17, 23]
@@ -189,26 +229,36 @@ Chunk 4: [35, 49]
 ------------------------------------------------------------
 SEARCH FOR 34
 
-Check Last Elements:
+Check chunk-ending elements:
 9
-23 
+23
 34
 
-Found correct chunk
+Correct chunk found.
 
 ------------------------------------------------------------
-PERFORM LINEAR SEARCH
+SEARCH INSIDE CHUNK
 
 Chunk: [26, 34]
+
 Search:
 26
 34
 Found
 
-------------------------------------------------------------
-RESULT
+Result: Position = 6
 
-Position = 6
+------------------------------------------------------------
+ADVANTAGES
+
+• Faster than Linear Search
+• Reduces the number of comparisons
+
+------------------------------------------------------------
+DISADVANTAGES
+
+• More difficult to implement
+• Slower than Binary Search
 
 ------------------------------------------------------------
 TIME COMPLEXITY
@@ -220,83 +270,155 @@ n = Number of Elements
 c = Chunk Size
 
 ------------------------------------------------------------
-ADVANTAGES
-
-• Faster than ordinary linear search
-• Fewer comparisons
-
-------------------------------------------------------------
-DISADVANTAGES
-
-• More complex implementation
-• Still slower than binary search
-
-------------------------------------------------------------
 BINARY SEARCH
 
-Binary Search is an efficient algorithm that repeatedly divides the search space into two halves.
-Search by repeatedly eliminating half the remaining data.
+Binary Search is one of the fastest searching techniques.
+Binary Search repeatedly divides the search space into two halves until the target is found.
 
-Requirement: Data must be sorted.
+Requirement: The data must be sorted.
 
 ------------------------------------------------------------
 WHY BINARY SEARCH IS FAST
 
-Each comparison removes half of the remaining elements.
+Instead of checking every element:
+Linear Search: 1 → 2 → 3 → 4 → 5 → 6 → 7
+Binary Search: Check Middle → Discard Half → Check New Middle → Discard Half Again
+
+Each comparison removes approximately half of the remaining data.
 
 ------------------------------------------------------------
-EXAMPLE
+CONDITIONS FOR BINARY SEARCH
 
-Array: [8, 9, 17, 23, 26, 34, 35, 49]
-Search: 26
+The list must be: Sorted in Ascending Order OR Sorted in Descending Order
+Without sorting, Binary Search cannot work correctly.
 
 ------------------------------------------------------------
-STEPS
+MIDDLE ELEMENT CALCULATION
 
-Middle Element: 23
-26 > 23
-Search Right Half
-Remaining: [26, 34, 35, 49]
+Formula: mid = (first + last) // 2
 
-Middle Element:
-34
-26 < 34
+Example:
+Array: 2 3 5 7 10 11 12
+Indexes: 0 1 2 3 4 5 6
+
+Calculation:
+mid = (0 + 6) // 2
+mid = 3
+
+Middle Element: 7
+
+------------------------------------------------------------
+WORKING OF BINARY SEARCH
+
+Three possible outcomes:
+Middle = Key
+Search Successful
+
+Middle > Key
 Search Left Half
-Remaining: [26]
 
-26 = 26
+Middle < Key
+Search Right Half
+
+------------------------------------------------------------
+EXAMPLE (KEY FOUND)
+
+Sorted List: 2 3 5 7 10 11 12
+Search Key: 10
+
+------------------------------------------------------------
+ITERATION 1
+
+first = 0
+last = 6
+mid = 3
+
+Element = 7
+10 > 7
+
+Search Right Half
+first = 4
+
+------------------------------------------------------------
+ITERATION 2
+
+first = 4
+last = 6
+mid = 5
+
+Element = 11
+10 < 11
+
+Search Left Half
+last = 4
+
+------------------------------------------------------------
+ITERATION 3
+
+first = 4
+last = 4
+
+mid = 4
+Element = 10
+
 Found
 
-------------------------------------------------------------
-RESULT
-
+Result:
 Position = 5
+Index = 4
 
 ------------------------------------------------------------
-ELEMENT NOT FOUND
+EXAMPLE (KEY NOT FOUND)
 
-Search: 30
 Array: [8, 9, 17, 23, 26, 34, 35, 49]
 
-------------------------------------------------------------
-STEP S
+Search: 30
 
-Middle: 23
+Process:
+Middle = 23
 Search Right
 
-Middle: 34
+Middle = 34
 Search Left
 
-26
+Middle = 26
 Search Right
 
-------------------------------------------------------------
-NO ELEMENTS REMAIN
-
+No elements remain.
 Result: 30 Not Found
 
 ------------------------------------------------------------
+ALGORITHM
+
+1. Set first = 0.
+2. Set last = n − 1.
+3. Find the middle element.
+4. Compare middle element with key.
+5. If equal, return position.
+6. If key is smaller, search left half.
+7. If key is larger, search right half.
+8. Continue until key is found or search space becomes empty.
+
+------------------------------------------------------------
+ADVANTAGES
+
+• Extremely fast
+• Reduces search space rapidly
+• Efficient for large datasets
+• Requires very few comparisons
+
+------------------------------------------------------------
+DISADVANTAGES
+
+• Data must be sorted
+• More complex than Linear Search
+• Sorting may add extra overhead
+
+------------------------------------------------------------
 TIME COMPLEXITY
+
+Best Case: O(1)
+Average Case: O(log n)
 
 Worst Case: O(log n)
 Formula: T(n) = 2log₂(n)
@@ -308,553 +430,66 @@ Array Size = 1,000
 Linear Search: Up to 1,000 comparisons
 Binary Search: About 10 comparisons
 
-------------------------------------------------------------
-ARRAY SIZE = 1,000,000
-
+Array Size = 1,000,000
 Linear Search: Up to 1,000,000 comparisons
 Binary Search: About 20 comparisons
 
 ------------------------------------------------------------
 COMPARISON OF SEARCH ALGORITHMS
 
-Algorithm               Time Complexity
-
-Unordered Linear Search     O(n)
-Ordered Linear Search       O(n)
-Chunk Search                O(n/c + 2c)
-Binary Search               O(log n)
+Algorithm                Time Complexity
+Unordered Linear Search  O(n)
+Ordered Linear Search    O(n)
+Chunk Search             O(n/c + 2c)
+Binary Search            O(log n)
 
 ------------------------------------------------------------
 WHEN TO USE EACH SEARCH
 
-Unordered Linear Search
-Use When: 
-•Data is unsorted
+UNORDERED LINEAR SEARCH
 
-Ordered Linear Search
+Use When:
+• Data is unsorted
+• Data size is small
+• Simplicity is required
+
+------------------------------------------------------------
+ORDERED LINEAR SEARCH
+
 Use When:
 • Data is sorted
-• Dataset is small
+• Dataset is relatively small
 
-Chunk Search
+------------------------------------------------------------
+CHUNK SEARCH
 
-Use When:
-• Ordered data
-• Medium-sized datasets
-
-Binary Search
 Use When:
 • Data is sorted
+• Dataset is medium-sized
+• Fewer comparisons are desired
+
+------------------------------------------------------------
+BINARY SEARCH
+
+Use When:
+• Data is sorted
+• Dataset is large
 • Fast searching is required
 
 ------------------------------------------------------------
-ADVANTAGES OF BINARY SEARCH
-
-• Extremely fast
-• Reduces search space quickly
-• Efficient for large datasets
-
-------------------------------------------------------------
-DISADVANTAGES OF BINARY SEARCH
-
-• Requires sorted data
-• More complex than linear search
-
-------------------------------------------------------------
-SEARCHING IN GRAPHS
-
-Graphs are powerful data structures used to represent relationships between data.
-A graph consists of vertices (nodes) connected by edges.
-
-------------------------------------------------------------
-WHY GRAPHS ARE USED
-
-Graphs are used whenever relationships between objects need to be represented.
-
-Examples:
-• Social Networks
-• Road Maps
-• Biological Databases
-• Web Pages
-• Computer Networks
-• Recommendation Systems
-
-------------------------------------------------------------
-GRAPH STRUCTURE
-
-Example:
-      A
-     / \
-    B---C
-     \
-      D
-
-Vertices: A, B, C, D
-Edges: AB, AC, BC, BD
-
-------------------------------------------------------------
-GRAPH COMPONENTS
-
-Vertex (Node) → Represents an object or data item
-Edge → Represents the relationship between objects
-
-------------------------------------------------------------
-WHY SEARCHING IN GRAPHS IS IMPORTANT
-
-Graph searching helps answer questions such as:
-• Are two graphs identical?
-• Does a graph contain a certain pattern?
-• Does a graph contain a smaller graph?
-• Are two structures similar?
-
-------------------------------------------------------------
-REAL-WORLD APPLICATIONS
-
-Biological Databases
-Vertices: Atoms
-Edges: Chemical Bonds
-Purpose: Compare molecular structures.
-
-Web Search Engines
-Vertices: Web Pages
-Edges: Hyperlinks
-Purpose: Determine page relevance.
-
-Computer Vision
-Vertices: Image Regions
-Edges: Relationships between regions
-Purpose: Pattern recognition.
-
-Network Systems
-Vertices: Computers
-Edges: Connections
-Purpose:Route discovery and analysis.
-
-------------------------------------------------------------
-EXACT MATCH (GRAPH ISOMORPHISM)
-
-Graph Isomorphism determines whether two graphs are structurally identical.
-Two graphs are isomorphic if their vertices and edges can be matched exactly.
-
-------------------------------------------------------------
-EXAMPLE
-
-Graph 1
-A ----- B
-|       |
-|       |
-C ----- D
-
-Graph 2
-P ----- Q
-|       |
-|       |
-R ----- S
-
-Observation
-A ↔ P
-B ↔ Q
-C ↔ R
-D ↔ S
-
-Both graphs have identical structures.
-Result: Graphs Are Isomorphic
-
-------------------------------------------------------------
-PURPOSE OF GRAPH ISOMORPHISM
-
-Used to identify:
-• Similar network structures
-• Similar molecules
-• Similar visual objects
-
-------------------------------------------------------------
-COMPLEXITY
-
-Very difficult problem.
-Category: NP Problem
-
-------------------------------------------------------------
-SUBGRAPH EXACT MATCHING: (SUBGRAPH ISOMORPHISM)
-
-Determine whether a smaller graph exists inside a larger graph.
-
-------------------------------------------------------------
-EXAMPLE
-
-Large Graph
-A ----- B ----- C
-|       |
-|       |
-D ----- E
-
-Query Graph
-X ----- Y
-|       |
-|       |
-Z ----- W
-
-Result
-Query Graph Exists Inside Larger Graph.
-
-------------------------------------------------------------
-WHY SUBGRAPH MATCHING IS IMPORTANT
-
-Applications:
-• Pattern Recognition
-• Drug Discovery
-• Network Analysis
-• Fraud Detection
-
-------------------------------------------------------------
-COMPLEXITY
-
-Category: NP-Complete
-Meaning: Extremely difficult for large graphs.
-
-------------------------------------------------------------
-SEARCHING IN GRAPH DATABASES
-
-Graph databases store entire collections of graphs.
-Goal: Find all occurrences of a query graph within the database.
-
-------------------------------------------------------------
-INPUT
-
-Graph Database:
-G1
-G2
-G3
-G4
-
-Query Graph: Q
-
-------------------------------------------------------------
-OUTPUT
-
-All graphs containing Q.
-
-------------------------------------------------------------
-APPLICATIONS
-
-• Molecular Databases
-• Social Networks
-• Biological Research
-• Knowledge Graphs
-
-------------------------------------------------------------
-GRAPH SEARCH CHALLENGES
-
-Problem:
-Many possible vertex mappings must be tested.
-Large graphs create enormous search spaces.
-
-------------------------------------------------------------
-THREE RESEARCH APPROACHES
-
-1. Special Graph Matching
-
-Examples:
-• Planar Graphs
-• Connected Graphs
-
-Goal: Reduce complexity.
-
-------------------------------------------------------------
-2. Reduce Mapping Generation
-
-Goal: Generate fewer candidate matches.
-Result: Faster searching.
-
-------------------------------------------------------------
-Approximate Matching
-
-Goal: Find near matches rather than exact matches.
-Result: Faster execution.
-
-------------------------------------------------------------
-APPROXIMATE GRAPH MATCHING
-
-Exact matches may not exist.
-Solution: Search for similar graphs instead.
-
-------------------------------------------------------------
-EXAMPLE
-
-Graph A
-A ----- B
-|
-|
-C
-
-Graph B
-A ----- B
-|
-|
-D
-
-Result:
-Very Similar Graphs
-Match Score: High
-
-------------------------------------------------------------
-ADVANTAGES
-
-• Handles noisy data
-• Finds similar structures
-• Faster than exact matching
-
-------------------------------------------------------------
-GRAPH SEARCH COMPLEXITY
-
-Exact Matching: Very Expensive
-Subgraph Matching
-NP-Complete
-
-Approximate Matching: Faster But not always exact
-
-------------------------------------------------------------
-GRAPHGREP
-
-GraphGrep is a graph database search technique.
-Purpose: Find all occurrences of a graph pattern within a graph database.
-
-------------------------------------------------------------
-WHY GRAPHGREP IS USED
-
-Problem: Graph searching is expensive.
-Solution: Create indexes that store graph structure information.
-
-------------------------------------------------------------
-HOW GRAPHGREP WORKS
-
-Step 1: Preprocess graph database.
-Step 2: Build graph fingerprints.
-Step 3: Store structural information.
-Step 4: Use fingerprints to reduce searching time.
-
-------------------------------------------------------------
-GRAPH FINGERPRINT
-
-A compact representation of graph structure.
-Purpose: Quickly eliminate impossible matches.
-
-------------------------------------------------------------
-ADVANTAGES OF GRAPHGREP
-
-• Faster searching
-• Efficient indexing
-• Works with graph databases
-• Reduces search space
-
-------------------------------------------------------------
-APPLICATIONS OF GRAPHGREP
-
-• Molecular Databases
-• Biological Databases
-• Web Data
-• Network Analysis
-
-------------------------------------------------------------
-SEARCHING IN TREES
-
-Trees are a specialized type of graph.
-A hierarchical graph with a root node and no cycles.
-
-------------------------------------------------------------
-WHY TREE SEARCHING IS IMPORTANT
-
-Tree structures are widely used in:
-• XML Documents
-• File Systems
-• Digital Libraries
-• Family Trees
-• Biological Databases
-
-------------------------------------------------------------
-TREE SEARCH APPLICATION: COIN DATABASES
-
-Ancient coins can be described using features.
-
-Example:
-Coin
-│
-├── Shape
-├── Material
-├── Inscription
-└── Symbol
-
-Each feature becomes part of a tree structure.
-
-------------------------------------------------------------
-PURPOSE
-
-When a new coin is discovered: Search tree database for similar coins.
-Result: Determine origin and classification.
-
-------------------------------------------------------------
-TREE MATCHING
-
-Tree searching often involves:
-• Exact Matching
-• Approximate Matching
-
-------------------------------------------------------------
-EXACT TREE MATCHING
-
-Goal: Find an identical tree.
-
-Example:
-Tree A = Tree B
-Result: Match Found
-
-------------------------------------------------------------
-APPROXIMATE TREE MATCHING
-
-Goal: Find similar trees.
-Used when exact matches do not exist.
-
-------------------------------------------------------------
-EXAMPLE
-
-Tree A
-Coin
-├── Gold
-└── Roman
-
-Tree B
-Coin
-├── Gold
-└── Greek
-
-Result: Partial Match
-Similarity Score: High
-
-------------------------------------------------------------
-TREE SEARCH IN XML
-
-XML documents naturally form trees.
-
-Example:
-<Book>
-    <Title>
-    <Author>
-</Book>
-
-------------------------------------------------------------
-TREE STRUCTURE
-
-Book
-├── Title
-└── Author
-
-------------------------------------------------------------
-PURPOSE
-
-Search XML databases efficiently.
-
-------------------------------------------------------------
-TREE SEARCH COMPLEXITY
-
-Depends on:
-• Ordered Tree
-• Unordered Tree
-• Exact Matching
-• Approximate Matching
-
-------------------------------------------------------------
-RESULT
-
-Complexity ranges from: Polynomial Time (P) to NP-Complete
-
-------------------------------------------------------------
-COMMON TREE SEARCH ALGORITHMS
-
-• FQ-Tree
-• VP-Tree
-• MVP-Tree
-• M-Tree
-
-Purpose: Improve tree-search efficiency.
-
-------------------------------------------------------------
-SEARCHING IN TEMPORAL PROBABILISTIC OBJECT DATA MODELS
-
-Modern databases often include:
-• Time
-• Uncertainty
-• Probability
-
-------------------------------------------------------------
-WHY TEMPORAL DATA IS IMPORTANT
-
-Real-world events change over time.
-
-Examples:
-• Package Delivery
-• Weather Prediction
-• Financial Forecasting
-
-------------------------------------------------------------
-PACKAGE DELIVERY EXAMPLE
-
-Delivery Prediction: Package arrives
-
-1 PM – 5 PM
-Probability = 0.9
-
-9 AM – 1 PM
-Probability = 0.1
-
-------------------------------------------------------------
-BENEFITS
-
-Businesses can:
-• Schedule workers
-• Allocate resources
-• Plan operations
-
-------------------------------------------------------------
-WEATHER DATABASE EXAMPLE
-
-Object: Storm
-
-Attributes:
-• Location
-• Speed
-• Time
-• Probability
-
-Search Result: Future weather prediction.
-
-------------------------------------------------------------
-FINANCIAL DATABASE EXAMPLE
-
-Object: Loan Customer
-
-Attributes:
-• Credit Score
-• Income
-• Risk Probability
-
-Purpose: Predict possible loan default.
-
-------------------------------------------------------------
-WHY OBJECT MODELS ARE USED
-
-Different objects have different properties.
-Examples:
-
-Vehicles:
-• Trucks
-• Planes
-• Ships
-
-Packages:
-• Letters
-• Boxes
-• Hazardous Materials
-
-Object-oriented models represent these differences efficiently.
+LINEAR SEARCH VS BINARY SEARCH
+
+Linear Search
+
+• Works on sorted or unsorted data
+• Sequential checking
+• No sorting required
+• Time Complexity = O(n)
+
+Binary Search
+• Works only on sorted data
+• Divide-and-conquer approach
+• Much faster for large datasets
+• Time Complexity = O(log n)
 
 ------------------------------------------------------------

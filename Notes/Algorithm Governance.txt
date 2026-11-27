@@ -394,52 +394,18 @@ LIMITATIONS OF ALGORITHM GOVERNANCE
 • Difficult to monitor complex AI systems
 
 ------------------------------------------------------------
-KEY CONCEPT: ACCOUNTABILITY
+LIMITATIONS OF ALGORITHMIC GOVERNANCE OPTIONS
 
-Ensuring that organizations remain responsible for algorithmic decisions.
-
-Purpose: Users should know:
-• Who made the decision
-• Why the decision was made
-• How it can be challenged
-
-------------------------------------------------------------
-KEY CONCEPT: BIAS
-
-Unfair favoritism toward or against specific individuals or groups.
-
-Examples:
-• Hiring systems
-• Loan approvals
-• Recommendation systems
-
-------------------------------------------------------------
-KEY CONCEPT: DISCRIMINATION
-
-Unfair treatment resulting from algorithmic decisions.
-
-------------------------------------------------------------
-KEY CONCEPT: HETERONOMY
-
-Loss of human control and increasing dependence on automated systems.
-
-------------------------------------------------------------
-8.3 LIMITATIONS OF ALGORITHMIC GOVERNANCE OPTIONS
-
-As algorithms become more important in decision-making, governments, organizations, and researchers face challenges in regulating them effectively.
-
-Definition:
+As algorithms become more important in decision-making, governments, organizations, 
+and researchers face challenges in regulating them effectively.
 Algorithmic governance limitations are obstacles that make controlling algorithms difficult.
 
 ------------------------------------------------------------
 WHY GOVERNANCE IS CHALLENGING
 
-Problem:
-
-Algorithms operate across many industries and applications.
+Problem: Algorithms operate across many industries and applications.
 
 Examples:
-
 • Search Engines
 • Social Media
 • Online Shopping
@@ -447,18 +413,13 @@ Examples:
 • Credit Scoring
 • Artificial Intelligence
 
-Result:
-
-A single governance solution cannot address every situation.
+Result: A single governance solution cannot address every situation.
 
 ------------------------------------------------------------
 MAIN GOVERNANCE CHALLENGE
 
 There is no "one-size-fits-all" solution for algorithm governance.
-
-Reason:
-
-Different algorithms create different risks.
+Reason: Different algorithms create different risks.
 
 ------------------------------------------------------------
 ALGORITHM GOVERNANCE GOAL
@@ -471,7 +432,7 @@ Governance seeks to:
 • Encourage accountability
 
 ------------------------------------------------------------
-8.3.1 LIMITATIONS OF MARKET SOLUTIONS AND SELF-HELP STRATEGIES
+LIMITATIONS OF MARKET SOLUTIONS AND SELF-HELP STRATEGIES
 
 Market solutions depend on individuals and organizations protecting themselves voluntarily.
 
