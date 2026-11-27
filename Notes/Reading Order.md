@@ -32,7 +32,7 @@
 - Graph
 - Graph Representation
 - Graph Component
-- Sorting Algorithms
+- Sort Algorithms
 - Search Algorithms
 - Searching in Graph and Trees
 - Algorithm Governance
