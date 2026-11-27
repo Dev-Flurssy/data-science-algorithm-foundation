@@ -1,6 +1,7 @@
 8. ALGORITHM GOVERNANCE
 
-Algorithm Governance refers to the management, regulation, monitoring, and control of algorithmic systems to ensure they operate safely, fairly, transparently, and responsibly.
+Algorithm Governance refers to the management, regulation, monitoring, 
+and control of algorithmic systems to ensure they operate safely, fairly, transparently, and responsibly.
 
 ------------------------------------------------------------
 WHY ALGORITHM GOVERNANCE IS IMPORTANT
@@ -8,7 +9,6 @@ WHY ALGORITHM GOVERNANCE IS IMPORTANT
 Algorithms increasingly influence everyday life.
 
 Examples:
-
 • Google Search Rankings
 • Netflix Recommendations
 • Spotify Recommendations
@@ -22,7 +22,6 @@ PROBLEM
 Algorithms can make decisions automatically without direct human involvement.
 
 Risks:
-
 • Bias
 • Privacy Violations
 • Manipulation
@@ -33,7 +32,6 @@ Risks:
 SOLUTION
 
 Use governance mechanisms to:
-
 • Reduce risks
 • Increase accountability
 • Protect users
@@ -45,84 +43,50 @@ WHAT IS ALGORITHMIC SELECTION?
 Algorithmic Selection is the automatic process of choosing, filtering, ranking, or recommending information.
 
 Examples:
-
-Search Engines
-→ Choose relevant web pages
-
-Social Media
-→ Choose visible posts
-
-Netflix
-→ Choose recommended movies
-
-Amazon
-→ Choose suggested products
+Search Engines → Choose relevant web pages
+Social Media → Choose visible posts
+Netflix → Choose recommended movies
+Amazon → Choose suggested products
 
 ------------------------------------------------------------
 EXAMPLES OF ALGORITHMIC SERVICES
 
 Search
-
 Examples:
-
 • Google
 • Bing
 • Yahoo
 
-------------------------------------------------------------
-
 Recommendation
-
 Examples:
-
 • Netflix
 • Spotify
 • YouTube
 
-------------------------------------------------------------
-
 Allocation
-
 Examples:
-
 • Online Advertising
 • Algorithmic Trading
 
-------------------------------------------------------------
-
 Scoring
-
 Examples:
-
 • Credit Scores
 • Reputation Scores
 • Social Scores
 
-------------------------------------------------------------
-
 Filtering
-
 Examples:
-
 • Spam Filters
 • Child Protection Filters
 
-------------------------------------------------------------
-
 Forecasting
-
 Examples:
-
 • Weather Prediction
 • Crime Prediction
 • Trend Prediction
 
-------------------------------------------------------------
-
 Content Creation
-
 Examples:
-
 • Automated Journalism
 • AI-generated Reports
 
@@ -130,7 +94,6 @@ Examples:
 WHY ALGORITHMS HAVE POWER
 
 Algorithms influence:
-
 • What we see
 • What we buy
 • What we read
@@ -141,152 +104,92 @@ Algorithms influence:
 EXAMPLE
 
 Google Search
-
-Search Query:
-
-"Best Laptop"
+Search Query: "Best Laptop"
 
 The algorithm decides:
-
 • Which websites appear first
 • Which websites appear later
 
-Result:
-
-Algorithms directly influence user decisions.
+Result: Algorithms directly influence user decisions.
 
 ------------------------------------------------------------
-8.1 ANALYTICAL FRAMEWORK
+ANALYTICAL FRAMEWORK
 
 Algorithm governance uses a risk-based approach.
-
-Definition:
-
 Identify risks first and then choose appropriate governance methods.
 
 ------------------------------------------------------------
 RISK-BASED APPROACH
 
-Step 1:
-Identify risks
-
-Step 2:
-Assess impact
-
-Step 3:
-Choose governance strategy
-
-Step 4:
-Monitor and improve
+Step 1: Identify risks
+Step 2: Assess impact
+Step 3: Choose governance strategy
+Step 4: Monitor and improve
 
 ------------------------------------------------------------
 MAIN RISKS OF ALGORITHMIC SELECTION
 
 1. Manipulation
-
 Algorithms can influence behavior intentionally.
-
 Examples:
-
 • Political manipulation
 • Consumer manipulation
 
-------------------------------------------------------------
-
 2. Restrictions on Communication
-
 Algorithms may censor information.
-
 Examples:
-
 • Content Blocking
 • Intelligent Filtering
 
-------------------------------------------------------------
-
 3. Filter Bubbles and Echo Chambers
-
 Algorithms repeatedly show similar opinions.
+Result: Users may see only information matching their beliefs.
 
-Result:
-
-Users may see only information matching their beliefs.
-
-------------------------------------------------------------
 
 4. Privacy Violations
-
 Algorithms collect large amounts of personal data.
-
 Risks:
-
 • Data Tracking
 • Data Leakage
 • Monitoring
 
-------------------------------------------------------------
-
 5. Social Discrimination
-
 Algorithms may unfairly treat certain groups.
-
 Examples:
-
 • Hiring Algorithms
 • Credit Approval Systems
 
-------------------------------------------------------------
-
 6. Intellectual Property Violations
-
 Algorithms may misuse copyrighted material.
 
-------------------------------------------------------------
-
 7. Market Power Abuse
-
 Large platforms may dominate markets.
-
 Examples:
-
 • Google
 • Facebook
 • Amazon
 
-------------------------------------------------------------
-
 8. Impact on Human Thinking
-
 Excessive reliance on algorithms may affect human decision-making.
 
-------------------------------------------------------------
 
 9. Loss of Human Control
-
 Humans may become overly dependent on automated decisions.
-
-This is called:
-
-Heteronomy
+This is called: Heteronomy
 
 ------------------------------------------------------------
-8.2 GOVERNANCE OPTIONS BY RISKS
+GOVERNANCE OPTIONS BY RISKS
 
 Different risks require different governance solutions.
-
 No single method works for every situation.
 
 ------------------------------------------------------------
 MAIN GOVERNANCE TYPES
 
 1. Market Solutions
-
 2. Self-Organization
-
 3. Self-Regulation
-
 4. Co-Regulation
-
 5. Government Regulation
 
 ------------------------------------------------------------
@@ -298,14 +201,12 @@ Users and companies voluntarily adjust behavior.
 USER SELF-PROTECTION
 
 Examples:
-
 • VPNs
 • Privacy Browsers
 • Encryption
 • Cookie Controls
 
 Benefits:
-
 • Improved privacy
 • Reduced tracking
 • Reduced censorship
@@ -314,15 +215,11 @@ Benefits:
 TECHNOLOGY-BASED SOLUTIONS
 
 Examples:
-
 • Privacy By Design
 • Privacy By Default
 • Recommendation Diversity Systems
 
-Purpose:
-
-Reduce:
-
+Purpose: Reduce:
 • Bias
 • Filter Bubbles
 • Privacy Risks
@@ -331,7 +228,6 @@ Reduce:
 MACHINE LEARNING IMPROVEMENTS
 
 Modern Machine Learning systems attempt to:
-
 • Reduce recommendation bias
 • Improve fairness
 • Improve personalization
@@ -353,7 +249,6 @@ EXAMPLES
 PURPOSE
 
 Improve:
-
 • Public trust
 • Reputation
 • Product quality
@@ -361,13 +256,8 @@ Improve:
 ------------------------------------------------------------
 EXAMPLE
 
-Company Policy:
-
-"Collect only necessary user data"
-
-This follows the:
-
-Minimal Data Collection Principle
+Company Policy: "Collect only necessary user data"
+This follows the: Minimal Data Collection Principle
 
 ------------------------------------------------------------
 3. SELF-REGULATION
@@ -386,11 +276,8 @@ EXAMPLES
 APPLICATIONS
 
 Online Advertising
-
 Privacy Protection
-
 Digital Rights Management (DRM)
-
 Search Engine Practices
 
 ------------------------------------------------------------
@@ -401,7 +288,7 @@ ADVANTAGES
 • Faster than government regulation
 
 ------------------------------------------------------------
-CO-REGULATION
+4. CO-REGULATION
 
 Industry and government work together.
 
@@ -420,7 +307,7 @@ BENEFITS
 • Practical implementation
 
 ------------------------------------------------------------
-GOVERNMENT REGULATION
+5. GOVERNMENT REGULATION
 
 Government directly controls algorithm usage.
 

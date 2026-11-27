@@ -727,8 +727,6 @@ Coin
 ├── Gold
 └── Greek
 
-------------------------------------------------------------
-
 Result: Partial Match
 Similarity Score: High
 
@@ -845,7 +843,6 @@ Purpose: Predict possible loan default.
 WHY OBJECT MODELS ARE USED
 
 Different objects have different properties.
-
 Examples:
 
 Vehicles:
