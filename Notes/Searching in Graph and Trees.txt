@@ -131,8 +131,7 @@ X ----- Y
 |       |
 Z ----- W
 
-Result
-Query Graph Exists Inside Larger Graph.
+Result: Query Graph Exists Inside Larger Graph.
 
 ------------------------------------------------------------
 WHY SUBGRAPH MATCHING IS IMPORTANT
@@ -493,5 +492,268 @@ Packages:
 • Hazardous Materials
 
 Object-oriented models represent these differences efficiently.
+
+------------------------------------------------------------
+COMMON TREE SEARCH ALGORITHMS
+
+These tree structures are advanced versions of trees that make searching much faster, 
+especially when dealing with large amounts of data such as images, 
+locations, online shopping products, or fingerprints.
+
+Think of them as different ways of organizing a huge library so that books can be found faster.
+
+------------------------------------------------------------
+1. VP-TREE (VANTAGE POINT TREE)
+
+Idea: Instead of sorting data by value, a VP-Tree sorts data by distance.
+
+------------------------------------------------------------
+REAL-LIFE EXAMPLE
+
+Imagine you are at a shopping mall.
+You need to find the store most similar to Nike.
+
+Instead of checking every store:
+Pick one store as a reference point (called the Vantage Point).
+Measure how far every other store is from that point.
+Arrange stores based on distance.
+
+------------------------------------------------------------
+HOW IT WORKS
+
+Reference Store
+       |
+   Distance
+  /         \
+Near      Far
+
+When searching: Want similar shoes?
+Search only the "Near" branch.
+Ignore the "Far" branch.
+
+------------------------------------------------------------
+USES
+
+• Face Recognition
+• Image Search
+• Music Recommendation
+• Similar Product Search
+• Fingerprint Matching
+
+------------------------------------------------------------
+EXAMPLE
+
+Upload a photo of a dog.
+VP-Tree helps Google Images quickly find visually similar dogs 
+instead of checking millions of pictures one by one.
+
+------------------------------------------------------------
+ADVANTAGE
+
+Very fast for similarity searching.
+
+------------------------------------------------------------
+2. MVP-TREE (MULTI VANTAGE POINT TREE)
+
+Idea: Uses MULTIPLE reference points instead of one.
+
+------------------------------------------------------------
+REAL-LIFE EXAMPLE
+
+Suppose you are searching for a restaurant in Cyprus.
+Using one landmark: "Distance from Nicosia"
+
+Using multiple landmarks:
+• Distance from Nicosia
+• Distance from Kyrenia
+• Distance from Famagusta
+
+works much better.
+
+------------------------------------------------------------
+HOW IT WORKS
+
+Reference Point A
+Reference Point B
+Reference Point C
+
+Every object stores distances to several reference points.
+
+------------------------------------------------------------
+RESULT
+
+Search area shrinks much faster.
+Less searching needed.
+
+------------------------------------------------------------
+USES
+
+• Large Image Databases
+• DNA Matching
+• Medical Records
+• Massive Product Catalogs
+
+------------------------------------------------------------
+EXAMPLE
+
+Netflix has millions of movies.
+Instead of comparing every movie:
+
+Use multiple characteristics:
+• Genre
+• Rating
+• Popularity
+• Viewing History
+
+Movies are grouped faster.
+
+------------------------------------------------------------
+ADVANTAGE
+
+Even faster than VP-Tree for huge datasets.
+
+------------------------------------------------------------
+3. M-TREE (METRIC TREE)
+
+Idea: Organizes data using distances between objects.
+Designed specifically for huge databases.
+
+------------------------------------------------------------
+REAL-LIFE EXAMPLE
+
+Imagine Google Maps.
+You search: "Restaurants within 5 km"
+Google does NOT check every restaurant on Earth.
+
+------------------------------------------------------------
+HOW IT WORKS
+
+M-Tree groups nearby objects together.
+
+Nicosia Cluster
+    |
+Schools
+Hospitals
+Restaurants
+
+Kyrenia Cluster
+    |
+Schools
+Hospitals
+Restaurants
+
+------------------------------------------------------------
+SEARCH PROCESS
+
+Want restaurants near Nicosia?
+Search only the Nicosia branch.
+No need to check Kyrenia or Limassol.
+
+------------------------------------------------------------
+USES
+
+• GPS Systems
+• Geographic Databases
+• Hospitals
+• Search Engines
+• Machine Learning
+
+------------------------------------------------------------
+EXAMPLE
+
+Google Maps
+Search: "Coffee shops within 2 km"
+M-Tree quickly eliminates distant locations.
+
+------------------------------------------------------------
+ADVANTAGE
+
+Very efficient for location-based searches.
+
+------------------------------------------------------------
+4. FQ-TREE (FIXED QUERY TREE)
+
+Idea: Optimized when the same type of search is performed repeatedly.
+
+------------------------------------------------------------
+REAL-LIFE EXAMPLE
+
+University Database
+Students frequently ask: "What courses am I eligible for?"
+This question is asked thousands of times.
+
+------------------------------------------------------------
+NORMAL SEARCH
+
+Search entire database every time.
+Slow.
+
+------------------------------------------------------------
+FQ-TREE APPROACH
+
+Prepare answers in advance.
+Organize data around common queries.
+
+------------------------------------------------------------
+SEARCH PROCESS
+
+Student Query
+      |
+   FQ-Tree
+      |
+Immediate Result
+
+------------------------------------------------------------
+USES
+
+• Search Engines
+• Recommendation Systems
+• Frequently Asked Queries
+• Online Shopping
+
+------------------------------------------------------------
+EXAMPLE
+
+Amazon
+
+Search: "Laptops under $1000"
+Thousands of customers search this every day.
+FQ-Tree stores information optimized for these repeated searches.
+
+------------------------------------------------------------
+ADVANTAGE
+
+Extremely fast when similar searches happen repeatedly.
+
+------------------------------------------------------------
+COMPARISON TABLE
+
+VP-Tree
+Organizes By: One Distance Reference Point
+Best For: Similarity Search
+
+Example:
+Face Recognition
+
+MVP-Tree
+Organizes By: Multiple Reference Points
+Best For: Huge Similarity Databases
+
+Example:
+Netflix Recommendations
+
+M-Tree
+Organizes By: Metric Distance
+Best For: Location Search
+
+Example:
+Google Maps
+
+FQ-Tree
+Organizes By: Repeated Queries
+Best For: Frequently Asked Searches
+
+Example:
+Amazon Product Search
 
 ------------------------------------------------------------
