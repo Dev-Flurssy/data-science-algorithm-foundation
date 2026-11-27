@@ -361,11 +361,9 @@ DISADVANTAGES OF BINARY SEARCH
 • More complex than linear search
 
 ------------------------------------------------------------
-7.5 SEARCHING IN GRAPHS
+SEARCHING IN GRAPHS
 
 Graphs are powerful data structures used to represent relationships between data.
-
-Definition:
 A graph consists of vertices (nodes) connected by edges.
 
 ------------------------------------------------------------
@@ -385,33 +383,25 @@ Examples:
 GRAPH STRUCTURE
 
 Example:
-
       A
      / \
     B---C
      \
       D
 
-Vertices:
-A, B, C, D
-
-Edges:
-AB, AC, BC, BD
+Vertices: A, B, C, D
+Edges: AB, AC, BC, BD
 
 ------------------------------------------------------------
 GRAPH COMPONENTS
 
-Vertex (Node)
-→ Represents an object or data item
-
-Edge
-→ Represents the relationship between objects
+Vertex (Node) → Represents an object or data item
+Edge → Represents the relationship between objects
 
 ------------------------------------------------------------
 WHY SEARCHING IN GRAPHS IS IMPORTANT
 
 Graph searching helps answer questions such as:
-
 • Are two graphs identical?
 • Does a graph contain a certain pattern?
 • Does a graph contain a smaller graph?
@@ -421,105 +411,59 @@ Graph searching helps answer questions such as:
 REAL-WORLD APPLICATIONS
 
 Biological Databases
-
-Vertices:
-Atoms
-
-Edges:
-Chemical Bonds
-
-Purpose:
-Compare molecular structures.
-
-------------------------------------------------------------
+Vertices: Atoms
+Edges: Chemical Bonds
+Purpose: Compare molecular structures.
 
 Web Search Engines
-
-Vertices:
-Web Pages
-
-Edges:
-Hyperlinks
-
-Purpose:
-Determine page relevance.
-
-------------------------------------------------------------
+Vertices: Web Pages
+Edges: Hyperlinks
+Purpose: Determine page relevance.
 
 Computer Vision
-
-Vertices:
-Image Regions
-
-Edges:
-Relationships between regions
-
-Purpose:
-Pattern recognition.
-
-------------------------------------------------------------
+Vertices: Image Regions
+Edges: Relationships between regions
+Purpose: Pattern recognition.
 
 Network Systems
-
-Vertices:
-Computers
-
-Edges:
-Connections
-
-Purpose:
-Route discovery and analysis.
+Vertices: Computers
+Edges: Connections
+Purpose:Route discovery and analysis.
 
 ------------------------------------------------------------
-7.5.1 EXACT MATCH (GRAPH ISOMORPHISM)
+EXACT MATCH (GRAPH ISOMORPHISM)
 
 Graph Isomorphism determines whether two graphs are structurally identical.
-
-Definition:
 Two graphs are isomorphic if their vertices and edges can be matched exactly.
 
 ------------------------------------------------------------
 EXAMPLE
 
 Graph 1
-
 A ----- B
 |       |
 |       |
 C ----- D
 
-------------------------------------------------------------
-
 Graph 2
-
 P ----- Q
 |       |
 |       |
 R ----- S
 
-------------------------------------------------------------
-
 Observation
-
 A ↔ P
-
 B ↔ Q
-
 C ↔ R
-
 D ↔ S
 
 Both graphs have identical structures.
-
-Result:
-
-Graphs Are Isomorphic
+Result: Graphs Are Isomorphic
 
 ------------------------------------------------------------
 PURPOSE OF GRAPH ISOMORPHISM
 
 Used to identify:
-
 • Similar network structures
 • Similar molecules
 • Similar visual objects
@@ -528,16 +472,10 @@ Used to identify:
 COMPLEXITY
 
 Very difficult problem.
-
-Category:
-
-NP Problem
+Category: NP Problem
 
 ------------------------------------------------------------
-7.5.2 SUBGRAPH EXACT MATCHING
-(SUBGRAPH ISOMORPHISM)
-
-Definition:
+SUBGRAPH EXACT MATCHING: (SUBGRAPH ISOMORPHISM)
 
 Determine whether a smaller graph exists inside a larger graph.
 
@@ -545,32 +483,24 @@ Determine whether a smaller graph exists inside a larger graph.
 EXAMPLE
 
 Large Graph
-
 A ----- B ----- C
 |       |
 |       |
 D ----- E
 
-------------------------------------------------------------
-
 Query Graph
-
 X ----- Y
 |       |
 |       |
 Z ----- W
 
-------------------------------------------------------------
-
 Result
-
 Query Graph Exists Inside Larger Graph.
 
 ------------------------------------------------------------
 WHY SUBGRAPH MATCHING IS IMPORTANT
 
 Applications:
-
 • Pattern Recognition
 • Drug Discovery
 • Network Analysis
@@ -579,36 +509,25 @@ Applications:
 ------------------------------------------------------------
 COMPLEXITY
 
-Category:
-
-NP-Complete
-
-Meaning:
-
-Extremely difficult for large graphs.
+Category: NP-Complete
+Meaning: Extremely difficult for large graphs.
 
 ------------------------------------------------------------
-7.5.3 SEARCHING IN GRAPH DATABASES
+SEARCHING IN GRAPH DATABASES
 
 Graph databases store entire collections of graphs.
-
-Goal:
-
-Find all occurrences of a query graph within the database.
+Goal: Find all occurrences of a query graph within the database.
 
 ------------------------------------------------------------
 INPUT
 
 Graph Database:
-
 G1
 G2
 G3
 G4
 
-Query Graph:
-
-Q
+Query Graph: Q
 
 ------------------------------------------------------------
 OUTPUT
@@ -627,9 +546,7 @@ APPLICATIONS
 GRAPH SEARCH CHALLENGES
 
 Problem:
-
 Many possible vertex mappings must be tested.
-
 Large graphs create enormous search spaces.
 
 ------------------------------------------------------------
@@ -641,65 +558,44 @@ Examples:
 • Planar Graphs
 • Connected Graphs
 
-Goal:
-Reduce complexity.
+Goal: Reduce complexity.
 
 ------------------------------------------------------------
-
 2. Reduce Mapping Generation
 
-Goal:
-Generate fewer candidate matches.
-
-Result:
-Faster searching.
+Goal: Generate fewer candidate matches.
+Result: Faster searching.
 
 ------------------------------------------------------------
+Approximate Matching
 
-3. Approximate Matching
-
-Goal:
-Find near matches rather than exact matches.
-
-Result:
-Faster execution.
+Goal: Find near matches rather than exact matches.
+Result: Faster execution.
 
 ------------------------------------------------------------
 APPROXIMATE GRAPH MATCHING
 
 Exact matches may not exist.
-
-Solution:
-
-Search for similar graphs instead.
+Solution: Search for similar graphs instead.
 
 ------------------------------------------------------------
 EXAMPLE
 
 Graph A
-
 A ----- B
 |
 |
 C
 
-------------------------------------------------------------
-
 Graph B
-
 A ----- B
 |
 |
 D
 
-------------------------------------------------------------
-
 Result:
-
 Very Similar Graphs
-
-Match Score:
-High
+Match Score: High
 
 ------------------------------------------------------------
 ADVANTAGES
@@ -711,68 +607,37 @@ ADVANTAGES
 ------------------------------------------------------------
 GRAPH SEARCH COMPLEXITY
 
-Exact Matching
-
-Very Expensive
-
-------------------------------------------------------------
-
+Exact Matching: Very Expensive
 Subgraph Matching
-
 NP-Complete
 
-------------------------------------------------------------
-
-Approximate Matching
-
-Faster
-But not always exact
+Approximate Matching: Faster But not always exact
 
 ------------------------------------------------------------
-7.6 GRAPHGREP
+GRAPHGREP
 
 GraphGrep is a graph database search technique.
-
-Purpose:
-
-Find all occurrences of a graph pattern within a graph database.
+Purpose: Find all occurrences of a graph pattern within a graph database.
 
 ------------------------------------------------------------
 WHY GRAPHGREP IS USED
 
-Problem:
-
-Graph searching is expensive.
-
-Solution:
-
-Create indexes that store graph structure information.
+Problem: Graph searching is expensive.
+Solution: Create indexes that store graph structure information.
 
 ------------------------------------------------------------
 HOW GRAPHGREP WORKS
 
-Step 1:
-Preprocess graph database.
-
-Step 2:
-Build graph fingerprints.
-
-Step 3:
-Store structural information.
-
-Step 4:
-Use fingerprints to reduce searching time.
+Step 1: Preprocess graph database.
+Step 2: Build graph fingerprints.
+Step 3: Store structural information.
+Step 4: Use fingerprints to reduce searching time.
 
 ------------------------------------------------------------
 GRAPH FINGERPRINT
 
-Definition:
-
 A compact representation of graph structure.
-
-Purpose:
-
-Quickly eliminate impossible matches.
+Purpose: Quickly eliminate impossible matches.
 
 ------------------------------------------------------------
 ADVANTAGES OF GRAPHGREP
@@ -791,19 +656,15 @@ APPLICATIONS OF GRAPHGREP
 • Network Analysis
 
 ------------------------------------------------------------
-7.7 SEARCHING IN TREES
+SEARCHING IN TREES
 
 Trees are a specialized type of graph.
-
-Definition:
-
 A hierarchical graph with a root node and no cycles.
 
 ------------------------------------------------------------
 WHY TREE SEARCHING IS IMPORTANT
 
 Tree structures are widely used in:
-
 • XML Documents
 • File Systems
 • Digital Libraries
@@ -811,13 +672,11 @@ Tree structures are widely used in:
 • Biological Databases
 
 ------------------------------------------------------------
-TREE SEARCH APPLICATION:
-COIN DATABASES
+TREE SEARCH APPLICATION: COIN DATABASES
 
 Ancient coins can be described using features.
 
 Example:
-
 Coin
 │
 ├── Shape
@@ -830,71 +689,48 @@ Each feature becomes part of a tree structure.
 ------------------------------------------------------------
 PURPOSE
 
-When a new coin is discovered:
-
-Search tree database for similar coins.
-
-Result:
-
-Determine origin and classification.
+When a new coin is discovered: Search tree database for similar coins.
+Result: Determine origin and classification.
 
 ------------------------------------------------------------
 TREE MATCHING
 
 Tree searching often involves:
-
 • Exact Matching
 • Approximate Matching
 
 ------------------------------------------------------------
 EXACT TREE MATCHING
 
-Goal:
-
-Find an identical tree.
+Goal: Find an identical tree.
 
 Example:
-
 Tree A = Tree B
-
-Result:
-
-Match Found
+Result: Match Found
 
 ------------------------------------------------------------
 APPROXIMATE TREE MATCHING
 
-Goal:
-
-Find similar trees.
-
+Goal: Find similar trees.
 Used when exact matches do not exist.
 
 ------------------------------------------------------------
 EXAMPLE
 
 Tree A
-
 Coin
 ├── Gold
 └── Roman
 
-------------------------------------------------------------
-
 Tree B
-
 Coin
 ├── Gold
 └── Greek
 
 ------------------------------------------------------------
 
-Result:
-
-Partial Match
-
-Similarity Score:
-High
+Result: Partial Match
+Similarity Score: High
 
 ------------------------------------------------------------
 TREE SEARCH IN XML
@@ -902,7 +738,6 @@ TREE SEARCH IN XML
 XML documents naturally form trees.
 
 Example:
-
 <Book>
     <Title>
     <Author>
@@ -924,7 +759,6 @@ Search XML databases efficiently.
 TREE SEARCH COMPLEXITY
 
 Depends on:
-
 • Ordered Tree
 • Unordered Tree
 • Exact Matching
@@ -933,13 +767,7 @@ Depends on:
 ------------------------------------------------------------
 RESULT
 
-Complexity ranges from:
-
-Polynomial Time (P)
-
-to
-
-NP-Complete
+Complexity ranges from: Polynomial Time (P) to NP-Complete
 
 ------------------------------------------------------------
 COMMON TREE SEARCH ALGORITHMS
@@ -949,9 +777,7 @@ COMMON TREE SEARCH ALGORITHMS
 • MVP-Tree
 • M-Tree
 
-Purpose:
-
-Improve tree-search efficiency.
+Purpose: Improve tree-search efficiency.
 
 ------------------------------------------------------------
 SEARCHING IN TEMPORAL PROBABILISTIC OBJECT DATA MODELS
