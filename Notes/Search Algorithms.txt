@@ -1,4 +1,4 @@
-7. SEARCH ALGORITHMS
+SEARCH ALGORITHMS
 
 A search algorithm is a method used to locate a specific item within a collection of data.
 
@@ -23,13 +23,11 @@ Search algorithms help locate data quickly and efficiently.
 SEARCH INPUTS
 
 Most search algorithms require:
-
 • Array or Collection (A)
 • Number of Elements (n)
 • Search Key (x)
 
 Output:
-
 • Position of x if found
 • "Not Found" if x does not exist
 
@@ -42,74 +40,38 @@ TYPES OF SEARCH ALGORITHMS
 4. Binary Search
 
 ------------------------------------------------------------
-7.1 UNORDERED LINEAR SEARCH
+UNORDERED LINEAR SEARCH
 
 Unordered Linear Search is used when data is not sorted.
-
-Definition:
 Search each element one by one from the beginning until the item is found.
 
 ------------------------------------------------------------
 EXAMPLE
 
-Array:
-
-[35, 17, 26, 34, 8, 23, 49, 9]
-
-Search:
-
-34
+Array: [35, 17, 26, 34, 8, 23, 49, 9]
+Search: 34
 
 ------------------------------------------------------------
-STEP 1
+STEPS
 
-Compare 34 with 35
-
-Not Found
-
-------------------------------------------------------------
-STEP 2
-
-Compare 34 with 17
-
-Not Found
-
-------------------------------------------------------------
-STEP 3
-
-Compare 34 with 26
-
-Not Found
-
-------------------------------------------------------------
-STEP 4
-
-Compare 34 with 34
-
-Found
+Compare 34 with 35: Not Found
+Compare 34 with 17: Not Found
+Compare 34 with 26: Not Found
+Compare 34 with 34: Found
 
 ------------------------------------------------------------
 RESULT
 
 Position = 4
-
 Comparisons = 4
 
 ------------------------------------------------------------
 ELEMENT NOT FOUND
 
-Search:
+Search: 19
+Array: [35, 17, 26, 34, 8, 23, 49, 9]
 
-19
-
-Array:
-
-[35, 17, 26, 34, 8, 23, 49, 9]
-
-Process:
-
-Compare every element
-
+Process: Compare every element
 35
 17
 26
@@ -119,22 +81,14 @@ Compare every element
 49
 9
 
-Result:
-
-19 Not Found
-
+Result: 19 Not Found
 Comparisons = 8
 
 ------------------------------------------------------------
 TIME COMPLEXITY
 
-Worst Case:
-
-O(n)
-
-Formula:
-
-T(n) = n
+Worst Case: O(n)
+Formula: T(n) = n
 
 ------------------------------------------------------------
 CHARACTERISTICS
@@ -147,7 +101,7 @@ Disadvantages:
 • Slow for large datasets
 
 ------------------------------------------------------------
-7.2 ORDERED LINEAR SEARCH
+ ORDERED LINEAR SEARCH
 
 Ordered Linear Search is used when data is already sorted.
 
@@ -157,55 +111,18 @@ Search from left to right but stop early when the current value becomes larger t
 ------------------------------------------------------------
 EXAMPLE
 
-Sorted Array:
-
-[8, 9, 17, 23, 26, 34, 35, 49]
-
-Search:
-
-34
+Sorted Array: [8, 9, 17, 23, 26, 34, 35, 49]
+Search: 34
 
 ------------------------------------------------------------
-STEP 1
+STEPS
 
-34 > 8
-
-Continue
-
-------------------------------------------------------------
-STEP 2
-
-34 > 9
-
-Continue
-
-------------------------------------------------------------
-STEP 3
-
-34 > 17
-
-Continue
-
-------------------------------------------------------------
-STEP 4
-
-34 > 23
-
-Continue
-
-------------------------------------------------------------
-STEP 5
-
-34 > 26
-
-Continue
-
-------------------------------------------------------------
-STEP 6
-
-34 = 34
-
-Found
+34 > 8: Continue
+34 > 9: Continue
+34 > 17: Continue
+34 > 23: Continue
+34 > 26: Continue
+34 = 34: Found
 
 ------------------------------------------------------------
 RESULT
@@ -215,60 +132,28 @@ Position = 6
 ------------------------------------------------------------
 EARLY STOPPING EXAMPLE
 
-Search:
-
-19
-
-Array:
-
-[8, 9, 17, 23, 26, 34, 35, 49]
+Search: 19
+Array: [8, 9, 17, 23, 26, 34, 35, 49]
 
 ------------------------------------------------------------
-STEP 1
+STEPS
 
-19 > 8
-
-Continue
-
-------------------------------------------------------------
-STEP 2
-
-19 > 9
-
-Continue
-
-------------------------------------------------------------
-STEP 3
-
-19 > 17
-
-Continue
-
-------------------------------------------------------------
-STEP 4
-
-19 < 23
-
-Stop Search
+19 > 8: Continue
+19 > 9: Continue
+19 > 17: Continue
+19 < 23: Stop Search
 
 ------------------------------------------------------------
 RESULT
 
 19 Not Found
-
-Reason:
-All remaining elements are larger than 19.
+Reason: All remaining elements are larger than 19.
 
 ------------------------------------------------------------
 TIME COMPLEXITY
 
-Worst Case:
-
-O(n)
-
-Formula:
-
-T(n) = 2n
+Worst Case: O(n)
+Formula: T(n) = 2n
 
 ------------------------------------------------------------
 ADVANTAGE OVER UNORDERED SEARCH
@@ -276,67 +161,37 @@ ADVANTAGE OVER UNORDERED SEARCH
 Can stop earlier when the target cannot exist.
 
 ------------------------------------------------------------
-7.3 CHUNK SEARCH
+CHUNK SEARCH
 
 Chunk Search divides an ordered list into smaller groups called chunks.
-
-Definition:
 Search chunk boundaries first, then perform linear search inside the selected chunk.
 
 ------------------------------------------------------------
 WHY CHUNK SEARCH IS USED
 
-Problem:
-
-Linear Search examines too many elements.
-
-Solution:
-
-Divide data into manageable chunks.
+Problem: Linear Search examines too many elements.
+Solution: Divide data into manageable chunks.
 
 ------------------------------------------------------------
 EXAMPLE
 
-Array:
-
-[8, 9, 17, 23, 26, 34, 35, 49]
-
+Array: [8, 9, 17, 23, 26, 34, 35, 49]
 Chunk Size = 2
 
 ------------------------------------------------------------
 CHUNKS
 
-Chunk 1:
-
-[8, 9]
-
-------------------------------------------------------------
-
-Chunk 2:
-
-[17, 23]
-
-------------------------------------------------------------
-
-Chunk 3:
-
-[26, 34]
-
-------------------------------------------------------------
-
-Chunk 4:
-
-[35, 49]
+Chunk 1: [8, 9]
+Chunk 2: [17, 23]
+Chunk 3: [26, 34]
+Chunk 4: [35, 49]
 
 ------------------------------------------------------------
 SEARCH FOR 34
 
 Check Last Elements:
-
 9
-
-23
-
+23 
 34
 
 Found correct chunk
@@ -344,16 +199,10 @@ Found correct chunk
 ------------------------------------------------------------
 PERFORM LINEAR SEARCH
 
-Chunk:
-
-[26, 34]
-
+Chunk: [26, 34]
 Search:
-
 26
-
 34
-
 Found
 
 ------------------------------------------------------------
@@ -364,14 +213,10 @@ Position = 6
 ------------------------------------------------------------
 TIME COMPLEXITY
 
-Formula:
-
-T(n) = n/c + 2c
+Formula: T(n) = n/c + 2c
 
 Where:
-
 n = Number of Elements
-
 c = Chunk Size
 
 ------------------------------------------------------------
@@ -387,15 +232,12 @@ DISADVANTAGES
 • Still slower than binary search
 
 ------------------------------------------------------------
-7.4 BINARY SEARCH
+BINARY SEARCH
 
 Binary Search is an efficient algorithm that repeatedly divides the search space into two halves.
-
-Definition:
 Search by repeatedly eliminating half the remaining data.
 
-Requirement:
-Data must be sorted.
+Requirement: Data must be sorted.
 
 ------------------------------------------------------------
 WHY BINARY SEARCH IS FAST
@@ -405,51 +247,24 @@ Each comparison removes half of the remaining elements.
 ------------------------------------------------------------
 EXAMPLE
 
-Array:
-
-[8, 9, 17, 23, 26, 34, 35, 49]
-
-Search:
-
-26
+Array: [8, 9, 17, 23, 26, 34, 35, 49]
+Search: 26
 
 ------------------------------------------------------------
-STEP 1
+STEPS
 
-Middle Element:
-
-23
-
+Middle Element: 23
 26 > 23
-
 Search Right Half
-
-------------------------------------------------------------
-Remaining:
-
-[26, 34, 35, 49]
-
-------------------------------------------------------------
-STEP 2
+Remaining: [26, 34, 35, 49]
 
 Middle Element:
-
 34
-
 26 < 34
-
 Search Left Half
-
-------------------------------------------------------------
-Remaining:
-
-[26]
-
-------------------------------------------------------------
-STEP 3
+Remaining: [26]
 
 26 = 26
-
 Found
 
 ------------------------------------------------------------
@@ -460,84 +275,44 @@ Position = 5
 ------------------------------------------------------------
 ELEMENT NOT FOUND
 
-Search:
-
-30
-
-Array:
-
-[8, 9, 17, 23, 26, 34, 35, 49]
+Search: 30
+Array: [8, 9, 17, 23, 26, 34, 35, 49]
 
 ------------------------------------------------------------
-STEP 1
+STEP S
 
-Middle:
-
-23
-
+Middle: 23
 Search Right
 
-------------------------------------------------------------
-STEP 2
-
-Middle:
-
-34
-
+Middle: 34
 Search Left
 
-------------------------------------------------------------
-STEP 3
-
 26
-
 Search Right
 
 ------------------------------------------------------------
 NO ELEMENTS REMAIN
 
-Result:
-
-30 Not Found
+Result: 30 Not Found
 
 ------------------------------------------------------------
 TIME COMPLEXITY
 
-Worst Case:
-
-O(log n)
-
-Formula:
-
-T(n) = 2log₂(n)
+Worst Case: O(log n)
+Formula: T(n) = 2log₂(n)
 
 ------------------------------------------------------------
 WHY BINARY SEARCH IS BETTER
 
 Array Size = 1,000
-
-Linear Search:
-
-Up to 1,000 comparisons
-
-------------------------------------------------------------
-
-Binary Search:
-
-About 10 comparisons
+Linear Search: Up to 1,000 comparisons
+Binary Search: About 10 comparisons
 
 ------------------------------------------------------------
 ARRAY SIZE = 1,000,000
 
-Linear Search:
-
-Up to 1,000,000 comparisons
-
-------------------------------------------------------------
-
-Binary Search:
-
-About 20 comparisons
+Linear Search: Up to 1,000,000 comparisons
+Binary Search: About 20 comparisons
 
 ------------------------------------------------------------
 COMPARISON OF SEARCH ALGORITHMS
@@ -545,30 +320,21 @@ COMPARISON OF SEARCH ALGORITHMS
 Algorithm               Time Complexity
 
 Unordered Linear Search     O(n)
-
 Ordered Linear Search       O(n)
-
 Chunk Search                O(n/c + 2c)
-
 Binary Search               O(log n)
 
 ------------------------------------------------------------
 WHEN TO USE EACH SEARCH
 
 Unordered Linear Search
-
-Use When:
-• Data is unsorted
-
-------------------------------------------------------------
+Use When: 
+•Data is unsorted
 
 Ordered Linear Search
-
 Use When:
 • Data is sorted
 • Dataset is small
-
-------------------------------------------------------------
 
 Chunk Search
 
@@ -576,10 +342,7 @@ Use When:
 • Ordered data
 • Medium-sized datasets
 
-------------------------------------------------------------
-
 Binary Search
-
 Use When:
 • Data is sorted
 • Fast searching is required
@@ -598,90 +361,3 @@ DISADVANTAGES OF BINARY SEARCH
 • More complex than linear search
 
 ------------------------------------------------------------
-KEYWORDS
-
-Search Algorithm
-→ Method used to locate data
-
-Linear Search
-→ Searches elements one by one
-
-Ordered Linear Search
-→ Linear search on sorted data
-
-Chunk Search
-→ Searches grouped sections
-
-Binary Search
-→ Repeatedly divides data into halves
-
-Key
-→ Value used for searching
-
-------------------------------------------------------------
-QUICK EXAM SUMMARY
-
-Unordered Linear Search
-
-Works On:
-Unsorted Data
-
-Complexity:
-O(n)
-
-------------------------------------------------------------
-
-Ordered Linear Search
-
-Works On:
-Sorted Data
-
-Complexity:
-O(n)
-
-Advantage:
-Can stop early
-
-------------------------------------------------------------
-
-Chunk Search
-
-Works On:
-Sorted Data
-
-Complexity:
-O(n/c + 2c)
-
-------------------------------------------------------------
-
-Binary Search
-
-Works On:
-Sorted Data
-
-Complexity:
-O(log n)
-
-------------------------------------------------------------
-
-Fastest Search Algorithm Discussed
-
-Binary Search
-
-------------------------------------------------------------
-
-Requirement For Binary Search
-
-Data Must Be Sorted
-
-------------------------------------------------------------
-
-Linear Search
-
-Checks Every Element
-
-------------------------------------------------------------
-
-Binary Search
-
-Eliminates Half Of Remaining Data At Each Step
