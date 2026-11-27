@@ -404,16 +404,6 @@ RESULT
 Complexity ranges from: Polynomial Time (P) to NP-Complete
 
 ------------------------------------------------------------
-COMMON TREE SEARCH ALGORITHMS
-
-• FQ-Tree
-• VP-Tree
-• MVP-Tree
-• M-Tree
-
-Purpose: Improve tree-search efficiency.
-
-------------------------------------------------------------
 SEARCHING IN TEMPORAL PROBABILISTIC OBJECT DATA MODELS
 
 Modern databases often include:
@@ -501,6 +491,13 @@ especially when dealing with large amounts of data such as images,
 locations, online shopping products, or fingerprints.
 
 Think of them as different ways of organizing a huge library so that books can be found faster.
+
+• FQ-Tree
+• VP-Tree
+• MVP-Tree
+• M-Tree
+
+Purpose: Improve tree-search efficiency.
 
 ------------------------------------------------------------
 1. VP-TREE (VANTAGE POINT TREE)
